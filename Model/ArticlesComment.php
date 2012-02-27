@@ -13,7 +13,7 @@
  * @since         v 1.0
  */
 class ArticlesComment extends AppModel {
-	public $actsAs = array('Bancha.BanchaRemotable');
+	
 /**
  * Validation rules
  *
