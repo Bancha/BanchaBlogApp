@@ -29,7 +29,9 @@ class ArticlesController extends AppController {
  */
 	public function index() {
 		$this->Article->recursive = 0;
-		$this->set('articles', $this->paginate());
+		$articles = $this->paginate();
+		$this->set('articles', $articles);
+		return array_merge($this->request['paging']['Article'],array('records'=>$articles));
 	}
 
 /**
@@ -44,6 +46,7 @@ class ArticlesController extends AppController {
 			throw new NotFoundException(__('Invalid article'));
 		}
 		$this->set('article', $this->Article->read(null, $id));
+		return $this->Article->data;
 	}
 
 /**
@@ -54,14 +57,17 @@ class ArticlesController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Article->create();
+			
+			if($this->request->params['isBancha']) return $this->Article->saveFieldsAndReturn($this->request->data);
+			
 			if ($this->Article->save($this->request->data)) {
 				$this->flash(__('Article saved.'), array('action' => 'index'));
 			} else {
 			}
 		}
 		$users = $this->Article->User->find('list');
-		$tags = $this->Article->Tag->find('list');
-		$this->set(compact('users', 'tags'));
+		$comments = $this->Article->Comment->find('list');
+		$this->set(compact('users', 'comments'));
 	}
 
 /**
@@ -75,6 +81,10 @@ class ArticlesController extends AppController {
 		if (!$this->Article->exists()) {
 			throw new NotFoundException(__('Invalid article'));
 		}
+		
+		if($this->request->params['isBancha']) return $this->Article->saveFieldsAndReturn($this->request->data);
+		
+		
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Article->save($this->request->data)) {
 				$this->flash(__('The article has been saved.'), array('action' => 'index'));
@@ -84,8 +94,8 @@ class ArticlesController extends AppController {
 			$this->request->data = $this->Article->read(null, $id);
 		}
 		$users = $this->Article->User->find('list');
-		$tags = $this->Article->Tag->find('list');
-		$this->set(compact('users', 'tags'));
+		$comments = $this->Article->Comment->find('list');
+		$this->set(compact('users', 'comments'));
 	}
 
 /**
@@ -102,6 +112,10 @@ class ArticlesController extends AppController {
 		if (!$this->Article->exists()) {
 			throw new NotFoundException(__('Invalid article'));
 		}
+		
+		if($this->request->params['isBancha']) return $this->Article->deleteAndReturn();
+		
+		
 		if ($this->Article->delete()) {
 			$this->flash(__('Article deleted'), array('action' => 'index'));
 		}

@@ -29,7 +29,9 @@ class CommentsController extends AppController {
  */
 	public function index() {
 		$this->Comment->recursive = 0;
-		$this->set('comments', $this->paginate());
+		$comments = $this->paginate();
+		$this->set('comments', $comments);
+		return array_merge($this->request['paging']['Comment'],array('records'=>$comments));
 	}
 
 /**
@@ -44,6 +46,7 @@ class CommentsController extends AppController {
 			throw new NotFoundException(__('Invalid comment'));
 		}
 		$this->set('comment', $this->Comment->read(null, $id));
+		return $this->Comment->data;
 	}
 
 /**
@@ -54,6 +57,9 @@ class CommentsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->Comment->create();
+			
+			if($this->request->params['isBancha']) return $this->Comment->saveFieldsAndReturn($this->request->data);
+			
 			if ($this->Comment->save($this->request->data)) {
 				$this->flash(__('Comment saved.'), array('action' => 'index'));
 			} else {
@@ -74,6 +80,10 @@ class CommentsController extends AppController {
 		if (!$this->Comment->exists()) {
 			throw new NotFoundException(__('Invalid comment'));
 		}
+		
+		if($this->request->params['isBancha']) return $this->Comment->saveFieldsAndReturn($this->request->data);
+		
+		
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Comment->save($this->request->data)) {
 				$this->flash(__('The comment has been saved.'), array('action' => 'index'));
@@ -100,6 +110,10 @@ class CommentsController extends AppController {
 		if (!$this->Comment->exists()) {
 			throw new NotFoundException(__('Invalid comment'));
 		}
+		
+		if($this->request->params['isBancha']) return $this->Comment->deleteAndReturn();
+		
+		
 		if ($this->Comment->delete()) {
 			$this->flash(__('Comment deleted'), array('action' => 'index'));
 		}
