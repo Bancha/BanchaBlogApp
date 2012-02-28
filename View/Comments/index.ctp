@@ -3,14 +3,14 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('string');?></th>
+			<th><?php echo $this->Paginator->sort('comment');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 	foreach ($comments as $comment): ?>
 	<tr>
 		<td><?php echo h($comment['Comment']['id']); ?>&nbsp;</td>
-		<td><?php echo h($comment['Comment']['string']); ?>&nbsp;</td>
+		<td><?php echo h($comment['Comment']['comment']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $comment['Comment']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $comment['Comment']['id'])); ?>

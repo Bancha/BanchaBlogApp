@@ -21,7 +21,7 @@ class Comment extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'string' => array(
+		'comment' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
 			),

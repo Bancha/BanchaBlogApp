@@ -9,7 +9,7 @@
 		echo $this->Form->input('body');
 		echo $this->Form->input('published');
 		echo $this->Form->input('user_id');
-		echo $this->Form->input('Tag');
+		echo $this->Form->input('Comment');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>
@@ -23,6 +23,6 @@
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Comments'), array('controller' => 'comments', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Tag'), array('controller' => 'comments', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Comment'), array('controller' => 'comments', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

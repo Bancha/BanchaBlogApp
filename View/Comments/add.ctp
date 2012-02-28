@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Comment'); ?></legend>
 	<?php
-		echo $this->Form->input('string');
+		echo $this->Form->input('comment');
 		echo $this->Form->input('Article');
 	?>
 	</fieldset>

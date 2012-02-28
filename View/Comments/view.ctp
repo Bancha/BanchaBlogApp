@@ -6,9 +6,9 @@
 			<?php echo h($comment['Comment']['id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('String'); ?></dt>
+		<dt><?php echo __('Comment'); ?></dt>
 		<dd>
-			<?php echo h($comment['Comment']['string']); ?>
+			<?php echo h($comment['Comment']['comment']); ?>
 			&nbsp;
 		</dd>
 	</dl>

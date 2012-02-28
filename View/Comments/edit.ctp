@@ -4,7 +4,7 @@
 		<legend><?php echo __('Edit Comment'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('string');
+		echo $this->Form->input('comment');
 		echo $this->Form->input('Article');
 	?>
 	</fieldset>

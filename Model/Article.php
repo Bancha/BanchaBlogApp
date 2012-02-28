@@ -56,7 +56,7 @@ class Article extends AppModel {
  * @var array
  */
 	public $hasAndBelongsToMany = array(
-		'Tag' => array(
+		'Comment' => array(
 			'className' => 'Comment',
 			'joinTable' => 'articles_comments',
 			'foreignKey' => 'article_id',
