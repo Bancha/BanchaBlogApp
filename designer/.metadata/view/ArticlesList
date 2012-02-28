@@ -1,0 +1,104 @@
+{
+    "id": "ExtBox1-ext-gen6789",
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "title": "Articles",
+        "designer|userClassName": "ArticlesList",
+        "designer|userAlias": "articleslist"
+    },
+    "customConfigs": [],
+    "designerId": "b546f619-60cc-442f-aae5-c0f933e1967b",
+    "$viewOrder": 1,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen6799",
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "string",
+                "flex": 2,
+                "text": "Name",
+                "designer|userClassName": "MyColumn"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6813",
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "width": 50,
+                "defaultWidth": 50,
+                "dataIndex": "date",
+                "flex": 1,
+                "text": "Author",
+                "designer|userClassName": "MyColumn1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen6827",
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen10341",
+            "type": "actioncolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "altText": null,
+                "designer|userClassName": "MyActionColumn"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen10347",
+                    "type": "actioncolumnitem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "icon": "http://sampleproject.banchaproject.org/img/icons/delete.png",
+                        "iconCls": "",
+                        "tooltip": "Delete Article",
+                        "designer|userClassName": "MyActionColumnItem"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

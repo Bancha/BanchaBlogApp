@@ -1,0 +1,45 @@
+{
+    "name": "BlogApp",
+    "settings": {
+        "urlPrefix": "",
+        "directAPI": "",
+        "spacesToIndent": 4,
+        "codeGenFormat": "Class",
+        "exportPath": "/Users/roland/Documents/AptanaWorkspace/BanchaSampleProject/app/webroot/js",
+        "extPath": "http://extjs.cachefly.net/ext-4.0.2a/",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "lineEnding": "LF",
+        "instantiateStore": true,
+        "genTimestamps": false,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
+        "cssPath": ""
+    },
+    "xdsVersion": "2.0.0",
+    "framework": "ext40",
+    "topInstanceFileMap": {
+        "aa072d1e-c180-4283-9cba-f5e26adde0bb": {
+            "paths": [
+                "app/view/MyViewport.js",
+                "app/view/ui/MyViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "MyViewport"
+        },
+        "b546f619-60cc-442f-aae5-c0f933e1967b": {
+            "paths": [
+                "app/view/ArticlesList.js",
+                "app/view/ui/ArticlesList.js"
+            ],
+            "className": "ArticlesList"
+        }
+    },
+    "expandedState": {
+        "data": true,
+        "model": true,
+        "component": true,
+        "controller": true
+    }
+}

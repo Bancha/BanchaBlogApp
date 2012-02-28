@@ -1,0 +1,174 @@
+{
+    "id": "ExtBox1-ext-gen6466",
+    "type": "viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "layout": "border",
+        "designer|userClassName": "MyViewport"
+    },
+    "customConfigs": [],
+    "designerId": "aa072d1e-c180-4283-9cba-f5e26adde0bb",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen10722",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "west",
+                "width": 150
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen6789"
+        },
+        {
+            "id": "ExtBox1-ext-gen85484",
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "border",
+                "title": "Article Name",
+                "designer|userClassName": "MyPanel",
+                "layout|region": "center"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen87307",
+                    "type": "component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 150,
+                        "tpl": "<h1>{titile}</h1>\n<h2>{date}, by {username}</h2>\n<p>\n{body}\n</p>",
+                        "designer|userClassName": "MyComponent",
+                        "layout|flex": 1,
+                        "layout|region": "north"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen88633",
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Comments",
+                        "designer|userClassName": "MyPanel1",
+                        "layout|region": "center"
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen5046",
+                            "type": "dataview",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "tpl": "<tpl for=\".\"><div>Comment{comment}<span class=\"comment-author\">{author},{created}</span></div></tpl>",
+                                "itemSelector": "div",
+                                "designer|userClassName": "MyView"
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen89247",
+                            "type": "form",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": 10,
+                                "title": null,
+                                "designer|userClassName": "MyForm"
+                            },
+                            "customConfigs": [],
+                            "expanded": true,
+                            "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen89688",
+                                    "type": "fieldset",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "title": "Add a comment",
+                                        "designer|userClassName": "MyFieldSet"
+                                    },
+                                    "customConfigs": [],
+                                    "expanded": true,
+                                    "cn": [
+                                        {
+                                            "id": "ExtBox1-ext-gen90679",
+                                            "type": "textareafield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "",
+                                                "designer|userClassName": "MyTextArea",
+                                                "layout|anchor": "100%"
+                                            },
+                                            "customConfigs": [],
+                                            "expanded": true
+                                        },
+                                        {
+                                            "id": "ExtBox1-ext-gen90929",
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "submit",
+                                                "designer|userClassName": "MyButton"
+                                            },
+                                            "customConfigs": [],
+                                            "expanded": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
