@@ -17,6 +17,7 @@ Ext.define('BlogApp.view.ui.ArticlesList', {
     extend: 'Ext.grid.Panel',
 
     title: 'Articles',
+    store: 'Articles',
 
     initComponent: function() {
         var me = this;

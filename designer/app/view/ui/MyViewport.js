@@ -64,7 +64,8 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                                     tpl: [
                                         '<tpl for="."><div>Comment{comment}<span class="comment-author">{author},{created}</span></div></tpl>'
                                     ],
-                                    itemSelector: 'div'
+                                    itemSelector: 'div',
+                                    store: 'Comments'
                                 },
                                 {
                                     xtype: 'form',

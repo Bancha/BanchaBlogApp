@@ -7,7 +7,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|initialView": true,
         "layout": "border",
         "designer|userClassName": "MyViewport"
     },
@@ -95,6 +94,7 @@
                             "userConfig": {
                                 "tpl": "<tpl for=\".\"><div>Comment{comment}<span class=\"comment-author\">{author},{created}</span></div></tpl>",
                                 "itemSelector": "div",
+                                "store": "Comments",
                                 "designer|userClassName": "MyView"
                             },
                             "customConfigs": [],

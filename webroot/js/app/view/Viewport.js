@@ -14,7 +14,7 @@
  */
 
 Ext.define('BlogApp.view.Viewport', {
-    extend: 'BlogApp.view.MyViewport',
+    extend: 'BlogApp.view.ArticlesList',
     renderTo: Ext.getBody(),
     requires: [
         'BlogApp.view.MyViewport'

@@ -18,8 +18,13 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-    stores: [
+    models: [
         
+    ],
+
+    stores: [
+        'Articles',
+        'Comments'
     ],
 
     views: [

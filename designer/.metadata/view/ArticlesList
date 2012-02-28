@@ -7,7 +7,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|initialView": true,
         "title": "Articles",
+        "store": "Articles",
         "designer|userClassName": "ArticlesList",
         "designer|userAlias": "articleslist"
     },

@@ -23,17 +23,31 @@
         "aa072d1e-c180-4283-9cba-f5e26adde0bb": {
             "paths": [
                 "app/view/MyViewport.js",
-                "app/view/ui/MyViewport.js",
-                "app/view/Viewport.js"
+                "app/view/ui/MyViewport.js"
             ],
             "className": "MyViewport"
         },
         "b546f619-60cc-442f-aae5-c0f933e1967b": {
             "paths": [
                 "app/view/ArticlesList.js",
-                "app/view/ui/ArticlesList.js"
+                "app/view/ui/ArticlesList.js",
+                "app/view/Viewport.js"
             ],
             "className": "ArticlesList"
+        },
+        "bbc13fdf-9ebb-4b29-9eac-aff66675899c": {
+            "paths": [
+                "app/store/Articles.js",
+                "app/store/base/Articles.js"
+            ],
+            "className": "Articles"
+        },
+        "fcc4597e-3fcb-4d90-b6d2-b204866b5d35": {
+            "paths": [
+                "app/store/Comments.js",
+                "app/store/base/Comments.js"
+            ],
+            "className": "Comments"
         }
     },
     "expandedState": {
