@@ -62,12 +62,15 @@ Ext.define('BlogApp.controller.Articles', {
     },
 
     onStartup: function(abstractcomponent, options) {
+
         // select first element in the list
         var list = Ext.ComponentQuery.query('articlelist')[0];
 
-        cosnole.info(list);
+        console.info(list);
 
-        list.getSelectionModel().select()
+        list.getSelectionModel().select();
+
+
         store.clearFilter();
         store.filter('station', request.params.station);
         store.sort('played_date', 'ASC');
@@ -76,6 +79,7 @@ Ext.define('BlogApp.controller.Articles', {
         this.application.fireEvent('articlechanged',this.getArticlesStore().getAt(0));
 
         console.info('launch done');
+
     }
 
 });

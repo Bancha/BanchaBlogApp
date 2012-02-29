@@ -29,10 +29,18 @@ Ext.define('BlogApp.controller.Articles', {
     init: function() {
         this.control({
             "articleslist": {
-                selectionchange: this.onArticleListSelectionChange,
-                afterrender: this.onStartup
+                selectionchange: this.onArticleListSelectionChange
             }
         });
+
+
+        // select first element in the list
+        var list = Ext.ComponentQuery.query('articlelist')[0];
+
+        console.info(list);
+
+        list.getSelectionModel().select();
+
 
         this.application.on({
             articlechanged: {
@@ -59,23 +67,6 @@ Ext.define('BlogApp.controller.Articles', {
 
         // update the title
         Ext.ComponentQuery.query('#articlePanel')[0].setTitle(record.get('title'));
-    },
-
-    onStartup: function(abstractcomponent, options) {
-        // select first element in the list
-        var list = Ext.ComponentQuery.query('articlelist')[0];
-
-        cosnole.info(list);
-
-        list.getSelectionModel().select()
-        store.clearFilter();
-        store.filter('station', request.params.station);
-        store.sort('played_date', 'ASC');
-
-        // and everywhere else
-        this.application.fireEvent('articlechanged',this.getArticlesStore().getAt(0));
-
-        console.info('launch done');
     }
 
 });

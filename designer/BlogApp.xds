@@ -5,7 +5,7 @@
         "directAPI": "",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
-        "exportPath": "/Users/roland/Documents/AptanaWorkspace/BanchaSampleProject/app/webroot/js",
+        "exportPath": "/Users/roland/Documents/AptanaWorkspace/BanchaSampleProject/app/webroot",
         "extPath": "http://extjs.cachefly.net/ext-4.0.2a/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",

@@ -88,7 +88,7 @@
             "expanded": true
         },
         {
-            "id": "ExtBox1-ext-gen105305",
+            "id": "ExtBox1-ext-gen5957",
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -97,8 +97,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onStartup",
-                "implHandler": "// select first element in the list\nvar list = Ext.ComponentQuery.query('articlelist')[0];\n\ncosnole.info(list);\n\nlist.getSelectionModel().select()\nstore.clearFilter();\nstore.filter('station', request.params.station);\nstore.sort('played_date', 'ASC');\n\n// and everywhere else\nthis.application.fireEvent('articlechanged',this.getArticlesStore().getAt(0));\n\nconsole.info('launch done');",
-                "single": true,
+                "implHandler": "\n// select first element in the list\nvar list = Ext.ComponentQuery.query('articlelist')[0];\n\nconsole.info(list);\n\nlist.getSelectionModel().select();\n\n\nstore.clearFilter();\nstore.filter('station', request.params.station);\nstore.sort('played_date', 'ASC');\n\n// and everywhere else\nthis.application.fireEvent('articlechanged',this.getArticlesStore().getAt(0));\n\nconsole.info('launch done');\n",
                 "name": "afterrender",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
