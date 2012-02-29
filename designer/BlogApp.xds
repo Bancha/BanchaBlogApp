@@ -74,6 +74,13 @@
                 "js/app/controller/Comments.js"
             ],
             "className": "Comments"
+        },
+        "e036c70a-4959-46fd-82eb-dcf76120cd2a": {
+            "paths": [
+                "js/app/store/Users.js",
+                "js/app/store/base/Users.js"
+            ],
+            "className": "Users"
         }
     },
     "expandedState": {

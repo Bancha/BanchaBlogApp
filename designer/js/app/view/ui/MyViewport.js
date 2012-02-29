@@ -66,7 +66,8 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                                     xtype: 'commentsview',
                                     padding: 10,
                                     tpl: [
-                                        '<tpl for="."><div>{comment}<span class="comment-author">author, {created}</span></div></tpl>'
+                                        'new Ext.XTemplate(\'<tpl for="."><div>{comment}<span class="comment-author">{[Ext.StoreMgr.get("Users").getById(values.user_id).get("name")]}, {created}</span></div></tpl>\')',
+                                        ''
                                     ]
                                 },
                                 {

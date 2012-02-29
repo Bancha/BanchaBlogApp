@@ -10,7 +10,8 @@
         "models": [],
         "stores": [
             "Articles",
-            "Comments"
+            "Comments",
+            "Users"
         ],
         "views": [
             "MyViewport",

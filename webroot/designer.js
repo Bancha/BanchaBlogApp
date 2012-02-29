@@ -24,7 +24,8 @@ Ext.application({
 
     stores: [
         'Articles',
-        'Comments'
+        'Comments',
+        'Users'
     ],
 
     views: [
