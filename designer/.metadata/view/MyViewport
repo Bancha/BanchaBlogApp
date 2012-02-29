@@ -7,6 +7,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|initialView": true,
         "layout": "border",
         "designer|userClassName": "MyViewport"
     },
@@ -25,7 +26,8 @@
             "codeClass": null,
             "userConfig": {
                 "layout|region": "west",
-                "width": 150
+                "layout|split": true,
+                "width": 226
             },
             "customConfigs": [],
             "iconCls": "icon-linkedinstance",
@@ -41,6 +43,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "id": "articlePanel",
                 "layout": "border",
                 "title": "Article Name",
                 "designer|userClassName": "MyPanel",
@@ -50,22 +53,22 @@
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen87307",
-                    "type": "component",
+                    "id": "ExtBox1-ext-gen67942",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 150,
-                        "tpl": "<h1>{titile}</h1>\n<h2>{date}, by {username}</h2>\n<p>\n{body}\n</p>",
-                        "designer|userClassName": "MyComponent",
-                        "layout|flex": 1,
-                        "layout|region": "north"
+                        "width": 150,
+                        "designer|userClassName": "ArticleView",
+                        "layout|region": "center"
                     },
                     "customConfigs": [],
-                    "expanded": true
+                    "iconCls": "icon-linkedinstance",
+                    "expanded": true,
+                    "masterInstanceId": "ExtBox1-ext-gen87307"
                 },
                 {
                     "id": "ExtBox1-ext-gen88633",
@@ -76,12 +79,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "height": 150,
                         "title": "Comments",
                         "designer|userClassName": "MyPanel1",
-                        "layout|region": "center"
+                        "layout|region": "south",
+                        "layout|split": true
                     },
                     "customConfigs": [],
-                    "expanded": true,
+                    "expanded": false,
                     "cn": [
                         {
                             "id": "ExtBox1-ext-gen5046",

@@ -7,8 +7,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|initialView": true,
         "title": "Articles",
+        "forceFit": true,
         "store": "Articles",
         "designer|userClassName": "ArticlesList",
         "designer|userAlias": "articleslist"
@@ -27,8 +27,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "string",
-                "flex": 2,
+                "width": 80,
+                "dataIndex": "title",
+                "flex": null,
                 "text": "Name",
                 "designer|userClassName": "MyColumn"
             },
@@ -37,19 +38,20 @@
         },
         {
             "id": "ExtBox1-ext-gen6813",
-            "type": "gridcolumn",
+            "type": "datecolumn",
             "reference": {
                 "name": "columns",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "width": 50,
-                "defaultWidth": 50,
+                "width": 140,
+                "defaultWidth": null,
                 "dataIndex": "date",
-                "flex": 1,
-                "text": "Author",
-                "designer|userClassName": "MyColumn1"
+                "flex": null,
+                "text": "Created",
+                "format": "Y-m-d",
+                "designer|userClassName": "MyDateColumn"
             },
             "customConfigs": [],
             "expanded": true
@@ -63,6 +65,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "width": 100,
                 "designer|userClassName": "MyGridView"
             },
             "customConfigs": [],
@@ -77,6 +80,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "width": 30,
                 "altText": null,
                 "designer|userClassName": "MyActionColumn"
             },

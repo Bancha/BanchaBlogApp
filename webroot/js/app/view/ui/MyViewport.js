@@ -16,7 +16,8 @@
 Ext.define('BlogApp.view.ui.MyViewport', {
     extend: 'Ext.container.Viewport',
     requires: [
-        'BlogApp.view.ArticlesList'
+        'BlogApp.view.ArticlesList',
+        'BlogApp.view.ArticleView'
     ],
 
     layout: {
@@ -31,10 +32,12 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                 {
                     xtype: 'articleslist',
                     region: 'west',
-                    width: 150
+                    split: true,
+                    width: 226
                 },
                 {
                     xtype: 'panel',
+                    id: 'articlePanel',
                     layout: {
                         type: 'border'
                     },
@@ -42,22 +45,16 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                     region: 'center',
                     items: [
                         {
-                            xtype: 'component',
-                            height: 150,
-                            tpl: [
-                                '<h1>{titile}</h1>',
-                                '<h2>{date}, by {username}</h2>',
-                                '<p>',
-                                '{body}',
-                                '</p>'
-                            ],
-                            flex: 1,
-                            region: 'north'
+                            xtype: 'articleview',
+                            width: 150,
+                            region: 'center'
                         },
                         {
                             xtype: 'panel',
+                            height: 150,
                             title: 'Comments',
-                            region: 'center',
+                            region: 'south',
+                            split: true,
                             items: [
                                 {
                                     xtype: 'dataview',

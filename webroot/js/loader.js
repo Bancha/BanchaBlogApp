@@ -16,6 +16,12 @@
 Ext.Loader.setConfig({
 	enabled:true,
 	paths: {
-    	'Ext'   : './js/extjs/src', // this is where place extjs for development
+    	'Ext': './js/extjs/src' // this is where place extjs for development
 	}
+});
+
+
+// init Bancha for loading models
+Ext.onReady(function() {
+	Bancha.init();
 });

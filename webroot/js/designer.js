@@ -24,17 +24,21 @@ Ext.application({
 
     stores: [
         'Articles',
-        'Comments'
     ],
 
     views: [
         'MyViewport',
-        'ArticlesList'
+        'ArticlesList',
+        'ArticleView'
     ],
 
     autoCreateViewport: true,
 
     name: 'BlogApp',
+
+    controllers: [
+        'Articles'
+    ],
 
     launch: function() {
 

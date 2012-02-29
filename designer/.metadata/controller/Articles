@@ -1,0 +1,91 @@
+{
+    "id": "ExtBox1-ext-gen32269",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|init": "",
+        "designer|userClassName": "Articles"
+    },
+    "customConfigs": [],
+    "designerId": "605f1b49-1e8a-4555-b989-141da478d287",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen32398",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "list",
+                "selector": "articleslist",
+                "designer|userClassName": "list"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen53152",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onArticleListSelectionChange",
+                "implHandler": "// make an application wide event\nthis.application.fireEvent('articlechanged',selections[0]);",
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "articleslist",
+                "designer|userClassName": "onArticleListSelectionChange"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen54770",
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onArticleChanged",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": "// refresh the single article view\nA = this;\nvar view = this.getArticleView();\n\n\nconsole.info(view);\n\nview.tpl.overwrite(view.el, record.data);\n\n//update the layout of the contentTpl\n//contentCt.setHeight('auto');\n//this.doLayout();\n",
+                "name": "articlechanged",
+                "designer|userClassName": "onArticleChanged"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen58059",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "articleView",
+                "selector": "articleview",
+                "designer|userClassName": "articleView"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

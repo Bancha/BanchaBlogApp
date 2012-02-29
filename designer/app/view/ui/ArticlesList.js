@@ -17,6 +17,7 @@ Ext.define('BlogApp.view.ui.ArticlesList', {
     extend: 'Ext.grid.Panel',
 
     title: 'Articles',
+    forceFit: true,
     store: 'Articles',
 
     initComponent: function() {
@@ -26,20 +27,20 @@ Ext.define('BlogApp.view.ui.ArticlesList', {
             columns: [
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'string',
-                    flex: 2,
+                    width: 80,
+                    dataIndex: 'title',
                     text: 'Name'
                 },
                 {
-                    xtype: 'gridcolumn',
-                    width: 50,
-                    defaultWidth: 50,
+                    xtype: 'datecolumn',
+                    width: 140,
                     dataIndex: 'date',
-                    flex: 1,
-                    text: 'Author'
+                    text: 'Created',
+                    format: 'Y-m-d'
                 },
                 {
                     xtype: 'actioncolumn',
+                    width: 30,
                     items: [
                         {
                             icon: 'http://sampleproject.banchaproject.org/img/icons/delete.png',
@@ -50,7 +51,7 @@ Ext.define('BlogApp.view.ui.ArticlesList', {
                 }
             ],
             viewConfig: {
-
+                width: 100
             }
         });
 

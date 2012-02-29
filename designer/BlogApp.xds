@@ -23,15 +23,15 @@
         "aa072d1e-c180-4283-9cba-f5e26adde0bb": {
             "paths": [
                 "app/view/MyViewport.js",
-                "app/view/ui/MyViewport.js"
+                "app/view/ui/MyViewport.js",
+                "app/view/Viewport.js"
             ],
             "className": "MyViewport"
         },
         "b546f619-60cc-442f-aae5-c0f933e1967b": {
             "paths": [
                 "app/view/ArticlesList.js",
-                "app/view/ui/ArticlesList.js",
-                "app/view/Viewport.js"
+                "app/view/ui/ArticlesList.js"
             ],
             "className": "ArticlesList"
         },
@@ -48,6 +48,19 @@
                 "app/store/base/Comments.js"
             ],
             "className": "Comments"
+        },
+        "605f1b49-1e8a-4555-b989-141da478d287": {
+            "paths": [
+                "app/controller/Articles.js"
+            ],
+            "className": "Articles"
+        },
+        "c4e4a2f6-2a3f-4210-980b-48a2fb439c37": {
+            "paths": [
+                "app/view/ArticleView.js",
+                "app/view/ui/ArticleView.js"
+            ],
+            "className": "ArticleView"
         }
     },
     "expandedState": {

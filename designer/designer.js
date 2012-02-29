@@ -29,12 +29,17 @@ Ext.application({
 
     views: [
         'MyViewport',
-        'ArticlesList'
+        'ArticlesList',
+        'ArticleView'
     ],
 
     autoCreateViewport: true,
 
     name: 'BlogApp',
+
+    controllers: [
+        'Articles'
+    ],
 
     launch: function() {
 
