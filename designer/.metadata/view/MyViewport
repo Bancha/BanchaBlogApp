@@ -43,7 +43,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "articlePanel",
+                "id": null,
+                "itemId": "articlePanel",
                 "layout": "border",
                 "title": "Article Name",
                 "designer|userClassName": "MyPanel",
@@ -61,6 +62,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "padding": 10,
+                        "tpl": "<h1>{titile}</h1>\n<h2>{date}</h2>\n<p>\n{body}\n</p>",
                         "width": 150,
                         "designer|userClassName": "ArticleView",
                         "layout|region": "center"
@@ -80,30 +83,30 @@
                     "codeClass": null,
                     "userConfig": {
                         "height": 150,
+                        "maxHeight": 500,
                         "title": "Comments",
                         "designer|userClassName": "MyPanel1",
                         "layout|region": "south",
                         "layout|split": true
                     },
                     "customConfigs": [],
-                    "expanded": false,
+                    "expanded": true,
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen5046",
-                            "type": "dataview",
+                            "id": "ExtBox1-ext-gen78037",
+                            "type": "linkedinstance",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "tpl": "<tpl for=\".\"><div>Comment{comment}<span class=\"comment-author\">{author},{created}</span></div></tpl>",
-                                "itemSelector": "div",
-                                "store": "Comments",
-                                "designer|userClassName": "MyView"
+                                "designer|userClassName": "CommentsView"
                             },
                             "customConfigs": [],
-                            "expanded": true
+                            "iconCls": "icon-linkedinstance",
+                            "expanded": true,
+                            "masterInstanceId": "ExtBox1-ext-gen5046"
                         },
                         {
                             "id": "ExtBox1-ext-gen89247",

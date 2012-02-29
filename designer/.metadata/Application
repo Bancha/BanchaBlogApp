@@ -15,7 +15,8 @@
         "views": [
             "MyViewport",
             "ArticlesList",
-            "ArticleView"
+            "ArticleView",
+            "CommentsView"
         ],
         "autoCreateViewport": true,
         "name": "BlogApp",

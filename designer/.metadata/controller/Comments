@@ -1,0 +1,39 @@
+{
+    "id": "ExtBox1-ext-gen79603",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|init": "",
+        "designer|userClassName": "Comments"
+    },
+    "customConfigs": [],
+    "designerId": "952497b9-f0cd-4d4b-bf08-6e675f422772",
+    "$viewOrder": 1,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen79740",
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onArticleChangeD1",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": "// refresh the comments\nthis.getCommentsStore().filter('article_id',record.get('id'));\nconsole.info('refreshing');",
+                "name": "articlechanged",
+                "designer|userClassName": "onArticleChangeD1"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

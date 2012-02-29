@@ -47,18 +47,14 @@ Ext.define('BlogApp.controller.Articles', {
 
     onArticleChanged: function(record) {
         // refresh the single article view
-        A = this;
-        var view = this.getArticleView();
-
-
-        console.info(view);
+        var view = Ext.ComponentQuery.query('articleview')[0];
+        // this.getArticleView(); should work a well, but there's a problem with references
 
         view.tpl.overwrite(view.el, record.data);
 
-        //update the layout of the contentTpl
-        //contentCt.setHeight('auto');
-        //this.doLayout();
 
+        // update the title
+        Ext.ComponentQuery.query('#articlePanel')[0].setTitle(record.get('title'));
     }
 
 });

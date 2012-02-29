@@ -61,6 +61,19 @@
                 "app/view/ui/ArticleView.js"
             ],
             "className": "ArticleView"
+        },
+        "4209468d-7b27-457e-92c7-4690b203204d": {
+            "paths": [
+                "app/view/CommentsView.js",
+                "app/view/ui/CommentsView.js"
+            ],
+            "className": "CommentsView"
+        },
+        "952497b9-f0cd-4d4b-bf08-6e675f422772": {
+            "paths": [
+                "app/controller/Comments.js"
+            ],
+            "className": "Comments"
         }
     },
     "expandedState": {

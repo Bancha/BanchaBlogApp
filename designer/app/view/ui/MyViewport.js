@@ -17,7 +17,8 @@ Ext.define('BlogApp.view.ui.MyViewport', {
     extend: 'Ext.container.Viewport',
     requires: [
         'BlogApp.view.ArticlesList',
-        'BlogApp.view.ArticleView'
+        'BlogApp.view.ArticleView',
+        'BlogApp.view.CommentsView'
     ],
 
     layout: {
@@ -37,7 +38,7 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                 },
                 {
                     xtype: 'panel',
-                    id: 'articlePanel',
+                    itemId: 'articlePanel',
                     layout: {
                         type: 'border'
                     },
@@ -46,23 +47,27 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                     items: [
                         {
                             xtype: 'articleview',
+                            padding: 10,
+                            tpl: [
+                                '<h1>{titile}</h1>',
+                                '<h2>{date}</h2>',
+                                '<p>',
+                                '{body}',
+                                '</p>'
+                            ],
                             width: 150,
                             region: 'center'
                         },
                         {
                             xtype: 'panel',
                             height: 150,
+                            maxHeight: 500,
                             title: 'Comments',
                             region: 'south',
                             split: true,
                             items: [
                                 {
-                                    xtype: 'dataview',
-                                    tpl: [
-                                        '<tpl for="."><div>Comment{comment}<span class="comment-author">{author},{created}</span></div></tpl>'
-                                    ],
-                                    itemSelector: 'div',
-                                    store: 'Comments'
+                                    xtype: 'commentsview'
                                 },
                                 {
                                     xtype: 'form',

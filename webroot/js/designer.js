@@ -24,12 +24,14 @@ Ext.application({
 
     stores: [
         'Articles',
+        'Comments'
     ],
 
     views: [
         'MyViewport',
         'ArticlesList',
-        'ArticleView'
+        'ArticleView',
+        'CommentsView'
     ],
 
     autoCreateViewport: true,
@@ -37,7 +39,8 @@ Ext.application({
     name: 'BlogApp',
 
     controllers: [
-        'Articles'
+        'Articles',
+        'Comments'
     ],
 
     launch: function() {

@@ -27,6 +27,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "renderTpl": null,
                 "width": 80,
                 "dataIndex": "title",
                 "flex": null,
