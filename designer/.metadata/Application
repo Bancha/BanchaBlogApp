@@ -15,7 +15,7 @@
         "views": [
             "MyViewport",
             "ArticlesList",
-            "ArticleView",
+            "ArticleReader",
             "CommentsView"
         ],
         "appFolder": "js/app",

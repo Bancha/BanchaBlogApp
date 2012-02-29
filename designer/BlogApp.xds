@@ -57,10 +57,10 @@
         },
         "c4e4a2f6-2a3f-4210-980b-48a2fb439c37": {
             "paths": [
-                "js/app/view/ArticleView.js",
-                "js/app/view/ui/ArticleView.js"
+                "js/app/view/ArticleReader.js",
+                "js/app/view/ui/ArticleReader.js"
             ],
-            "className": "ArticleView"
+            "className": "ArticleReader"
         },
         "4209468d-7b27-457e-92c7-4690b203204d": {
             "paths": [

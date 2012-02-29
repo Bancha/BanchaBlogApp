@@ -17,20 +17,22 @@ Ext.define('BlogApp.controller.Articles', {
 
     refs: [
         {
-            ref: 'list',
+            ref: 'articlesList',
             selector: 'articleslist'
         },
         {
-            ref: 'articleView',
-            selector: 'articleview'
+            ref: 'articleReader',
+            selector: 'articlereader'
         }
     ],
 
     init: function() {
         this.control({
             "articleslist": {
-                selectionchange: this.onArticleListSelectionChange,
-                afterrender: this.onStartup
+                selectionchange: this.onArticleListSelectionChange
+            },
+            "gridpanel": {
+                viewready: this.onGridpanelViewReady
             }
         });
 
@@ -41,44 +43,29 @@ Ext.define('BlogApp.controller.Articles', {
         });
     },
 
-    onArticleListSelectionChange: function(tablepanel, selections, options) {
-        // make an application wide event
-        this.application.fireEvent('articlechanged',selections[0]);
-    },
-
     onArticleChanged: function(record) {
         // refresh the single article view
-        var view = Ext.ComponentQuery.query('articleview')[0];
-        // this.getArticleView(); should work a well, but there's a problem with references
+        var view = Ext.ComponentQuery.query('articlereader')[0];
+        // not sure how exactly this.getArticleReaderView(); works
 
-        console.info(view);
-        console.info(record.data);
-
+        // update the content
         view.tpl.overwrite(view.el, record.data);
-
 
         // update the title
         Ext.ComponentQuery.query('#articlePanel')[0].setTitle(record.get('title'));
     },
 
-    onStartup: function(abstractcomponent, options) {
+    onArticleListSelectionChange: function(tablepanel, selections, options) {
+        // make an application wide event
+        this.application.fireEvent('articlechanged',selections[0]);
+    },
 
-        // select first element in the list
-        var list = Ext.ComponentQuery.query('articlelist')[0];
+    onGridpanelViewReady: function(tablepanel, options) {
+        // as default select the first articles list element
+        var firstRecord = this.getStore('Articles').getAt(0);
+        this.getArticlesList().getSelectionModel().select(firstRecord);
 
-        console.info(list);
-
-        list.getSelectionModel().select();
-
-
-        store.clearFilter();
-        store.filter('station', request.params.station);
-        store.sort('played_date', 'ASC');
-
-        // and everywhere else
-        this.application.fireEvent('articlechanged',this.getArticlesStore().getAt(0));
-
-        console.info('launch done');
+        // this other views will be informed by the triggered application event 'articlechanged';
     }
 
 });

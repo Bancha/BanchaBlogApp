@@ -64,7 +64,7 @@
                     "userConfig": {
                         "layout|region": "center",
                         "padding": 10,
-                        "tpl": "<h1>{titile}</h1>\n<h2>{date}</h2>\n<p>\n{body}\n</p>",
+                        "tpl": "{body}",
                         "width": 150
                     },
                     "customConfigs": [],
@@ -99,7 +99,10 @@
                                 "type": "array"
                             },
                             "codeClass": null,
-                            "userConfig": {},
+                            "userConfig": {
+                                "padding": 10,
+                                "tpl": "<tpl for=\".\"><div>{comment}<span class=\"comment-author\">author, {created}</span></div></tpl>"
+                            },
                             "customConfigs": [],
                             "iconCls": "icon-linkedinstance",
                             "expanded": true,

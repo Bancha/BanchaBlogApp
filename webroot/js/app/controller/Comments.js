@@ -21,17 +21,16 @@ Ext.define('BlogApp.controller.Comments', {
 
         this.application.on({
             articlechanged: {
-                fn: this.onArticleChangeD1
+                fn: this.onArticleChanged
             }
         });
     },
 
-    onArticleChangeD1: function(record) {
+    onArticleChanged: function(record) {
         // refresh the comments
         var store = this.getCommentsStore();
 
-        console.info('refreshing');
-
+        // get the corresponding articles comments
         store.clearFilter();
         store.filter('article_id',record.get('id'));
         store.sort('created', 'ASC');

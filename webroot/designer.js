@@ -30,7 +30,7 @@ Ext.application({
     views: [
         'MyViewport',
         'ArticlesList',
-        'ArticleView',
+        'ArticleReader',
         'CommentsView'
     ],
 

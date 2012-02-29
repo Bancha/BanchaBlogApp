@@ -17,7 +17,7 @@ Ext.define('BlogApp.view.ui.MyViewport', {
     extend: 'Ext.container.Viewport',
     requires: [
         'BlogApp.view.ArticlesList',
-        'BlogApp.view.ArticleView',
+        'BlogApp.view.ArticleReader',
         'BlogApp.view.CommentsView'
     ],
 
@@ -46,15 +46,11 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                     region: 'center',
                     items: [
                         {
-                            xtype: 'articleview',
+                            xtype: 'articlereader',
                             region: 'center',
                             padding: 10,
                             tpl: [
-                                '<h1>{titile}</h1>',
-                                '<h2>{date}</h2>',
-                                '<p>',
-                                '{body}',
-                                '</p>'
+                                '{body}'
                             ],
                             width: 150
                         },
@@ -67,7 +63,11 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                             split: true,
                             items: [
                                 {
-                                    xtype: 'commentsview'
+                                    xtype: 'commentsview',
+                                    padding: 10,
+                                    tpl: [
+                                        '<tpl for="."><div>{comment}<span class="comment-author">author, {created}</span></div></tpl>'
+                                    ]
                                 },
                                 {
                                     xtype: 'form',
