@@ -12,15 +12,26 @@
  * @author        Roland Schuetz <mail@rolandschuetz.at>
  * @since         v 1.0
  */
+App::uses('AppModel', 'Model');
 class Comment extends AppModel {
 	public $actsAs = array('Bancha.BanchaRemotable');
-	
+/**
+ * Display field
+ *
+ * @var string
+ */
+	public $displayField = 'comment';
 /**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
+		'article_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+			),
+		),
 		'comment' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
@@ -29,17 +40,14 @@ class Comment extends AppModel {
 	);
 
 /**
- * hasAndBelongsToMany associations
+ * belongsTo associations
  *
  * @var array
  */
-	public $hasAndBelongsToMany = array(
+	public $belongsTo = array(
 		'Article' => array(
 			'className' => 'Article',
-			'joinTable' => 'articles_comments',
-			'foreignKey' => 'comment_id',
-			'associationForeignKey' => 'article_id',
+			'foreignKey' => 'article_id',
 		)
 	);
-
 }

@@ -3,14 +3,20 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id');?></th>
+			<th><?php echo $this->Paginator->sort('article_id');?></th>
 			<th><?php echo $this->Paginator->sort('comment');?></th>
+			<th><?php echo $this->Paginator->sort('create');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
 	foreach ($comments as $comment): ?>
 	<tr>
 		<td><?php echo h($comment['Comment']['id']); ?>&nbsp;</td>
+		<td>
+			<?php echo $this->Html->link($comment['Article']['title'], array('controller' => 'articles', 'action' => 'view', $comment['Article']['id'])); ?>
+		</td>
 		<td><?php echo h($comment['Comment']['comment']); ?>&nbsp;</td>
+		<td><?php echo h($comment['Comment']['create']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $comment['Comment']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $comment['Comment']['id'])); ?>

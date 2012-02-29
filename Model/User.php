@@ -2,7 +2,17 @@
 /**
  * User Model
  *
+ * Bancha Sample Project
+ * Copyright 2011-2012 Roland Schuetz
+ *
+ * @package       BanchaSampleProject
+ * @subpackage    Model
+ * @copyright     Copyright 2011-2012 Roland Schuetz
+ * @link          http://banchaproject.org Bancha Project
+ * @author        Roland Schuetz <mail@rolandschuetz.at>
+ * @since         v 1.0
  */
+App::uses('AppModel', 'Model');
 class User extends AppModel {
 	public $actsAs = array('Bancha.BanchaRemotable');
 

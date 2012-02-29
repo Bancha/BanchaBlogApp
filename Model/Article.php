@@ -12,6 +12,7 @@
  * @author        Roland Schuetz <mail@rolandschuetz.at>
  * @since         v 1.0
  */
+App::uses('AppModel', 'Model');
 class Article extends AppModel {
 	public $actsAs = array('Bancha.BanchaRemotable');
 
@@ -51,16 +52,14 @@ class Article extends AppModel {
 	);
 
 /**
- * hasAndBelongsToMany associations
+ * hasMany associations
  *
  * @var array
  */
-	public $hasAndBelongsToMany = array(
+	public $hasMany = array(
 		'Comment' => array(
 			'className' => 'Comment',
-			'joinTable' => 'articles_comments',
 			'foreignKey' => 'article_id',
-			'associationForeignKey' => 'comment_id',
 		)
 	);
 

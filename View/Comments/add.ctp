@@ -3,8 +3,9 @@
 	<fieldset>
 		<legend><?php echo __('Add Comment'); ?></legend>
 	<?php
+		echo $this->Form->input('article_id');
 		echo $this->Form->input('comment');
-		echo $this->Form->input('Article');
+		echo $this->Form->input('create');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>
