@@ -58,7 +58,7 @@ class CommentsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Comment->create();
 			
-			if($this->request->params['isBancha']) return $this->Comment->saveFieldsAndReturn($this->request->data);
+			if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->Comment->saveFieldsAndReturn($this->request->data);
 			
 			if ($this->Comment->save($this->request->data)) {
 				$this->flash(__('Comment saved.'), array('action' => 'index'));
@@ -81,7 +81,7 @@ class CommentsController extends AppController {
 			throw new NotFoundException(__('Invalid comment'));
 		}
 		
-		if($this->request->params['isBancha']) return $this->Comment->saveFieldsAndReturn($this->request->data);
+		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->Comment->saveFieldsAndReturn($this->request->data);
 		
 		
 		if ($this->request->is('post') || $this->request->is('put')) {
@@ -111,7 +111,7 @@ class CommentsController extends AppController {
 			throw new NotFoundException(__('Invalid comment'));
 		}
 		
-		if($this->request->params['isBancha']) return $this->Comment->deleteAndReturn();
+		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->Comment->deleteAndReturn();
 		
 		
 		if ($this->Comment->delete()) {

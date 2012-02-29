@@ -69,7 +69,7 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			
-			if($this->request->params['isBancha']) return $this->User->saveFieldsAndReturn($this->request->data);
+			if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->User->saveFieldsAndReturn($this->request->data);
 			
 			if ($this->User->save($this->request->data)) {
 				$this->flash(__('User saved.'), array('action' => 'index'));
@@ -90,7 +90,7 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		
-		if($this->request->params['isBancha']) return $this->User->saveFieldsAndReturn($this->request->data);
+		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->User->saveFieldsAndReturn($this->request->data);
 		
 		
 		if ($this->request->is('post') || $this->request->is('put')) {
@@ -118,7 +118,7 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		
-		if($this->request->params['isBancha']) return $this->User->deleteAndReturn();
+		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->User->deleteAndReturn();
 		
 		
 		if ($this->User->delete()) {

@@ -58,7 +58,7 @@ class ArticlesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Article->create();
 			
-			if($this->request->params['isBancha']) return $this->Article->saveFieldsAndReturn($this->request->data);
+			if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->Article->saveFieldsAndReturn($this->request->data);
 			
 			if ($this->Article->save($this->request->data)) {
 				$this->flash(__('Article saved.'), array('action' => 'index'));
@@ -82,7 +82,7 @@ class ArticlesController extends AppController {
 			throw new NotFoundException(__('Invalid article'));
 		}
 		
-		if($this->request->params['isBancha']) return $this->Article->saveFieldsAndReturn($this->request->data);
+		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->Article->saveFieldsAndReturn($this->request->data);
 		
 		
 		if ($this->request->is('post') || $this->request->is('put')) {
@@ -113,7 +113,7 @@ class ArticlesController extends AppController {
 			throw new NotFoundException(__('Invalid article'));
 		}
 		
-		if($this->request->params['isBancha']) return $this->Article->deleteAndReturn();
+		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->Article->deleteAndReturn();
 		
 		
 		if ($this->Article->delete()) {
