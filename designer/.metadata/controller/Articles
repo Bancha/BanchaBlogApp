@@ -97,7 +97,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onStartup",
-                "implHandler": "\n// select first element in the list\nvar list = Ext.ComponentQuery.query('articlelist')[0];\n\nconsole.info(list);\n\nlist.getSelectionModel().select();\n\n\nstore.clearFilter();\nstore.filter('station', request.params.station);\nstore.sort('played_date', 'ASC');\n\n// and everywhere else\nthis.application.fireEvent('articlechanged',this.getArticlesStore().getAt(0));\n\nconsole.info('launch done');\n",
+                "implHandler": "\n// select first element in the list\nvar list = Ext.ComponentQuery.query('articlelist')[0];\n\nconsole.info(list);\n\nlist.getSelectionModel().select();\n\n\nstore.clearFilter();\nstore.filter('station', request.params.station);\nstore.sort('played_date', 'ASC');\n\n// and everywhere else\nthis.application.fireEvent('articlechanged',this.getArticlesStore().getAt(0));\n\nconsole.info('launch done');",
                 "name": "afterrender",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",

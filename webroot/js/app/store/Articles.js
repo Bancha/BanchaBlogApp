@@ -18,7 +18,9 @@ Ext.define('BlogApp.store.Articles', {
     constructor: function(cfg) {
         var me = this;
         cfg = cfg || {};
-        me.callParent([Ext.apply({}, cfg)]);
+        me.callParent([Ext.apply({
+            model: Bancha.getModel('Article')
+        }, cfg)]);
     }
 
 });

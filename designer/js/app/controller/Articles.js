@@ -79,7 +79,6 @@ Ext.define('BlogApp.controller.Articles', {
         this.application.fireEvent('articlechanged',this.getArticlesStore().getAt(0));
 
         console.info('launch done');
-
     }
 
 });
