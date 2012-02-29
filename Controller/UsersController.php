@@ -21,6 +21,12 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+	/**
+	 * Hide the password while paginating (you can also use blacklisting)
+	 */
+	public $paginate = array(
+		'fields' => array('id', 'username', 'name', 'email') // hide password from Bancha
+	);
 
 /**
  * index method
@@ -31,6 +37,7 @@ class UsersController extends AppController {
 		$this->User->recursive = 0;
 		$users = $this->paginate();
 		$this->set('users', $users);
+		
 		return array_merge($this->request['paging']['User'],array('records'=>$users));
 	}
 
@@ -46,6 +53,10 @@ class UsersController extends AppController {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		$this->set('user', $this->User->read(null, $id));
+		
+		// don't send the password
+		$this->User->data['User']['password'] = '';
+		
 		return $this->User->data;
 	}
 
