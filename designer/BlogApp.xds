@@ -22,56 +22,56 @@
     "topInstanceFileMap": {
         "aa072d1e-c180-4283-9cba-f5e26adde0bb": {
             "paths": [
-                "app/view/MyViewport.js",
-                "app/view/ui/MyViewport.js",
-                "app/view/Viewport.js"
+                "js/app/view/MyViewport.js",
+                "js/app/view/ui/MyViewport.js",
+                "js/app/view/Viewport.js"
             ],
             "className": "MyViewport"
         },
         "b546f619-60cc-442f-aae5-c0f933e1967b": {
             "paths": [
-                "app/view/ArticlesList.js",
-                "app/view/ui/ArticlesList.js"
+                "js/app/view/ArticlesList.js",
+                "js/app/view/ui/ArticlesList.js"
             ],
             "className": "ArticlesList"
         },
         "bbc13fdf-9ebb-4b29-9eac-aff66675899c": {
             "paths": [
-                "app/store/Articles.js",
-                "app/store/base/Articles.js"
+                "js/app/store/Articles.js",
+                "js/app/store/base/Articles.js"
             ],
             "className": "Articles"
         },
         "fcc4597e-3fcb-4d90-b6d2-b204866b5d35": {
             "paths": [
-                "app/store/Comments.js",
-                "app/store/base/Comments.js"
+                "js/app/store/Comments.js",
+                "js/app/store/base/Comments.js"
             ],
             "className": "Comments"
         },
         "605f1b49-1e8a-4555-b989-141da478d287": {
             "paths": [
-                "app/controller/Articles.js"
+                "js/app/controller/Articles.js"
             ],
             "className": "Articles"
         },
         "c4e4a2f6-2a3f-4210-980b-48a2fb439c37": {
             "paths": [
-                "app/view/ArticleView.js",
-                "app/view/ui/ArticleView.js"
+                "js/app/view/ArticleView.js",
+                "js/app/view/ui/ArticleView.js"
             ],
             "className": "ArticleView"
         },
         "4209468d-7b27-457e-92c7-4690b203204d": {
             "paths": [
-                "app/view/CommentsView.js",
-                "app/view/ui/CommentsView.js"
+                "js/app/view/CommentsView.js",
+                "js/app/view/ui/CommentsView.js"
             ],
             "className": "CommentsView"
         },
         "952497b9-f0cd-4d4b-bf08-6e675f422772": {
             "paths": [
-                "app/controller/Comments.js"
+                "js/app/controller/Comments.js"
             ],
             "className": "Comments"
         }

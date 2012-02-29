@@ -10,6 +10,7 @@
         "title": "Articles",
         "forceFit": true,
         "store": "Articles",
+        "columnLines": true,
         "designer|userClassName": "ArticlesList",
         "designer|userAlias": "articleslist"
     },

@@ -34,6 +34,8 @@ Ext.application({
         'CommentsView'
     ],
 
+    appFolder: 'js/app',
+
     autoCreateViewport: true,
 
     name: 'BlogApp',

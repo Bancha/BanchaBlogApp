@@ -18,6 +18,7 @@
             "ArticleView",
             "CommentsView"
         ],
+        "appFolder": "js/app",
         "autoCreateViewport": true,
         "name": "BlogApp",
         "designer|launch": ""

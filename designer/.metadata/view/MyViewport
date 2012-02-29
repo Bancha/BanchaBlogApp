@@ -62,11 +62,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "layout|region": "center",
                         "padding": 10,
                         "tpl": "<h1>{titile}</h1>\n<h2>{date}</h2>\n<p>\n{body}\n</p>",
-                        "width": 150,
-                        "designer|userClassName": "ArticleView",
-                        "layout|region": "center"
+                        "width": 150
                     },
                     "customConfigs": [],
                     "iconCls": "icon-linkedinstance",
@@ -100,9 +99,7 @@
                                 "type": "array"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "CommentsView"
-                            },
+                            "userConfig": {},
                             "customConfigs": [],
                             "iconCls": "icon-linkedinstance",
                             "expanded": true,
