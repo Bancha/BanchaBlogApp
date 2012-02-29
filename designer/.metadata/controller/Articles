@@ -80,7 +80,7 @@
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "// refresh the single article view\nvar view = Ext.ComponentQuery.query('articlereader')[0];\n// not sure how exactly this.getArticleReaderView(); works\n\n// update the content\nview.tpl.overwrite(view.el, record.data);\n\n// update the title\nExt.ComponentQuery.query('#articlePanel')[0].setTitle(record.get('title'));",
+                "implHandler": "        // refresh the single article view\n        var view = Ext.ComponentQuery.query('articlereader')[0];\n        // not sure how exactly this.getArticleReaderView(); works\n\n        // update the content\n        view.tpl.overwrite(view.el, record.data);\n\n        // update the title\n        Ext.ComponentQuery.query('#articlePanel')[0].setTitle(record.get('title'));",
                 "name": "articlechanged",
                 "designer|userClassName": "onArticleChanged"
             },

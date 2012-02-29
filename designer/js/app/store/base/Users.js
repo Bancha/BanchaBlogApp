@@ -21,7 +21,7 @@ Ext.define('BlogApp.store.base.Users', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: true,
-            storeId: 'MyStore2'
+            storeId: 'Users'
         }, cfg)]);
     }
 });

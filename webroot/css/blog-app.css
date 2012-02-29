@@ -1,0 +1,27 @@
+/**
+ * Blog App - A Bancha Sample Project
+ *
+ * This App demonstrated how to develop applications using Ext Deisgner and Bancha.
+ * 
+ * 
+ * Bancha Sample Project
+ * Copyright 2011-2012 Roland Schuetz
+ *
+ * @package       BanchaSampleProject
+ * @subpackage    ExtJS.App
+ * @copyright     Copyright 2011-2012 Roland Schuetz
+ * @link          http://banchaproject.org Bancha Project
+ * @author        Roland Schuetz <mail@rolandschuetz.at>
+ * @since         v 1.0
+ */
+
+.comment {
+    border-bottom: 1px solid grey;
+    padding: 5px 0;
+}
+.comment-meta {
+    display:block;
+    text-align:right;
+    font-size: 80%;
+    color: grey;
+}

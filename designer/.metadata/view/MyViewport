@@ -92,23 +92,6 @@
                     "expanded": true,
                     "cn": [
                         {
-                            "id": "ExtBox1-ext-gen78037",
-                            "type": "linkedinstance",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "padding": 10,
-                                "tpl": "new Ext.XTemplate('<tpl for=\".\"><div>{comment}<span class=\"comment-author\">{[Ext.StoreMgr.get(\"Users\").getById(values.user_id).get(\"name\")]}, {created}</span></div></tpl>')\n"
-                            },
-                            "customConfigs": [],
-                            "iconCls": "icon-linkedinstance",
-                            "expanded": true,
-                            "masterInstanceId": "ExtBox1-ext-gen5046"
-                        },
-                        {
                             "id": "ExtBox1-ext-gen89247",
                             "type": "form",
                             "reference": {
@@ -124,6 +107,22 @@
                             "customConfigs": [],
                             "expanded": true,
                             "cn": [
+                                {
+                                    "id": "ExtBox1-ext-gen50677",
+                                    "type": "linkedinstance",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "CommentsList"
+                                    },
+                                    "customConfigs": [],
+                                    "iconCls": "icon-linkedinstance",
+                                    "expanded": true,
+                                    "masterInstanceId": "ExtBox1-ext-gen49722"
+                                },
                                 {
                                     "id": "ExtBox1-ext-gen89688",
                                     "type": "fieldset",

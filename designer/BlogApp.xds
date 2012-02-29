@@ -62,13 +62,6 @@
             ],
             "className": "ArticleReader"
         },
-        "4209468d-7b27-457e-92c7-4690b203204d": {
-            "paths": [
-                "js/app/view/CommentsView.js",
-                "js/app/view/ui/CommentsView.js"
-            ],
-            "className": "CommentsView"
-        },
         "952497b9-f0cd-4d4b-bf08-6e675f422772": {
             "paths": [
                 "js/app/controller/Comments.js"
@@ -81,6 +74,13 @@
                 "js/app/store/base/Users.js"
             ],
             "className": "Users"
+        },
+        "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11": {
+            "paths": [
+                "js/app/view/CommentsList.js",
+                "js/app/view/ui/CommentsList.js"
+            ],
+            "className": "CommentsList"
         }
     },
     "expandedState": {

@@ -8,7 +8,7 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
-        "storeId": "MyStore2",
+        "storeId": "Users",
         "designer|userClassName": "Users"
     },
     "customConfigs": [],

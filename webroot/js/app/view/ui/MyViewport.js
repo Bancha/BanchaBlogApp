@@ -18,7 +18,7 @@ Ext.define('BlogApp.view.ui.MyViewport', {
     requires: [
         'BlogApp.view.ArticlesList',
         'BlogApp.view.ArticleReader',
-        'BlogApp.view.CommentsView'
+        'BlogApp.view.CommentsList'
     ],
 
     layout: {
@@ -63,16 +63,12 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                             split: true,
                             items: [
                                 {
-                                    xtype: 'commentsview',
-                                    padding: 10,
-                                    tpl: [
-                                        '<tpl for="."><div>{comment}<span class="comment-author">{[Ext.StoreMgr.get("Users").getById(values.user_id).get("name")]}, {created}</span></div></tpl>'
-                                    ]
-                                },
-                                {
                                     xtype: 'form',
                                     bodyPadding: 10,
                                     items: [
+                                        {
+                                            xtype: 'commentslist'
+                                        },
                                         {
                                             xtype: 'fieldset',
                                             title: 'Add a comment',

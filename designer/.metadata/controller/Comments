@@ -28,7 +28,7 @@
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "// refresh the comments\nvar store = this.getCommentsStore();\n\n// get the corresponding articles comments\nstore.clearFilter();\nstore.filter('article_id',record.get('id'));\nstore.sort('created', 'ASC');",
+                "implHandler": "        // refresh the comments\n        var store = this.getCommentsStore();\n\n        // get the corresponding articles comments\n        store.clearFilter();\n        store.filter('article_id',record.get('id'));\n        store.sort('created', 'ASC');",
                 "name": "articlechanged",
                 "designer|userClassName": "onArticleChanged"
             },

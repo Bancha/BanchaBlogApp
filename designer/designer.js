@@ -32,7 +32,7 @@ Ext.application({
         'MyViewport',
         'ArticlesList',
         'ArticleReader',
-        'CommentsView'
+        'CommentsList'
     ],
 
     appFolder: 'js/app',
