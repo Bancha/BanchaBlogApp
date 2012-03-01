@@ -45,6 +45,7 @@ Ext.define('BlogApp.view.ui.CommentForm', {
                             xtype: 'textareafield',
                             name: 'comment',
                             fieldLabel: '',
+                            allowBlank: false,
                             anchor: '100%'
                         },
                         {

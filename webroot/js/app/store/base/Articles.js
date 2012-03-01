@@ -20,7 +20,6 @@ Ext.define('BlogApp.store.base.Articles', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
             storeId: 'Articles'
         }, cfg)]);
     }

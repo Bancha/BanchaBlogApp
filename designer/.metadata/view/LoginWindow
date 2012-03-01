@@ -13,14 +13,14 @@
         "layout": "fit",
         "closable": false,
         "title": "Login",
-        "plain": true,
+        "modal": true,
         "designer|userClassName": "LoginWindow",
         "designer|userAlias": "loginwindow"
     },
     "customConfigs": [],
     "designerId": "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6",
     "$viewOrder": 5,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen77796",
@@ -32,15 +32,33 @@
             "codeClass": null,
             "userConfig": {
                 "ui": null,
-                "bodyPadding": 50,
+                "bodyPadding": 30,
                 "frameHeader": false,
                 "title": "",
+                "paramOrder": null,
+                "paramsAsHash": true,
+                "waitTitle": "Logging in...",
                 "designer|userClassName": "MyForm2",
                 "dock": null
             },
             "customConfigs": [],
             "expanded": true,
             "cn": [
+                {
+                    "id": "ExtBox1-ext-gen87821",
+                    "type": "component",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "Please login before use:<br/><br/><br/>",
+                        "designer|userClassName": "MyComponent2"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
                 {
                     "id": "ExtBox1-ext-gen78174",
                     "type": "textfield",
@@ -50,6 +68,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "name": "username",
                         "fieldLabel": "Username",
                         "allowBlank": false,
                         "designer|userClassName": "MyTextField",
@@ -67,6 +86,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "name": "password",
                         "fieldLabel": "Password",
                         "allowBlank": false,
                         "designer|userClassName": "MyTextField1",

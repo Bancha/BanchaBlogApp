@@ -9,9 +9,7 @@
     "userConfig": {
         "models": [],
         "stores": [
-            "Articles",
-            "Comments",
-            "Users"
+            "Articles"
         ],
         "views": [
             "MyViewport",

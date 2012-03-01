@@ -20,13 +20,53 @@ App::uses('AppController', 'Controller');
  * @property User $User
  */
 class UsersController extends AppController {
-
-	/**
-	 * Hide the password while paginating (you can also use blacklisting)
-	 */
+/**
+ * Hide the password while paginating (you can also use blacklisting)
+ */
 	public $paginate = array(
 		'fields' => array('id', 'username', 'name', 'email') // hide password from Bancha
 	);
+
+	public function beforeFilter() {
+		$this->Auth->allow('login');
+	}
+/**
+ * User Management
+ *
+ * If a Bancha request return false or in success case the user record
+ * @banchaRemotable
+ */
+	public function login($data = null) {
+		
+		// send Bancha the logging in user data
+		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) {
+			// prepare data (more elegant with form post)
+			$this->request->data = array('User' => $data);
+			if ($this->Auth->login()) {
+				return $this->Auth->user(); // success
+			} else {
+				return false; // invalid
+			}
+		}
+			
+		
+		
+		// normal login handling
+    	if ($this->request->is('post')) {
+        	if ($this->Auth->login()) {			
+            	return $this->redirect($this->Auth->redirect());
+        	} else {
+            	$this->Session->setFlash(__('Username or password is incorrect'), 'default', array(), 'auth');
+        	}
+    	}
+	}
+	public function logout() {
+	    $this->redirect($this->Auth->logout());
+	}
+
+
+
+// CRUD functions below
 
 /**
  * index method

@@ -23,9 +23,7 @@ Ext.application({
     ],
 
     stores: [
-        'Articles',
-        'Comments',
-        'Users'
+        'Articles'
     ],
 
     views: [
@@ -33,7 +31,8 @@ Ext.application({
         'ArticlesList',
         'ArticleReader',
         'CommentsList',
-        'CommentForm'
+        'CommentForm',
+        'LoginWindow'
     ],
 
     appFolder: 'js/app',
@@ -44,7 +43,8 @@ Ext.application({
 
     controllers: [
         'Articles',
-        'Comments'
+        'Comments',
+        'Login'
     ],
 
     launch: function() {

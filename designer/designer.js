@@ -23,9 +23,7 @@ Ext.application({
     ],
 
     stores: [
-        'Articles',
-        'Comments',
-        'Users'
+        'Articles'
     ],
 
     views: [

@@ -15,6 +15,9 @@
 Ext.define('BlogApp.controller.Comments', {
     extend: 'Ext.app.Controller',
 
+    stores: [
+        'Comments'
+    ],
     refs: [
         {
             ref: 'commentForm',
@@ -31,7 +34,8 @@ Ext.define('BlogApp.controller.Comments', {
 
         this.application.on({
             articlechanged: {
-                fn: this.onArticleChanged
+                fn: this.onArticleChanged,
+                scope: this
             }
         });
     },
@@ -45,10 +49,12 @@ Ext.define('BlogApp.controller.Comments', {
         store.filter('article_id',record.get('id'));
         store.sort('created', 'ASC');
 
+
+        // allways keep a reference to the active article if, for committing comments
+        this.active_article = record;
     },
 
     onSubmitComment: function(button, e, options) {
-
         /*
         * if you just want to submit data to the server use this
         * (the override for ext designer fo rthis doesn't yet work, it's really compley, see designer-overrrides.js)
@@ -60,6 +66,24 @@ Ext.define('BlogApp.controller.Comments', {
         * we directly add it to the store and use store.sync()
         */
         a = this;
+        if(!this.getCommentForm().getForm().isValid()) {
+            return false;
+        }
+
+
+        console.info({
+            'article_id': this.active_article.get('id'), // see Comments.onArticleChanged
+            'user_id'   : this.getController('Login').active_user.get('id'),
+            'comment'   : this.getCommentForm().getValues().comment
+        });
+        this.getCommentsStore().add({
+            'article_id': this.active_article.get('id'), // see Comments.onArticleChanged
+            'user_id'   : this.getController('Login').active_user.get('id'),
+            'comment'   : this.getCommentForm().getValues().comment
+        });
+
+        this.getCommentsStore().sync(); // save to server
+
     }
 
 });

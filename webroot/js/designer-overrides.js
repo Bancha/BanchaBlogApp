@@ -47,7 +47,7 @@ Ext.define('BlogApp.view.override.CommentsList', {
 
          // overwrite template
          this.tpl = new Ext.XTemplate(
-             '<tpl for="."><div class="comment">{comment}<span class="comment-meta">{[this.getAuthorName(values.user_id)]}, {[Ext.Date.format(values.created, "Y-m-d")]}</span></div></tpl>',
+             '<tpl for="."><div class="comment">{comment}<span class="comment-meta">{[this.getAuthorName(values.user_id)]}{[this.getDate(values.created)]}</span></div></tpl>',
              {
                  getAuthorName: function(id) {
                  	// get the users store
@@ -60,6 +60,15 @@ Ext.define('BlogApp.view.override.CommentsList', {
 
                  	// return the author's name
                  	return store.getById(id).get('name');
+                 },
+                 /**
+                  * necessary since I don't want to provide an date for unsaved comments
+                  */
+                 getDate: function(date) {
+                     if(date) {
+                         return ', '+Ext.Date.format(date, "Y-m-d");
+                     }
+                     return '';
                  }
              }
          );

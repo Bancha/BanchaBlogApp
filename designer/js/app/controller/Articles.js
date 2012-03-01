@@ -30,22 +30,24 @@ Ext.define('BlogApp.controller.Articles', {
         this.control({
             "articleslist": {
                 selectionchange: this.onArticleListSelectionChange
-            },
-            "gridpanel": {
-                viewready: this.onGridpanelViewReady
             }
         });
 
         this.application.on({
             articlechanged: {
-                fn: this.onArticleChanged
+                fn: this.onArticleChanged,
+                scope: this
+            },
+            articlesloaded: {
+                fn: this.onArticlesLoaded,
+                scope: this
             }
         });
     },
 
     onArticleChanged: function(record) {
         // refresh the single article view
-        var view = Ext.ComponentQuery.query('articlereader')[0];
+        var view = this.getArticleReader();
         // not sure how exactly this.getArticleReaderView(); works
 
         // update the content
@@ -60,12 +62,13 @@ Ext.define('BlogApp.controller.Articles', {
         this.application.fireEvent('articlechanged',selections[0]);
     },
 
-    onGridpanelViewReady: function(tablepanel, options) {
+    onArticlesLoaded: function() {
         // as default select the first articles list element
         var firstRecord = this.getStore('Articles').getAt(0);
         this.getArticlesList().getSelectionModel().select(firstRecord);
 
         // this other views will be informed by the triggered application event 'articlechanged';
+
     }
 
 });

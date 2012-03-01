@@ -7,7 +7,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoLoad": true,
         "storeId": "Comments",
         "designer|userClassName": "Comments"
     },

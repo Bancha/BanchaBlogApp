@@ -20,7 +20,6 @@ Ext.define('BlogApp.store.base.Comments', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
             storeId: 'Comments'
         }, cfg)]);
     }
