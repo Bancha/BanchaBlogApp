@@ -13,7 +13,7 @@
     "customConfigs": [],
     "designerId": "952497b9-f0cd-4d4b-bf08-6e675f422772",
     "$viewOrder": 1,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen79740",
@@ -28,9 +28,45 @@
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "        // refresh the comments\n        var store = this.getCommentsStore();\n\n        // get the corresponding articles comments\n        store.clearFilter();\n        store.filter('article_id',record.get('id'));\n        store.sort('created', 'ASC');",
+                "implHandler": "// refresh the comments\nvar store = this.getCommentsStore();\n\n// get the corresponding articles comments\nstore.clearFilter();\nstore.filter('article_id',record.get('id'));\nstore.sort('created', 'ASC');\n\n\n// allways keep a reference to the active article if, for committing comments\nthis.active_article = record;",
                 "name": "articlechanged",
                 "designer|userClassName": "onArticleChanged"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen61424",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSubmitComment",
+                "implHandler": "\n/*\n* if you just want to submit data to the server use this\n* (the override for ext designer fo rthis doesn't yet work, it's really compley, see designer-overrrides.js)\n*/\n//this.getCommentForm().submit();\n\n/*\n* but since we also want to have the data inside out store, \n* we directly add it to the store and use store.sync()\n*/\nthis.getStore('Comments').add({\n    article_id: this.active_article.get('id'), // see onArticleChanged\n    user_id: this.getController('Login').active_user.get(id);\n    comment: this.getCommentForm().getValues().comment\n});\n\nthis.getStore('Comments').sync();",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "commentform button",
+                "designer|userClassName": "onSubmitComment"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen64105",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "commentForm",
+                "selector": "commentform",
+                "designer|userClassName": "commentForm"
             },
             "customConfigs": [],
             "expanded": true

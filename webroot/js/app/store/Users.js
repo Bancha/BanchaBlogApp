@@ -18,9 +18,7 @@ Ext.define('BlogApp.store.Users', {
     constructor: function(cfg) {
         var me = this;
         cfg = cfg || {};
-        me.callParent([Ext.apply({
-            model: Bancha.getModel('User')
-        }, cfg)]);
+        me.callParent([Ext.apply({}, cfg)]);
     }
 
 });

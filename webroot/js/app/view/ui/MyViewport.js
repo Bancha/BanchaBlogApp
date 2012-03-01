@@ -18,7 +18,8 @@ Ext.define('BlogApp.view.ui.MyViewport', {
     requires: [
         'BlogApp.view.ArticlesList',
         'BlogApp.view.ArticleReader',
-        'BlogApp.view.CommentsList'
+        'BlogApp.view.CommentsList',
+        'BlogApp.view.CommentForm'
     ],
 
     layout: {
@@ -48,6 +49,7 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                         {
                             xtype: 'articlereader',
                             region: 'center',
+                            height: 482,
                             padding: 10,
                             tpl: [
                                 '{body}'
@@ -56,35 +58,20 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                         },
                         {
                             xtype: 'panel',
-                            height: 150,
+                            height: 200,
+                            id: '',
                             maxHeight: 500,
+                            autoScroll: true,
                             title: 'Comments',
                             region: 'south',
                             split: true,
                             items: [
                                 {
-                                    xtype: 'form',
-                                    bodyPadding: 10,
-                                    items: [
-                                        {
-                                            xtype: 'commentslist'
-                                        },
-                                        {
-                                            xtype: 'fieldset',
-                                            title: 'Add a comment',
-                                            items: [
-                                                {
-                                                    xtype: 'textareafield',
-                                                    fieldLabel: '',
-                                                    anchor: '100%'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    text: 'submit'
-                                                }
-                                            ]
-                                        }
-                                    ]
+                                    xtype: 'commentslist',
+                                    padding: 10
+                                },
+                                {
+                                    xtype: 'commentform'
                                 }
                             ]
                         }

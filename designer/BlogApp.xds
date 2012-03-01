@@ -2,7 +2,7 @@
     "name": "BlogApp",
     "settings": {
         "urlPrefix": "",
-        "directAPI": "",
+        "directAPI": "http://sampleproject.banchaproject.org/bancha-api.js",
         "spacesToIndent": 4,
         "codeGenFormat": "Class",
         "exportPath": "/Users/roland/Documents/AptanaWorkspace/BanchaSampleProject/app/webroot",
@@ -81,6 +81,26 @@
                 "js/app/view/ui/CommentsList.js"
             ],
             "className": "CommentsList"
+        },
+        "bde46fe1-286e-4915-9a8d-2c6da3934859": {
+            "paths": [
+                "js/app/view/CommentForm.js",
+                "js/app/view/ui/CommentForm.js"
+            ],
+            "className": "CommentForm"
+        },
+        "bd7c905b-5945-4966-9e89-6d97c6f82b3e": {
+            "paths": [
+                "js/app/controller/Login.js"
+            ],
+            "className": "Login"
+        },
+        "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6": {
+            "paths": [
+                "js/app/view/LoginWindow.js",
+                "js/app/view/ui/LoginWindow.js"
+            ],
+            "className": "LoginWindow"
         }
     },
     "expandedState": {

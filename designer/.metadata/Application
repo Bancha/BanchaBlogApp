@@ -17,7 +17,9 @@
             "MyViewport",
             "ArticlesList",
             "ArticleReader",
-            "CommentsList"
+            "CommentsList",
+            "CommentForm",
+            "LoginWindow"
         ],
         "appFolder": "js/app",
         "autoCreateViewport": true,

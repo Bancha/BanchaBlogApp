@@ -18,9 +18,7 @@ Ext.define('BlogApp.store.Comments', {
     constructor: function(cfg) {
         var me = this;
         cfg = cfg || {};
-        me.callParent([Ext.apply({
-            model: Bancha.getModel('Comment')
-        }, cfg)]);
+        me.callParent([Ext.apply({}, cfg)]);
     }
 
 });

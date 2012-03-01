@@ -15,8 +15,18 @@
 Ext.define('BlogApp.controller.Comments', {
     extend: 'Ext.app.Controller',
 
+    refs: [
+        {
+            ref: 'commentForm',
+            selector: 'commentform'
+        }
+    ],
+
     init: function() {
         this.control({
+            "commentform button": {
+                click: this.onSubmitComment
+            }
         });
 
         this.application.on({
@@ -34,6 +44,22 @@ Ext.define('BlogApp.controller.Comments', {
         store.clearFilter();
         store.filter('article_id',record.get('id'));
         store.sort('created', 'ASC');
+
+    },
+
+    onSubmitComment: function(button, e, options) {
+
+        /*
+        * if you just want to submit data to the server use this
+        * (the override for ext designer fo rthis doesn't yet work, it's really compley, see designer-overrrides.js)
+        */
+        //this.getCommentForm().submit();
+
+        /*
+        * but since we also want to have the data inside out store, 
+        * we directly add it to the store and use store.sync()
+        */
+        a = this;
     }
 
 });

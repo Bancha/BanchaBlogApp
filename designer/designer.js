@@ -32,7 +32,9 @@ Ext.application({
         'MyViewport',
         'ArticlesList',
         'ArticleReader',
-        'CommentsList'
+        'CommentsList',
+        'CommentForm',
+        'LoginWindow'
     ],
 
     appFolder: 'js/app',
@@ -43,7 +45,8 @@ Ext.application({
 
     controllers: [
         'Articles',
-        'Comments'
+        'Comments',
+        'Login'
     ],
 
     launch: function() {

@@ -26,7 +26,7 @@ Ext.define('BlogApp.view.ui.CommentsList', {
 
         Ext.applyIf(me, {
             tpl: [
-                '<tpl for="."><div>{comment}<span class="comment-author">{[/* it\'s not possible to get tpl functions in designer, so it\'s inline */Ext.StoreMgr.get("Users").getById(values.comment_id) ? Ext.StoreMgr.get("Users").getById(values.comment_id).get("name") : "undefined"]}, {created}</span></div></tpl>'
+                'template is defined in coding class'
             ]
         });
 

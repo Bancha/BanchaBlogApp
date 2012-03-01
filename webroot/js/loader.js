@@ -16,7 +16,8 @@
 Ext.Loader.setConfig({
 	enabled:true,
 	paths: {
-    	'Ext': './js/extjs/src' // this is where place extjs for development
+    	'Ext'    : './js/extjs/src', // this is where place extjs for development
+    	'BlogApp': './js/app'
 	}
 });
 

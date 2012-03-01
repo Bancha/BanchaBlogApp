@@ -1,0 +1,55 @@
+{
+    "id": "ExtBox1-ext-gen77338",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|init": "// force login\nExt.create('BlogApp.view.LoginWindow', {});\n\n\n// set active_user.get(id);",
+        "designer|userClassName": "Login"
+    },
+    "customConfigs": [],
+    "designerId": "bd7c905b-5945-4966-9e89-6d97c6f82b3e",
+    "$viewOrder": 2,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen83344",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLogin",
+                "implHandler": "// log the user in\na = this;\nthis.getLoginWindow().getForm().submit({ \n    api: {\n        submit: Bancha.getStubsNamespace().Users.login // wie das????\n    }\n    waitTitle:'Connecting', \n    waitMsg:'Sending data...',\n\n    // Functions that fire (success or failure) when the server responds. \n    // The one that executes is determined by the \n    // response that comes from login.asp as seen below. The server would \n    // actually respond with valid JSON, \n    // something like: response.write \"{ success: true}\" or \n    // response.write \"{ success: false, errors: { reason: 'Login failed. Try again.' }}\" \n    // depending on the logic contained within your server script.\n    // If a success occurs, the user is notified with an alert messagebox, \n    // and when they click \"OK\", they are redirected to whatever page\n    // you define as redirect. \n\n    success:function(){ \n        Ext.Msg.alert('Status', 'Login Successful!', function(btn, text){\n            if (btn == 'ok'){\n                var redirect = 'test.asp'; \n                window.location = redirect;\n            }\n        });\n    },\n\n    // Failure function, see comment above re: success and failure. \n    // You can see here, if login fails, it throws a messagebox\n    // at the user telling him / her as much.  \n\n    failure:function(form, action){ \n        if(action.failureType == 'server'){ \n            obj = Ext.util.JSON.decode(action.response.responseText); \n            Ext.Msg.alert('Login Failed!', obj.errors.reason); \n        }else{ \n            Ext.Msg.alert('Warning!', 'Authentication server is unreachable : ' + action.response.responseText); \n        } \n        login.getForm().reset(); \n    } \n}); ",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "button",
+                "designer|userClassName": "onLogin"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen84392",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "loginWindow",
+                "selector": "loginwindow",
+                "designer|userClassName": "loginWindow"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

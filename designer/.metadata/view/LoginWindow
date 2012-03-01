@@ -1,0 +1,130 @@
+{
+    "id": "ExtBox1-ext-gen77574",
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 215,
+        "width": 400,
+        "resizable": "false",
+        "layout": "fit",
+        "closable": false,
+        "title": "Login",
+        "plain": true,
+        "designer|userClassName": "LoginWindow",
+        "designer|userAlias": "loginwindow"
+    },
+    "customConfigs": [],
+    "designerId": "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6",
+    "$viewOrder": 5,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen77796",
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ui": null,
+                "bodyPadding": 50,
+                "frameHeader": false,
+                "title": "",
+                "designer|userClassName": "MyForm2",
+                "dock": null
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen78174",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Username",
+                        "allowBlank": false,
+                        "designer|userClassName": "MyTextField",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen78371",
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Password",
+                        "allowBlank": false,
+                        "designer|userClassName": "MyTextField1",
+                        "layout|anchor": "100%"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen78760",
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "ui": "footer",
+                        "designer|userClassName": "MyToolbar1",
+                        "dock": "bottom"
+                    },
+                    "customConfigs": [],
+                    "expanded": true,
+                    "cn": [
+                        {
+                            "id": "ExtBox1-ext-gen80497",
+                            "type": "tbspacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MySpacer1",
+                                "layout|flex": 1
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        },
+                        {
+                            "id": "ExtBox1-ext-gen78580",
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "login",
+                                "designer|userClassName": "MyButton1",
+                                "layout|flex": null
+                            },
+                            "customConfigs": [],
+                            "expanded": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
