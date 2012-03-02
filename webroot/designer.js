@@ -23,7 +23,7 @@ Ext.application({
     ],
 
     stores: [
-        'Articles'
+        
     ],
 
     views: [

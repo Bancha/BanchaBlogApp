@@ -31,14 +31,31 @@ Ext.define('BlogApp.controller.Login', {
 
     init: function() {
         this.control({
-            "button": {
+            "loginwindow button": {
                 click: this.onLogin
             }
         });
 
-        // force login
-        var win = Ext.create('BlogApp.view.LoginWindow', {});
-        win.show();
+        var me = this;
+
+        // ask server if already logged in
+        Bancha.getStubsNamespace().User.login({}, function(result,response) {
+        if(result && result.success) {
+            var user = Ext.create('Bancha.model.User', result.data);
+            me.application.fireEvent('loggedin', user);
+        } else {
+            // fore user to log in
+            var win = Ext.create('BlogApp.view.LoginWindow', {});
+            win.show();
+        }
+    });
+
+        this.application.on({
+            loggedin: {
+                fn: this.onLoggedIn,
+                scope: this
+            }
+        });
     },
 
     onLogin: function(button, e, options) {
@@ -48,39 +65,42 @@ Ext.define('BlogApp.controller.Login', {
         values = win.items.items[0].getForm().getValues();
 
         // login through the banchaRemotable method UsersController->login
-        Bancha.getStubsNamespace().User.login(values, function(result,response) {
-
-            if(Ext.isObject(result) && result.id) {
-
-                // we got a record back, so we are logged in
+        Bancha.getStubsNamespace().User.login(values, {
+            success: function(result,response) {
+                // we are logged in, so hide login window
                 win.hide();
 
-                // keep the record data
-                me.active_user = Ext.create('Bancha.model.User',result);
-
-                // now that we are logged in the stores can be loaded
-                // (if you want a clean separation of concerns, just fire an application event 'logged in',
-                // so each controller loads it's own stores)
-                me.getUsersStore().load();
-                me.getStore('Comments').load();
-                me.getStore('Articles').load({
-                    callback: function() {
-                        // articles loaded tell everyone (see Articles controller onArticlesLoaded)
-                        me.application.fireEvent('articlesloaded');
-                    }
-                });
-
-            } else {
-
-                // force login again
-
+                // tell application about login
+                var user = Ext.create('Bancha.model.User', result.data);
+                me.application.fireEvent('loggedin', user);
+            },
+            failure: function(result,response) {
                 if(result && result.success===false) {
                     Ext.Msg.alert('Login Failed!', 'Username and password don\'t match!');
                 } else {
                     Ext.Msg.alert('Warning!', 'Authentication server is unreachable or returned with an error');
                 }
             }
-        }); 
+        });
+    },
+
+    onLoggedIn: function(userRecord) {
+        var me = this;
+
+        // keep the record data
+        this.active_user = userRecord;
+
+        // now that we are logged in the stores can be loaded
+        // (if you want a clean separation of concerns, just fire an application event 'logged in',
+        // so each controller loads it's own stores)
+        this.getUsersStore().load();
+        this.getStore('Comments').load();
+        this.getStore('Articles').load({
+            callback: function() {
+                // articles loaded tell everyone (see Articles controller onArticlesLoaded)
+                me.application.fireEvent('articlesloaded');
+            }
+        });
     }
 
 });

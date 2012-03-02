@@ -33,8 +33,9 @@ class UsersController extends AppController {
 /**
  * User Management
  *
- * If a Bancha request return false or in success case the user record
  * @banchaRemotable
+ * 
+ * @return user record if logged in, otherwise false
  */
 	public function login($data = null) {
 		
@@ -43,7 +44,7 @@ class UsersController extends AppController {
 			// prepare data (more elegant with form post)
 			$this->request->data = array('User' => $data);
 			if ($this->Auth->login()) {
-				return $this->Auth->user(); // success
+				return array('User'=>$this->Auth->user()); // success
 			} else {
 				return false; // invalid
 			}

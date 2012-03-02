@@ -8,9 +8,7 @@
     "codeClass": null,
     "userConfig": {
         "models": [],
-        "stores": [
-            "Articles"
-        ],
+        "stores": [],
         "views": [
             "MyViewport",
             "ArticlesList",

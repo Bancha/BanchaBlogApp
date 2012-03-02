@@ -15,6 +15,9 @@
 Ext.define('BlogApp.controller.Articles', {
     extend: 'Ext.app.Controller',
 
+    stores: [
+        'Articles'
+    ],
     refs: [
         {
             ref: 'articlesList',
@@ -68,7 +71,6 @@ Ext.define('BlogApp.controller.Articles', {
         this.getArticlesList().getSelectionModel().select(firstRecord);
 
         // this other views will be informed by the triggered application event 'articlechanged';
-
     }
 
 });

@@ -7,13 +7,16 @@
     },
     "codeClass": null,
     "userConfig": {
+        "stores": [
+            "Articles"
+        ],
         "designer|init": "",
         "designer|userClassName": "Articles"
     },
     "customConfigs": [],
     "designerId": "605f1b49-1e8a-4555-b989-141da478d287",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen53152",
@@ -80,7 +83,7 @@
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "// refresh the single article view\nvar view = this.getArticleReader();\n// not sure how exactly this.getArticleReaderView(); works\n\n// update the content\nview.tpl.overwrite(view.el, record.data);\n\n// update the title\nExt.ComponentQuery.query('#articlePanel')[0].setTitle(record.get('title'));",
+                "implHandler": "        // refresh the single article view\n        var view = this.getArticleReader();\n        // not sure how exactly this.getArticleReaderView(); works\n\n        // update the content\n        view.tpl.overwrite(view.el, record.data);\n\n        // update the title\n        Ext.ComponentQuery.query('#articlePanel')[0].setTitle(record.get('title'));",
                 "name": "articlechanged",
                 "scope": "this",
                 "designer|userClassName": "onArticleChanged"
@@ -98,7 +101,7 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onArticlesLoaded",
-                "implHandler": "// as default select the first articles list element\nvar firstRecord = this.getStore('Articles').getAt(0);\nthis.getArticlesList().getSelectionModel().select(firstRecord);\n\n// this other views will be informed by the triggered application event 'articlechanged';\n",
+                "implHandler": "        // as default select the first articles list element\n        var firstRecord = this.getStore('Articles').getAt(0);\n        this.getArticlesList().getSelectionModel().select(firstRecord);\n\n        // this other views will be informed by the triggered application event 'articlechanged';",
                 "name": "articlesloaded",
                 "scope": "this",
                 "designer|userClassName": "onArticlesLoaded"

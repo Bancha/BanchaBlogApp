@@ -10,13 +10,13 @@
         "stores": [
             "Users"
         ],
-        "designer|init": "// force login\nvar win = Ext.create('BlogApp.view.LoginWindow', {});\nwin.show();",
+        "designer|init": "var me = this;\n\n// ask server if already logged in\nBancha.getStubsNamespace().User.login({}, function(result,response) {\nif(result && result.success) {\n    var user = Ext.create('Bancha.model.User', result.data);\n    me.application.fireEvent('loggedin', user);\n} else {\n    // fore user to log in\n    var win = Ext.create('BlogApp.view.LoginWindow', {});\n    win.show();\n}\n});",
         "designer|userClassName": "Login"
     },
     "customConfigs": [],
     "designerId": "bd7c905b-5945-4966-9e89-6d97c6f82b3e",
     "$viewOrder": 2,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen83344",
@@ -28,11 +28,11 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "onLogin",
-                "implHandler": "// log the user in\nvar me = this, // keep reference to controller and window through scope\nwin = this.getLoginWindow(), \nvalues = win.items.items[0].getForm().getValues();\n\n// login through the banchaRemotable method UsersController->login\nBancha.getStubsNamespace().User.login(values, function(result,response) {\n\n    if(Ext.isObject(result) && result.id) {\n\n        // we got a record back, so we are logged in\n        win.hide();\n\n        // keep the record data\n        me.active_user = Ext.create('Bancha.model.User',result);\n\n        // now that we are logged in the stores can be loaded\n        // (if you want a clean separation of concerns, just fire an application event 'logged in',\n        // so each controller loads it's own stores)\n        me.getUsersStore().load();\n        me.getStore('Comments').load();\n        me.getStore('Articles').load({\n            callback: function() {\n                // articles loaded tell everyone (see Articles controller onArticlesLoaded)\n                me.application.fireEvent('articlesloaded');\n            }\n        });\n\n    } else {\n\n        // force login again\n\n        if(result && result.success===false) {\n            Ext.Msg.alert('Login Failed!', 'Username and password don\\'t match!');\n        } else {\n            Ext.Msg.alert('Warning!', 'Authentication server is unreachable or returned with an error');\n        }\n    }\n}); ",
+                "implHandler": "        // log the user in\n        var me = this, // keep reference to controller and window through scope\n        win = this.getLoginWindow(), \n        values = win.items.items[0].getForm().getValues();\n\n        // login through the banchaRemotable method UsersController->login\n        Bancha.getStubsNamespace().User.login(values, {\n            success: function(result,response) {\n                // we are logged in, so hide login window\n                win.hide();\n\n                // tell application about login\n                var user = Ext.create('Bancha.model.User', result.data);\n                me.application.fireEvent('loggedin', user);\n            },\n            failure: function(result,response) {\n                if(result && result.success===false) {\n                    Ext.Msg.alert('Login Failed!', 'Username and password don\\'t match!');\n                } else {\n                    Ext.Msg.alert('Warning!', 'Authentication server is unreachable or returned with an error');\n                }\n            }\n        });",
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "button",
+                "designer|controlQuery": "loginwindow button",
                 "designer|userClassName": "onLogin"
             },
             "customConfigs": [],
@@ -66,6 +66,27 @@
                 "ref": "loginForm",
                 "selector": "loginWindow formpanel",
                 "designer|userClassName": "loginForm"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen114164",
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLoggedIn",
+                "designer|params": [
+                    "userRecord"
+                ],
+                "implHandler": "        var me = this;\n\n        // keep the record data\n        this.active_user = userRecord;\n\n        // now that we are logged in the stores can be loaded\n        // (if you want a clean separation of concerns, just fire an application event 'logged in',\n        // so each controller loads it's own stores)\n        this.getUsersStore().load();\n        this.getStore('Comments').load();\n        this.getStore('Articles').load({\n            callback: function() {\n                // articles loaded tell everyone (see Articles controller onArticlesLoaded)\n                me.application.fireEvent('articlesloaded');\n            }\n        });",
+                "name": "loggedin",
+                "scope": "this",
+                "designer|userClassName": "onLoggedIn"
             },
             "customConfigs": [],
             "expanded": true
