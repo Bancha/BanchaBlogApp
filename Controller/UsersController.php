@@ -28,7 +28,7 @@ class UsersController extends AppController {
 	);
 
 	public function beforeFilter() {
-		$this->Auth->allow('login');
+		$this->Auth->allow('login','logout');
 	}
 /**
  * User Management

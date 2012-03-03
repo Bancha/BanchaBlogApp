@@ -5,7 +5,7 @@ This project is show casing the usage of Bancha by creating a Blog Application. 
 
 
 Futher development:
- - The User Management is a basic example, a full application should handle expired sessions, logouts, etc.
+ - The User Management is a basic example, a full application should handle expired sessions, registration, etc.
 
 
 For more information about Bancha go to [banchaproject.org](http://banchaproject.org)
