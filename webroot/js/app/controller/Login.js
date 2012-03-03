@@ -65,21 +65,21 @@ Ext.define('BlogApp.controller.Login', {
         values = win.items.items[0].getForm().getValues();
 
         // login through the banchaRemotable method UsersController->login
-        Bancha.getStubsNamespace().User.login(values, {
-            success: function(result,response) {
+        Bancha.getStubsNamespace().User.login(values, function(result,response) {
+
+            if(result && result.success===true) {
                 // we are logged in, so hide login window
                 win.hide();
 
                 // tell application about login
                 var user = Ext.create('Bancha.model.User', result.data);
                 me.application.fireEvent('loggedin', user);
-            },
-            failure: function(result,response) {
-                if(result && result.success===false) {
-                    Ext.Msg.alert('Login Failed!', 'Username and password don\'t match!');
-                } else {
-                    Ext.Msg.alert('Warning!', 'Authentication server is unreachable or returned with an error');
-                }
+
+                // error handling
+            } else if(result && result.success===false) {
+                Ext.Msg.alert('Login Failed!', 'Username and password don\'t match!');
+            } else {
+                Ext.Msg.alert('Warning!', 'Authentication server is unreachable or returned with an error');
             }
         });
     },
