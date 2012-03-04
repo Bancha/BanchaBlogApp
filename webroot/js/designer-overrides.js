@@ -98,8 +98,7 @@ Ext.define('BlogApp.view.ui.CommentForm', {
 
 /*
  * change the form panel api string to an object
- * For why see: http://www.sencha.com/forum/showthread.php?184414-Ext.form.Panel-doesn-t-allow-to-defined-a-api-object&p=745773#post745773
- * For how see: http://www.sencha.com/forum/showthread.php?184489-How-to-override-configs-from-initCompoent&p=745789#post745789
+ * For why see: http://www.sencha.com/forum/showthread.php?184414-Ext.form.Panel-doesn-t-allow-to-defined-a-api-object&p=745773
  */
 var className = 'BlogApp.view.ui.CommentForm';
 Ext.require([className], function() {
@@ -116,18 +115,19 @@ Ext.require([className], function() {
 
 	// Ext Designer defines the api two times, so we need to 
 	// overwrite two times as well
-	
-	// overrride api config
     Ext.define(className+'Overrride', {
          override: className,
-         api: fixApiConfig(classPrototype.api)
-    });
-
-    // override initComponent config (tricky)
-    Ext.Function.interceptBefore(classObj.superclass, 'constructor', function(){
-        this.initialConfig = Ext.apply({
-			api: fixApiConfig(this.initialConfig) // <------------------------------- how should this actually work????
-		}, this.initialConfig);
+         
+         // override the designer config
+         api: fixApiConfig(classPrototype.api),
+         
+         // override the designer initComponent config
+         constructor : function(config) {
+             if(!config.api) {
+                 config.api = fixApiConfig(classPrototype.api);
+             }
+             this.callParent([config]);
+         }
     });
 });
 
