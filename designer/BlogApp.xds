@@ -91,9 +91,9 @@
         },
         "bd7c905b-5945-4966-9e89-6d97c6f82b3e": {
             "paths": [
-                "js/app/controller/Login.js"
+                "js/app/controller/Authentification.js"
             ],
-            "className": "Login"
+            "className": "Authentification"
         },
         "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6": {
             "paths": [

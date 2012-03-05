@@ -44,7 +44,7 @@ Ext.application({
     controllers: [
         'Articles',
         'Comments',
-        'Login'
+        'Authentification'
     ],
 
     launch: function() {

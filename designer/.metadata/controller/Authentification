@@ -11,12 +11,12 @@
             "Users"
         ],
         "designer|init": "var me = this;\n\n// ask server if already logged in\nBancha.getStubsNamespace().User.login({}, function(result,response) {\nif(result && result.success) {\n    var user = Ext.create('Bancha.model.User', result.data);\n    me.application.fireEvent('loggedin', user);\n} else {\n    // fore user to log in\n    var win = Ext.create('BlogApp.view.LoginWindow', {});\n    win.show();\n}\n});",
-        "designer|userClassName": "Login"
+        "designer|userClassName": "Authentification"
     },
     "customConfigs": [],
     "designerId": "bd7c905b-5945-4966-9e89-6d97c6f82b3e",
     "$viewOrder": 2,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen83344",
