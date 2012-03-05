@@ -1,0 +1,62 @@
+{
+    "id": "ExtBox1-ext-gen13587",
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "storeId": "MyStore3",
+        "model": "Authorization",
+        "designer|userClassName": "Authorizations",
+        "designer|userAlias": "authorizations"
+    },
+    "customConfigs": [],
+    "designerId": "93ea076e-7b3b-4165-86d4-7cead306d76f",
+    "$viewOrder": 3,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen19051",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "isAllowed",
+                "designer|params": [
+                    "model",
+                    "id",
+                    "action"
+                ],
+                "implHandler": "/**\n* @param model the model to look up authorization\n* @param id the id of the model to look up authorization\n* @param actions 'create', 'edit' or 'delete'\n*        (when you don't have read permissions you will never see it)\n* @return boolean or -1 if not yet loaded (just a falsy value)\n*/\n\n// transform model id to global id\nvar authId = this.createAuthorizationId(model,id)\n// get the entry\nrec = this.getById(authId);\n\n// get the store right\nreturn (rec) ? rec.get(action) : -1;\n",
+                "designer|userClassName": "isAllowed"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen24685",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "createAuthorizationId",
+                "designer|params": [
+                    "model",
+                    "id"
+                ],
+                "implHandler": "// ext designer doesn't allow to set propterties \n// so we have to do it here on first usage\nthis.model2IdMapping = {\n    'article': 1,\n    'comment': 2\n};\n\nthis.createAuthorizationId = function(model,id) {\n    return id*100 + this.model2IdMapping[model];\n}\n\nreturn this.createAuthorizationId(model,id);\n",
+                "designer|userClassName": "createAuthorizationId"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

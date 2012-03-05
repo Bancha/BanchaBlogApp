@@ -101,6 +101,19 @@
                 "js/app/view/ui/LoginWindow.js"
             ],
             "className": "LoginWindow"
+        },
+        "93ea076e-7b3b-4165-86d4-7cead306d76f": {
+            "paths": [
+                "js/app/store/Authorizations.js",
+                "js/app/store/base/Authorizations.js"
+            ],
+            "className": "Authorizations"
+        },
+        "b98396c0-a261-4572-a839-095e717cd36d": {
+            "paths": [
+                "js/app/model/Authorization.js"
+            ],
+            "className": "Authorization"
         }
     },
     "expandedState": {

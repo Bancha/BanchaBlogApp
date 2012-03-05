@@ -19,11 +19,11 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        
+        'Authorization'
     ],
 
     stores: [
-        
+        'Authorizations'
     ],
 
     views: [

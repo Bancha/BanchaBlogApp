@@ -75,6 +75,28 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                                 }
                             ]
                         }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            id: '',
+                            ui: 'footer\n',
+                            dock: 'top',
+                            items: [
+                                {
+                                    xtype: 'tbspacer',
+                                    flex: 1
+                                },
+                                {
+                                    xtype: 'button',
+                                    text: 'Edit'
+                                },
+                                {
+                                    xtype: 'button',
+                                    text: 'Delete'
+                                }
+                            ]
+                        }
                     ]
                 }
             ]
