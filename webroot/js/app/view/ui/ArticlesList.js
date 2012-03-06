@@ -42,11 +42,52 @@ Ext.define('BlogApp.view.ui.ArticlesList', {
                 {
                     xtype: 'actioncolumn',
                     width: 30,
+                    dataIndex: 'id',
                     items: [
                         {
-                            icon: 'http://sampleproject.banchaproject.org/img/icons/delete.png',
-                            iconCls: '',
-                            tooltip: 'Delete Article'
+                            altText: 'edit',
+                            getClass: function(id,metadata,record,rowIndex,colIndex,store){
+
+                                // keep a reference for next execution
+                                this.authorizationsStore = Ext.StoreMgr.get('Authorizations');
+
+                                // get the authorization from the model
+                                var allowed = this.authorizationsStore.isAllowed('edit',id);
+
+                                // delay rendering
+                                if(allowed===-1) {
+                                    // authorization now yet loaded
+                                    if(!this.loadingAuthorizations) {
+
+                                        this.loadingAuthorizations = true;
+
+                                        // re-render when available
+                                        this.authorizationsStore.on('loaded', {
+                                            single: true,
+                                            callback: function() {
+
+                                                // re-render columns
+                                                this.doLayout(); // (is this working)
+
+                                                // change flag
+                                                this.loadingAuthorizations = false;
+                                            }
+                                        });
+
+                                        return 'loading-icon';
+                                    }
+                                }
+
+                                // return correct icon
+                                return allowed ? 'edit-icon' : 'x-hide-display';
+                            },
+                            icon: '',
+                            tooltip: 'edit'
+                        },
+                        {
+                            altText: 'delete',
+                            icon: '',
+                            tooltip: 'delete'
                         }
                     ]
                 }

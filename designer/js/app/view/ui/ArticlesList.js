@@ -49,10 +49,10 @@ Ext.define('BlogApp.view.ui.ArticlesList', {
                             getClass: function(id,metadata,record,rowIndex,colIndex,store){
 
                                 // keep a reference for next execution
-                                this.authorizationsStore = Ext.storeMgr.get('Authorzations');
+                                this.authorizationsStore = Ext.StoreMgr.get('Authorizations');
 
                                 // get the authorization from the model
-                                var allowed = this.authorizationsStore.isAllowed('edit',value);
+                                var allowed = this.authorizationsStore.isAllowed('edit',id);
 
                                 // delay rendering
                                 if(allowed===-1) {

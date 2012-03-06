@@ -28,6 +28,7 @@ class AppController extends Controller {
 			),
 			'logoutRedirect' => 'app.html'
 		),
+		'Acl'
 	);
 	
 	public function beforeFilter() {

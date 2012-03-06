@@ -139,8 +139,10 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "",
-                        "ui": "footer\n",
+                        "ui": null,
+                        "width": 150,
                         "designer|userClassName": "MyToolbar2",
+                        "layout|region": "west",
                         "dock": "top"
                     },
                     "customConfigs": [],

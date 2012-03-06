@@ -32,7 +32,7 @@
                     "id",
                     "action"
                 ],
-                "implHandler": "/**\n* @param model the model to look up authorization\n* @param id the id of the model to look up authorization\n* @param actions 'create', 'edit' or 'delete'\n*        (when you don't have read permissions you will never see it)\n* @return boolean or -1 if not yet loaded (just a falsy value)\n*/\n\n// transform model id to global id\nvar authId = this.createAuthorizationId(model,id)\n// get the entry\nrec = this.getById(authId);\n\n// get the store right\nreturn (rec) ? rec.get(action) : -1;\n",
+                "implHandler": "        /**\n        * @param model the model to look up authorization\n        * @param id the id of the model to look up authorization\n        * @param actions 'create', 'edit' or 'delete'\n        *        (when you don't have read permissions you will never see it)\n        * @return boolean or -1 if not yet loaded (just a falsy value)\n        */\n\n        // transform model id to global id\n        var authId = this.createAuthorizationId(model,id)\n        // get the entry\n        rec = this.getById(authId);\n\n        // get the store right\n        return (rec) ? rec.get(action) : -1;",
                 "designer|userClassName": "isAllowed"
             },
             "customConfigs": [],
@@ -52,7 +52,7 @@
                     "model",
                     "id"
                 ],
-                "implHandler": "// ext designer doesn't allow to set propterties \n// so we have to do it here on first usage\nthis.model2IdMapping = {\n    'article': 1,\n    'comment': 2\n};\n\nthis.createAuthorizationId = function(model,id) {\n    return id*100 + this.model2IdMapping[model];\n}\n\nreturn this.createAuthorizationId(model,id);\n",
+                "implHandler": "        // ext designer doesn't allow to set propterties \n        // so we have to do it here on first usage\n        this.model2IdMapping = {\n            'article': 1,\n            'comment': 2\n        };\n\n        this.createAuthorizationId = function(model,id) {\n            return id*100 + this.model2IdMapping[model];\n        }\n\n        return this.createAuthorizationId(model,id);",
                 "designer|userClassName": "createAuthorizationId"
             },
             "customConfigs": [],

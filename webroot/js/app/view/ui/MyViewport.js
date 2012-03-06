@@ -80,7 +80,8 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                         {
                             xtype: 'toolbar',
                             id: '',
-                            ui: 'footer\n',
+                            width: 150,
+                            region: 'west',
                             dock: 'top',
                             items: [
                                 {
