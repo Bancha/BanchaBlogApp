@@ -70,7 +70,8 @@ Ext.define('BlogApp.view.ui.LoginWindow', {
                                 },
                                 {
                                     xtype: 'button',
-                                    text: 'login'
+                                    text: 'login',
+                                    action: 'login'
                                 }
                             ]
                         }

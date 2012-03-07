@@ -16,10 +16,9 @@
 Ext.define('BlogApp.view.ui.MyViewport', {
     extend: 'Ext.container.Viewport',
     requires: [
-        'BlogApp.view.ArticlesList',
+        'BlogApp.view.ArticleList',
         'BlogApp.view.ArticleReader',
-        'BlogApp.view.CommentsList',
-        'BlogApp.view.CommentForm'
+        'BlogApp.view.CommentsPanel'
     ],
 
     layout: {
@@ -34,7 +33,6 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                 {
                     xtype: 'articleslist',
                     region: 'west',
-                    split: true,
                     width: 226
                 },
                 {
@@ -49,7 +47,7 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                         {
                             xtype: 'articlereader',
                             region: 'center',
-                            height: 482,
+                            height: 384,
                             padding: 10,
                             tpl: [
                                 '{body}'
@@ -57,46 +55,9 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                             width: 150
                         },
                         {
-                            xtype: 'panel',
-                            height: 200,
-                            id: '',
-                            maxHeight: 500,
-                            autoScroll: true,
-                            title: 'Comments',
+                            xtype: 'commentspanel',
                             region: 'south',
-                            split: true,
-                            items: [
-                                {
-                                    xtype: 'commentslist',
-                                    padding: 10
-                                },
-                                {
-                                    xtype: 'commentform'
-                                }
-                            ]
-                        }
-                    ],
-                    dockedItems: [
-                        {
-                            xtype: 'toolbar',
-                            id: '',
-                            width: 150,
-                            region: 'west',
-                            dock: 'top',
-                            items: [
-                                {
-                                    xtype: 'tbspacer',
-                                    flex: 1
-                                },
-                                {
-                                    xtype: 'button',
-                                    text: 'Edit'
-                                },
-                                {
-                                    xtype: 'button',
-                                    text: 'Delete'
-                                }
-                            ]
+                            split: true
                         }
                     ]
                 }

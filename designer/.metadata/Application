@@ -7,15 +7,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "models": [
-            "Authorization"
-        ],
-        "stores": [
-            "Authorizations"
-        ],
+        "models": [],
+        "stores": [],
         "views": [
             "MyViewport",
-            "ArticlesList",
+            "ArticleList",
             "ArticleReader",
             "CommentsList",
             "CommentForm",

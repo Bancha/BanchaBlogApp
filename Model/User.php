@@ -14,30 +14,7 @@
  */
 App::uses('AppModel', 'Model');
 class User extends AppModel {
-	public $actsAs = array('Bancha.BanchaRemotable', 'Acl' => array('type' => 'requester'));
-
-
-/**
- * ACL support
- */
-    public function parentNode() {
-        if (!$this->id && empty($this->data)) {
-            return null;
-        }
-        if (isset($this->data['User']['group_id'])) {
-            $groupId = $this->data['User']['group_id'];
-        } else {
-            $groupId = $this->field('group_id');
-        }
-        if (!$groupId) {
-            return null;
-        } else {
-            return array('Group' => array('id' => $groupId));
-        }
-    }
-
-
-
+	public $actsAs = array('Bancha.BanchaRemotable');
 
 /**
  * Validation rules

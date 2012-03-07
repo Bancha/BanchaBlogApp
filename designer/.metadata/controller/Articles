@@ -11,7 +11,8 @@
             "Articles"
         ],
         "designer|init": "",
-        "designer|userClassName": "Articles"
+        "designer|userClassName": "Articles",
+        "designer|userAlias": "articles"
     },
     "customConfigs": [],
     "designerId": "605f1b49-1e8a-4555-b989-141da478d287",
@@ -71,6 +72,22 @@
             "expanded": true
         },
         {
+            "id": "ExtBox1-ext-gen46970",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "articlePanel",
+                "selector": "#articlePanel",
+                "designer|userClassName": "articlePanel"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
             "id": "ExtBox1-ext-gen54770",
             "type": "applicationaction",
             "reference": {
@@ -83,7 +100,7 @@
                 "designer|params": [
                     "record"
                 ],
-                "implHandler": "        // refresh the single article view\n        var view = this.getArticleReader();\n        // not sure how exactly this.getArticleReaderView(); works\n\n        // update the content\n        view.tpl.overwrite(view.el, record.data);\n\n        // update the title\n        Ext.ComponentQuery.query('#articlePanel')[0].setTitle(record.get('title'));",
+                "implHandler": "/**\n* refresh the single article view\n*/\nvar me = this,\n    view = this.getArticleReader();\n\n// update the content\nview.tpl.overwrite(view.el, record.data);\n\n// update the title\nthis.getArticlePanel().setTitle(record.get('title'));",
                 "name": "articlechanged",
                 "scope": "this",
                 "designer|userClassName": "onArticleChanged"
@@ -105,6 +122,27 @@
                 "name": "articlesloaded",
                 "scope": "this",
                 "designer|userClassName": "onArticlesLoaded"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen42043",
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLoggedin",
+                "designer|params": [
+                    "userRecord"
+                ],
+                "implHandler": "/**\n* Only show the article edit and delete to admins\n* \n* Normally I would dynamically render the action items in for the admin view,\n* but since promoting the ActionColumn to a own class breaks it (Designer bug!?)\n* we just remove it for non-admins\n*/\nif(userRecord.get('role') === 'admin') {\n    return;\n}\n\nvar grid = this.getArticlesList(),\n    headerCt = grid.headerCt,\n    column = headerCt.getComponent('adminactioncolumn');\nheaderCt.remove(column);\ngrid.getView().refresh();",
+                "name": "loggedin",
+                "scope": "this",
+                "designer|userClassName": "onLoggedin"
             },
             "customConfigs": [],
             "expanded": true

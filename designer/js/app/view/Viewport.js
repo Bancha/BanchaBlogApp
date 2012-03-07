@@ -18,6 +18,7 @@ Ext.define('BlogApp.view.Viewport', {
     renderTo: Ext.getBody(),
     requires: [
         'BlogApp.view.MyViewport',
-        'BlogApp.view.LoginWindow'
+        'BlogApp.view.LoginWindow',
+        'BlogApp.view.ManageCommentsWindow'
     ]
 });

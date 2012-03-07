@@ -1,0 +1,80 @@
+{
+    "id": "ExtBox1-ext-gen88633",
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 300,
+        "id": "",
+        "maxHeight": 500,
+        "autoScroll": true,
+        "title": "Comments",
+        "designer|userClassName": "CommentsPanel",
+        "designer|userAlias": "commentspanel"
+    },
+    "customConfigs": [],
+    "designerId": "8b3b577a-a2ce-4959-b077-396ccb45c57b",
+    "$viewOrder": 6,
+    "expanded": false,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen50677",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "padding": 10,
+                "designer|userClassName": "CommentsList"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen49722"
+        },
+        {
+            "id": "ExtBox1-ext-gen61886",
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "CommentForm"
+            },
+            "customConfigs": [],
+            "iconCls": "icon-linkedinstance",
+            "expanded": true,
+            "masterInstanceId": "ExtBox1-ext-gen89247"
+        },
+        {
+            "id": "ExtBox1-ext-gen60581",
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "tooltip": "Manage comments",
+                "type": "gear",
+                "designer|userClassName": "MyTool",
+                "hidden": "true"
+            },
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "hidden",
+                    "type": "string"
+                }
+            ],
+            "expanded": true
+        }
+    ]
+}

@@ -26,6 +26,10 @@ Ext.define('BlogApp.controller.Articles', {
         {
             ref: 'articleReader',
             selector: 'articlereader'
+        },
+        {
+            ref: 'articlePanel',
+            selector: '#articlePanel'
         }
     ],
 
@@ -44,25 +48,31 @@ Ext.define('BlogApp.controller.Articles', {
             articlesloaded: {
                 fn: this.onArticlesLoaded,
                 scope: this
+            },
+            loggedin: {
+                fn: this.onLoggedin,
+                scope: this
             }
         });
-    },
-
-    onArticleChanged: function(record) {
-        // refresh the single article view
-        var view = this.getArticleReader();
-        // not sure how exactly this.getArticleReaderView(); works
-
-        // update the content
-        view.tpl.overwrite(view.el, record.data);
-
-        // update the title
-        Ext.ComponentQuery.query('#articlePanel')[0].setTitle(record.get('title'));
     },
 
     onArticleListSelectionChange: function(tablepanel, selections, options) {
         // make an application wide event
         this.application.fireEvent('articlechanged',selections[0]);
+    },
+
+    onArticleChanged: function(record) {
+        /**
+        * refresh the single article view
+        */
+        var me = this,
+            view = this.getArticleReader();
+
+        // update the content
+        view.tpl.overwrite(view.el, record.data);
+
+        // update the title
+        this.getArticlePanel().setTitle(record.get('title'));
     },
 
     onArticlesLoaded: function() {
@@ -71,6 +81,25 @@ Ext.define('BlogApp.controller.Articles', {
         this.getArticlesList().getSelectionModel().select(firstRecord);
 
         // this other views will be informed by the triggered application event 'articlechanged';
+    },
+
+    onLoggedin: function(userRecord) {
+        /**
+        * Only show the article edit and delete to admins
+        * 
+        * Normally I would dynamically render the action items in for the admin view,
+        * but since promoting the ActionColumn to a own class breaks it (Designer bug!?)
+        * we just remove it for non-admins
+        */
+        if(userRecord.get('role') === 'admin') {
+            return;
+        }
+
+        var grid = this.getArticlesList(),
+            headerCt = grid.headerCt,
+            column = headerCt.getComponent('adminactioncolumn');
+        headerCt.remove(column);
+        grid.getView().refresh();
     }
 
 });

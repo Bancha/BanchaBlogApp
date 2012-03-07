@@ -137,9 +137,16 @@
                             "userConfig": {
                                 "text": "login",
                                 "designer|userClassName": "MyButton1",
+                                "action": "login",
                                 "layout|flex": null
                             },
-                            "customConfigs": [],
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "action",
+                                    "type": "string"
+                                }
+                            ],
                             "expanded": true
                         }
                     ]

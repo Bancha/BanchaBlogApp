@@ -24,7 +24,7 @@ class UsersController extends AppController {
  * Hide the password while paginating (you can also use blacklisting)
  */
 	public $paginate = array(
-		'fields' => array('id', 'username', 'name', 'email') // hide password from Bancha
+		'fields' => array('id', 'username', 'name', 'email', 'role') // hide password from Bancha
 	);
 
 	public function beforeFilter() {
@@ -35,7 +35,7 @@ class UsersController extends AppController {
  *
  * @banchaRemotable
  * 
- * @return user record if logged in, otherwise false
+ * @return for Bancha: user record if logged in, otherwise false
  */
 	public function login($data = null) {
 		
@@ -107,6 +107,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function add() {
+		
 		if ($this->request->is('post')) {
 			$this->User->create();
 			

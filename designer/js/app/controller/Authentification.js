@@ -25,13 +25,13 @@ Ext.define('BlogApp.controller.Authentification', {
         },
         {
             ref: 'loginForm',
-            selector: 'loginWindow formpanel'
+            selector: 'loginwindow formpanel'
         }
     ],
 
     init: function() {
         this.control({
-            "loginwindow button": {
+            "loginwindow button[action=login]": {
                 click: this.onLogin
             }
         });

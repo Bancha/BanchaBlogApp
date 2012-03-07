@@ -11,13 +11,13 @@
         "forceFit": true,
         "store": "Articles",
         "columnLines": true,
-        "designer|userClassName": "ArticlesList",
+        "designer|userClassName": "ArticleList",
         "designer|userAlias": "articleslist"
     },
     "customConfigs": [],
     "designerId": "b546f619-60cc-442f-aae5-c0f933e1967b",
     "$viewOrder": 1,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen6799",
@@ -59,6 +59,59 @@
             "expanded": true
         },
         {
+            "id": "ExtBox1-ext-gen27599",
+            "type": "actioncolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "adminactioncolumn",
+                "width": 70,
+                "designer|userClassName": "AdminActions",
+                "designer|userAlias": "adminactions"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen27813",
+                    "type": "actioncolumnitem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "altText": "edit",
+                        "icon": "img/icons/edit.png",
+                        "tooltip": "edit",
+                        "designer|userClassName": "MyActionColumnItem1"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                },
+                {
+                    "id": "ExtBox1-ext-gen27605",
+                    "type": "actioncolumnitem",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "altText": "delete",
+                        "icon": "img/icons/delete.png",
+                        "tooltip": "delete",
+                        "designer|userClassName": "MyActionColumnItem"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        },
+        {
             "id": "ExtBox1-ext-gen6827",
             "type": "gridview",
             "reference": {
@@ -72,60 +125,6 @@
             },
             "customConfigs": [],
             "expanded": true
-        },
-        {
-            "id": "ExtBox1-ext-gen10341",
-            "type": "actioncolumn",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "width": 30,
-                "dataIndex": "id",
-                "altText": null,
-                "designer|userClassName": "MyActionColumn"
-            },
-            "customConfigs": [],
-            "expanded": true,
-            "cn": [
-                {
-                    "id": "ExtBox1-ext-gen18213",
-                    "type": "actioncolumnitem",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "altText": "edit",
-                        "getClass": "function(id,metadata,record,rowIndex,colIndex,store){\n\t\n\t// keep a reference for next execution\n\tthis.authorizationsStore = Ext.StoreMgr.get('Authorizations');\n\n\t// get the authorization from the model\n\tvar allowed = this.authorizationsStore.isAllowed('edit',id);\n\n\t// delay rendering\n\tif(allowed===-1) {\n\t\t// authorization now yet loaded\n\t\tif(!this.loadingAuthorizations) {\n\t\t\n\t\t\tthis.loadingAuthorizations = true;\n\t\t\n\t\t\t// re-render when available\n\t\t\tthis.authorizationsStore.on('loaded', {\n\t\t\t\tsingle: true,\n\t\t\t\tcallback: function() {\n\t\t\t\t\n\t\t\t\t\t// re-render columns\n\t\t\t\t\tthis.doLayout(); // (is this working)\n\t\t\t\t\n\t\t\t\t\t// change flag\n\t\t\t\t\tthis.loadingAuthorizations = false;\n\t\t\t\t}\n\t\t\t});\n\t\t\n\t\t\treturn 'loading-icon';\n\t\t}\n\t}\n\n\t// return correct icon\n\treturn allowed ? 'edit-icon' : 'x-hide-display';\n}",
-                        "icon": "",
-                        "tooltip": "edit",
-                        "designer|userClassName": "MyActionColumnItem"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                },
-                {
-                    "id": "ExtBox1-ext-gen28111",
-                    "type": "actioncolumnitem",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "altText": "delete",
-                        "icon": "",
-                        "tooltip": "delete",
-                        "designer|userClassName": "MyActionColumnItem"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                }
-            ]
         }
     ]
 }

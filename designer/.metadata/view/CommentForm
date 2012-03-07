@@ -116,6 +116,7 @@
                                 "margin": null,
                                 "text": "submit",
                                 "designer|userClassName": "MyButton",
+                                "action": "submitComment",
                                 "layout|flex": null
                             },
                             "customConfigs": [],

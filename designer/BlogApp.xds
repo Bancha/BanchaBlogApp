@@ -30,10 +30,10 @@
         },
         "b546f619-60cc-442f-aae5-c0f933e1967b": {
             "paths": [
-                "js/app/view/ArticlesList.js",
-                "js/app/view/ui/ArticlesList.js"
+                "js/app/view/ArticleList.js",
+                "js/app/view/ui/ArticleList.js"
             ],
-            "className": "ArticlesList"
+            "className": "ArticleList"
         },
         "bbc13fdf-9ebb-4b29-9eac-aff66675899c": {
             "paths": [
@@ -102,22 +102,23 @@
             ],
             "className": "LoginWindow"
         },
-        "93ea076e-7b3b-4165-86d4-7cead306d76f": {
+        "8b3b577a-a2ce-4959-b077-396ccb45c57b": {
             "paths": [
-                "js/app/store/Authorizations.js",
-                "js/app/store/base/Authorizations.js"
+                "js/app/view/CommentsPanel.js",
+                "js/app/view/ui/CommentsPanel.js"
             ],
-            "className": "Authorizations"
+            "className": "CommentsPanel"
         },
-        "b98396c0-a261-4572-a839-095e717cd36d": {
+        "591a9c04-0e0a-4bc9-8679-78f1b38363d1": {
             "paths": [
-                "js/app/model/Authorization.js"
+                "js/app/view/ManageCommentsWindow.js",
+                "js/app/view/ui/ManageCommentsWindow.js"
             ],
-            "className": "Authorization"
+            "className": "ManageCommentsWindow"
         }
     },
     "expandedState": {
-        "data": true,
+        "data": false,
         "model": true,
         "component": true,
         "controller": true

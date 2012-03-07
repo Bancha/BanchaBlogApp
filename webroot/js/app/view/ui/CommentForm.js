@@ -60,7 +60,8 @@ Ext.define('BlogApp.view.ui.CommentForm', {
                                 {
                                     xtype: 'button',
                                     cls: 'comment-submit',
-                                    text: 'submit'
+                                    text: 'submit',
+                                    action: 'submitComment'
                                 }
                             ]
                         }

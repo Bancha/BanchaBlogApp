@@ -14,10 +14,10 @@
     "customConfigs": [],
     "designerId": "aa072d1e-c180-4283-9cba-f5e26adde0bb",
     "$viewOrder": 0,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
-            "id": "ExtBox1-ext-gen10722",
+            "id": "ExtBox1-ext-gen55152",
             "type": "linkedinstance",
             "reference": {
                 "name": "items",
@@ -26,7 +26,6 @@
             "codeClass": null,
             "userConfig": {
                 "layout|region": "west",
-                "layout|split": true,
                 "width": 226
             },
             "customConfigs": [],
@@ -51,7 +50,7 @@
                 "layout|region": "center"
             },
             "customConfigs": [],
-            "expanded": true,
+            "expanded": false,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen67942",
@@ -63,7 +62,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|region": "center",
-                        "height": 482,
+                        "height": 384,
                         "padding": 10,
                         "tpl": "{body}",
                         "width": 150
@@ -74,128 +73,22 @@
                     "masterInstanceId": "ExtBox1-ext-gen87307"
                 },
                 {
-                    "id": "ExtBox1-ext-gen88633",
-                    "type": "panel",
+                    "id": "ExtBox1-ext-gen61372",
+                    "type": "linkedinstance",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 200,
-                        "id": "",
-                        "maxHeight": 500,
-                        "autoScroll": true,
-                        "title": "Comments",
-                        "designer|userClassName": "MyPanel1",
                         "layout|region": "south",
-                        "layout|split": true
+                        "layout|split": true,
+                        "designer|userClassName": "CommentsPanel"
                     },
                     "customConfigs": [],
-                    "expanded": false,
-                    "cn": [
-                        {
-                            "id": "ExtBox1-ext-gen50677",
-                            "type": "linkedinstance",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "padding": 10,
-                                "designer|userClassName": "CommentsList"
-                            },
-                            "customConfigs": [],
-                            "iconCls": "icon-linkedinstance",
-                            "expanded": true,
-                            "masterInstanceId": "ExtBox1-ext-gen49722"
-                        },
-                        {
-                            "id": "ExtBox1-ext-gen61886",
-                            "type": "linkedinstance",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "CommentForm"
-                            },
-                            "customConfigs": [],
-                            "iconCls": "icon-linkedinstance",
-                            "expanded": true,
-                            "masterInstanceId": "ExtBox1-ext-gen89247"
-                        }
-                    ]
-                },
-                {
-                    "id": "ExtBox1-ext-gen7532",
-                    "type": "toolbar",
-                    "reference": {
-                        "name": "dockedItems",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "id": "",
-                        "ui": null,
-                        "width": 150,
-                        "designer|userClassName": "MyToolbar2",
-                        "layout|region": "west",
-                        "dock": "top"
-                    },
-                    "customConfigs": [],
+                    "iconCls": "icon-linkedinstance",
                     "expanded": true,
-                    "cn": [
-                        {
-                            "id": "ExtBox1-ext-gen8696",
-                            "type": "tbspacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MySpacer2",
-                                "layout|flex": 1
-                            },
-                            "customConfigs": [],
-                            "expanded": true
-                        },
-                        {
-                            "id": "ExtBox1-ext-gen7957",
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "text": "Edit",
-                                "designer|userClassName": "MyButton2",
-                                "layout|flex": null
-                            },
-                            "customConfigs": [],
-                            "expanded": true
-                        },
-                        {
-                            "id": "ExtBox1-ext-gen8320",
-                            "type": "button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "text": "Delete",
-                                "designer|userClassName": "MyButton3",
-                                "layout|flex": null
-                            },
-                            "customConfigs": [],
-                            "expanded": true
-                        }
-                    ]
+                    "masterInstanceId": "ExtBox1-ext-gen88633"
                 }
             ]
         }

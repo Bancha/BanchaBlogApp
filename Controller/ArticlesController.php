@@ -22,69 +22,6 @@ App::uses('AppController', 'Controller');
 class ArticlesController extends AppController {
 	
 	
-	/* this was used once to init all ACL AROs
-	function init() {
-	    $aro = new Aro();
-	    $aroObjs = array(
-        	0 => array(
-	            'alias' => 'admins'
-	        ),
-	        1 => array(
-	            'alias' => 'moderators'
-	        ),
-	        2 => array(
-	            'alias' => 'Users'
-	        ),
-	        3 => array(
-	            'alias' => 'Admin Roland',
-	            'parent_id' => 1,
-	            'model' => 'User',
-	            'foreign_key' => 2,
-	        ),
-	        4 => array(
-	            'alias' => 'Moderator Joe',
-	            'parent_id' => 2,
-	            'model' => 'User',
-	            'foreign_key' => 3,
-	        ),
-	        5 => array(
-	            'alias' => 'Normal User Martin',
-	            'parent_id' => 3,
-	            'model' => 'User',
-	            'foreign_key' => 1,
-	        ),
-	    );
-	    // Iterate and create AROs
-	    foreach ($aroObjs as $data) {
-	        $aro->create();
-	        $aro->save($data);
-	    }
-
-
-		$aco = new Aco();
-		$acoObjs = array(
-			0 => array(
-		        'alias' => 'Users'
-		    ),
-		    1 => array(
-		        'alias' => 'Articles'
-		    ),
-		    2 => array(
-		        'alias' => 'Comments'
-		    ),
-		);
-		// Iterate and create ACOs
-		foreach ($acoObjs as $data) {
-		    $aco->create();
-		    $aco->save($data);
-		}
-
-
-		exit('done');
-	}*/
-	
-	
-	
 /**
  * index method
  *

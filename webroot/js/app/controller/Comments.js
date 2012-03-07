@@ -22,12 +22,20 @@ Ext.define('BlogApp.controller.Comments', {
         {
             ref: 'commentForm',
             selector: 'commentform'
+        },
+        {
+            ref: 'commentsPanel',
+            selector: 'commentspanel'
+        },
+        {
+            ref: 'manageTool',
+            selector: 'commentspanel tool[type=gear]'
         }
     ],
 
     init: function() {
         this.control({
-            "commentform button": {
+            "commentform button[action=submitComment]": {
                 click: this.onCommentSubmit
             }
         });
@@ -36,8 +44,21 @@ Ext.define('BlogApp.controller.Comments', {
             articlechanged: {
                 fn: this.onArticleChanged,
                 scope: this
+            },
+            loggedin: {
+                fn: this.onLoggedIn,
+                scope: this
             }
         });
+    },
+
+    onLoggedIn: function(userRecord) {
+        /**
+        * Only show the manage button to admins and moderators
+        */
+        if(userRecord.get('role') === 'admin' || userRecord.get('role') === 'moderator') {
+            this.getManageTool().show();
+        }
     },
 
     onArticleChanged: function(record) {
@@ -71,7 +92,7 @@ Ext.define('BlogApp.controller.Comments', {
 
         this.getCommentsStore().add({
             'article_id': this.active_article.get('id'), // see Comments.onArticleChanged
-            'user_id'   : this.getController('Login').active_user.get('id'),
+            'user_id'   : this.getController('Authentification').active_user.get('id'),
             'comment'   : this.getCommentForm().getValues().comment
         });
 

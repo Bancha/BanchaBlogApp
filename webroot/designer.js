@@ -19,20 +19,21 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'Authorization'
+        
     ],
 
     stores: [
-        'Authorizations'
+        
     ],
 
     views: [
         'MyViewport',
-        'ArticlesList',
+        'ArticleList',
         'ArticleReader',
         'CommentsList',
         'CommentForm',
-        'LoginWindow'
+        'LoginWindow',
+        'CommentsPanel'
     ],
 
     appFolder: 'js/app',
