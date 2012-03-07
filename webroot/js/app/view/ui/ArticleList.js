@@ -45,12 +45,15 @@ Ext.define('BlogApp.view.ui.ArticleList', {
                     width: 70,
                     items: [
                         {
-                            altText: 'edit',
-                            icon: 'img/icons/edit.png',
-                            tooltip: 'edit'
-                        },
-                        {
                             altText: 'delete',
+                            handler: function(grid, rowIndex, colIndex) {
+                                var rec = grid.getStore().getAt(rowIndex);
+
+                                // this should normally be done by the controller, but Designer doesn't allow custom events as far as I can see
+                                grid.getStore().remove(rec);
+                                grid.getStore().sync();
+
+                            },
                             icon: 'img/icons/delete.png',
                             tooltip: 'delete'
                         }

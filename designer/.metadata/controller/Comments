@@ -16,7 +16,7 @@
     "customConfigs": [],
     "designerId": "952497b9-f0cd-4d4b-bf08-6e675f422772",
     "$viewOrder": 1,
-    "expanded": true,
+    "expanded": false,
     "cn": [
         {
             "id": "ExtBox1-ext-gen79740",
@@ -92,7 +92,36 @@
             "expanded": true
         },
         {
-            "id": "ExtBox1-ext-gen61017",
+            "id": "ExtBox1-ext-gen73002",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "manageWindow",
+                "selector": "managewindow",
+                "designer|userClassName": "manageWindow",
+                "autoCreate": "true",
+                "xtype": "managecommentswindows"
+            },
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "autoCreate",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "xtype",
+                    "type": "string"
+                }
+            ],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen74222",
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -126,6 +155,33 @@
                 "designer|userClassName": "onLoggedIn"
             },
             "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen72166",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onManageToolClick",
+                "implHandler": "// just show the manage window\na = this;\nthis.getManageWindow().show();",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "commentspanel tool[type=gear]",
+                "designer|userClassName": "onManageToolClick",
+                "autoCreate": null
+            },
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "autoCreate",
+                    "type": "string"
+                }
+            ],
             "expanded": true
         }
     ]

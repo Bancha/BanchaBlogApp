@@ -17,7 +17,7 @@
     "customConfigs": [],
     "designerId": "b546f619-60cc-442f-aae5-c0f933e1967b",
     "$viewOrder": 1,
-    "expanded": false,
+    "expanded": true,
     "cn": [
         {
             "id": "ExtBox1-ext-gen6799",
@@ -76,23 +76,6 @@
             "expanded": true,
             "cn": [
                 {
-                    "id": "ExtBox1-ext-gen27813",
-                    "type": "actioncolumnitem",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "altText": "edit",
-                        "icon": "img/icons/edit.png",
-                        "tooltip": "edit",
-                        "designer|userClassName": "MyActionColumnItem1"
-                    },
-                    "customConfigs": [],
-                    "expanded": true
-                },
-                {
                     "id": "ExtBox1-ext-gen27605",
                     "type": "actioncolumnitem",
                     "reference": {
@@ -102,6 +85,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "altText": "delete",
+                        "handler": "function(grid, rowIndex, colIndex) {\n    var rec = grid.getStore().getAt(rowIndex);\n    \n// this should normally be done by the controller, but Designer doesn't allow custom events as far as I can see\ngrid.getStore().remove(rec);\ngrid.getStore().sync();\n\n}",
                         "icon": "img/icons/delete.png",
                         "tooltip": "delete",
                         "designer|userClassName": "MyActionColumnItem"

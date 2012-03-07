@@ -90,6 +90,26 @@
             },
             "customConfigs": [],
             "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen78544",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLogoutClick",
+                "implHandler": "var loc = window.location.pathname;\nvar dir = loc.substring(0, loc.lastIndexOf('/'));\n\nwindow.location.href = dir+'users/logout';",
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "tool[action=logout]",
+                "designer|userClassName": "onLogoutClick"
+            },
+            "customConfigs": [],
+            "expanded": true
         }
     ]
 }

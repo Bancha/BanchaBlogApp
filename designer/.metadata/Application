@@ -15,7 +15,9 @@
             "ArticleReader",
             "CommentsList",
             "CommentForm",
-            "LoginWindow"
+            "LoginWindow",
+            "CommentsPanel",
+            "ManageCommentsWindow"
         ],
         "appFolder": "js/app",
         "autoCreateViewport": true,

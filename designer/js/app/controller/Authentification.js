@@ -33,6 +33,9 @@ Ext.define('BlogApp.controller.Authentification', {
         this.control({
             "loginwindow button[action=login]": {
                 click: this.onLogin
+            },
+            "tool[action=logout]": {
+                click: this.onLogoutClick
             }
         });
 
@@ -101,6 +104,13 @@ Ext.define('BlogApp.controller.Authentification', {
                 me.application.fireEvent('articlesloaded');
             }
         });
+    },
+
+    onLogoutClick: function(tool, e, options) {
+        var loc = window.location.pathname;
+        var dir = loc.substring(0, loc.lastIndexOf('/'));
+
+        window.location.href = dir+'users/logout';
     }
 
 });

@@ -50,7 +50,7 @@
                 "layout|region": "center"
             },
             "customConfigs": [],
-            "expanded": false,
+            "expanded": true,
             "cn": [
                 {
                     "id": "ExtBox1-ext-gen67942",
@@ -89,6 +89,29 @@
                     "iconCls": "icon-linkedinstance",
                     "expanded": true,
                     "masterInstanceId": "ExtBox1-ext-gen88633"
+                },
+                {
+                    "id": "ExtBox1-ext-gen77708",
+                    "type": "tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "tooltip": "logout",
+                        "type": "close",
+                        "designer|userClassName": "MyTool1",
+                        "action": "logout"
+                    },
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "action",
+                            "type": "string"
+                        }
+                    ],
+                    "expanded": true
                 }
             ]
         }

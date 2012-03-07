@@ -59,6 +59,14 @@ Ext.define('BlogApp.view.ui.MyViewport', {
                             region: 'south',
                             split: true
                         }
+                    ],
+                    tools: [
+                        {
+                            xtype: 'tool',
+                            tooltip: 'logout',
+                            type: 'close',
+                            action: 'logout'
+                        }
                     ]
                 }
             ]

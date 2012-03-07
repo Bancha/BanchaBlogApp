@@ -28,6 +28,12 @@ Ext.define('BlogApp.controller.Comments', {
             selector: 'commentspanel'
         },
         {
+            ref: 'manageWindow',
+            selector: 'managewindow',
+            autoCreate: 'true',
+            xtype: 'managecommentswindows'
+        },
+        {
             ref: 'manageTool',
             selector: 'commentspanel tool[type=gear]'
         }
@@ -37,6 +43,9 @@ Ext.define('BlogApp.controller.Comments', {
         this.control({
             "commentform button[action=submitComment]": {
                 click: this.onCommentSubmit
+            },
+            "commentspanel tool[type=gear]": {
+                click: this.onManageToolClick
             }
         });
 
@@ -99,6 +108,12 @@ Ext.define('BlogApp.controller.Comments', {
         this.getCommentsStore().sync(); // save to server
 
         this.getCommentForm().getForm().reset();
+    },
+
+    onManageToolClick: function(tool, e, options) {
+        // just show the manage window
+        a = this;
+        this.getManageWindow().show();
     }
 
 });

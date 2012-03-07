@@ -33,7 +33,8 @@ Ext.application({
         'CommentsList',
         'CommentForm',
         'LoginWindow',
-        'CommentsPanel'
+        'CommentsPanel',
+        'ManageCommentsWindow'
     ],
 
     appFolder: 'js/app',
