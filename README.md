@@ -3,10 +3,6 @@ Blog App - A Bancha Sample Project
 
 This project is show casing the usage of Bancha by creating a Blog Application. It will demonstrate how to use Bancha in the ExtJS MVC, and how to use Authentification and ACL.
 
-
-Futher development:
- - The User Management is a basic example, a full application should handle expired sessions, registration, etc.
-
 For more information about Bancha go to [banchaproject.org](http://banchaproject.org)
 
 How to setup the project:
@@ -24,11 +20,15 @@ Done.
 How to test the application:
 -------------------------
 You can login with three different levels:
-- admin:     username & password: roland
-- moderator: username & password: joe
-- user:      username & password: martin
+
+* admin:     username & password: roland
+* moderator: username & password: joe
+* user:      username & password: martin
 
 
+Futher development:
+-------------------------
+ - The User Management is a basic example, a full application should handle expired sessions, registration, etc.
 
 -------------------------
 
