@@ -1,7 +1,7 @@
 Blog App - A Bancha Sample Project
 ==================================
 
-This project is show casing the usage of Bancha by creating a Blog Application. It will demonstrate how to use Bancha in the ExtJS MVC, and how to use Authentification and ACL.
+This project is show casing the usage of Bancha together with Ext Designer by creating a Blog Application. It will demonstrate how to use Bancha in the ExtJS MVC, and how to use Authentification.
 
 For more information about Bancha go to [banchaproject.org](http://banchaproject.org)
 
