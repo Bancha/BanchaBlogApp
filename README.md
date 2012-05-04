@@ -1,6 +1,6 @@
 #########################################################
 
-The Projected worked with a non-final release of Sencha Architect, but has not yet been adopted to the new Sencha Architect!
+The Project had worked with a non-final release of Sencha Architect, but has not yet been adopted to the new Sencha Architect!
 =========
 
 #########################################################
