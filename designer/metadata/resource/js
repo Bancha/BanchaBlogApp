@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "url": "/bancha/js/Bancha.js"
+    },
+    "id": "ExtBox1-ext-gen8142",
+    "designerId": "b1c7066b-cb6a-4c25-9eb9-4e463fe8cc77"
+}

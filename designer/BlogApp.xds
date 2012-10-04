@@ -2,125 +2,200 @@
     "name": "BlogApp",
     "settings": {
         "urlPrefix": "",
-        "directAPI": "http://sampleproject.banchaproject.org/bancha-api.js",
         "spacesToIndent": 4,
+        "exportPath": "../webroot",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
         "codeGenFormat": "Class",
-        "exportPath": "/Users/roland/Documents/AptanaWorkspace/BanchaSampleProject/app/webroot",
-        "extPath": "http://extjs.cachefly.net/ext-4.0.2a/",
         "senchaIoKey": "",
         "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
-        "lineEnding": "LF",
         "instantiateStore": true,
-        "genTimestamps": false,
         "saveOnDeploy": false,
         "appName": "MyApp",
-        "mapsAPI": "http://maps.google.com/maps/api/js?sensor=true",
         "cssPath": ""
     },
-    "xdsVersion": "2.0.0",
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 640,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
     "framework": "ext40",
     "topInstanceFileMap": {
+        "93907ad8-a278-40b5-a417-cd1d172cd181": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
         "aa072d1e-c180-4283-9cba-f5e26adde0bb": {
             "paths": [
-                "js/app/view/MyViewport.js",
-                "js/app/view/ui/MyViewport.js",
-                "js/app/view/Viewport.js"
+                "metadata/view/MyViewport",
+                "app/view/override/MyViewport.js",
+                "app/view/MyViewport.js",
+                "app/view/Viewport.js"
             ],
             "className": "MyViewport"
         },
-        "b546f619-60cc-442f-aae5-c0f933e1967b": {
+        "591a9c04-0e0a-4bc9-8679-78f1b38363d1": {
             "paths": [
-                "js/app/view/ArticleList.js",
-                "js/app/view/ui/ArticleList.js"
+                "metadata/view/ManageCommentsWindow",
+                "app/view/override/ManageCommentsWindow.js",
+                "app/view/ManageCommentsWindow.js"
             ],
-            "className": "ArticleList"
-        },
-        "bbc13fdf-9ebb-4b29-9eac-aff66675899c": {
-            "paths": [
-                "js/app/store/Articles.js",
-                "js/app/store/base/Articles.js"
-            ],
-            "className": "Articles"
-        },
-        "fcc4597e-3fcb-4d90-b6d2-b204866b5d35": {
-            "paths": [
-                "js/app/store/Comments.js",
-                "js/app/store/base/Comments.js"
-            ],
-            "className": "Comments"
-        },
-        "605f1b49-1e8a-4555-b989-141da478d287": {
-            "paths": [
-                "js/app/controller/Articles.js"
-            ],
-            "className": "Articles"
-        },
-        "c4e4a2f6-2a3f-4210-980b-48a2fb439c37": {
-            "paths": [
-                "js/app/view/ArticleReader.js",
-                "js/app/view/ui/ArticleReader.js"
-            ],
-            "className": "ArticleReader"
-        },
-        "952497b9-f0cd-4d4b-bf08-6e675f422772": {
-            "paths": [
-                "js/app/controller/Comments.js"
-            ],
-            "className": "Comments"
-        },
-        "e036c70a-4959-46fd-82eb-dcf76120cd2a": {
-            "paths": [
-                "js/app/store/Users.js",
-                "js/app/store/base/Users.js"
-            ],
-            "className": "Users"
-        },
-        "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11": {
-            "paths": [
-                "js/app/view/CommentsList.js",
-                "js/app/view/ui/CommentsList.js"
-            ],
-            "className": "CommentsList"
-        },
-        "bde46fe1-286e-4915-9a8d-2c6da3934859": {
-            "paths": [
-                "js/app/view/CommentForm.js",
-                "js/app/view/ui/CommentForm.js"
-            ],
-            "className": "CommentForm"
-        },
-        "bd7c905b-5945-4966-9e89-6d97c6f82b3e": {
-            "paths": [
-                "js/app/controller/Authentification.js"
-            ],
-            "className": "Authentification"
+            "className": "ManageCommentsWindow"
         },
         "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6": {
             "paths": [
-                "js/app/view/LoginWindow.js",
-                "js/app/view/ui/LoginWindow.js"
+                "metadata/view/LoginWindow",
+                "app/view/override/LoginWindow.js",
+                "app/view/LoginWindow.js"
             ],
             "className": "LoginWindow"
         },
         "8b3b577a-a2ce-4959-b077-396ccb45c57b": {
             "paths": [
-                "js/app/view/CommentsPanel.js",
-                "js/app/view/ui/CommentsPanel.js"
+                "metadata/view/CommentsPanel",
+                "app/view/override/CommentsPanel.js",
+                "app/view/CommentsPanel.js"
             ],
             "className": "CommentsPanel"
         },
-        "591a9c04-0e0a-4bc9-8679-78f1b38363d1": {
+        "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11": {
             "paths": [
-                "js/app/view/ManageCommentsWindow.js",
-                "js/app/view/ui/ManageCommentsWindow.js"
+                "metadata/view/CommentsList",
+                "app/view/override/CommentsList.js",
+                "app/view/CommentsList.js"
             ],
-            "className": "ManageCommentsWindow"
+            "className": "CommentsList"
+        },
+        "bde46fe1-286e-4915-9a8d-2c6da3934859": {
+            "paths": [
+                "metadata/view/CommentForm",
+                "app/view/override/CommentForm.js",
+                "app/view/CommentForm.js"
+            ],
+            "className": "CommentForm"
+        },
+        "c4e4a2f6-2a3f-4210-980b-48a2fb439c37": {
+            "paths": [
+                "metadata/view/ArticleReader",
+                "app/view/override/ArticleReader.js",
+                "app/view/ArticleReader.js"
+            ],
+            "className": "ArticleReader"
+        },
+        "b546f619-60cc-442f-aae5-c0f933e1967b": {
+            "paths": [
+                "metadata/view/ArticleList",
+                "app/view/override/ArticleList.js",
+                "app/view/ArticleList.js"
+            ],
+            "className": "ArticleList"
+        },
+        "bbc13fdf-9ebb-4b29-9eac-aff66675899c": {
+            "paths": [
+                "metadata/store/Articles",
+                "app/store/override/Articles.js",
+                "app/store/Articles.js"
+            ],
+            "className": "Articles"
+        },
+        "fcc4597e-3fcb-4d90-b6d2-b204866b5d35": {
+            "paths": [
+                "metadata/store/Comments",
+                "app/store/override/Comments.js",
+                "app/store/Comments.js"
+            ],
+            "className": "Comments"
+        },
+        "e036c70a-4959-46fd-82eb-dcf76120cd2a": {
+            "paths": [
+                "metadata/store/Users",
+                "app/store/override/Users.js",
+                "app/store/Users.js"
+            ],
+            "className": "Users"
+        },
+        "605f1b49-1e8a-4555-b989-141da478d287": {
+            "paths": [
+                "metadata/controller/Articles",
+                "app/controller/override/Articles.js",
+                "app/controller/Articles.js"
+            ],
+            "className": "Articles"
+        },
+        "bd7c905b-5945-4966-9e89-6d97c6f82b3e": {
+            "paths": [
+                "metadata/controller/Authentification",
+                "app/controller/override/Authentification.js",
+                "app/controller/Authentification.js"
+            ],
+            "className": "Authentification"
+        },
+        "952497b9-f0cd-4d4b-bf08-6e675f422772": {
+            "paths": [
+                "metadata/controller/Comments",
+                "app/controller/override/Comments.js",
+                "app/controller/Comments.js"
+            ],
+            "className": "Comments"
+        },
+        "b1c7066b-cb6a-4c25-9eb9-4e463fe8cc77": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
+        },
+        "1ecc005c-3d7c-41e4-887a-f87e3be025a7": {
+            "paths": [
+                "metadata/resource/js1"
+            ],
+            "className": "js1"
+        },
+        "40bc445e-5215-4255-86be-592265051836": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "e3e7be34-51db-4aa2-808e-19e833067bb3": {
+            "paths": [
+                "metadata/resource/js2"
+            ],
+            "className": "js2"
         }
     },
-    "expandedState": {
-        "data": false,
-        "model": true,
-        "component": true,
-        "controller": true
+    "viewOrderMap": {
+        "view": [
+            "aa072d1e-c180-4283-9cba-f5e26adde0bb",
+            "591a9c04-0e0a-4bc9-8679-78f1b38363d1",
+            "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6",
+            "8b3b577a-a2ce-4959-b077-396ccb45c57b",
+            "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11",
+            "bde46fe1-286e-4915-9a8d-2c6da3934859",
+            "c4e4a2f6-2a3f-4210-980b-48a2fb439c37",
+            "b546f619-60cc-442f-aae5-c0f933e1967b"
+        ],
+        "store": [
+            "bbc13fdf-9ebb-4b29-9eac-aff66675899c",
+            "fcc4597e-3fcb-4d90-b6d2-b204866b5d35",
+            "e036c70a-4959-46fd-82eb-dcf76120cd2a"
+        ],
+        "controller": [
+            "605f1b49-1e8a-4555-b989-141da478d287",
+            "bd7c905b-5945-4966-9e89-6d97c6f82b3e",
+            "952497b9-f0cd-4d4b-bf08-6e675f422772"
+        ],
+        "model": [],
+        "resource": [
+            "93907ad8-a278-40b5-a417-cd1d172cd181",
+            "b1c7066b-cb6a-4c25-9eb9-4e463fe8cc77",
+            "e3e7be34-51db-4aa2-808e-19e833067bb3",
+            "1ecc005c-3d7c-41e4-887a-f87e3be025a7",
+            "40bc445e-5215-4255-86be-592265051836"
+        ],
+        "app": [
+            "application"
+        ]
     }
 }

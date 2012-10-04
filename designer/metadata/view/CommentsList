@@ -1,0 +1,94 @@
+{
+    "type": "dataview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CommentsList",
+        "designer|userAlias": "commentslist",
+        "html": [
+            "loading..."
+        ],
+        "emptyText": "There are no comments for this article, write the first:",
+        "itemSelector": "div",
+        "store": "Comments"
+    },
+    "id": "ExtBox1-ext-gen49722",
+    "designerId": "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11",
+    "cn": [
+        {
+            "type": "template",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "tpl",
+                "implHandler": [
+                    "<tpl for=\".\">",
+                    "    <div class=\"comment\">{comment}",
+                    "        <span class=\"comment-meta\">{[this.getAuthorName(values.user_id)]}{[this.getDate(values.created)]}</span>",
+                    "    </div>",
+                    "</tpl>"
+                ],
+                "designer|displayName": "tpl"
+            },
+            "designerId": "8f757dd3-1d77-4b5e-aca0-1eeb7abc28bb",
+            "cn": [
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "getAuthorName",
+                        "fn": "getAuthorName",
+                        "designer|params": [
+                            "id"
+                        ],
+                        "implHandler": [
+                            "// get the users store",
+                            "var store = Ext.StoreMgr.get('Users');",
+                            "",
+                            "// if the record doesn't exists",
+                            "if(!store || !store.getById(id)) {",
+                            "    return 'undefined';",
+                            "}",
+                            "",
+                            "// return the author's name",
+                            "return store.getById(id).get('name');"
+                        ]
+                    },
+                    "designerId": "1c78850b-83fe-49e1-b59b-c004ab4f58a4"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "getDate",
+                        "fn": "getDate",
+                        "designer|params": [
+                            "date"
+                        ],
+                        "implHandler": [
+                            "if(date) {",
+                            "     return ', '+Ext.Date.format(date, \"Y-m-d\");",
+                            "}",
+                            "return '';"
+                        ]
+                    },
+                    "designerId": "8b693238-421c-4e51-81ac-5c149123ebf1"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "type": "component",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ArticleReader",
+        "designer|userAlias": "articlereader",
+        "height": 150,
+        "id": null,
+        "styleHtmlContent": true
+    },
+    "id": "ExtBox1-ext-gen87307",
+    "designerId": "c4e4a2f6-2a3f-4210-980b-48a2fb439c37",
+    "cn": [
+        {
+            "type": "template",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "tpl",
+                "implHandler": [
+                    "<i>{[this.getDate(values.date)]}, by {[this.getAuthorName(values.user_id)]}</i>",
+                    "<p>",
+                    "    {body}",
+                    "</p>"
+                ],
+                "designer|displayName": "tpl"
+            },
+            "designerId": "782eb575-f559-4a85-9f5b-ffd49a1bec1d",
+            "cn": [
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "getDate",
+                        "fn": "getDate",
+                        "designer|params": [
+                            "date"
+                        ],
+                        "implHandler": [
+                            "if(date) {",
+                            "     return Ext.Date.format(date, \"Y-m-d\");",
+                            "}",
+                            "return '';"
+                        ]
+                    },
+                    "designerId": "a373c912-15be-4c4c-9538-4722903bb5ee"
+                },
+                {
+                    "type": "templatefunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "getAuthorName",
+                        "fn": "getAuthorName",
+                        "designer|params": [
+                            "id"
+                        ],
+                        "implHandler": [
+                            "// get the users store",
+                            "var store = Ext.StoreMgr.get('Users');",
+                            "",
+                            "// if the record doesn't exists",
+                            "if(!store || !store.getById(id)) {",
+                            "    return 'undefined';",
+                            "}",
+                            "",
+                            "// return the author's name",
+                            "return store.getById(id).get('name');"
+                        ]
+                    },
+                    "designerId": "a227b580-72b6-4b66-b5af-c452c380d810"
+                }
+            ]
+        }
+    ]
+}

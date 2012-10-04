@@ -1,0 +1,129 @@
+{
+    "type": "form",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CommentForm",
+        "designer|userAlias": "commentform",
+        "cls": "",
+        "bodyCls": "comments-form",
+        "bodyPadding": 10,
+        "frameHeader": false,
+        "title": null,
+        "api": [
+            "{ submit: Bancha.getStubsNamespace().Comment.submit}"
+        ]
+    },
+    "id": "ExtBox1-ext-gen89247",
+    "designerId": "bde46fe1-286e-4915-9a8d-2c6da3934859",
+    "cn": [
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet",
+                "title": "Add a comment"
+            },
+            "designerId": "47bafdee-1952-4889-a4d6-5b08f020b563",
+            "cn": [
+                {
+                    "type": "hiddenfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyHiddenField",
+                        "name": "article_id",
+                        "fieldLabel": ""
+                    },
+                    "designerId": "821e9afa-1338-42f5-98c3-6fe014c17837"
+                },
+                {
+                    "type": "textareafield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|userClassName": "MyTextArea",
+                        "name": "comment",
+                        "fieldLabel": "",
+                        "allowBlank": false
+                    },
+                    "designerId": "91fdcb03-f0d6-403e-a816-5acce639c4d9"
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyToolbar",
+                        "style": [
+                            "margin-bottom: 10px;",
+                            ""
+                        ],
+                        "ui": [
+                            "footer",
+                            ""
+                        ]
+                    },
+                    "designerId": "e7ed9a0a-f79c-4557-aa79-81ef725c6b52",
+                    "cn": [
+                        {
+                            "type": "tbspacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "designer|userClassName": "MySpacer"
+                            },
+                            "designerId": "c9fe28fd-8383-4640-ba96-0630ce8db4c9"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "action": "submitComment",
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton",
+                                "cls": "comment-submit",
+                                "margin": null,
+                                "text": "submit"
+                            },
+                            "designerId": "423870a4-8d0e-4308-9ecd-ce764cdef2c8",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "action",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

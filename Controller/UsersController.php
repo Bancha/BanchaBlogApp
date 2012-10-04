@@ -61,7 +61,17 @@ class UsersController extends AppController {
         	}
     	}
 	}
+	/**
+	 * @banchaRemotable
+	 */
 	public function logout() {
+		// Bancha requests return true when logged out
+		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) {
+	    	$this->Auth->logout();
+	    	return true; // tell bancha that everything worked
+	    }
+
+	    // normal requests are redirected
 	    $this->redirect($this->Auth->logout());
 	}
 

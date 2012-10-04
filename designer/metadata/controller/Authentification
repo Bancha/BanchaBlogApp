@@ -1,0 +1,201 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Authentification",
+        "stores": [
+            "Users"
+        ]
+    },
+    "id": "ExtBox1-ext-gen77338",
+    "designerId": "bd7c905b-5945-4966-9e89-6d97c6f82b3e",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLoginClick",
+                "fn": "onLoginClick",
+                "implHandler": [
+                    "// log the user in",
+                    "var me = this, // keep reference to controller and window through scope",
+                    "win = this.getLoginWindow(), ",
+                    "values = win.items.items[0].getForm().getValues();",
+                    "",
+                    "// mask while asking the server",
+                    "win.setLoading('logging in...');",
+                    "",
+                    "// login through the banchaRemotable method UsersController->login",
+                    "Bancha.getStub('User').login(values, function(result,response) {",
+                    "",
+                    "    if(result && result.success===true) {",
+                    "        // we are logged in, so hide login window",
+                    "        win.hide();",
+                    "",
+                    "        // tell application about login",
+                    "        var user = Ext.create('Bancha.model.User', result.data);",
+                    "        me.application.fireEvent('loggedin', user);",
+                    "",
+                    "        // error handling",
+                    "    } else if(result && result.success===false) {",
+                    "        Ext.Msg.alert('Login Failed!', 'Username and password don\\'t match!');",
+                    "    } else {",
+                    "        Ext.Msg.alert('Warning!', 'Authentication server is unreachable or returned with an error');",
+                    "    }",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "loginwindow button[action=login]"
+            },
+            "designerId": "dc50409d-a144-4df1-91f3-09c7761c69b0"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "viewport",
+                "designer|displayName": "Viewport",
+                "ref": "viewport",
+                "selector": "viewport"
+            },
+            "designerId": "728e36ab-7bca-4315-a6b7-37e4a85e186b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "loginWindow",
+                "ref": "loginWindow",
+                "selector": "loginwindow"
+            },
+            "designerId": "297f7972-6c28-47f8-be33-3c466d6ca3bd"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "loginForm",
+                "ref": "loginForm",
+                "selector": "loginwindow formpanel"
+            },
+            "designerId": "6c22024e-7bd4-4878-968c-94502271fb44"
+        },
+        {
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLoggedIn",
+                "fn": "onLoggedIn",
+                "designer|params": [
+                    "userRecord"
+                ],
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "// keep the record data",
+                    "this.active_user = userRecord;",
+                    "",
+                    "// now that we are logged in the stores can be loaded",
+                    "// (if you want a clean separation of concerns, just fire an application event 'logged in',",
+                    "// so each controller loads it's own stores)",
+                    "this.getUsersStore().load();",
+                    "this.getStore('Comments').load();",
+                    "this.getStore('Articles').load({",
+                    "    callback: function() {",
+                    "        // articles loaded tell everyone (see Articles controller onArticlesLoaded)",
+                    "        me.application.fireEvent('articlesloaded');",
+                    "    }",
+                    "});"
+                ],
+                "name": "loggedin",
+                "scope": "this"
+            },
+            "designerId": "9aac5947-4b3c-43d7-8326-6300013b1cac"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLogoutClick",
+                "fn": "onLogoutClick",
+                "implHandler": [
+                    "",
+                    "// mask for user",
+                    "this.getViewport().setLoading('Logging out...');",
+                    "",
+                    "// logout",
+                    "Bancha.getStub('User').logout(function() {",
+                    "    // user is logged out",
+                    "    window.location.reload();",
+                    "});"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "tool[action=logout]"
+            },
+            "designerId": "b16741de-5fdb-4ec9-a55f-12c64591408b"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "// ask server if already logged in",
+                    "Bancha.getStub('User').login({}, function(result,response) {",
+                    "    if(result && result.success) {",
+                    "        var user = Ext.create('Bancha.model.User', result.data);",
+                    "        me.application.fireEvent('loggedin', user);",
+                    "    } else {",
+                    "        // force user to log in",
+                    "        var win = Ext.create('BlogApp.view.LoginWindow', {});",
+                    "        win.show();",
+                    "    }",
+                    "});"
+                ]
+            },
+            "designerId": "5e6c915c-955f-4cbf-a076-79a4752c8d46"
+        }
+    ]
+}

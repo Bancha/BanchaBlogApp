@@ -1,0 +1,66 @@
+{
+    "type": "panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CommentsPanel",
+        "designer|userAlias": "commentspanel",
+        "height": 300,
+        "id": "",
+        "maxHeight": 500,
+        "autoScroll": true,
+        "title": "Comments"
+    },
+    "id": "ExtBox1-ext-gen88633",
+    "designerId": "8b3b577a-a2ce-4959-b077-396ccb45c57b",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "padding": 10
+            },
+            "designerId": "606ab03e-94d4-492e-a180-a8ab5749d903",
+            "masterInstanceId": "ExtBox1-ext-gen49722"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "6ade2de9-32ca-44b8-b282-b805e0a2828c",
+            "masterInstanceId": "ExtBox1-ext-gen89247"
+        },
+        {
+            "type": "tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": "true",
+                "designer|userClassName": "MyTool",
+                "tooltip": "Manage comments",
+                "type": "gear"
+            },
+            "designerId": "b8f9012b-3839-4b17-8127-f33818fc2e8d",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "hidden",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

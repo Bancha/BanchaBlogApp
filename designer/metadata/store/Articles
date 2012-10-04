@@ -1,0 +1,19 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Articles",
+        "uses": [
+            "BlogApp.store.override.Articles"
+        ],
+        "storeId": "Articles",
+        "model": null,
+        "pageSize": 200
+    },
+    "id": "ExtBox1-ext-gen23153",
+    "designerId": "bbc13fdf-9ebb-4b29-9eac-aff66675899c"
+}

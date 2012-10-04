@@ -1,0 +1,28 @@
+{
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "stores": [
+            "Articles",
+            "Comments",
+            "Users"
+        ],
+        "views": [
+            "MyViewport",
+            "LoginWindow"
+        ],
+        "autoCreateViewport": true,
+        "name": "BlogApp",
+        "controllers": [
+            "Articles",
+            "Authentification",
+            "Comments"
+        ]
+    },
+    "id": "ExtBox1-ext-gen1550",
+    "designerId": "application"
+}

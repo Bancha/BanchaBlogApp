@@ -1,0 +1,205 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Comments",
+        "stores": [
+            "Comments"
+        ]
+    },
+    "id": "ExtBox1-ext-gen79603",
+    "designerId": "952497b9-f0cd-4d4b-bf08-6e675f422772",
+    "cn": [
+        {
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onArticleChanged",
+                "fn": "onArticleChanged",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "        // refresh the comments",
+                    "        var store = this.getCommentsStore();",
+                    "",
+                    "        // get the corresponding articles comments",
+                    "        store.clearFilter();",
+                    "        store.filter('article_id',record.get('id'));",
+                    "        store.sort('created', 'ASC');",
+                    "",
+                    "",
+                    "        // allways keep a reference to the active article if, for committing comments",
+                    "        this.active_article = record;"
+                ],
+                "name": "articlechanged",
+                "scope": "this"
+            },
+            "designerId": "91ac8c9a-cc38-4921-94fa-4945a66633dd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onCommentSubmit",
+                "fn": "onCommentSubmit",
+                "implHandler": [
+                    "        /*",
+                    "        * if you just want to submit data to the server use this",
+                    "        * (the override for ext designer fo rthis doesn't yet work, it's really compley, see designer-overrrides.js)",
+                    "        */",
+                    "        //this.getCommentForm().submit();",
+                    "",
+                    "        /*",
+                    "        * but since we also want to have the data inside out store, ",
+                    "        * we directly add it to the store and use store.sync()",
+                    "        */",
+                    "        if(!this.getCommentForm().getForm().isValid()) {",
+                    "            return false;",
+                    "        }",
+                    "",
+                    "        this.getCommentsStore().add({",
+                    "            'article_id': this.active_article.get('id'), // see Comments.onArticleChanged",
+                    "            'user_id'   : this.getController('Authentification').active_user.get('id'),",
+                    "            'comment'   : this.getCommentForm().getValues().comment",
+                    "        });",
+                    "",
+                    "        this.getCommentsStore().sync(); // save to server",
+                    "",
+                    "        this.getCommentForm().getForm().reset();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "commentform button[action=submitComment]"
+            },
+            "designerId": "9592b856-5e3b-4c76-8ba7-cf53df26073b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "commentForm",
+                "ref": "commentForm",
+                "selector": "commentform"
+            },
+            "designerId": "4fd95e3d-55c5-4df6-93fe-9e1747352a97"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "commentsPanel",
+                "ref": "commentsPanel",
+                "selector": "commentspanel"
+            },
+            "designerId": "d6df3b1c-868a-4b2a-8869-95eee5c4eb47"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "manageWindow",
+                "autoCreate": true,
+                "ref": "manageWindow",
+                "selector": "managewindow",
+                "xtype": "managecommentswindows"
+            },
+            "designerId": "77020113-4687-4c3f-8768-31e864d326b8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "manageTool",
+                "ref": "manageTool",
+                "selector": "commentspanel tool[type=gear]"
+            },
+            "designerId": "5a529e04-d7ae-4ae9-8264-066a91bdb0ef"
+        },
+        {
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLoggedIn",
+                "fn": "onLoggedIn",
+                "designer|params": [
+                    "userRecord"
+                ],
+                "implHandler": [
+                    "/**",
+                    "* Only show the manage button to admins and moderators",
+                    "*/",
+                    "if(userRecord.get('role') === 'admin' || userRecord.get('role') === 'moderator') {",
+                    "    this.getManageTool().show();",
+                    "}"
+                ],
+                "name": "loggedin",
+                "scope": "this"
+            },
+            "designerId": "f018ac55-5635-44e5-b3bb-b95f7aac3084"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": null,
+                "designer|userClassName": "onManageToolClick",
+                "fn": "onManageToolClick",
+                "implHandler": [
+                    "// just show the manage window",
+                    "a = this;",
+                    "this.getManageWindow().show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "commentspanel tool[type=gear]"
+            },
+            "designerId": "b1230213-4562-4151-8498-37ca83cfa40f",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "autoCreate",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

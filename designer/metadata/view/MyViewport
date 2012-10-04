@@ -1,0 +1,102 @@
+{
+    "type": "viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyViewport",
+        "designer|initialView": true,
+        "layout": "border"
+    },
+    "id": "ExtBox1-ext-gen6466",
+    "designerId": "aa072d1e-c180-4283-9cba-f5e26adde0bb",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "width": 226,
+                "layout|region": "west"
+            },
+            "designerId": "b2d926aa-2bc1-4c2d-8116-3a4151bd6ce4",
+            "masterInstanceId": "ExtBox1-ext-gen6789"
+        },
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|region": "center",
+                "designer|userClassName": "MyPanel",
+                "id": null,
+                "itemId": "articlePanel",
+                "layout": "border",
+                "title": "Article Name"
+            },
+            "designerId": "a435c04d-6872-4875-9df8-75dee7289da8",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 384,
+                        "padding": 10,
+                        "width": 150,
+                        "layout|region": "center"
+                    },
+                    "designerId": "30322ef0-8f3c-419b-8cd4-d8023d83b272",
+                    "masterInstanceId": "ExtBox1-ext-gen87307"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|region": "south",
+                        "layout|split": true
+                    },
+                    "designerId": "a5bb9218-1ce8-4f65-85b9-6ae735ab7a7b",
+                    "masterInstanceId": "ExtBox1-ext-gen88633"
+                },
+                {
+                    "type": "tool",
+                    "reference": {
+                        "name": "tools",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "action": "logout",
+                        "designer|userClassName": "MyTool1",
+                        "tooltip": "logout",
+                        "type": "close"
+                    },
+                    "designerId": "5867f605-aeda-419a-81c1-f376bf58cac0",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "action",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

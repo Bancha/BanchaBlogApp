@@ -1,0 +1,136 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ManageCommentsWindow",
+        "designer|userAlias": "managecommentswindows",
+        "height": 500,
+        "width": 798,
+        "layout": "fit",
+        "title": "Manage Comments"
+    },
+    "id": "ExtBox1-ext-gen66504",
+    "designerId": "591a9c04-0e0a-4bc9-8679-78f1b38363d1",
+    "cn": [
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridPanel3",
+                "title": null,
+                "store": "Comments"
+            },
+            "designerId": "159ccbbe-b8e8-4f0e-a0a3-fdbc2cc2fb7d",
+            "cn": [
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn1",
+                        "width": 517,
+                        "dataIndex": "comment",
+                        "text": "comment"
+                    },
+                    "designerId": "6d0b621f-70e9-4f53-b87a-9198c85b9f11"
+                },
+                {
+                    "type": "datecolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyDateColumn1",
+                        "dataIndex": "created",
+                        "text": "Date"
+                    },
+                    "designerId": "9f00bba0-731b-4818-9177-cbfb52f7fd56"
+                },
+                {
+                    "type": "actioncolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyActionColumn2"
+                    },
+                    "designerId": "e7d636d5-38ad-49f0-a2f9-1b48072b44f3",
+                    "cn": [
+                        {
+                            "type": "actioncolumnitem",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyActionColumnItem2",
+                                "altText": "delete",
+                                "icon": "img/icons/delete.png",
+                                "tooltip": "delete"
+                            },
+                            "designerId": "a374f281-8f6b-46a5-be05-81293c564d08",
+                            "cn": [
+                                {
+                                    "type": "fixedfunction",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "handler",
+                                        "fn": "handler",
+                                        "designer|params": [
+                                            "view",
+                                            "rowIndex",
+                                            "colIndex",
+                                            "item",
+                                            "e"
+                                        ],
+                                        "implHandler": [
+                                            "var store = view.getStore(),",
+                                            "    rec = store.getAt(rowIndex);",
+                                            "",
+                                            "// this is normally a job for the controller, but to keep the example simple we do it here",
+                                            "store.remove(rec);",
+                                            "store.sync();"
+                                        ]
+                                    },
+                                    "designerId": "3304af68-b810-4724-ad0b-b7525bf2a0cc"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView1"
+                    },
+                    "designerId": "ad514e13-fe76-4672-a9cd-9eeaade60d7b"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,172 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Articles",
+        "designer|userAlias": "articles",
+        "stores": [
+            "Articles"
+        ]
+    },
+    "id": "ExtBox1-ext-gen32269",
+    "designerId": "605f1b49-1e8a-4555-b989-141da478d287",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onArticleListSelectionChange",
+                "fn": "onArticleListSelectionChange",
+                "implHandler": [
+                    "        // make an application wide event",
+                    "        this.application.fireEvent('articlechanged',selections[0]);"
+                ],
+                "name": "selectionchange",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "articleslist"
+            },
+            "designerId": "7d04c161-e9db-40f4-9a89-42e34a5fb3fd"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "articlesList",
+                "ref": "articlesList",
+                "selector": "articleslist"
+            },
+            "designerId": "a704efb6-748a-4ef6-9196-4bd2dfc91f49"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "articleReader",
+                "ref": "articleReader",
+                "selector": "articlereader"
+            },
+            "designerId": "a435a8b3-5ece-4f80-8c24-9e7481aae9d8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "articlePanel",
+                "ref": "articlePanel",
+                "selector": "#articlePanel"
+            },
+            "designerId": "47b70bb1-b1ae-4304-9a44-af9664a68b19"
+        },
+        {
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onArticleChanged",
+                "fn": "onArticleChanged",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "/**",
+                    "* refresh the single article view",
+                    "*/",
+                    "var me = this,",
+                    "    view = this.getArticleReader();",
+                    "",
+                    "A = view;",
+                    "// update the content",
+                    "view.tpl.overwrite(view.el, record.data);",
+                    "",
+                    "// update the title",
+                    "this.getArticlePanel().setTitle(record.get('title'));"
+                ],
+                "name": "articlechanged",
+                "scope": "this"
+            },
+            "designerId": "64cf8ec6-14c9-4a9e-911c-a23f7a7e8275"
+        },
+        {
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onArticlesLoaded",
+                "fn": "onArticlesLoaded",
+                "implHandler": [
+                    "        // as default select the first articles list element",
+                    "        var firstRecord = this.getStore('Articles').getAt(0);",
+                    "        this.getArticlesList().getSelectionModel().select(firstRecord);",
+                    "",
+                    "        // this other views will be informed by the triggered application event 'articlechanged';"
+                ],
+                "name": "articlesloaded",
+                "scope": "this"
+            },
+            "designerId": "2d90de8b-628a-4030-8aaa-476590d9732a"
+        },
+        {
+            "type": "applicationaction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLoggedin",
+                "fn": "onLoggedin",
+                "designer|params": [
+                    "userRecord"
+                ],
+                "implHandler": [
+                    "/**",
+                    "* Only show the article edit and delete to admins",
+                    "* ",
+                    "* Normally I would dynamically render the action items in for the admin view,",
+                    "* but since promoting the ActionColumn to a own class breaks it (Designer bug!?)",
+                    "* we just remove it for non-admins",
+                    "*/",
+                    "if(userRecord.get('role') === 'admin') {",
+                    "    return;",
+                    "}",
+                    "",
+                    "var grid = this.getArticlesList(),",
+                    "    headerCt = grid.headerCt,",
+                    "    column = headerCt.getComponent('adminactioncolumn');",
+                    "headerCt.remove(column);",
+                    "grid.getView().refresh();"
+                ],
+                "name": "loggedin",
+                "scope": "this"
+            },
+            "designerId": "42652ec7-e97b-45bf-8f5f-a2ff5c3c2ab8"
+        }
+    ]
+}

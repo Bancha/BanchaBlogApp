@@ -113,7 +113,6 @@ class CommentsController extends AppController {
 		
 		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->Comment->deleteAndReturn();
 		
-		
 		if ($this->Comment->delete()) {
 			$this->flash(__('Comment deleted'), array('action' => 'index'));
 		}
