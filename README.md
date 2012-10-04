@@ -3,6 +3,7 @@ Blog App - A Bancha Sample Project using Sencha Architect
 =========================================================
 
 This project is show casing the usage of Bancha together with Sencha Architect 2 by creating a Blog Application. It will demonstrate how to use Bancha in the ExtJS MVC, and how to use Authentification.
+The app can be seeon online here: http://blogapp.banchaproject.org/
 
 For more information about Bancha go to [banchaproject.org](http://banchaproject.org)
 
