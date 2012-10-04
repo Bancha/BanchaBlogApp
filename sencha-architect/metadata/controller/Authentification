@@ -47,8 +47,10 @@
                     "        // error handling",
                     "    } else if(result && result.success===false) {",
                     "        Ext.Msg.alert('Login Failed!', 'Username and password don\\'t match!');",
+                    "        win.setLoading(false);",
                     "    } else {",
                     "        Ext.Msg.alert('Warning!', 'Authentication server is unreachable or returned with an error');",
+                    "        win.setLoading(false);",
                     "    }",
                     "});"
                 ],

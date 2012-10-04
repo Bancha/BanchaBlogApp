@@ -28,17 +28,21 @@
                     "record"
                 ],
                 "implHandler": [
-                    "        // refresh the comments",
-                    "        var store = this.getCommentsStore();",
+                    "// refresh the comments",
+                    "var store = this.getCommentsStore();",
                     "",
-                    "        // get the corresponding articles comments",
-                    "        store.clearFilter();",
-                    "        store.filter('article_id',record.get('id'));",
-                    "        store.sort('created', 'ASC');",
+                    "// get the corresponding articles comments",
+                    "store.clearFilter(true); // Clear the filter collection without updating the UI",
+                    "store.filter({",
+                    "    property:'article_id',",
+                    "    exactMatch: true,",
+                    "    value: record.get('id')",
+                    "});",
+                    "store.sort('created', 'ASC');",
                     "",
                     "",
-                    "        // allways keep a reference to the active article if, for committing comments",
-                    "        this.active_article = record;"
+                    "// allways keep a reference to the active article if, for committing comments",
+                    "this.active_article = record;"
                 ],
                 "name": "articlechanged",
                 "scope": "this"

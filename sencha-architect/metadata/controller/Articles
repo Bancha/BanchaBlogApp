@@ -26,8 +26,8 @@
                 "designer|userClassName": "onArticleListSelectionChange",
                 "fn": "onArticleListSelectionChange",
                 "implHandler": [
-                    "        // make an application wide event",
-                    "        this.application.fireEvent('articlechanged',selections[0]);"
+                    "// make an application wide event",
+                    "this.application.fireEvent('articlechanged',selections[0]);"
                 ],
                 "name": "selectionchange",
                 "scope": "me",
@@ -98,7 +98,6 @@
                     "var me = this,",
                     "    view = this.getArticleReader();",
                     "",
-                    "A = view;",
                     "// update the content",
                     "view.tpl.overwrite(view.el, record.data);",
                     "",
@@ -140,8 +139,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLoggedin",
-                "fn": "onLoggedin",
+                "designer|userClassName": "onLoggedIn",
+                "fn": "onLoggedIn",
                 "designer|params": [
                     "userRecord"
                 ],

@@ -1,6 +1,6 @@
 {
     "expandedState": {
-        "data": false,
+        "data": true,
         "model": true,
         "component": true,
         "controller": true,
@@ -172,6 +172,7 @@
         },
         "b546f619-60cc-442f-aae5-c0f933e1967b": {
             "id": "b546f619-60cc-442f-aae5-c0f933e1967b",
+            "expanded": false,
             "cn": [
                 {
                     "id": "941e5b3e-f736-4005-975f-badfd60ff58f"

@@ -148,9 +148,9 @@
         },
         "1ecc005c-3d7c-41e4-887a-f87e3be025a7": {
             "paths": [
-                "metadata/resource/js1"
+                "metadata/resource/js2"
             ],
-            "className": "js1"
+            "className": "js2"
         },
         "40bc445e-5215-4255-86be-592265051836": {
             "paths": [
@@ -160,9 +160,9 @@
         },
         "e3e7be34-51db-4aa2-808e-19e833067bb3": {
             "paths": [
-                "metadata/resource/js2"
+                "metadata/resource/js1"
             ],
-            "className": "js2"
+            "className": "js1"
         }
     },
     "viewOrderMap": {

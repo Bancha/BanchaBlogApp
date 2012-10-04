@@ -18,7 +18,7 @@ Ext.define('BlogApp.view.LoginWindow', {
     alias: 'widget.loginwindow',
 
     height: 330,
-    width: 500,
+    width: 470,
     resizable: false,
     layout: {
         type: 'fit'
@@ -42,7 +42,7 @@ Ext.define('BlogApp.view.LoginWindow', {
                     items: [
                         {
                             xtype: 'component',
-                            html: '<h2>Hello to the Sencha Architect example.</h2>\n\n<p>\nThis example has three different authorization levels.<br>\nLog in with username and password "martin" to just read the \narticles and comments. Login as "joe" to also delete comments, \nand as "roland" you can delete the whole article additionally. \n<br/><br/><br/>\n\nI hope you like it, now please log in:<br/>',
+                            html: '<h2>Hello to the Sencha Architect example.</h2>\n\n<p>\nThis example has three different authorization levels.<br>\nLog in with username and password "martin" to just read the \narticles and comments. Login as "joe" to also delete comments, \nand as "roland" you can delete the whole article additionally. \n<br/><br/>\n\nAlso read more about <a href="http://banchaproject.org/using-sencha-architect-2.html" style="color: black;">\nhow to use Sencha Architect</a>. I hope you like it, now log in to play around:<br/>',
                             styleHtmlContent: true
                         },
                         {

@@ -9,7 +9,7 @@
         "designer|userClassName": "LoginWindow",
         "designer|userAlias": "loginwindow",
         "height": 330,
-        "width": 500,
+        "width": 470,
         "resizable": [
             "false"
         ],
@@ -60,9 +60,10 @@
                             "Log in with username and password \"martin\" to just read the ",
                             "articles and comments. Login as \"joe\" to also delete comments, ",
                             "and as \"roland\" you can delete the whole article additionally. ",
-                            "<br/><br/><br/>",
+                            "<br/><br/>",
                             "",
-                            "I hope you like it, now please log in:<br/>"
+                            "Also read more about <a href=\"http://banchaproject.org/using-sencha-architect-2.html\" style=\"color: black;\">",
+                            "how to use Sencha Architect</a>. I hope you like it, now log in to play around:<br/>"
                         ],
                         "styleHtmlContent": true
                     },

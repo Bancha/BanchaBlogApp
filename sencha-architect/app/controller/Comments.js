@@ -78,8 +78,12 @@ Ext.define('BlogApp.controller.Comments', {
         var store = this.getCommentsStore();
 
         // get the corresponding articles comments
-        store.clearFilter();
-        store.filter('article_id',record.get('id'));
+        store.clearFilter(true); // Clear the filter collection without updating the UI
+        store.filter({
+            property:'article_id',
+            exactMatch: true,
+            value: record.get('id')
+        });
         store.sort('created', 'ASC');
 
 

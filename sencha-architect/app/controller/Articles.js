@@ -48,7 +48,6 @@ Ext.define('BlogApp.controller.Articles', {
         var me = this,
             view = this.getArticleReader();
 
-        A = view;
         // update the content
         view.tpl.overwrite(view.el, record.data);
 
@@ -64,7 +63,7 @@ Ext.define('BlogApp.controller.Articles', {
         // this other views will be informed by the triggered application event 'articlechanged';
     },
 
-    onLoggedin: function(userRecord) {
+    onLoggedIn: function(userRecord) {
         /**
         * Only show the article edit and delete to admins
         * 
@@ -100,7 +99,7 @@ Ext.define('BlogApp.controller.Articles', {
                 scope: this
             },
             loggedin: {
-                fn: this.onLoggedin,
+                fn: this.onLoggedIn,
                 scope: this
             }
         });
