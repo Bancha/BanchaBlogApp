@@ -111,6 +111,14 @@ class CommentsController extends AppController {
 			throw new NotFoundException(__('Invalid comment'));
 		}
 		
+		/*
+		 * --------------------------------------------------------
+		 *
+		 * ADD HERE YOUR OWN LOGIC TO CHECK WHO CAN DELETE COMMENTS
+		 *
+		 * --------------------------------------------------------
+		 */
+
 		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->Comment->deleteAndReturn();
 		
 		if ($this->Comment->delete()) {

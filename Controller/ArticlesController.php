@@ -113,6 +113,14 @@ class ArticlesController extends AppController {
 			throw new NotFoundException(__('Invalid article'));
 		}
 		
+		/*
+		 * --------------------------------------------------------
+		 *
+		 * ADD HERE YOUR OWN LOGIC TO CHECK WHO CAN DELETE ARTICLES
+		 *
+		 * --------------------------------------------------------
+		 */
+
 		if(isset($this->request->params['isBancha']) && $this->request->params['isBancha']) return $this->Article->deleteAndReturn();
 		
 		
