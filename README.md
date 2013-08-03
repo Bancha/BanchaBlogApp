@@ -9,7 +9,8 @@ How to setup the project
 ------------------------
 1. Download [CakePHP](http://www.cakephp.org) latest (tested with 2.3.8)
 1. Download this project inside _/app_
-1. Configure your _app/Config/database.php_, then add the tables from _app/Config/schema/test-database.sql_ to your database
+1. Configure your _app/Config/database.php_
+1. Add the tables from _app/Config/schema/test-database.sql_ to your database
 1. Open _/bancha/setup-check.html_ to see if everything works.
 
 
@@ -26,6 +27,7 @@ You can login with three different authorization levels, use the name both for u
 Futher development
 ------------------
 The User Management is a basic example, a full application should handle expired sessions, registration, etc.
+
 
 -------------------------
 
