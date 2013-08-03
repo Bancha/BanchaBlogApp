@@ -1,68 +1,75 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "border": null,
         "designer|userClassName": "ArticleList",
         "designer|userAlias": "articleslist",
-        "title": "Articles",
+        "bodyBorder": null,
+        "frameHeader": null,
+        "title": "Article List",
+        "columnLines": true,
+        "enableColumnHide": false,
+        "enableColumnMove": false,
         "forceFit": true,
-        "store": "Articles",
-        "columnLines": true
+        "store": "Articles"
     },
-    "id": "ExtBox1-ext-gen6789",
     "designerId": "b546f619-60cc-442f-aae5-c0f933e1967b",
     "cn": [
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn",
                 "width": null,
                 "defaultWidth": null,
                 "dataIndex": "title",
-                "flex": 1,
-                "text": "Name"
+                "hideable": null,
+                "menuDisabled": true,
+                "text": "Name",
+                "flex": 1
             },
             "designerId": "941e5b3e-f736-4005-975f-badfd60ff58f"
         },
         {
-            "type": "datecolumn",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDateColumn",
-                "width": 60,
+                "width": 90,
                 "defaultWidth": null,
                 "dataIndex": "date",
-                "flex": null,
+                "hideable": null,
+                "menuDisabled": true,
                 "text": "Created",
+                "flex": null,
                 "format": "Y-m-d"
             },
             "designerId": "9d2f38a7-1365-49d4-950f-c8c1caf5e77d"
         },
         {
-            "type": "actioncolumn",
+            "type": "Ext.grid.column.Action",
             "reference": {
                 "name": "columns",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "AdminActions",
-                "designer|userAlias": "adminactions",
                 "id": "adminactioncolumn",
-                "width": 40
+                "width": 27,
+                "designer|displayName": "Actions",
+                "hideable": false,
+                "menuDisabled": true
             },
             "designerId": "eabf6e34-1192-4c96-86b8-71a0537741fa",
             "cn": [
@@ -74,7 +81,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyActionColumnItem",
+                        "designer|displayName": "Delete",
                         "altText": "delete",
                         "icon": "img/icons/delete.png",
                         "tooltip": "delete"
@@ -89,7 +96,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "view",
@@ -100,11 +106,20 @@
                                 ],
                                 "implHandler": [
                                     "var store = view.getStore(),",
-                                    "    rec = store.getAt(rowIndex);",
+                                    "    rec = store.getAt(rowIndex),",
+                                    "    title = rec.get('title'); // for callback",
                                     "",
-                                    "// this is normally a job for the controller, but to keep the example simple we do it here",
+                                    "// this is normally a job for the controller, but to keep the example simple",
+                                    "// we do it here",
                                     "store.remove(rec);",
-                                    "store.sync();"
+                                    "store.sync({",
+                                    "    success: function(batch, options) {",
+                                    "        Ext.Msg.alert('Deleted', 'Deleted '+title);",
+                                    "    },",
+                                    "    failure: function(batch, options) {",
+                                    "        Ext.Msg.alert('Delete Error', 'Could not delete '+title);",
+                                    "    }",
+                                    "});"
                                 ]
                             },
                             "designerId": "969ea0f3-a209-49c2-90e7-b92ea33b89a8"
@@ -114,14 +129,13 @@
             ]
         },
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyGridView",
                 "width": 100
             },
             "designerId": "7f49127a-f302-4244-b834-73faaf9d6a6a"

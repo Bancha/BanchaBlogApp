@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,12 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "Articles",
-        "designer|userAlias": "articles",
-        "stores": [
-            "Articles"
-        ]
+        "designer|userAlias": "articles"
     },
-    "id": "ExtBox1-ext-gen32269",
     "designerId": "605f1b49-1e8a-4555-b989-141da478d287",
     "cn": [
         {
@@ -23,11 +19,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onArticleListSelectionChange",
                 "fn": "onArticleListSelectionChange",
                 "implHandler": [
                     "// make an application wide event",
-                    "this.application.fireEvent('articlechanged',selections[0]);"
+                    "this.application.fireEvent('articlechanged',selected[0]);"
                 ],
                 "name": "selectionchange",
                 "scope": "me",
@@ -44,7 +39,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "articlesList",
                 "ref": "articlesList",
                 "selector": "articleslist"
             },
@@ -58,7 +52,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "articleReader",
                 "ref": "articleReader",
                 "selector": "articlereader"
             },
@@ -72,7 +65,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "articlePanel",
                 "ref": "articlePanel",
                 "selector": "#articlePanel"
             },
@@ -86,7 +78,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onArticleChanged",
                 "fn": "onArticleChanged",
                 "designer|params": [
                     "record"
@@ -117,14 +108,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onArticlesLoaded",
                 "fn": "onArticlesLoaded",
                 "implHandler": [
-                    "        // as default select the first articles list element",
-                    "        var firstRecord = this.getStore('Articles').getAt(0);",
-                    "        this.getArticlesList().getSelectionModel().select(firstRecord);",
+                    "// as default select the first articles list element",
+                    "var firstRecord = this.getStore('Articles').getAt(0);",
+                    "this.getArticlesList().getSelectionModel().select(firstRecord);",
                     "",
-                    "        // this other views will be informed by the triggered application event 'articlechanged';"
+                    "// this other views will be informed by the triggered application event 'articlechanged';"
                 ],
                 "name": "articlesloaded",
                 "scope": "this"
@@ -139,7 +129,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLoggedIn",
                 "fn": "onLoggedIn",
                 "designer|params": [
                     "userRecord"

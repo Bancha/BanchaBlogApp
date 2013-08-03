@@ -1,0 +1,23 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bancha": true,
+        "designer|userClassName": "User"
+    },
+    "configAlternates": {
+        "bancha": "boolean"
+    },
+    "designerId": "5658ed76-2304-4361-9297-4c9f4fc8a60d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "bancha",
+            "type": "string"
+        }
+    ]
+}

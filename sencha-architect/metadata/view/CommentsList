@@ -1,32 +1,28 @@
 {
-    "type": "dataview",
+    "type": "Ext.view.View",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "html": null,
         "designer|userClassName": "CommentsList",
         "designer|userAlias": "commentslist",
-        "html": [
-            "loading..."
-        ],
-        "emptyText": "There are no comments for this article, write the first:",
+        "emptyText": "<br /><i>There are no comments for this article, write the first:</i>",
         "itemSelector": "div",
         "store": "Comments"
     },
-    "id": "ExtBox1-ext-gen49722",
     "designerId": "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11",
     "cn": [
         {
-            "type": "template",
+            "type": "Ext.XTemplate",
             "reference": {
                 "name": "tpl",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "tpl",
                 "implHandler": [
                     "<tpl for=\".\">",
                     "    <div class=\"comment\">{comment}",
@@ -46,7 +42,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "getAuthorName",
                         "fn": "getAuthorName",
                         "designer|params": [
                             "id"
@@ -74,7 +69,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "getDate",
                         "fn": "getDate",
                         "designer|params": [
                             "date"

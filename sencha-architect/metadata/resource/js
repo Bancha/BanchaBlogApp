@@ -6,8 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "url": "/bancha/js/Bancha.js"
+        "designer|userClassName": "js",
+        "url": "/Bancha/js/ScriptTagInitializer.js",
+        "id": "Bancha"
     },
-    "id": "ExtBox1-ext-gen8142",
-    "designerId": "b1c7066b-cb6a-4c25-9eb9-4e463fe8cc77"
+    "designerId": "b1a5e540-cd9a-4ee3-950f-5769dfe0946b"
 }

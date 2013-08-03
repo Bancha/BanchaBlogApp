@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "css",
         "url": "css/blog-app.css"
     },
-    "id": "ExtBox1-ext-gen19856",
     "designerId": "40bc445e-5215-4255-86be-592265051836"
 }

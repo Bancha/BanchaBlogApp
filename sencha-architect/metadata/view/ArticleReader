@@ -1,29 +1,28 @@
 {
-    "type": "component",
+    "type": "Ext.Component",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "ArticleReader",
-        "designer|userAlias": "articlereader",
+        "frame": null,
         "height": 150,
         "id": null,
-        "styleHtmlContent": true
+        "ui": null,
+        "designer|userClassName": "ArticleReader",
+        "designer|userAlias": "articlereader"
     },
-    "id": "ExtBox1-ext-gen87307",
     "designerId": "c4e4a2f6-2a3f-4210-980b-48a2fb439c37",
     "cn": [
         {
-            "type": "template",
+            "type": "Ext.XTemplate",
             "reference": {
                 "name": "tpl",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "tpl",
                 "implHandler": [
                     "<i>{[this.getDate(values.date)]}, by {[this.getAuthorName(values.user_id)]}</i>",
                     "<p>",
@@ -42,7 +41,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "getDate",
                         "fn": "getDate",
                         "designer|params": [
                             "date"
@@ -64,7 +62,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "getAuthorName",
                         "fn": "getAuthorName",
                         "designer|params": [
                             "id"

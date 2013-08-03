@@ -1,15 +1,15 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "height": 342,
+        "width": 530,
         "designer|userClassName": "LoginWindow",
         "designer|userAlias": "loginwindow",
-        "height": 330,
-        "width": 470,
         "resizable": [
             "false"
         ],
@@ -18,11 +18,10 @@
         "title": "Login",
         "modal": true
     },
-    "id": "ExtBox1-ext-gen77574",
     "designerId": "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -30,47 +29,45 @@
             "codeClass": null,
             "userConfig": {
                 "dock": null,
-                "designer|userClassName": "MyForm2",
                 "designer|displayName": "Form",
-                "ui": null,
-                "bodyPadding": 30,
+                "bodyPadding": "20 30 0 30",
                 "frameHeader": false,
                 "title": "",
-                "paramOrder": null,
                 "paramsAsHash": true,
                 "waitTitle": "Logging in..."
             },
             "designerId": "a586174e-ee48-4641-a390-3d6863ffeed0",
             "cn": [
                 {
-                    "type": "component",
+                    "type": "Ext.Component",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyComponent2",
-                        "designer|displayName": "Description",
                         "html": [
-                            "<h2>Hello to the Sencha Architect example.</h2>",
-                            "",
-                            "<p>",
-                            "This example has three different authorization levels.<br>",
-                            "Log in with username and password \"martin\" to just read the ",
-                            "articles and comments. Login as \"joe\" to also delete comments, ",
-                            "and as \"roland\" you can delete the whole article additionally. ",
-                            "<br/><br/>",
-                            "",
-                            "Also read more about <a href=\"http://banchaproject.org/using-sencha-architect-2.html\" style=\"color: black;\">",
-                            "how to use Sencha Architect</a>. I hope you like it, now log in to play around:<br/>"
+                            "[",
+                            "    '<h2>Hello to the Sencha Architect example.</h2>',",
+                            "\t'<p>',",
+                            "    'This example has three different authorization levels.',",
+                            "    '<br>',",
+                            "    'Log in with username and password \"martin\" to just read the ',",
+                            "    'articles and comments. Login as \"joe\" to also delete comments, ',",
+                            "    'and as \"roland\" you can delete the whole article additionally. ',",
+                            "    '<br/><br/>',",
+                            "    'Also read more about ',",
+                            "    '<a href=\"http://banchaproject.org/using-sencha-architect-2.html\" style=\"color: black;\">',",
+                            "    'how to use Sencha Architect</a>. I hope you like it, now log in to play around:',",
+                            "    '</p>'",
+                            "]"
                         ],
-                        "styleHtmlContent": true
+                        "designer|displayName": "Description"
                     },
                     "designerId": "97f3964d-6f56-4158-b94f-599e0b8e8175"
                 },
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -78,15 +75,15 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField",
-                        "name": "username",
                         "fieldLabel": "Username",
-                        "allowBlank": false
+                        "name": "username",
+                        "allowBlank": false,
+                        "enableKeyEvents": true
                     },
                     "designerId": "6b61f9a1-271b-4c20-87ac-fac06c91af29"
                 },
                 {
-                    "type": "textfield",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -94,16 +91,16 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|anchor": "100%",
-                        "designer|userClassName": "MyTextField1",
-                        "inputType": "password",
-                        "name": "password",
                         "fieldLabel": "Password",
-                        "allowBlank": false
+                        "name": "password",
+                        "inputType": "password",
+                        "allowBlank": false,
+                        "enableKeyEvents": true
                     },
                     "designerId": "8f4cc487-8fef-4d9b-a28a-1689f61e5db7"
                 },
                 {
-                    "type": "toolbar",
+                    "type": "Ext.toolbar.Toolbar",
                     "reference": {
                         "name": "dockedItems",
                         "type": "array"
@@ -111,28 +108,26 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": "bottom",
-                        "designer|userClassName": "MyToolbar1",
-                        "ui": [
-                            "footer"
-                        ]
+                        "container|padding": "0 20 20 0",
+                        "ui": null,
+                        "designer|displayName": "Login Toolbar"
                     },
                     "designerId": "805a07d7-873c-4256-a0fe-ee0bcc7a8f53",
                     "cn": [
                         {
-                            "type": "tbspacer",
+                            "type": "Ext.toolbar.Spacer",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1,
-                                "designer|userClassName": "MySpacer1"
+                                "layout|flex": 1
                             },
                             "designerId": "625561da-5ca1-45ad-8df9-7088e0d323eb"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -141,7 +136,7 @@
                             "userConfig": {
                                 "action": "login",
                                 "layout|flex": null,
-                                "designer|userClassName": "MyButton1",
+                                "padding": "2 10 2 10",
                                 "text": "login"
                             },
                             "designerId": "f1f54480-33a7-4b4d-b86b-0be11345107e",

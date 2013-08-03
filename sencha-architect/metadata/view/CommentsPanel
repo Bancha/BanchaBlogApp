@@ -1,20 +1,19 @@
 {
-    "type": "panel",
+    "type": "Ext.panel.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "height": null,
+        "id": null,
+        "maxHeight": null,
         "designer|userClassName": "CommentsPanel",
         "designer|userAlias": "commentspanel",
-        "height": 300,
-        "id": "",
-        "maxHeight": 500,
         "autoScroll": true,
         "title": "Comments"
     },
-    "id": "ExtBox1-ext-gen88633",
     "designerId": "8b3b577a-a2ce-4959-b077-396ccb45c57b",
     "cn": [
         {
@@ -28,7 +27,7 @@
                 "padding": 10
             },
             "designerId": "606ab03e-94d4-492e-a180-a8ab5749d903",
-            "masterInstanceId": "ExtBox1-ext-gen49722"
+            "masterInstanceId": "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11"
         },
         {
             "type": "linkedinstance",
@@ -38,18 +37,18 @@
             },
             "codeClass": null,
             "designerId": "6ade2de9-32ca-44b8-b282-b805e0a2828c",
-            "masterInstanceId": "ExtBox1-ext-gen89247"
+            "masterInstanceId": "bde46fe1-286e-4915-9a8d-2c6da3934859"
         },
         {
-            "type": "tool",
+            "type": "Ext.panel.Tool",
             "reference": {
                 "name": "tools",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "hidden": "true",
-                "designer|userClassName": "MyTool",
+                "hidden": null,
+                "designer|displayName": "Manage Comment Tool",
                 "tooltip": "Manage comments",
                 "type": "gear"
             },

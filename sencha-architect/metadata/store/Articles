@@ -1,19 +1,16 @@
 {
-    "type": "store",
+    "type": "Ext.data.Store",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "autoSync": null,
+        "model": "Article",
+        "storeId": "MyStore",
         "designer|userClassName": "Articles",
-        "uses": [
-            "BlogApp.store.override.Articles"
-        ],
-        "storeId": "Articles",
-        "model": null,
-        "pageSize": 200
+        "pageSize": 5000
     },
-    "id": "ExtBox1-ext-gen23153",
-    "designerId": "bbc13fdf-9ebb-4b29-9eac-aff66675899c"
+    "designerId": "4b702e2b-55aa-48bb-9ada-ef0ce834d434"
 }

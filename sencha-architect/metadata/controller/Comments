@@ -1,17 +1,19 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Comments",
         "stores": [
             "Comments"
-        ]
+        ],
+        "views": [
+            "ManageCommentsWindow"
+        ],
+        "designer|userClassName": "Comments"
     },
-    "id": "ExtBox1-ext-gen79603",
     "designerId": "952497b9-f0cd-4d4b-bf08-6e675f422772",
     "cn": [
         {
@@ -22,7 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onArticleChanged",
                 "fn": "onArticleChanged",
                 "designer|params": [
                     "record"
@@ -57,32 +58,35 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onCommentSubmit",
                 "fn": "onCommentSubmit",
                 "implHandler": [
-                    "        /*",
-                    "        * if you just want to submit data to the server use this",
-                    "        * (the override for ext designer fo rthis doesn't yet work, it's really compley, see designer-overrrides.js)",
-                    "        */",
-                    "        //this.getCommentForm().submit();",
+                    "/*",
+                    "* if you just want to submit data to the server use this",
+                    "* (the override for ext designer fo rthis doesn't yet work, it's really compley, see designer-overrrides.js)",
+                    "*/",
+                    "//this.getCommentForm().submit();",
                     "",
-                    "        /*",
-                    "        * but since we also want to have the data inside out store, ",
-                    "        * we directly add it to the store and use store.sync()",
-                    "        */",
-                    "        if(!this.getCommentForm().getForm().isValid()) {",
-                    "            return false;",
-                    "        }",
+                    "/*",
+                    "* but since we also want to have the data inside our store, ",
+                    "* we directly add it to the store and use store.sync()",
+                    "*/",
+                    "var commentText = this.getCommentForm().getValues().comment;",
+                    "if(!commentText || commentText.length===0) {",
+                    "    return false;",
+                    "}",
                     "",
-                    "        this.getCommentsStore().add({",
-                    "            'article_id': this.active_article.get('id'), // see Comments.onArticleChanged",
-                    "            'user_id'   : this.getController('Authentification').active_user.get('id'),",
-                    "            'comment'   : this.getCommentForm().getValues().comment",
-                    "        });",
+                    "this.getCommentsStore().add({",
+                    "    'article_id': this.active_article.get('id'), // see Comments.onArticleChanged",
+                    "    'user_id'   : this.getController('Authentification').active_user.get('id'),",
+                    "    'comment'   : commentText",
+                    "});",
                     "",
-                    "        this.getCommentsStore().sync(); // save to server",
+                    "// now you would normally save to server",
+                    "// this.getCommentsStore().sync();",
+                    "// But we don't need this because we use the autoSync mode",
                     "",
-                    "        this.getCommentForm().getForm().reset();"
+                    "// reset form",
+                    "this.getCommentForm().getForm().reset();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -99,7 +103,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "commentForm",
                 "ref": "commentForm",
                 "selector": "commentform"
             },
@@ -113,7 +116,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "commentsPanel",
                 "ref": "commentsPanel",
                 "selector": "commentspanel"
             },
@@ -127,7 +129,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "manageWindow",
                 "autoCreate": true,
                 "ref": "manageWindow",
                 "selector": "managewindow",
@@ -143,7 +144,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "manageTool",
                 "ref": "manageTool",
                 "selector": "commentspanel tool[type=gear]"
             },
@@ -157,7 +157,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLoggedIn",
                 "fn": "onLoggedIn",
                 "designer|params": [
                     "userRecord"
@@ -166,8 +165,8 @@
                     "/**",
                     "* Only show the manage button to admins and moderators",
                     "*/",
-                    "if(userRecord.get('role') === 'admin' || userRecord.get('role') === 'moderator') {",
-                    "    this.getManageTool().show();",
+                    "if(userRecord.get('role') !== 'admin' && userRecord.get('role') !== 'moderator') {",
+                    "    this.getManageTool().hide();",
                     "}"
                 ],
                 "name": "loggedin",
@@ -184,11 +183,9 @@
             "codeClass": null,
             "userConfig": {
                 "autoCreate": null,
-                "designer|userClassName": "onManageToolClick",
                 "fn": "onManageToolClick",
                 "implHandler": [
                     "// just show the manage window",
-                    "a = this;",
                     "this.getManageWindow().show();"
                 ],
                 "name": "click",

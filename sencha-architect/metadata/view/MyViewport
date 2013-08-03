@@ -1,5 +1,5 @@
 {
-    "type": "viewport",
+    "type": "Ext.container.Viewport",
     "reference": {
         "name": "items",
         "type": "array"
@@ -10,7 +10,6 @@
         "designer|initialView": true,
         "layout": "border"
     },
-    "id": "ExtBox1-ext-gen6466",
     "designerId": "aa072d1e-c180-4283-9cba-f5e26adde0bb",
     "cn": [
         {
@@ -21,14 +20,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "width": 226,
-                "layout|region": "west"
+                "frame": null,
+                "width": 250,
+                "layout|region": "west",
+                "layout|split": true
             },
             "designerId": "b2d926aa-2bc1-4c2d-8116-3a4151bd6ce4",
-            "masterInstanceId": "ExtBox1-ext-gen6789"
+            "masterInstanceId": "b546f619-60cc-442f-aae5-c0f933e1967b"
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -36,10 +37,12 @@
             "codeClass": null,
             "userConfig": {
                 "layout|region": "center",
-                "designer|userClassName": "MyPanel",
+                "layout|split": null,
+                "container|align": "stretch",
+                "frame": null,
                 "id": null,
                 "itemId": "articlePanel",
-                "layout": "border",
+                "layout": "vbox",
                 "title": "Article Name"
             },
             "designerId": "a435c04d-6872-4875-9df8-75dee7289da8",
@@ -52,13 +55,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "height": 384,
+                        "height": null,
                         "padding": 10,
-                        "width": 150,
-                        "layout|region": "center"
+                        "style": [
+                            "{ background: 'white'}"
+                        ],
+                        "ui": null,
+                        "width": null,
+                        "layout|flex": 1
                     },
                     "designerId": "30322ef0-8f3c-419b-8cd4-d8023d83b272",
-                    "masterInstanceId": "ExtBox1-ext-gen87307"
+                    "masterInstanceId": "c4e4a2f6-2a3f-4210-980b-48a2fb439c37"
                 },
                 {
                     "type": "linkedinstance",
@@ -68,14 +75,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|region": "south",
-                        "layout|split": true
+                        "frame": null,
+                        "frameHeader": null,
+                        "layout|flex": 1
                     },
                     "designerId": "a5bb9218-1ce8-4f65-85b9-6ae735ab7a7b",
-                    "masterInstanceId": "ExtBox1-ext-gen88633"
+                    "masterInstanceId": "8b3b577a-a2ce-4959-b077-396ccb45c57b"
                 },
                 {
-                    "type": "tool",
+                    "type": "Ext.panel.Tool",
                     "reference": {
                         "name": "tools",
                         "type": "array"
@@ -83,9 +91,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "action": "logout",
-                        "designer|userClassName": "MyTool1",
                         "tooltip": "logout",
-                        "type": "close"
+                        "type": "minus"
                     },
                     "designerId": "5867f605-aeda-419a-81c1-f376bf58cac0",
                     "customConfigs": [

@@ -1,0 +1,23 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bancha": true,
+        "designer|userClassName": "Comment"
+    },
+    "configAlternates": {
+        "bancha": "boolean"
+    },
+    "designerId": "a9b524f1-f2e0-4175-bc55-94b4bbfad4e9",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "bancha",
+            "type": "string"
+        }
+    ]
+}
