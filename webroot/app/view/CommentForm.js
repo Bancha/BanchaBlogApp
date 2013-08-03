@@ -29,7 +29,10 @@ Ext.define('BlogApp.view.CommentForm', {
         }, me.initialConfig);
 
         Ext.applyIf(me, {
-            bodyCls: 'comments-form',
+            bodyCls: [
+                'comments-form',
+                'x-panel-body-default'
+            ],
             api: { submit: 'Bancha.RemoteStubs.Comment.submit' },
             items: [
                 {

@@ -65,7 +65,6 @@ Ext.define('BlogApp.view.ManageCommentsWindow', {
 
                                         // this is normally a job for the controller, but to keep the example simple we do it here
                                         store.remove(rec);
-                                        store.sync();
                                     },
                                     altText: 'delete',
                                     icon: 'img/icons/delete.png',

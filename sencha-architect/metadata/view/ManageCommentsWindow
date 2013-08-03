@@ -127,8 +127,7 @@
                                             "    rec = store.getAt(rowIndex);",
                                             "",
                                             "// this is normally a job for the controller, but to keep the example simple we do it here",
-                                            "store.remove(rec);",
-                                            "store.sync();"
+                                            "store.remove(rec);"
                                         ]
                                     },
                                     "designerId": "3304af68-b810-4724-ad0b-b7525bf2a0cc"
