@@ -10,7 +10,7 @@
         "designer|userClassName": "Articles",
         "model": "Article",
         "pageSize": 5000,
-        "storeId": "MyStore"
+        "storeId": "Articles"
     },
     "designerId": "4b702e2b-55aa-48bb-9ada-ef0ce834d434"
 }

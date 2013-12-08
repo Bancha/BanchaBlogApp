@@ -9,7 +9,10 @@
         "bancha": true,
         "designer|userClassName": "Article",
         "isBancha": null,
-        "mixins": null
+        "mixins": null,
+        "requires": [
+            "Bancha.Initializer"
+        ]
     },
     "configAlternates": {
         "bancha": "boolean"

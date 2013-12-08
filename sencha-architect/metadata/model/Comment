@@ -7,7 +7,10 @@
     "codeClass": null,
     "userConfig": {
         "bancha": true,
-        "designer|userClassName": "Comment"
+        "designer|userClassName": "Comment",
+        "requires": [
+            "Bancha.Initializer"
+        ]
     },
     "configAlternates": {
         "bancha": "boolean"

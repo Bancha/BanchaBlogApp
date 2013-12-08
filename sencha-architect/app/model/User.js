@@ -16,5 +16,9 @@
 Ext.define('BlogApp.model.User', {
     extend: 'Ext.data.Model',
 
+    requires: [
+        'Bancha.Initializer'
+    ],
+
     bancha: true
 });

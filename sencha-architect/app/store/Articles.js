@@ -25,7 +25,7 @@ Ext.define('BlogApp.store.Articles', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             model: 'BlogApp.model.Article',
-            storeId: 'MyStore',
+            storeId: 'Articles',
             pageSize: 5000
         }, cfg)]);
     }
