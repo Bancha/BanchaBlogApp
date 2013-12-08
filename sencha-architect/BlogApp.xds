@@ -1,6 +1,11 @@
 {
     "name": "BlogApp",
     "settings": {
+        "cmd": {
+            "license": "gpl",
+            "cmdVersion": "4.0.1.45",
+            "frameworkVersion": "4.2.1.883"
+        },
         "urlPrefix": "",
         "spacesToIndent": 4,
         "exportPath": "../webroot",
@@ -13,170 +18,30 @@
         "instantiateStore": true,
         "saveOnDeploy": false,
         "appName": "MyApp",
-        "cssPath": ""
-    },
-    "xdsVersion": "2.2.2",
-    "xdsBuild": 991,
-    "schemaVersion": 1,
-    "upgradeVersion": 210000000503,
-    "framework": "ext42",
-    "topInstanceFileMap": {
-        "93907ad8-a278-40b5-a417-cd1d172cd181": {
-            "paths": [
-                "metadata/resource/Library"
-            ],
-            "className": "Library"
+        "cssPath": "",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
         },
-        "aa072d1e-c180-4283-9cba-f5e26adde0bb": {
-            "paths": [
-                "metadata/view/MyViewport",
-                "app/view/override/MyViewport.js",
-                "app/view/MyViewport.js",
-                "app/view/Viewport.js"
-            ],
-            "className": "MyViewport"
-        },
-        "591a9c04-0e0a-4bc9-8679-78f1b38363d1": {
-            "paths": [
-                "metadata/view/ManageCommentsWindow",
-                "app/view/override/ManageCommentsWindow.js",
-                "app/view/ManageCommentsWindow.js"
-            ],
-            "className": "ManageCommentsWindow"
-        },
-        "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6": {
-            "paths": [
-                "metadata/view/LoginWindow",
-                "app/view/override/LoginWindow.js",
-                "app/view/LoginWindow.js"
-            ],
-            "className": "LoginWindow"
-        },
-        "8b3b577a-a2ce-4959-b077-396ccb45c57b": {
-            "paths": [
-                "metadata/view/CommentsPanel",
-                "app/view/override/CommentsPanel.js",
-                "app/view/CommentsPanel.js"
-            ],
-            "className": "CommentsPanel"
-        },
-        "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11": {
-            "paths": [
-                "metadata/view/CommentsList",
-                "app/view/override/CommentsList.js",
-                "app/view/CommentsList.js"
-            ],
-            "className": "CommentsList"
-        },
-        "bde46fe1-286e-4915-9a8d-2c6da3934859": {
-            "paths": [
-                "metadata/view/CommentForm",
-                "app/view/override/CommentForm.js",
-                "app/view/CommentForm.js"
-            ],
-            "className": "CommentForm"
-        },
-        "c4e4a2f6-2a3f-4210-980b-48a2fb439c37": {
-            "paths": [
-                "metadata/view/ArticleReader",
-                "app/view/override/ArticleReader.js",
-                "app/view/ArticleReader.js"
-            ],
-            "className": "ArticleReader"
-        },
-        "b546f619-60cc-442f-aae5-c0f933e1967b": {
-            "paths": [
-                "metadata/view/ArticleList",
-                "app/view/override/ArticleList.js",
-                "app/view/ArticleList.js"
-            ],
-            "className": "ArticleList"
-        },
-        "fcc4597e-3fcb-4d90-b6d2-b204866b5d35": {
-            "paths": [
-                "metadata/store/Comments",
-                "app/store/override/Comments.js",
-                "app/store/Comments.js"
-            ],
-            "className": "Comments"
-        },
-        "e036c70a-4959-46fd-82eb-dcf76120cd2a": {
-            "paths": [
-                "metadata/store/Users",
-                "app/store/override/Users.js",
-                "app/store/Users.js"
-            ],
-            "className": "Users"
-        },
-        "605f1b49-1e8a-4555-b989-141da478d287": {
-            "paths": [
-                "metadata/controller/Articles",
-                "app/controller/override/Articles.js",
-                "app/controller/Articles.js"
-            ],
-            "className": "Articles"
-        },
-        "bd7c905b-5945-4966-9e89-6d97c6f82b3e": {
-            "paths": [
-                "metadata/controller/Authentification",
-                "app/controller/override/Authentification.js",
-                "app/controller/Authentification.js"
-            ],
-            "className": "Authentification"
-        },
-        "952497b9-f0cd-4d4b-bf08-6e675f422772": {
-            "paths": [
-                "metadata/controller/Comments",
-                "app/controller/override/Comments.js",
-                "app/controller/Comments.js"
-            ],
-            "className": "Comments"
-        },
-        "40bc445e-5215-4255-86be-592265051836": {
-            "paths": [
-                "metadata/resource/css"
-            ],
-            "className": "css"
-        },
-        "b1a5e540-cd9a-4ee3-950f-5769dfe0946b": {
-            "paths": [
-                "metadata/resource/js"
-            ],
-            "className": "js"
-        },
-        "034a9eb8-c33f-471e-8b9d-f1545e257fb3": {
-            "paths": [
-                "metadata/model/Article",
-                "app/model/override/Article.js",
-                "app/model/Article.js"
-            ],
-            "className": "Article"
-        },
-        "5658ed76-2304-4361-9297-4c9f4fc8a60d": {
-            "paths": [
-                "metadata/model/User",
-                "app/model/override/User.js",
-                "app/model/User.js"
-            ],
-            "className": "User"
-        },
-        "a9b524f1-f2e0-4175-bc55-94b4bbfad4e9": {
-            "paths": [
-                "metadata/model/Comment",
-                "app/model/override/Comment.js",
-                "app/model/Comment.js"
-            ],
-            "className": "Comment"
-        },
-        "4b702e2b-55aa-48bb-9ada-ef0ce834d434": {
-            "paths": [
-                "metadata/store/Articles",
-                "app/store/override/Articles.js",
-                "app/store/Articles.js"
-            ],
-            "className": "Articles"
+        "sdkPath": "",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "license": "gpl",
+        "customPath": "",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
         }
     },
+    "xdsVersion": "3.0.0",
+    "xdsBuild": 1337,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000003,
+    "framework": "ext42",
     "viewOrderMap": {
         "view": [
             "aa072d1e-c180-4283-9cba-f5e26adde0bb",

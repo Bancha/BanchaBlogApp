@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "html": null,
-        "designer|userClassName": "CommentsList",
         "designer|userAlias": "commentslist",
+        "designer|userClassName": "CommentsList",
         "emptyText": "<br /><i>There are no comments for this article, write the first:</i>",
+        "html": null,
         "itemSelector": "div",
         "store": "Comments"
     },
@@ -23,14 +23,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|displayName": "tpl",
                 "implHandler": [
                     "<tpl for=\".\">",
                     "    <div class=\"comment\">{comment}",
                     "        <span class=\"comment-meta\">{[this.getAuthorName(values.user_id)]}{[this.getDate(values.created)]}</span>",
                     "    </div>",
                     "</tpl>"
-                ],
-                "designer|displayName": "tpl"
+                ]
             },
             "designerId": "8f757dd3-1d77-4b5e-aca0-1eeb7abc28bb",
             "cn": [
@@ -42,10 +42,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "getAuthorName",
                         "designer|params": [
                             "id"
                         ],
+                        "fn": "getAuthorName",
                         "implHandler": [
                             "// get the users store",
                             "var store = Ext.StoreMgr.get('Users');",
@@ -69,10 +69,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "getDate",
                         "designer|params": [
                             "date"
                         ],
+                        "fn": "getDate",
                         "implHandler": [
                             "if(date) {",
                             "     return ', '+Ext.Date.format(date, \"Y-m-d\");",

@@ -7,8 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "js",
+        "id": "Bancha",
         "url": "/bancha/js/ScriptTagInitializer.js",
-        "id": "Bancha"
+        "x-bootstrap": true
     },
     "designerId": "b1a5e540-cd9a-4ee3-950f-5769dfe0946b"
 }

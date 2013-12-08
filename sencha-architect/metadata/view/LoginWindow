@@ -6,17 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 342,
-        "width": 530,
-        "designer|userClassName": "LoginWindow",
+        "closable": false,
         "designer|userAlias": "loginwindow",
+        "designer|userClassName": "LoginWindow",
+        "height": 342,
+        "layout": "fit",
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "layout": "fit",
-        "closable": false,
         "title": "Login",
-        "modal": true
+        "width": 530
     },
     "designerId": "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6",
     "cn": [
@@ -28,12 +28,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": null,
-                "designer|displayName": "Form",
                 "bodyPadding": "20 30 0 30",
+                "designer|displayName": "Form",
+                "dock": null,
                 "frameHeader": false,
-                "title": "",
                 "paramsAsHash": true,
+                "title": "",
                 "waitTitle": "Logging in..."
             },
             "designerId": "a586174e-ee48-4641-a390-3d6863ffeed0",
@@ -46,6 +46,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|displayName": "Description",
                         "html": [
                             "[",
                             "    '<h2>Hello to the Sencha Architect example.</h2>',",
@@ -61,8 +62,7 @@
                             "    'how to use Sencha Architect</a>. I hope you like it, now log in to play around:',",
                             "    '</p>'",
                             "]"
-                        ],
-                        "designer|displayName": "Description"
+                        ]
                     },
                     "designerId": "97f3964d-6f56-4158-b94f-599e0b8e8175"
                 },
@@ -74,11 +74,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Username",
-                        "name": "username",
                         "allowBlank": false,
-                        "enableKeyEvents": true
+                        "enableKeyEvents": true,
+                        "fieldLabel": "Username",
+                        "layout|anchor": "100%",
+                        "name": "username"
                     },
                     "designerId": "6b61f9a1-271b-4c20-87ac-fac06c91af29"
                 },
@@ -90,12 +90,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
-                        "fieldLabel": "Password",
-                        "name": "password",
-                        "inputType": "password",
                         "allowBlank": false,
-                        "enableKeyEvents": true
+                        "enableKeyEvents": true,
+                        "fieldLabel": "Password",
+                        "inputType": "password",
+                        "layout|anchor": "100%",
+                        "name": "password"
                     },
                     "designerId": "8f4cc487-8fef-4d9b-a28a-1689f61e5db7"
                 },
@@ -107,10 +107,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "dock": "bottom",
                         "container|padding": "0 20 20 0",
-                        "ui": null,
-                        "designer|displayName": "Login Toolbar"
+                        "designer|displayName": "Login Toolbar",
+                        "dock": "bottom",
+                        "ui": null
                     },
                     "designerId": "805a07d7-873c-4256-a0fe-ee0bcc7a8f53",
                     "cn": [

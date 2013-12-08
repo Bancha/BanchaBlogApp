@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Articles",
-        "designer|userAlias": "articles"
+        "designer|userAlias": "articles",
+        "designer|userClassName": "Articles"
     },
     "designerId": "605f1b49-1e8a-4555-b989-141da478d287",
     "cn": [
@@ -19,15 +19,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "articleslist",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onArticleListSelectionChange",
                 "implHandler": [
                     "// make an application wide event",
                     "this.application.fireEvent('articlechanged',selected[0]);"
                 ],
                 "name": "selectionchange",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "articleslist"
+                "scope": "me"
             },
             "designerId": "7d04c161-e9db-40f4-9a89-42e34a5fb3fd"
         },
@@ -78,10 +78,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onArticleChanged",
                 "designer|params": [
                     "record"
                 ],
+                "fn": "onArticleChanged",
                 "implHandler": [
                     "/**",
                     "* refresh the single article view",
@@ -129,10 +129,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onLoggedIn",
                 "designer|params": [
                     "userRecord"
                 ],
+                "fn": "onLoggedIn",
                 "implHandler": [
                     "/**",
                     "* Only show the article edit and delete to admins",

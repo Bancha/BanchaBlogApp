@@ -6,19 +6,24 @@
     },
     "codeClass": null,
     "userConfig": {
-        "cls": "",
-        "designer|userClassName": "CommentForm",
-        "designer|userAlias": "commentform",
+        "api": [
+            "{ submit: 'Bancha.RemoteStubs.Comment.submit' }"
+        ],
         "bodyCls": [
             "comments-form",
             "x-panel-body-default"
         ],
         "bodyPadding": 10,
+        "cls": "",
+        "designer|userAlias": "commentform",
+        "designer|userClassName": "CommentForm",
         "frameHeader": false,
-        "title": null,
-        "api": [
-            "{ submit: 'Bancha.RemoteStubs.Comment.submit' }"
-        ]
+        "requires": [
+            "Ext.form.FieldSet",
+            "Ext.form.field.Hidden",
+            "Ext.toolbar.Spacer"
+        ],
+        "title": null
     },
     "designerId": "bde46fe1-286e-4915-9a8d-2c6da3934859",
     "cn": [
@@ -42,8 +47,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "fieldLabel": "",
+                        "layout|anchor": "100%",
                         "name": "article_id"
                     },
                     "designerId": "821e9afa-1338-42f5-98c3-6fe014c17837"
@@ -56,10 +61,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|anchor": "100%",
                         "fieldLabel": "",
-                        "name": "comment",
-                        "growAppend": "-"
+                        "growAppend": "-",
+                        "layout|anchor": "100%",
+                        "name": "comment"
                     },
                     "designerId": "91fdcb03-f0d6-403e-a816-5acce639c4d9"
                 },
@@ -71,11 +76,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|displayName": "Submit Toolbar",
                         "style": [
                             "{'margin-bottom': '10px'}"
                         ],
-                        "ui": null,
-                        "designer|displayName": "Submit Toolbar"
+                        "ui": null
                     },
                     "designerId": "e7ed9a0a-f79c-4557-aa79-81ef725c6b52",
                     "cn": [
@@ -100,8 +105,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "action": "submitComment",
-                                "layout|flex": null,
                                 "cls": "comment-submit",
+                                "layout|flex": null,
                                 "margin": null,
                                 "text": "submit"
                             },

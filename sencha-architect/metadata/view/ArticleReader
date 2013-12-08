@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userAlias": "articlereader",
+        "designer|userClassName": "ArticleReader",
         "frame": null,
         "height": 150,
         "id": null,
-        "ui": null,
-        "designer|userClassName": "ArticleReader",
-        "designer|userAlias": "articlereader"
+        "ui": null
     },
     "designerId": "c4e4a2f6-2a3f-4210-980b-48a2fb439c37",
     "cn": [
@@ -23,13 +23,13 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|displayName": "tpl",
                 "implHandler": [
                     "<i>{[this.getDate(values.date)]}, by {[this.getAuthorName(values.user_id)]}</i>",
                     "<p>",
                     "    {body}",
                     "</p>"
-                ],
-                "designer|displayName": "tpl"
+                ]
             },
             "designerId": "782eb575-f559-4a85-9f5b-ffd49a1bec1d",
             "cn": [
@@ -41,10 +41,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "getDate",
                         "designer|params": [
                             "date"
                         ],
+                        "fn": "getDate",
                         "implHandler": [
                             "if(date) {",
                             "     return Ext.Date.format(date, \"Y-m-d\");",
@@ -62,10 +62,10 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "getAuthorName",
                         "designer|params": [
                             "id"
                         ],
+                        "fn": "getAuthorName",
                         "implHandler": [
                             "// get the users store",
                             "var store = Ext.StoreMgr.get('Users');",

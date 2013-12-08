@@ -6,11 +6,17 @@
     },
     "codeClass": null,
     "userConfig": {
+        "controllers": [
+            "Articles",
+            "Authentication",
+            "Comments"
+        ],
         "models": [
             "Article",
             "User",
             "Comment"
         ],
+        "name": "BlogApp",
         "stores": [
             "Comments",
             "Users",
@@ -19,14 +25,7 @@
         "views": [
             "MyViewport",
             "LoginWindow"
-        ],
-        "autoCreateViewport": true,
-        "controllers": [
-            "Articles",
-            "Authentification",
-            "Comments"
-        ],
-        "name": "BlogApp"
+        ]
     },
     "designerId": "application"
 }

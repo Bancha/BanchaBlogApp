@@ -6,17 +6,21 @@
     },
     "codeClass": null,
     "userConfig": {
-        "border": null,
-        "designer|userClassName": "ArticleList",
-        "designer|userAlias": "articleslist",
         "bodyBorder": null,
-        "frameHeader": null,
-        "title": "Article List",
+        "border": null,
         "columnLines": true,
+        "designer|userAlias": "articleslist",
+        "designer|userClassName": "ArticleList",
         "enableColumnHide": false,
         "enableColumnMove": false,
         "forceFit": true,
-        "store": "Articles"
+        "frameHeader": null,
+        "requires": [
+            "Ext.grid.column.Date",
+            "Ext.grid.column.Action"
+        ],
+        "store": "Articles",
+        "title": "Article List"
     },
     "designerId": "b546f619-60cc-442f-aae5-c0f933e1967b",
     "cn": [
@@ -28,13 +32,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "width": null,
-                "defaultWidth": null,
                 "dataIndex": "title",
+                "defaultWidth": null,
+                "flex": 1,
                 "hideable": null,
                 "menuDisabled": true,
                 "text": "Name",
-                "flex": 1
+                "width": null
             },
             "designerId": "941e5b3e-f736-4005-975f-badfd60ff58f"
         },
@@ -46,14 +50,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "width": 90,
-                "defaultWidth": null,
                 "dataIndex": "date",
+                "defaultWidth": null,
+                "flex": null,
+                "format": "Y-m-d",
                 "hideable": null,
                 "menuDisabled": true,
                 "text": "Created",
-                "flex": null,
-                "format": "Y-m-d"
+                "width": 90
             },
             "designerId": "9d2f38a7-1365-49d4-950f-c8c1caf5e77d"
         },
@@ -65,11 +69,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "adminactioncolumn",
-                "width": 27,
                 "designer|displayName": "Actions",
                 "hideable": false,
-                "menuDisabled": true
+                "id": "adminactioncolumn",
+                "menuDisabled": true,
+                "width": 27
             },
             "designerId": "eabf6e34-1192-4c96-86b8-71a0537741fa",
             "cn": [
@@ -81,8 +85,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "Delete",
                         "altText": "delete",
+                        "designer|displayName": "Delete",
                         "icon": "img/icons/delete.png",
                         "tooltip": "delete"
                     },
@@ -96,7 +100,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "view",
                                     "rowIndex",
@@ -104,6 +107,7 @@
                                     "item",
                                     "e"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "var store = view.getStore(),",
                                     "    rec = store.getAt(rowIndex),",

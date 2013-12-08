@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "isBancha": null,
         "bancha": true,
         "designer|userClassName": "Article",
+        "isBancha": null,
         "mixins": null
     },
     "configAlternates": {

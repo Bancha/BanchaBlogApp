@@ -7,10 +7,10 @@
     "codeClass": null,
     "userConfig": {
         "autoSync": true,
-        "model": "Comment",
-        "storeId": "Comments",
         "designer|userClassName": "Comments",
-        "pageSize": 5000
+        "model": "Comment",
+        "pageSize": 5000,
+        "storeId": "Comments"
     },
     "designerId": "fcc4597e-3fcb-4d90-b6d2-b204866b5d35"
 }

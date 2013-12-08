@@ -6,9 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MyViewport",
         "designer|initialView": true,
-        "layout": "border"
+        "designer|userClassName": "MyViewport",
+        "layout": "border",
+        "requires": [
+            "Ext.layout.container.Border"
+        ]
     },
     "designerId": "aa072d1e-c180-4283-9cba-f5e26adde0bb",
     "cn": [
@@ -21,9 +24,9 @@
             "codeClass": null,
             "userConfig": {
                 "frame": null,
-                "width": 250,
                 "layout|region": "west",
-                "layout|split": true
+                "layout|split": true,
+                "width": 250
             },
             "designerId": "b2d926aa-2bc1-4c2d-8116-3a4151bd6ce4",
             "masterInstanceId": "b546f619-60cc-442f-aae5-c0f933e1967b"
@@ -36,13 +39,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|region": "center",
-                "layout|split": null,
                 "container|align": "stretch",
                 "frame": null,
                 "id": null,
                 "itemId": "articlePanel",
                 "layout": "vbox",
+                "layout|region": "center",
+                "layout|split": null,
                 "title": "Article Name"
             },
             "designerId": "a435c04d-6872-4875-9df8-75dee7289da8",
@@ -56,13 +59,13 @@
                     "codeClass": null,
                     "userConfig": {
                         "height": null,
+                        "layout|flex": 1,
                         "padding": 10,
                         "style": [
                             "{ background: 'white'}"
                         ],
                         "ui": null,
-                        "width": null,
-                        "layout|flex": 1
+                        "width": null
                     },
                     "designerId": "30322ef0-8f3c-419b-8cd4-d8023d83b272",
                     "masterInstanceId": "c4e4a2f6-2a3f-4210-980b-48a2fb439c37"

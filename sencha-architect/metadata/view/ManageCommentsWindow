@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "height": 500,
-        "width": 800,
-        "designer|userClassName": "ManageCommentsWindow",
         "designer|userAlias": "managecommentswindows",
+        "designer|userClassName": "ManageCommentsWindow",
+        "height": 500,
         "layout": "fit",
+        "modal": true,
         "title": "Manage Comments",
-        "modal": true
+        "width": 800
     },
     "designerId": "591a9c04-0e0a-4bc9-8679-78f1b38363d1",
     "cn": [
@@ -24,10 +24,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "width": 27,
                 "designer|displayName": "Comments Grid",
+                "store": "Comments",
                 "title": null,
-                "store": "Comments"
+                "width": 27
             },
             "designerId": "159ccbbe-b8e8-4f0e-a0a3-fdbc2cc2fb7d",
             "cn": [
@@ -39,11 +39,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": null,
                         "dataIndex": "comment",
+                        "flex": 1,
                         "menuDisabled": true,
                         "text": "comment",
-                        "flex": 1
+                        "width": null
                     },
                     "designerId": "6d0b621f-70e9-4f53-b87a-9198c85b9f11",
                     "cn": [
@@ -69,11 +69,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 130,
                         "dataIndex": "created",
+                        "format": "Y-m-d H:i",
                         "menuDisabled": true,
                         "text": "Created",
-                        "format": "Y-m-d H:i"
+                        "width": 130
                     },
                     "designerId": "9f00bba0-731b-4818-9177-cbfb52f7fd56"
                 },
@@ -85,9 +85,9 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "width": 27,
                         "designer|displayName": "Actions",
-                        "menuDisabled": true
+                        "menuDisabled": true,
+                        "width": 27
                     },
                     "designerId": "e7d636d5-38ad-49f0-a2f9-1b48072b44f3",
                     "cn": [
@@ -99,8 +99,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|displayName": "Delete",
                                 "altText": "delete",
+                                "designer|displayName": "Delete",
                                 "icon": "img/icons/delete.png",
                                 "tooltip": "delete"
                             },
@@ -114,7 +114,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "fn": "handler",
                                         "designer|params": [
                                             "view",
                                             "rowIndex",
@@ -122,6 +121,7 @@
                                             "item",
                                             "e"
                                         ],
+                                        "fn": "handler",
                                         "implHandler": [
                                             "var store = view.getStore(),",
                                             "    rec = store.getAt(rowIndex);",

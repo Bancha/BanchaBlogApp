@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoScroll": true,
+        "designer|userAlias": "commentspanel",
+        "designer|userClassName": "CommentsPanel",
         "height": null,
         "id": null,
         "maxHeight": null,
-        "designer|userClassName": "CommentsPanel",
-        "designer|userAlias": "commentspanel",
-        "autoScroll": true,
         "title": "Comments"
     },
     "designerId": "8b3b577a-a2ce-4959-b077-396ccb45c57b",
@@ -47,8 +47,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "hidden": null,
                 "designer|displayName": "Manage Comment Tool",
+                "hidden": null,
                 "tooltip": "Manage comments",
                 "type": "gear"
             },
