@@ -5,6 +5,27 @@
  * metadata-driven class system features 
  */
 Ext.Loader.addClassPathMappings({
+  "Bancha": "../../../Plugin/Bancha/webroot/js/Main.js",
+  "Bancha.Initializer": "../../../Plugin/Bancha/webroot/js/Initializer.js",
+  "Bancha.Loader": "../../../Plugin/Bancha/webroot/js/Loader.js",
+  "Bancha.Logger": "../../../Plugin/Bancha/webroot/js/Logger.js",
+  "Bancha.Remoting": "../../../Plugin/Bancha/webroot/js/Remoting.js",
+  "Bancha.data.Model": "../../../Plugin/Bancha/webroot/js/data/Model.js",
+  "Bancha.data.override.Validations": "../../../Plugin/Bancha/webroot/js/data/override/Validations.js",
+  "Bancha.data.writer.ConsistentJson": "../../../Plugin/Bancha/webroot/js/data/writer/ConsistentJson.js",
+  "Bancha.data.writer.JsonWithDateTime": "../../../Plugin/Bancha/webroot/js/data/writer/JsonWithDateTime.js",
+  "Bancha.loader.Interface": "../../../Plugin/Bancha/webroot/js/loader/Interface.js",
+  "Bancha.loader.Models": "../../../Plugin/Bancha/webroot/js/loader/Models.js",
+  "Bancha.model.Article": "../../app/REMOTE_API.js",
+  "Bancha.model.Comment": "../../app/REMOTE_API.js",
+  "Bancha.model.User": "../../app/REMOTE_API.js",
+  "Bancha.scaffold.Util": "../../../Plugin/Bancha/webroot/js/scaffold/src/Util.js",
+  "Bancha.scaffold.form.Config": "../../../Plugin/Bancha/webroot/js/scaffold/src/form/Config.js",
+  "Bancha.scaffold.form.field.override.VTypes": "../../../Plugin/Bancha/webroot/js/scaffold/src/form/field/override/VTypes.js",
+  "Bancha.scaffold.form.override.Panel": "../../../Plugin/Bancha/webroot/js/scaffold/src/form/override/Panel.js",
+  "Bancha.scaffold.grid.Config": "../../../Plugin/Bancha/webroot/js/scaffold/src/grid/Config.js",
+  "Bancha.scaffold.grid.ManagementPanel": "../../../Plugin/Bancha/webroot/js/scaffold/src/grid/ManagementPanel.js",
+  "Bancha.scaffold.grid.override.Panel": "../../../Plugin/Bancha/webroot/js/scaffold/src/grid/override/Panel.js",
   "BlogApp": "../../app",
   "Ext": "../../ext/src",
   "Ext.Msg": "../../ext/src/window/MessageBox.js",
@@ -27,6 +48,32 @@ Ext.Loader.addClassPathMappings({
   "ExtThemeNeptune.toolbar.Toolbar": "../../ext/ext-theme-neptune.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
+  "Bancha": [
+    "Bancha.Main"
+  ],
+  "Bancha.Initializer": [],
+  "Bancha.Loader": [],
+  "Bancha.Logger": [],
+  "Bancha.REMOTE_API": [],
+  "Bancha.Remoting": [],
+  "Bancha.data.Model": [],
+  "Bancha.data.override.Validations": [
+    "Bancha.scaffold.data.override.Validations"
+  ],
+  "Bancha.data.writer.ConsistentJson": [],
+  "Bancha.data.writer.JsonWithDateTime": [],
+  "Bancha.loader.Interface": [],
+  "Bancha.loader.Models": [],
+  "Bancha.model.Article": [],
+  "Bancha.model.Comment": [],
+  "Bancha.model.User": [],
+  "Bancha.scaffold.Util": [],
+  "Bancha.scaffold.form.Config": [],
+  "Bancha.scaffold.form.field.override.VTypes": [],
+  "Bancha.scaffold.form.override.Panel": [],
+  "Bancha.scaffold.grid.Config": [],
+  "Bancha.scaffold.grid.ManagementPanel": [],
+  "Bancha.scaffold.grid.override.Panel": [],
   "BlogApp.Application": [],
   "BlogApp.controller.Articles": [],
   "BlogApp.controller.Authentication": [],
@@ -882,6 +929,34 @@ Ext.ClassManager.addNameAlternateMappings({
   "ExtThemeNeptune.toolbar.Toolbar": []
 });
 Ext.ClassManager.addNameAliasMappings({
+  "Bancha": [],
+  "Bancha.Initializer": [],
+  "Bancha.Loader": [],
+  "Bancha.Logger": [],
+  "Bancha.REMOTE_API": [],
+  "Bancha.Remoting": [],
+  "Bancha.data.Model": [],
+  "Bancha.data.override.Validations": [],
+  "Bancha.data.writer.ConsistentJson": [
+    "writer.consistent"
+  ],
+  "Bancha.data.writer.JsonWithDateTime": [
+    "writer.jsondate"
+  ],
+  "Bancha.loader.Interface": [],
+  "Bancha.loader.Models": [],
+  "Bancha.model.Article": [],
+  "Bancha.model.Comment": [],
+  "Bancha.model.User": [],
+  "Bancha.scaffold.Util": [],
+  "Bancha.scaffold.form.Config": [],
+  "Bancha.scaffold.form.field.override.VTypes": [],
+  "Bancha.scaffold.form.override.Panel": [],
+  "Bancha.scaffold.grid.Config": [],
+  "Bancha.scaffold.grid.ManagementPanel": [
+    "widget.managementpanel"
+  ],
+  "Bancha.scaffold.grid.override.Panel": [],
   "BlogApp.Application": [],
   "BlogApp.controller.Articles": [
     "controller.articles"
