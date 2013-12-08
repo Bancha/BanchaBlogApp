@@ -1,16 +1,17 @@
 MVC Example App with Bancha
 ===========================
 
-This project is show casing the usage of Bancha in Sencha Architect 2 by creating a blog application. It will demonstrate how to use Bancha in an Ext JS MVC, and how to use Authentification.
+This project is show casing the usage of Bancha in Sencha Architect 3 by creating a blog application. It will demonstrate how to use Bancha in an Ext JS MVC, and how to use Authentication.
 
-For more information go to our article [Using Sencha Architect 2](http://banchaproject.org/using-sencha-architect-2.html)
+For more information go to our article how to use [Sencha Architect 3](http://banchaproject.org/documentation-pro-sencha-architect-3.html)
 
 How to setup the project
 ------------------------
-1. Download [CakePHP](http://www.cakephp.org) latest (tested with 2.3.8)
+1. Download [CakePHP](http://www.cakephp.org) latest
 1. Download this project inside _/app_
 1. Configure your _app/Config/database.php_
-1. Add the tables from _app/Config/schema/test-database.sql_ to your database
+1. Add the tables from _app/Config/schema/testdata.sql_ to your database
+1. Replace _http://my-local-host.com/_ with your local domain in _app/sencha-architect/.sencha/app/sencha.cfg_, line 16 
 1. Open _/bancha/setup-check.html_ to see if everything works.
 
 
