@@ -11,7 +11,7 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	/*
-	 * Add authentification, same as in the Bancha config in core.php
+	 * Add authentication, same as in the Bancha config in core.php
 	 */
 	public $components = array(
 		'Auth' => array(
