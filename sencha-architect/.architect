@@ -7,7 +7,6 @@
         "resource": true,
         "aa072d1e-c180-4283-9cba-f5e26adde0bb": {
             "id": "aa072d1e-c180-4283-9cba-f5e26adde0bb",
-            "expanded": false,
             "cn": [
                 {
                     "id": "b2d926aa-2bc1-4c2d-8116-3a4151bd6ce4"
@@ -338,7 +337,7 @@
         "selectedInstance": "aa072d1e-c180-4283-9cba-f5e26adde0bb"
     },
     "codeState": {
-        "topInstance": "aa072d1e-c180-4283-9cba-f5e26adde0bb"
+        "topInstance": null
     },
     "editMode": "design",
     "userSettings": {}

@@ -5,21 +5,30 @@
  * metadata-driven class system features 
  */
 Ext.Loader.addClassPathMappings({
-  "Bancha": "../Plugin/Bancha/webroot/js/Main.js",
+  "Bancha": "app",
   "Bancha.Initializer": "../Plugin/Bancha/webroot/js/Initializer.js",
   "Bancha.Loader": "../Plugin/Bancha/webroot/js/Loader.js",
   "Bancha.Logger": "../Plugin/Bancha/webroot/js/Logger.js",
+  "Bancha.Main": "../Plugin/Bancha/webroot/js/Main.js",
   "Bancha.Remoting": "../Plugin/Bancha/webroot/js/Remoting.js",
   "Bancha.data.Model": "../Plugin/Bancha/webroot/js/data/Model.js",
+  "Bancha.data.Validators": "../Plugin/Bancha/webroot/js/data/Validators.js",
+  "Bancha.data.override.NodeInterface": "../Plugin/Bancha/webroot/js/data/override/NodeInterface.js",
   "Bancha.data.override.Validations": "../Plugin/Bancha/webroot/js/data/override/Validations.js",
+  "Bancha.data.validator.File": "../Plugin/Bancha/webroot/js/data/validator/File.js",
+  "Bancha.data.validator.override.Bound": "../Plugin/Bancha/webroot/js/data/Validators.js",
   "Bancha.data.writer.ConsistentJson": "../Plugin/Bancha/webroot/js/data/writer/ConsistentJson.js",
   "Bancha.data.writer.JsonWithDateTime": "../Plugin/Bancha/webroot/js/data/writer/JsonWithDateTime.js",
+  "Bancha.data.writer.TreeParentIdTransformedJson": "../Plugin/Bancha/webroot/js/data/writer/TreeParentIdTransformedJson.js",
   "Bancha.loader.Interface": "../Plugin/Bancha/webroot/js/loader/Interface.js",
   "Bancha.loader.Models": "../Plugin/Bancha/webroot/js/loader/Models.js",
   "Bancha.model.Article": "app/REMOTE_API.js",
   "Bancha.model.Comment": "app/REMOTE_API.js",
   "Bancha.model.User": "app/REMOTE_API.js",
   "Bancha.scaffold.Util": "../Plugin/Bancha/webroot/js/scaffold/src/Util.js",
+  "Bancha.scaffold.data.Validators": "../Plugin/Bancha/webroot/js/scaffold/src/data/Validators.js",
+  "Bancha.scaffold.data.override.Validations": "../Plugin/Bancha/webroot/js/scaffold/src/data/override/Validations.js",
+  "Bancha.scaffold.data.validator.File": "../Plugin/Bancha/webroot/js/scaffold/src/data/validator/File.js",
   "Bancha.scaffold.form.Config": "../Plugin/Bancha/webroot/js/scaffold/src/form/Config.js",
   "Bancha.scaffold.form.field.override.VTypes": "../Plugin/Bancha/webroot/js/scaffold/src/form/field/override/VTypes.js",
   "Bancha.scaffold.form.override.Panel": "../Plugin/Bancha/webroot/js/scaffold/src/form/override/Panel.js",
@@ -29,6 +38,9 @@ Ext.Loader.addClassPathMappings({
   "BlogApp": "app",
   "Ext": "ext/src",
   "Ext.Msg": "ext/src/window/MessageBox.js",
+  "Ext.data.validations": "../Plugin/Bancha/webroot/js/data/override/Validations.js",
+  "Ext.data.validator.Validator": "../Plugin/Bancha/webroot/js/scaffold/src/data/validator/File.js",
+  "Ext.data.validator.override.Range": "../Plugin/Bancha/webroot/js/data/Validators.js",
   "Ext.rtl.EventObjectImpl": "ext/src/rtl/EventObject.js",
   "ExtThemeNeptune.Component": "ext/ext-theme-neptune.js",
   "ExtThemeNeptune.container.ButtonGroup": "ext/ext-theme-neptune.js",
@@ -48,26 +60,40 @@ Ext.Loader.addClassPathMappings({
   "ExtThemeNeptune.toolbar.Toolbar": "ext/ext-theme-neptune.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
-  "Bancha": [
-    "Bancha.Main"
-  ],
   "Bancha.Initializer": [],
   "Bancha.Loader": [],
   "Bancha.Logger": [],
+  "Bancha.Main": [
+    "Bancha"
+  ],
   "Bancha.REMOTE_API": [],
   "Bancha.Remoting": [],
   "Bancha.data.Model": [],
-  "Bancha.data.override.Validations": [
-    "Bancha.scaffold.data.override.Validations"
+  "Bancha.data.Validators": [
+    "Bancha.scaffold.data.Validators"
   ],
+  "Bancha.data.override.NodeInterface": [],
+  "Bancha.data.override.Validations": [],
+  "Bancha.data.validator.File": [
+    "Bancha.scaffold.data.validator.File"
+  ],
+  "Bancha.data.validator.override.Bound": [],
   "Bancha.data.writer.ConsistentJson": [],
   "Bancha.data.writer.JsonWithDateTime": [],
+  "Bancha.data.writer.TreeParentIdTransformedJson": [],
   "Bancha.loader.Interface": [],
   "Bancha.loader.Models": [],
   "Bancha.model.Article": [],
   "Bancha.model.Comment": [],
   "Bancha.model.User": [],
   "Bancha.scaffold.Util": [],
+  "Bancha.scaffold.data.Validators": [
+    "Bancha.data.Validators"
+  ],
+  "Bancha.scaffold.data.override.Validations": [],
+  "Bancha.scaffold.data.validator.File": [
+    "Bancha.data.validator.File"
+  ],
   "Bancha.scaffold.form.Config": [],
   "Bancha.scaffold.form.field.override.VTypes": [],
   "Bancha.scaffold.form.override.Panel": [],
@@ -313,6 +339,8 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.data.XmlReader"
   ],
   "Ext.data.validations": [],
+  "Ext.data.validator.Validator": [],
+  "Ext.data.validator.override.Range": [],
   "Ext.data.writer.Json": [
     "Ext.data.JsonWriter"
   ],
@@ -929,19 +957,28 @@ Ext.ClassManager.addNameAlternateMappings({
   "ExtThemeNeptune.toolbar.Toolbar": []
 });
 Ext.ClassManager.addNameAliasMappings({
-  "Bancha": [],
   "Bancha.Initializer": [],
   "Bancha.Loader": [],
   "Bancha.Logger": [],
+  "Bancha.Main": [],
   "Bancha.REMOTE_API": [],
   "Bancha.Remoting": [],
   "Bancha.data.Model": [],
+  "Bancha.data.Validators": [],
+  "Bancha.data.override.NodeInterface": [],
   "Bancha.data.override.Validations": [],
+  "Bancha.data.validator.File": [
+    "data.validator.file"
+  ],
+  "Bancha.data.validator.override.Bound": [],
   "Bancha.data.writer.ConsistentJson": [
-    "writer.consistent"
+    "writer.consitentjson"
   ],
   "Bancha.data.writer.JsonWithDateTime": [
     "writer.jsondate"
+  ],
+  "Bancha.data.writer.TreeParentIdTransformedJson": [
+    "writer.treeenabledjsonwriter"
   ],
   "Bancha.loader.Interface": [],
   "Bancha.loader.Models": [],
@@ -949,6 +986,11 @@ Ext.ClassManager.addNameAliasMappings({
   "Bancha.model.Comment": [],
   "Bancha.model.User": [],
   "Bancha.scaffold.Util": [],
+  "Bancha.scaffold.data.Validators": [],
+  "Bancha.scaffold.data.override.Validations": [],
+  "Bancha.scaffold.data.validator.File": [
+    "data.validator.file"
+  ],
   "Bancha.scaffold.form.Config": [],
   "Bancha.scaffold.form.field.override.VTypes": [],
   "Bancha.scaffold.form.override.Panel": [],
@@ -1227,6 +1269,8 @@ Ext.ClassManager.addNameAliasMappings({
     "reader.xml"
   ],
   "Ext.data.validations": [],
+  "Ext.data.validator.Validator": [],
+  "Ext.data.validator.override.Range": [],
   "Ext.data.writer.Json": [
     "writer.json"
   ],
