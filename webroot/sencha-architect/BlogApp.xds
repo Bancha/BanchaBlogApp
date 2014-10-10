@@ -3,10 +3,10 @@
     "settings": {
         "cmd": {
             "license": "gpl",
-            "cmdVersion": "4.0.1.45",
+            "cmdVersion": "5.0.2.270",
             "frameworkVersion": "4.2.1.883"
         },
-        "urlPrefix": "",
+        "urlPrefix": "http://localhost:1841",
         "spacesToIndent": 4,
         "exportPath": "/Users/roland/Documents/AptanaWorkspace/BanchaBlogApp/app/webroot",
         "lineEnding": "LF",
@@ -40,12 +40,13 @@
         "displayfield-ExtBox1-1338-inputEl": "Not Installed",
         "displayfield-ExtBox1-1388-inputEl": "Not Installed",
         "displayfield-ExtBox1-1438-inputEl": "Not Installed",
-        "displayfield-ExtBox1-1279-inputEl": "Not Installed"
+        "displayfield-ExtBox1-1279-inputEl": "Not Installed",
+        "projectHasEnabledWebServer": true
     },
-    "xdsVersion": "3.0.4",
-    "xdsBuild": 1386,
+    "xdsVersion": "3.1.0",
+    "xdsBuild": 1903,
     "schemaVersion": 1,
-    "upgradeVersion": 300000000004,
+    "upgradeVersion": 300000000007,
     "framework": "ext42",
     "viewOrderMap": {
         "view": [

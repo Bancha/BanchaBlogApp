@@ -31,6 +31,7 @@
                     "</p>"
                 ]
             },
+            "name": "tpl",
             "designerId": "782eb575-f559-4a85-9f5b-ffd49a1bec1d",
             "cn": [
                 {
@@ -52,6 +53,7 @@
                             "return '';"
                         ]
                     },
+                    "name": "getDate",
                     "designerId": "a373c912-15be-4c4c-9538-4722903bb5ee"
                 },
                 {
@@ -79,6 +81,7 @@
                             "return store.getById(id).get('name');"
                         ]
                     },
+                    "name": "getAuthorName",
                     "designerId": "a227b580-72b6-4b66-b5af-c452c380d810"
                 }
             ]

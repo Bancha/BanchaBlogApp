@@ -36,6 +36,7 @@
                 "title": "",
                 "waitTitle": "Logging in..."
             },
+            "name": "MyForm",
             "designerId": "a586174e-ee48-4641-a390-3d6863ffeed0",
             "cn": [
                 {
@@ -64,6 +65,7 @@
                             "]"
                         ]
                     },
+                    "name": "MyComponent",
                     "designerId": "97f3964d-6f56-4158-b94f-599e0b8e8175"
                 },
                 {
@@ -80,6 +82,7 @@
                         "layout|anchor": "100%",
                         "name": "username"
                     },
+                    "name": "MyTextField1",
                     "designerId": "6b61f9a1-271b-4c20-87ac-fac06c91af29"
                 },
                 {
@@ -97,6 +100,7 @@
                         "layout|anchor": "100%",
                         "name": "password"
                     },
+                    "name": "MyTextField2",
                     "designerId": "8f4cc487-8fef-4d9b-a28a-1689f61e5db7"
                 },
                 {
@@ -112,6 +116,7 @@
                         "dock": "bottom",
                         "ui": null
                     },
+                    "name": "MyToolbar1",
                     "designerId": "805a07d7-873c-4256-a0fe-ee0bcc7a8f53",
                     "cn": [
                         {
@@ -124,6 +129,7 @@
                             "userConfig": {
                                 "layout|flex": 1
                             },
+                            "name": "MySpacer1",
                             "designerId": "625561da-5ca1-45ad-8df9-7088e0d323eb"
                         },
                         {
@@ -139,6 +145,7 @@
                                 "padding": "2 10 2 10",
                                 "text": "login"
                             },
+                            "name": "MyButton1",
                             "designerId": "f1f54480-33a7-4b4d-b86b-0be11345107e",
                             "customConfigs": [
                                 {

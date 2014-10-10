@@ -29,6 +29,7 @@
                 "name": "selectionchange",
                 "scope": "me"
             },
+            "name": "onArticleListSelectionChange",
             "designerId": "7d04c161-e9db-40f4-9a89-42e34a5fb3fd"
         },
         {
@@ -42,6 +43,7 @@
                 "ref": "articlesList",
                 "selector": "articleslist"
             },
+            "name": "articlesList",
             "designerId": "a704efb6-748a-4ef6-9196-4bd2dfc91f49"
         },
         {
@@ -55,6 +57,7 @@
                 "ref": "articleReader",
                 "selector": "articlereader"
             },
+            "name": "articleReader",
             "designerId": "a435a8b3-5ece-4f80-8c24-9e7481aae9d8"
         },
         {
@@ -68,6 +71,7 @@
                 "ref": "articlePanel",
                 "selector": "#articlePanel"
             },
+            "name": "articlePanel",
             "designerId": "47b70bb1-b1ae-4304-9a44-af9664a68b19"
         },
         {
@@ -98,6 +102,7 @@
                 "name": "articlechanged",
                 "scope": "this"
             },
+            "name": "onArticleChanged",
             "designerId": "64cf8ec6-14c9-4a9e-911c-a23f7a7e8275"
         },
         {
@@ -119,6 +124,7 @@
                 "name": "articlesloaded",
                 "scope": "this"
             },
+            "name": "onArticlesLoaded",
             "designerId": "2d90de8b-628a-4030-8aaa-476590d9732a"
         },
         {
@@ -154,6 +160,7 @@
                 "name": "loggedin",
                 "scope": "this"
             },
+            "name": "onLoggedIn",
             "designerId": "42652ec7-e97b-45bf-8f5f-a2ff5c3c2ab8"
         }
     ]

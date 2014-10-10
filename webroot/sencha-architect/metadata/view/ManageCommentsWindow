@@ -29,6 +29,7 @@
                 "title": null,
                 "width": 27
             },
+            "name": "MyGridPanel",
             "designerId": "159ccbbe-b8e8-4f0e-a0a3-fdbc2cc2fb7d",
             "cn": [
                 {
@@ -45,6 +46,7 @@
                         "text": "comment",
                         "width": null
                     },
+                    "name": "MyColumn1",
                     "designerId": "6d0b621f-70e9-4f53-b87a-9198c85b9f11",
                     "cn": [
                         {
@@ -57,6 +59,7 @@
                             "userConfig": {
                                 "designer|displayName": "Comment Editor"
                             },
+                            "name": "MyTextField",
                             "designerId": "80d75ed1-34fe-4cc8-9866-b6d7c545ad75"
                         }
                     ]
@@ -75,6 +78,7 @@
                         "text": "Created",
                         "width": 130
                     },
+                    "name": "MyDateColumn1",
                     "designerId": "9f00bba0-731b-4818-9177-cbfb52f7fd56"
                 },
                 {
@@ -89,6 +93,7 @@
                         "menuDisabled": true,
                         "width": 27
                     },
+                    "name": "MyActionColumn1",
                     "designerId": "e7d636d5-38ad-49f0-a2f9-1b48072b44f3",
                     "cn": [
                         {
@@ -104,6 +109,7 @@
                                 "icon": "img/icons/delete.png",
                                 "tooltip": "delete"
                             },
+                            "name": "MyActionColumnItem1",
                             "designerId": "a374f281-8f6b-46a5-be05-81293c564d08",
                             "cn": [
                                 {
@@ -130,6 +136,7 @@
                                             "store.remove(rec);"
                                         ]
                                     },
+                                    "name": "handler",
                                     "designerId": "3304af68-b810-4724-ad0b-b7525bf2a0cc"
                                 }
                             ]
@@ -143,6 +150,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
+                    "name": "MyGridView1",
                     "designerId": "ad514e13-fe76-4672-a9cd-9eeaade60d7b"
                 },
                 {
@@ -152,6 +160,7 @@
                         "type": "array"
                     },
                     "codeClass": "Ext.grid.plugin.CellEditing",
+                    "name": "MyCellEditingPlugin",
                     "designerId": "e6c9544d-d104-4ded-9a77-4379c2054528"
                 }
             ]

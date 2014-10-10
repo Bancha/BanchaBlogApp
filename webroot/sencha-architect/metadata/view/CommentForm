@@ -37,6 +37,7 @@
             "userConfig": {
                 "title": "Add a comment"
             },
+            "name": "MyFieldSet",
             "designerId": "47bafdee-1952-4889-a4d6-5b08f020b563",
             "cn": [
                 {
@@ -51,6 +52,7 @@
                         "layout|anchor": "100%",
                         "name": "article_id"
                     },
+                    "name": "MyHiddenField",
                     "designerId": "821e9afa-1338-42f5-98c3-6fe014c17837"
                 },
                 {
@@ -66,6 +68,7 @@
                         "layout|anchor": "100%",
                         "name": "comment"
                     },
+                    "name": "MyTextArea",
                     "designerId": "91fdcb03-f0d6-403e-a816-5acce639c4d9"
                 },
                 {
@@ -82,6 +85,7 @@
                         ],
                         "ui": null
                     },
+                    "name": "MyToolbar",
                     "designerId": "e7ed9a0a-f79c-4557-aa79-81ef725c6b52",
                     "cn": [
                         {
@@ -94,6 +98,7 @@
                             "userConfig": {
                                 "layout|flex": 1
                             },
+                            "name": "MySpacer",
                             "designerId": "c9fe28fd-8383-4640-ba96-0630ce8db4c9"
                         },
                         {
@@ -110,6 +115,7 @@
                                 "margin": null,
                                 "text": "submit"
                             },
+                            "name": "MyButton",
                             "designerId": "423870a4-8d0e-4308-9ecd-ce764cdef2c8",
                             "customConfigs": [
                                 {

@@ -48,6 +48,7 @@
                 "name": "articlechanged",
                 "scope": "this"
             },
+            "name": "onArticleChanged",
             "designerId": "91ac8c9a-cc38-4921-94fa-4945a66633dd"
         },
         {
@@ -93,6 +94,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onCommentSubmit",
             "designerId": "9592b856-5e3b-4c76-8ba7-cf53df26073b"
         },
         {
@@ -106,6 +108,7 @@
                 "ref": "commentForm",
                 "selector": "commentform"
             },
+            "name": "commentForm",
             "designerId": "4fd95e3d-55c5-4df6-93fe-9e1747352a97"
         },
         {
@@ -119,6 +122,7 @@
                 "ref": "commentsPanel",
                 "selector": "commentspanel"
             },
+            "name": "commentsPanel",
             "designerId": "d6df3b1c-868a-4b2a-8869-95eee5c4eb47"
         },
         {
@@ -134,6 +138,7 @@
                 "selector": "managewindow",
                 "xtype": "managecommentswindows"
             },
+            "name": "manageWindow",
             "designerId": "77020113-4687-4c3f-8768-31e864d326b8"
         },
         {
@@ -147,6 +152,7 @@
                 "ref": "manageTool",
                 "selector": "commentspanel tool[type=gear]"
             },
+            "name": "manageTool",
             "designerId": "5a529e04-d7ae-4ae9-8264-066a91bdb0ef"
         },
         {
@@ -172,6 +178,7 @@
                 "name": "loggedin",
                 "scope": "this"
             },
+            "name": "onLoggedIn",
             "designerId": "f018ac55-5635-44e5-b3bb-b95f7aac3084"
         },
         {
@@ -193,6 +200,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onManageToolClick",
             "designerId": "b1230213-4562-4151-8498-37ca83cfa40f",
             "customConfigs": [
                 {

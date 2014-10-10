@@ -27,5 +27,6 @@
             "LoginWindow"
         ]
     },
+    "name": "Application",
     "designerId": "application"
 }

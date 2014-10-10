@@ -35,7 +35,13 @@ Ext.Loader.addClassPathMappings({
   "Bancha.scaffold.grid.override.Panel": "../../Plugin/Bancha/webroot/js/scaffold/src/grid/override/Panel.js",
   "BlogApp": "app",
   "Ext": "ext/src",
+  "Ext.DomHelper": "ext/src/dom/Helper.js",
+  "Ext.DomQuery": "ext/src/dom/Query.js",
+  "Ext.EventObjectImpl": "ext/src/EventObject.js",
   "Ext.Msg": "ext/src/window/MessageBox.js",
+  "Ext.Supports": "ext/src/Support.js",
+  "Ext.core.DomHelper": "ext/src/dom/Helper.js",
+  "Ext.core.DomQuery": "ext/src/dom/Query.js",
   "Ext.data.validator": "../../Plugin/Bancha/webroot/js/data/validator",
   "Ext.rtl.EventObjectImpl": "ext/src/rtl/EventObject.js",
   "ExtThemeNeptune.Component": "ext/ext-theme-neptune.js",
@@ -2031,9 +2037,9 @@ Ext.setVersion("ext-theme-base", "4.2.1");
 Ext.setVersion("ext-theme-neptune", "4.2.1");
 Ext.setVersion("ext-theme-neutral", "4.2.1");
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/Component.js");;
-Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Panel.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/toolbar/Toolbar.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/layout/component/Dock.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Panel.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/container/ButtonGroup.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/toolbar/Paging.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/picker/Month.js");;
@@ -2042,8 +2048,8 @@ Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Table.js")
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/grid/RowEditor.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/grid/column/RowNumberer.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/resizer/Splitter.js");;
-Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/menu/Menu.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/menu/Separator.js");;
+Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/menu/Menu.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/panel/Tool.js");;
 Ext.Loader.loadScript("ext/packages/ext-theme-neptune/overrides/tab/Tab.js");;
 /**

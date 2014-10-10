@@ -40,6 +40,7 @@
                 "text": "Name",
                 "width": null
             },
+            "name": "MyColumn",
             "designerId": "941e5b3e-f736-4005-975f-badfd60ff58f"
         },
         {
@@ -59,6 +60,7 @@
                 "text": "Created",
                 "width": 90
             },
+            "name": "MyDateColumn",
             "designerId": "9d2f38a7-1365-49d4-950f-c8c1caf5e77d"
         },
         {
@@ -75,6 +77,7 @@
                 "menuDisabled": true,
                 "width": 27
             },
+            "name": "MyActionColumn",
             "designerId": "eabf6e34-1192-4c96-86b8-71a0537741fa",
             "cn": [
                 {
@@ -90,6 +93,7 @@
                         "icon": "/img/icons/delete.png",
                         "tooltip": "delete"
                     },
+                    "name": "MyActionColumnItem",
                     "designerId": "d5a95a3c-8eaa-45f6-aadb-8fbb2ea46686",
                     "cn": [
                         {
@@ -126,6 +130,7 @@
                                     "});"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "969ea0f3-a209-49c2-90e7-b92ea33b89a8"
                         }
                     ]
@@ -142,6 +147,7 @@
             "userConfig": {
                 "width": 100
             },
+            "name": "MyGridView",
             "designerId": "7f49127a-f302-4244-b834-73faaf9d6a6a"
         }
     ]

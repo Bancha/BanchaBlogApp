@@ -1,10 +1,6 @@
 {
     "expandedState": {
-        "data": true,
-        "model": true,
-        "component": true,
-        "controller": true,
-        "resource": true,
+        "view": true,
         "aa072d1e-c180-4283-9cba-f5e26adde0bb": {
             "id": "aa072d1e-c180-4283-9cba-f5e26adde0bb",
             "expanded": false,
@@ -206,6 +202,7 @@
                 }
             ]
         },
+        "store": true,
         "fcc4597e-3fcb-4d90-b6d2-b204866b5d35": {
             "id": "fcc4597e-3fcb-4d90-b6d2-b204866b5d35",
             "expanded": false
@@ -218,6 +215,7 @@
             "id": "4b702e2b-55aa-48bb-9ada-ef0ce834d434",
             "expanded": false
         },
+        "model": true,
         "034a9eb8-c33f-471e-8b9d-f1545e257fb3": {
             "id": "034a9eb8-c33f-471e-8b9d-f1545e257fb3",
             "expanded": false
@@ -230,6 +228,7 @@
             "id": "a9b524f1-f2e0-4175-bc55-94b4bbfad4e9",
             "expanded": false
         },
+        "controller": true,
         "605f1b49-1e8a-4555-b989-141da478d287": {
             "id": "605f1b49-1e8a-4555-b989-141da478d287",
             "expanded": false,
@@ -317,6 +316,7 @@
                 }
             ]
         },
+        "resource": true,
         "93907ad8-a278-40b5-a417-cd1d172cd181": {
             "id": "93907ad8-a278-40b5-a417-cd1d172cd181"
         },
@@ -328,17 +328,16 @@
         }
     },
     "tabState": {
-        "openTabs": []
+        "openTabs": [
+            "f672fe9e-9206-4008-be75-6d10326f654e"
+        ]
     },
     "canvasState": {
         "topInstance": "aa072d1e-c180-4283-9cba-f5e26adde0bb"
     },
     "inspectorState": {
-        "topInstance": "aa072d1e-c180-4283-9cba-f5e26adde0bb",
-        "selectedInstance": "aa072d1e-c180-4283-9cba-f5e26adde0bb"
-    },
-    "codeState": {
-        "topInstance": "b546f619-60cc-442f-aae5-c0f933e1967b"
+        "topInstance": "f672fe9e-9206-4008-be75-6d10326f654e",
+        "selectedInstance": "f672fe9e-9206-4008-be75-6d10326f654e"
     },
     "editMode": "design",
     "userSettings": {}

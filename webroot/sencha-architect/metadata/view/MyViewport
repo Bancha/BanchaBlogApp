@@ -28,6 +28,7 @@
                 "layout|split": true,
                 "width": 250
             },
+            "name": "articlelist",
             "designerId": "b2d926aa-2bc1-4c2d-8116-3a4151bd6ce4",
             "masterInstanceId": "b546f619-60cc-442f-aae5-c0f933e1967b"
         },
@@ -48,6 +49,7 @@
                 "layout|split": null,
                 "title": "Article Name"
             },
+            "name": "MyPanel",
             "designerId": "a435c04d-6872-4875-9df8-75dee7289da8",
             "cn": [
                 {
@@ -67,6 +69,7 @@
                         "ui": null,
                         "width": null
                     },
+                    "name": "articlereader",
                     "designerId": "30322ef0-8f3c-419b-8cd4-d8023d83b272",
                     "masterInstanceId": "c4e4a2f6-2a3f-4210-980b-48a2fb439c37"
                 },
@@ -82,6 +85,7 @@
                         "frameHeader": null,
                         "layout|flex": 1
                     },
+                    "name": "commentspanel",
                     "designerId": "a5bb9218-1ce8-4f65-85b9-6ae735ab7a7b",
                     "masterInstanceId": "8b3b577a-a2ce-4959-b077-396ccb45c57b"
                 },
@@ -97,6 +101,7 @@
                         "tooltip": "logout",
                         "type": "minus"
                     },
+                    "name": "MyTool1",
                     "designerId": "5867f605-aeda-419a-81c1-f376bf58cac0",
                     "customConfigs": [
                         {

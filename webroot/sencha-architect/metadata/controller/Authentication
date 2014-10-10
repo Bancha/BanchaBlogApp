@@ -55,6 +55,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onLoginClick",
             "designerId": "dc50409d-a144-4df1-91f3-09c7761c69b0"
         },
         {
@@ -90,6 +91,7 @@
                 "name": "loggedin",
                 "scope": "this"
             },
+            "name": "onLoggedIn",
             "designerId": "9aac5947-4b3c-43d7-8326-6300013b1cac"
         },
         {
@@ -104,6 +106,7 @@
                 "ref": "viewport",
                 "selector": "viewport"
             },
+            "name": "viewport",
             "designerId": "728e36ab-7bca-4315-a6b7-37e4a85e186b"
         },
         {
@@ -117,6 +120,7 @@
                 "ref": "loginWindow",
                 "selector": "loginwindow"
             },
+            "name": "loginWindow",
             "designerId": "297f7972-6c28-47f8-be33-3c466d6ca3bd"
         },
         {
@@ -130,6 +134,7 @@
                 "ref": "loginForm",
                 "selector": "loginwindow formpanel"
             },
+            "name": "loginForm",
             "designerId": "6c22024e-7bd4-4878-968c-94502271fb44"
         },
         {
@@ -151,6 +156,7 @@
                 "name": "keypress",
                 "scope": "me"
             },
+            "name": "onLoginEnter",
             "designerId": "05aaeafe-9813-4930-968c-a978cc3a0c66"
         },
         {
@@ -178,6 +184,7 @@
                 "name": "click",
                 "scope": "me"
             },
+            "name": "onLogoutClick",
             "designerId": "b16741de-5fdb-4ec9-a55f-12c64591408b"
         },
         {
@@ -211,6 +218,7 @@
                     "});"
                 ]
             },
+            "name": "init",
             "designerId": "5e6c915c-955f-4cbf-a076-79a4752c8d46"
         }
     ]
