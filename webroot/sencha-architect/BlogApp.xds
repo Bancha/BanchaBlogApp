@@ -1,0 +1,85 @@
+{
+    "name": "BlogApp",
+    "settings": {
+        "cmd": {
+            "license": "gpl",
+            "cmdVersion": "4.0.1.45",
+            "frameworkVersion": "4.2.1.883"
+        },
+        "urlPrefix": "",
+        "spacesToIndent": 4,
+        "exportPath": "/Users/roland/Documents/AptanaWorkspace/BanchaBlogApp/app/webroot",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "codeGenFormat": "Class",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "instantiateStore": true,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "cssPath": "",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "sdkPath": "",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "license": "gpl",
+        "customPath": "",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        },
+        "displayfield-ExtBox1-1288-inputEl": "Not Installed",
+        "displayfield-ExtBox1-1338-inputEl": "Not Installed",
+        "displayfield-ExtBox1-1388-inputEl": "Not Installed",
+        "displayfield-ExtBox1-1438-inputEl": "Not Installed",
+        "displayfield-ExtBox1-1279-inputEl": "Not Installed"
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "aa072d1e-c180-4283-9cba-f5e26adde0bb",
+            "591a9c04-0e0a-4bc9-8679-78f1b38363d1",
+            "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6",
+            "8b3b577a-a2ce-4959-b077-396ccb45c57b",
+            "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11",
+            "bde46fe1-286e-4915-9a8d-2c6da3934859",
+            "c4e4a2f6-2a3f-4210-980b-48a2fb439c37",
+            "b546f619-60cc-442f-aae5-c0f933e1967b"
+        ],
+        "store": [
+            "fcc4597e-3fcb-4d90-b6d2-b204866b5d35",
+            "e036c70a-4959-46fd-82eb-dcf76120cd2a",
+            "4b702e2b-55aa-48bb-9ada-ef0ce834d434"
+        ],
+        "controller": [
+            "605f1b49-1e8a-4555-b989-141da478d287",
+            "bd7c905b-5945-4966-9e89-6d97c6f82b3e",
+            "952497b9-f0cd-4d4b-bf08-6e675f422772"
+        ],
+        "model": [
+            "034a9eb8-c33f-471e-8b9d-f1545e257fb3",
+            "5658ed76-2304-4361-9297-4c9f4fc8a60d",
+            "a9b524f1-f2e0-4175-bc55-94b4bbfad4e9"
+        ],
+        "resource": [
+            "93907ad8-a278-40b5-a417-cd1d172cd181",
+            "40bc445e-5215-4255-86be-592265051836",
+            "f672fe9e-9206-4008-be75-6d10326f654e"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

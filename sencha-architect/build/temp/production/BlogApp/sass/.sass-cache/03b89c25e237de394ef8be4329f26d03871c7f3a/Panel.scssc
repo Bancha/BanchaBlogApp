@@ -1,1666 +1,0 @@
-3.1.7 (Brainy Betty)
-6b22b9892f4d1e71d81b3afb69a9df088e74663c
-o:Sass::Tree::RootNode
-:@template"√y/**
- * Creates a visual theme for a Panel
- *
- * @param {string} $ui-label
- * The name of the UI being created. Can not included spaces or special punctuation
- * (used in CSS class names).
- * 
- * @param {color} [$ui-border-color=$panel-border-color]
- * The border-color of the Panel
- *
- * @param {number} [$ui-border-radius=$panel-border-radius]
- * The border-radius of the Panel
- *
- * @param {number} [$ui-border-width=$panel-border-width]
- * The border-width of the Panel
- *
- * @param {number} [$ui-padding=$panel-padding]
- * The padding of the Panel
- *
- * @param {color} [$ui-header-color=$panel-header-color]
- * The text color of the Header
- *
- * @param {string} [$ui-header-font-family=$panel-header-font-family]
- * The font-family of the Header
- *
- * @param {number} [$ui-header-font-size=$panel-header-font-size]
- * The font-size of the Header
- *
- * @param {string} [$ui-header-font-weight=$panel-header-font-weight]
- * The font-weight of the Header
- *
- * @param {number} [$ui-header-line-height=$panel-header-line-height]
- * The line-height of the Header
- *
- * @param {color} [$ui-header-border-color=$panel-header-border-color]
- * The border-color of the Header
- *
- * @param {number} [$ui-header-border-width=$panel-header-border-width]
- * The border-width of the Header
- *
- * @param {string} [$ui-header-border-style=$panel-header-border-style]
- * The border-style of the Header
- *
- * @param {color} [$ui-header-background-color=$panel-header-background-color]
- * The background-color of the Header
- *
- * @param {string/list} [$ui-header-background-gradient=$panel-header-background-gradient]
- * The background-gradient of the Header. Can be either the name of a predefined gradient
- * or a list of color stops. Used as the `$type` parameter for {@link Global_CSS#background-gradient}.
- *
- * @param {color} [$ui-header-inner-border-color=$panel-header-inner-border-color]
- * The inner border-color of the Header
- *
- * @param {number} [$ui-header-inner-border-width=$panel-header-inner-border-width]
- * The inner border-width of the Header
- *
- * @param {number/list} [$ui-header-text-padding=$panel-header-text-padding]
- * The padding of the Header's text element
- *
- * @param {string} [$ui-header-text-transform=$panel-header-text-transform]
- * The text-transform of the Header
- *
- * @param {number/list} [$ui-header-padding=$panel-header-padding]
- * The padding of the Header
- *
- * @param {number} [$ui-header-icon-width=$panel-header-icon-width]
- * The width of the Header icon
- *
- * @param {number} [$ui-header-icon-height=$panel-header-icon-height]
- * The height of the Header icon
- *
- * @param {number} [$ui-header-icon-spacing=$panel-header-icon-spacing]
- * The space between the Header icon and text
- *
- * @param {list} [$ui-header-icon-background-position=$panel-header-icon-background-position]
- * The background-position of the Header icon
- *
- * @param {color} [$ui-header-glyph-color=$panel-header-glyph-color]
- * The color of the Header glyph icon
- *
- * @param {number} [$ui-header-glyph-opacity=$panel-header-glyph-opacity]
- * The opacity of the Header glyph icon
- *
- * @param {number} [$ui-tool-spacing=$panel-tool-spacing]
- * The space between the Panel {@link Ext.panel.Tool Tools}
- *
- * @param {string} [$ui-tool-background-image=$panel-tool-background-image]
- * The background sprite to use for Panel {@link Ext.panel.Tool Tools}
- *
- * @param {color} [$ui-body-color=$panel-body-color]
- * The color of text inside the Panel body
- *
- * @param {color} [$ui-body-border-color=$panel-body-border-color]
- * The border-color of the Panel body
- *
- * @param {number} [$ui-body-border-width=$panel-body-border-width]
- * The border-width of the Panel body
- *
- * @param {string} [$ui-body-border-style=$panel-body-border-style]
- * The border-style of the Panel body
- *
- * @param {color} [$ui-body-background-color=$panel-body-background-color]
- * The background-color of the Panel body
- *
- * @param {number} [$ui-body-font-size=$panel-body-font-size]
- * The font-size of the Panel body
- *
- * @param {string} [$ui-body-font-weight=$panel-body-font-weight]
- * The font-weight of the Panel body
- *
- * @param {string} [$ui-background-stretch-top=$panel-background-stretch-top]
- * The direction to strech the background-gradient of top docked Headers when slicing images
- * for IE using Sencha Cmd
- *
- * @param {string} [$ui-background-stretch-bottom=$panel-background-stretch-bottom]
- * The direction to strech the background-gradient of bottom docked Headers when slicing images
- * for IE using Sencha Cmd
- *
- * @param {string} [$ui-background-stretch-right=$panel-background-stretch-right]
- * The direction to strech the background-gradient of right docked Headers when slicing images
- * for IE using Sencha Cmd
- *
- * @param {string} [$ui-background-stretch-left=$panel-background-stretch-left]
- * The direction to strech the background-gradient of left docked Headers when slicing images
- * for IE using Sencha Cmd
- *
- * @param {boolean} [$ui-include-border-management-rules=$panel-include-border-management-rules]
- * True to include neptune style border management rules.
- *
- * @param {color} [$ui-wrap-border-color=$panel-wrap-border-color]
- * The color to apply to the border that wraps the body and docked items in a framed
- * panel. The presence of the wrap border in a framed panel is controlled by the
- * {@link #border} config. Only applicable when `$ui-include-border-management-rules` is
- * `true`.
- *
- * @param {color} [$ui-wrap-border-width=$panel-wrap-border-width]
- * The width to apply to the border that wraps the body and docked items in a framed
- * panel. The presence of the wrap border in a framed panel is controlled by the
- * {@link #border} config. Only applicable when `$ui-include-border-management-rules` is
- * `true`.
- *
- * @member Ext.panel.Panel
- */
-@mixin extjs-panel-ui(
-    $ui-label,
-
-    $ui-border-color: $panel-border-color,
-    $ui-border-radius: $panel-border-radius,
-    $ui-border-width: $panel-border-width,
-    $ui-padding: 0,
-
-    $ui-header-color: $panel-header-color,
-    $ui-header-font-family: $panel-header-font-family,
-    $ui-header-font-size: $panel-header-font-size,
-    $ui-header-font-weight: $panel-header-font-weight,
-    $ui-header-line-height: $panel-header-line-height,
-    $ui-header-border-color: $panel-header-border-color,
-    $ui-header-border-width: $panel-header-border-width,
-    $ui-header-border-style: $panel-header-border-style,
-    $ui-header-background-color: $panel-header-background-color,
-    $ui-header-background-gradient: $panel-header-background-gradient,
-    $ui-header-inner-border-color: $panel-header-inner-border-color,
-    $ui-header-inner-border-width: $panel-header-inner-border-width,
-    $ui-header-text-padding: $panel-header-text-padding,
-    $ui-header-text-transform: $panel-header-text-transform,
-    $ui-header-padding: $panel-header-padding,
-    $ui-header-icon-width: $panel-header-icon-width,
-    $ui-header-icon-height: $panel-header-icon-height,
-    $ui-header-icon-spacing: $panel-header-icon-spacing,
-    $ui-header-icon-background-position: $panel-header-icon-background-position,
-    $ui-header-glyph-color: $panel-header-glyph-color,
-    $ui-header-glyph-opacity: $panel-header-glyph-opacity,
-
-    $ui-tool-spacing: $panel-tool-spacing,
-    $ui-tool-background-image: $panel-tool-background-image,
-
-    $ui-body-color: $panel-body-color,
-    $ui-body-border-color: $panel-body-border-color,
-    $ui-body-border-width: $panel-body-border-width,
-    $ui-body-border-style: $panel-body-border-style,
-    $ui-body-background-color: $panel-body-background-color,
-    $ui-body-font-size: $panel-body-font-size,
-    $ui-body-font-weight: $panel-body-font-weight,
-
-    $ui-background-stretch-top: $panel-background-stretch-top,
-    $ui-background-stretch-bottom: $panel-background-stretch-bottom,
-    $ui-background-stretch-right: $panel-background-stretch-right,
-    $ui-background-stretch-left: $panel-background-stretch-left,
-
-    // See the docs above
-    $ui-include-border-management-rules: $panel-include-border-management-rules,
-    $ui-wrap-border-color: $panel-wrap-border-color,
-    $ui-wrap-border-width: $panel-wrap-border-width
-){
-    @if $ui-header-inner-border-color == null and $ui-header-background-color != null {
-        $ui-header-inner-border-color: lighten($ui-header-background-color, 10);
-    }
-
-    $ui-header-padding-noborder:
-        top($ui-header-padding) + top($ui-header-border-width)
-        right($ui-header-padding) + right($ui-header-border-width)
-        // don't add bottom border since bottom border always gets removed by dock layout
-        bottom($ui-header-padding)
-        left($ui-header-padding) + left($ui-header-border-width);
-
-    .#{$prefix}panel-#{$ui-label} {
-        @if $ui-border-color != null { border-color: $ui-border-color; }
-        padding: $ui-padding;
-    }
-
-    // header
-    .#{$prefix}panel-header-#{$ui-label} {
-        @if $ui-header-font-size != null { font-size: $ui-header-font-size; }
-
-        @if $ui-header-border-width != 0 {
-            border: $ui-header-border-width $ui-header-border-style $ui-header-border-color;
-        }
-
-        .#{$prefix}tool-img {
-            @if $ui-tool-background-image != $tool-background-image {
-                background-image: theme-background-image($ui-tool-background-image);
-            }
-            @if $ui-header-background-gradient == null {
-                // EXTJSIV-8846: partially transparent png images do not display correctly
-                // in winXP/IE8m when the image element has a transparent background.
-                // to fix this, we give the element the same background-color as the header.
-                background-color: $ui-header-background-color;
-            }
-        }
-    }
-
-    .#{$prefix}panel-header-#{$ui-label}-horizontal {
-        padding: $ui-header-padding;
-    }
-
-    .#{$prefix}panel-header-#{$ui-label}-horizontal-noborder {
-        padding: $ui-header-padding-noborder;
-    }
-
-    .#{$prefix}panel-header-#{$ui-label}-vertical {
-        padding: rotate90($ui-header-padding);
-    }
-
-    .#{$prefix}panel-header-#{$ui-label}-vertical-noborder {
-        padding: rotate90($ui-header-padding-noborder);
-    }
-
-    @if $include-rtl {
-        .#{$prefix}rtl.#{$prefix}panel-header-#{$ui-label}-vertical {
-            padding: rotate270($ui-header-padding);
-        }
-
-        .#{$prefix}rtl.#{$prefix}panel-header-#{$ui-label}-vertical-noborder {
-            padding: rotate270($ui-header-padding-noborder);
-        }
-    }
-
-
-    // header text
-    .#{$prefix}panel-header-text-container-#{$ui-label} {
-        @if $ui-header-color != null { color: $ui-header-color; }
-
-        @if $ui-header-font-size != null {   font-size: $ui-header-font-size; }
-        @if $ui-header-font-weight != null { font-weight: $ui-header-font-weight; }
-        @if $ui-header-font-family != null { font-family: $ui-header-font-family; }
-        @if $ui-header-line-height != null { line-height: $ui-header-line-height; }
-        padding: $ui-header-text-padding;
-        text-transform: $ui-header-text-transform;
-    }
-
-    // body
-    .#{$prefix}panel-body-#{$ui-label} {
-        @if $ui-body-background-color != null { background: $ui-body-background-color; }
-        @if $ui-body-border-color != null {     border-color: $ui-body-border-color; }
-        @if $ui-body-color != null {            color: $ui-body-color; }
-        @if $ui-body-font-size != null {        font-size: $ui-body-font-size; }
-        @if $ui-body-font-weight != null {      font-size: $ui-body-font-weight; }
-
-        @if $ui-body-border-width != null {
-            border-width: $ui-body-border-width;
-            @if $ui-body-border-style != null { border-style: $ui-body-border-style; }
-        }
-    }
-
-    @if $ui-border-radius != null {
-        @include x-frame(
-            $cls: 'panel',
-            $ui: '#{$ui-label}',
-            $border-radius   : $ui-border-radius,
-            $border-width    : $ui-border-width,
-            $padding         : $ui-padding,
-            $background-color: $ui-body-background-color
-        );
-
-        @include x-frame(
-            $cls: 'panel-header',
-            $ui: '#{$ui-label}-top',
-            $border-radius: top($ui-border-radius) right($ui-border-radius) 0 0,
-            $border-width: top($ui-header-border-width) right($ui-header-border-width) 0 left($ui-header-border-width),
-            $padding: $ui-header-padding,
-            $background-color: $ui-header-background-color,
-            $background-gradient: $ui-header-background-gradient,
-            $background-stretch: $ui-background-stretch-top
-        );
-
-        @include x-frame(
-            $cls: 'panel-header',
-            $ui: '#{$ui-label}-right',
-            $border-radius: 0 right($ui-border-radius) bottom($ui-border-radius) 0,
-            $border-width: top($ui-header-border-width) right($ui-header-border-width) bottom($ui-header-border-width) 0,
-            $padding: rotate90($ui-header-padding),
-            $background-color: $ui-header-background-color,
-            $background-gradient: $ui-header-background-gradient,
-            $background-direction: right,
-            $include-frame-rtl: $include-rtl,
-            $background-stretch: $ui-background-stretch-right
-        );
-
-        @include x-frame(
-            $cls: 'panel-header',
-            $ui: '#{$ui-label}-bottom',
-            $border-radius: 0 0 bottom($ui-border-radius) left($ui-border-radius),
-            $border-width: 0 right($ui-header-border-width) bottom($ui-header-border-width) left($ui-header-border-width),
-            $padding: $ui-header-padding,
-            $background-color: $ui-header-background-color,
-            $background-gradient: $ui-header-background-gradient,
-            $background-stretch: $ui-background-stretch-bottom
-        );
-
-        @include x-frame(
-            $cls: 'panel-header',
-            $ui: '#{$ui-label}-left',
-            $border-radius: top($ui-border-radius) 0 0 left($ui-border-radius),
-            $border-width: top($ui-header-border-width) 0 bottom($ui-header-border-width) left($ui-header-border-width),
-            $padding: rotate90($ui-header-padding),
-            $background-color: $ui-header-background-color,
-            $background-gradient: $ui-header-background-gradient,
-            $background-direction: right,
-            $include-frame-rtl: $include-rtl,
-            $background-stretch: $ui-background-stretch-left
-        );
-
-        @include x-frame(
-            $cls: 'panel-header',
-            $ui: '#{$ui-label}-collapsed-top',
-            $border-radius: top($ui-border-radius) right($ui-border-radius) bottom($ui-border-radius) left($ui-border-radius),
-            $border-width: $ui-header-border-width,
-            $padding: $ui-header-padding,
-            $background-color: $ui-header-background-color,
-            $background-gradient: $ui-header-background-gradient,
-            $background-stretch: $ui-background-stretch-top
-        );
-
-        @include x-frame(
-            $cls: 'panel-header',
-            $ui: '#{$ui-label}-collapsed-right',
-            $border-radius: top($ui-border-radius) right($ui-border-radius) bottom($ui-border-radius) left($ui-border-radius),
-            $border-width: $ui-header-border-width,
-            $padding: rotate90($ui-header-padding),
-            $background-color: $ui-header-background-color,
-            $background-gradient: $ui-header-background-gradient,
-            $background-direction: right,
-            $include-frame-rtl: $include-rtl,
-            $background-stretch: $ui-background-stretch-right
-        );
-
-        @include x-frame(
-            $cls: 'panel-header',
-            $ui: '#{$ui-label}-collapsed-bottom',
-            $border-radius: top($ui-border-radius) right($ui-border-radius) bottom($ui-border-radius) left($ui-border-radius),
-            $border-width: $ui-header-border-width,
-            $padding: $ui-header-padding,
-            $background-color: $ui-header-background-color,
-            $background-gradient: $ui-header-background-gradient,
-            $background-stretch: $ui-background-stretch-bottom
-        );
-
-        @include x-frame(
-            $cls: 'panel-header',
-            $ui: '#{$ui-label}-collapsed-left',
-            $border-radius: top($ui-border-radius) right($ui-border-radius) bottom($ui-border-radius) left($ui-border-radius),
-            $border-width: $ui-header-border-width,
-            $padding: rotate90($ui-header-padding),
-            $background-color: $ui-header-background-color,
-            $background-gradient: $ui-header-background-gradient,
-            $background-direction: right,
-            $include-frame-rtl: $include-rtl,
-            $background-stretch: $ui-background-stretch-left
-        );
-
-        // !important is needed in the following rules to override dock layout's border
-        // management rules. the x-panel ancestor selector is used to increase the
-        // specificity over the ".#{$prefix}nbr .#{$prefix}#{$cls-ui}" rule produced by
-        // x-frame
-        .#{$prefix}panel {
-            .#{$prefix}panel-header-#{$ui-label}-top {
-                border-bottom-width: bottom($ui-header-border-width) !important;
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-right {
-                border-left-width: bottom($ui-header-border-width) !important;
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-bottom {
-                border-top-width: bottom($ui-header-border-width) !important;
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-left {
-                border-right-width: bottom($ui-header-border-width) !important;
-            }
-        }
-
-        .#{$prefix}nbr {
-            .#{$prefix}panel-header-#{$ui-label}-collapsed-top {
-                border-bottom-width: 0 !important;
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-collapsed-right {
-                border-left-width: 0 !important;
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-collapsed-bottom {
-                border-top-width: 0 !important;
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-collapsed-left {
-                border-right-width: 0 !important;
-            }
-        }
-    } @else {
-        @if $ui-header-background-color != null and ($supports-gradients or $compile-all) {
-            .#{$prefix}panel-header-#{$ui-label} {
-                @include background-gradient($ui-header-background-color, $ui-header-background-gradient);
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-vertical {
-                @include background-gradient($ui-header-background-color, $ui-header-background-gradient, right);
-            }
-
-            @if $include-rtl {
-                .#{$prefix}rtl.#{$prefix}panel-header-#{$ui-label}-vertical {
-                    @include background-gradient($ui-header-background-color, $ui-header-background-gradient, left);
-                }
-            }
-        }
-
-        // header background images
-        $panel-header-ui: 'panel-header-#{$ui-label}';
-        $panel-header-path: 'panel-header/panel-header-#{$ui-label}';
-
-        @if $ui-header-background-color != null and $ui-header-background-gradient != null {
-            @if not $supports-gradients or $compile-all {
-                .#{$prefix}nlg {
-                    .#{$prefix}#{$panel-header-ui}-top {
-                        background: slicer-background-image($panel-header-ui + '-top',
-                                            '#{$panel-header-path}-top-bg');
-                    }
-
-                    .#{$prefix}#{$panel-header-ui}-bottom {
-                        background: slicer-background-image($panel-header-ui + '-bottom',
-                                            '#{$panel-header-path}-bottom-bg');
-                    }
-
-                    .#{$prefix}#{$panel-header-ui}-left {
-                        background: slicer-background-image($panel-header-ui + '-left',
-                                            '#{$panel-header-path}-left-bg') top right;
-                    }
-
-                    .#{$prefix}#{$panel-header-ui}-right {
-                        background: slicer-background-image($panel-header-ui + '-right',
-                                            '#{$panel-header-path}-right-bg') top right;
-                    }
-
-                    @if $include-rtl {
-                        .#{$prefix}rtl {
-                            &.#{$prefix}#{$panel-header-ui}-left {
-                                background: slicer-background-image-rtl($panel-header-ui + '-left',
-                                            '#{$panel-header-path}-left-bg-rtl');
-                            }
-                            &.#{$prefix}#{$panel-header-ui}-right {
-                                background: slicer-background-image-rtl($panel-header-ui + '-right',
-                                            '#{$panel-header-path}-right-bg-rtl');
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .#{$prefix}panel {
-            // !important is needed here to override dock layout's border management
-            // rules. the x-panel ancestor selector is used to increase the specificity
-            // over the ".#{$prefix}nbr .#{$prefix}#{$cls-ui}" rule produced by x-frame
-            .#{$prefix}panel-header-#{$ui-label}-collapsed-border-top {
-                border-bottom-width: $ui-header-border-width !important;
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-collapsed-border-right {
-                border-left-width: $ui-header-border-width !important;
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-collapsed-border-bottom {
-                border-top-width: $ui-header-border-width !important;
-            }
-
-            .#{$prefix}panel-header-#{$ui-label}-collapsed-border-left {
-                border-right-width: $ui-header-border-width !important;
-            }
-        }
-
-        $stretch: slicer-background-stretch($panel-header-ui + '-top', bottom);
-        $stretch: slicer-background-stretch($panel-header-ui + '-right', left);
-        $stretch: slicer-background-stretch($panel-header-ui + '-bottom', bottom);
-        $stretch: slicer-background-stretch($panel-header-ui + '-left', left);
-
-        @include x-slicer($panel-header-ui + '-top');
-        @include x-slicer($panel-header-ui + '-bottom');
-        @include x-slicer($panel-header-ui + '-left');
-        @include x-slicer($panel-header-ui + '-right');
-    }
-
-    .#{$prefix}panel-header-#{$ui-label}-vertical .#{$prefix}panel-header-text-container {
-        @include rotate-element($angle: 90, $background-color: $ui-header-background-color);
-    }
-
-    @if $include-rtl {
-        .#{$prefix}panel-header-#{$ui-label}-vertical .#{$prefix}rtl.#{$prefix}panel-header-text-container {
-            @include rotate-element($angle: 270, $background-color: $ui-header-background-color);
-        }
-    }
-
-    @if $ui-header-inner-border-width != 0 {
-        .#{$prefix}panel-header-#{$ui-label}-top {
-            @include inner-border($ui-header-inner-border-width, $ui-header-inner-border-color);
-        }
-
-        .#{$prefix}panel-header-#{$ui-label}-right {
-            @include inner-border(rotate90($ui-header-inner-border-width), $ui-header-inner-border-color);
-        }
-
-        .#{$prefix}panel-header-#{$ui-label}-bottom {
-            @include inner-border(rotate180($ui-header-inner-border-width), $ui-header-inner-border-color);
-        }
-
-        .#{$prefix}panel-header-#{$ui-label}-left {
-            @include inner-border(rotate270($ui-header-inner-border-width), $ui-header-inner-border-color);
-        }
-    }
-
-    .#{$prefix}panel-header-#{$ui-label} {
-        .#{$prefix}panel-header-icon {
-            width: $ui-header-icon-width;
-            height: $ui-header-icon-height;
-            background-position: $ui-header-icon-background-position;
-        }
-        .#{$prefix}panel-header-glyph {
-            color: $ui-header-glyph-color;
-            font-size: $ui-header-icon-height;
-            line-height: $ui-header-icon-height;
-
-            @if $ui-header-glyph-opacity != 1 {
-                // do not use the opacity mixin because we do not want IE's filter version of
-                // opacity to be included.  We emulate the opacity setting in IE8m by mixing
-                // the icon color into the background color. (see below)
-                opacity: $ui-header-glyph-opacity;
-            }
-            // In IE8 and below when a glyph contains partially transparent pixels, we 
-            // can't apply an opacity filter to the glyph element, because IE8m will render
-            // the partially transparent pixels of the glyph as black. To work around this,
-            // we emulate the approximate color that the glyph would have if it had opacity
-            // applied by mixing the glyph color with the header's background-color.
-            .#{$prefix}ie8m & {
-                color: mix($ui-header-glyph-color, $ui-header-background-color, $ui-header-glyph-opacity * 100);
-            }
-        }
-    }
-
-    $ui-header-icon-margin: 0 $panel-header-icon-spacing 0 0;
-    .#{$prefix}panel-header-#{$ui-label}-horizontal {
-        .#{$prefix}panel-header-icon-before-title {
-            margin: $ui-header-icon-margin;
-        }
-
-        @if $include-rtl {
-            .#{$prefix}rtl.#{$prefix}panel-header-icon-before-title {
-                margin: rtl($ui-header-icon-margin);
-            }
-        }
-
-        .#{$prefix}panel-header-icon-after-title {
-            margin: rtl($ui-header-icon-margin);
-        }
-
-        @if $include-rtl {
-            .#{$prefix}rtl.#{$prefix}panel-header-icon-after-title {
-                margin: $ui-header-icon-margin;
-            }
-        }
-    }
-
-    .#{$prefix}panel-header-#{$ui-label}-vertical {
-        .#{$prefix}panel-header-icon-before-title {
-            margin: rotate90($ui-header-icon-margin);
-        }
-
-        @if $include-rtl {
-            .#{$prefix}rtl.#{$prefix}panel-header-icon-before-title {
-                margin: rotate270(rtl($ui-header-icon-margin));
-            }
-        }
-
-        .#{$prefix}panel-header-icon-after-title {
-            margin: rotate90(rtl($ui-header-icon-margin));
-        }
-
-        @if $include-rtl {
-            .#{$prefix}rtl.#{$prefix}panel-header-icon-after-title {
-                margin: rotate270($ui-header-icon-margin);
-            }
-        }
-    }
-
-    $ui-tool-margin: 0 0 0 $ui-tool-spacing;
-    .#{$prefix}panel-header-#{$ui-label}-horizontal {
-        .#{$prefix}tool-after-title {
-            margin: $ui-tool-margin;
-        }
-
-        @if $include-rtl {
-            .#{$prefix}rtl.#{$prefix}tool-after-title {
-                margin: rtl($ui-tool-margin);
-            }
-        }
-
-        .#{$prefix}tool-before-title {
-            margin: rtl($ui-tool-margin);
-        }
-
-        @if $include-rtl {
-            .#{$prefix}rtl.#{$prefix}tool-before-title {
-                margin: $ui-tool-margin;
-            }
-        }
-    }
-
-    .#{$prefix}panel-header-#{$ui-label}-vertical {
-        .#{$prefix}tool-after-title {
-            margin: rotate90($ui-tool-margin);
-        }
-
-        @if $include-rtl {
-            .#{$prefix}rtl.#{$prefix}tool-after-title {
-                margin: rotate270(rtl($ui-tool-margin));
-            }
-        }
-
-        .#{$prefix}tool-before-title {
-            margin: rotate90(rtl($ui-tool-margin));
-        }
-
-        @if $include-rtl {
-            .#{$prefix}rtl.#{$prefix}tool-before-title {
-                margin: rotate270($ui-tool-margin);
-            }
-        }
-    }
-
-    @if $include-rtl {
-        .#{$prefix}rtl {
-            &.#{$prefix}panel-header-#{$ui-label}-collapsed-border-right {
-                border-right-width: $ui-header-border-width !important;
-            }
-            &.#{$prefix}panel-header-#{$ui-label}-collapsed-border-left {
-                border-left-width: $ui-header-border-width !important;
-            }
-        }
-    }
-
-    // Panel resizing.
-    // If there's a border that's wider than the specified threshold (Sencha default is 2) then
-    // embed the handles in the borders using -ve position and make resizable windows show overflow.
-    // The dock layout should ensure that all constituent elements fit within the element.
-    // The only exception is during animated resizing. Overflow inline style is set hidden during animation (AbstractComponent.animate)
-    .#{$prefix}panel-#{$ui-label}-resizable {
-
-        // Panel resize handles are invisible
-        .#{$prefix}panel-handle {
-            @include opacity(0);
-        }
-
-        // If there's a border width, embed the handles in that border
-        @if $ui-border-width > $border-width-threshold {
-            // Resizable Panel element overflow must be visible for embedded handles to accept mouseovers.
-            overflow: visible;
-
-            .#{$prefix}panel-handle-north-br {
-                top: -($ui-border-width);
-            }
-            .#{$prefix}panel-handle-south-br {
-                bottom: -($ui-border-width);
-            }
-            .#{$prefix}panel-handle-east-br {
-                right: -($ui-border-width);
-            }
-            .#{$prefix}panel-handle-west-br {
-                left: -($ui-border-width);
-            }
-            .#{$prefix}panel-handle-northwest-br {
-                left: -($ui-border-width);
-                top: -($ui-border-width);
-            }
-            .#{$prefix}panel-handle-northeast-br {
-                right: -($ui-border-width);
-                top: -($ui-border-width);
-            }
-            .#{$prefix}panel-handle-southeast-br {
-                right: -($ui-border-width);
-                bottom: -($ui-border-width);
-            }
-            .#{$prefix}panel-handle-southwest-br {
-                left: -($ui-border-width);
-                bottom: -($ui-border-width);
-            }
-        }
-    }
-
-    @if $ui-include-border-management-rules {
-        @include border-management(
-            $parent-cls: panel-#{$ui-label},
-            $border-width: $ui-wrap-border-width,
-            $border-color: $ui-wrap-border-color
-        );
-    }
-}
-
-.#{$prefix}panel-ghost {
-    @include opacity($panel-ghost-opacity);
-}
-
-@if $include-panel-default-ui {
-    @include extjs-panel-ui(
-        $ui-label: 'default'
-    );
-}
-
-@if $include-panel-default-framed-ui {
-    @include extjs-panel-ui(
-        $ui-label: 'default-framed',
-
-        $ui-border-color: $panel-frame-border-color,
-        $ui-border-width: $panel-frame-border-width,
-        $ui-border-radius: $panel-frame-border-radius,
-        $ui-padding: $panel-frame-padding,
-
-        $ui-header-border-color: $panel-frame-border-color,
-        $ui-header-border-width: $panel-frame-header-border-width,
-        $ui-header-inner-border-color: $panel-frame-header-inner-border-color,
-        $ui-header-inner-border-width: $panel-frame-header-inner-border-width,
-        $ui-header-padding: $panel-frame-header-padding,
-
-        $ui-body-border-width: $panel-frame-body-border-width,
-        $ui-body-background-color: $panel-frame-background-color
-    );
-}:@has_childrenT:@options{ :@children[
-o:Sass::Tree::CommentNode:@silent0;@;	[ :@lines[ :
-@loud0:@value"°/**
- * Creates a visual theme for a Panel
- *
- * @param {string} $ui-label
- * The name of the UI being created. Can not included spaces or special punctuation
- * (used in CSS class names).
- * 
- * @param {color} [$ui-border-color=$panel-border-color]
- * The border-color of the Panel
- *
- * @param {number} [$ui-border-radius=$panel-border-radius]
- * The border-radius of the Panel
- *
- * @param {number} [$ui-border-width=$panel-border-width]
- * The border-width of the Panel
- *
- * @param {number} [$ui-padding=$panel-padding]
- * The padding of the Panel
- *
- * @param {color} [$ui-header-color=$panel-header-color]
- * The text color of the Header
- *
- * @param {string} [$ui-header-font-family=$panel-header-font-family]
- * The font-family of the Header
- *
- * @param {number} [$ui-header-font-size=$panel-header-font-size]
- * The font-size of the Header
- *
- * @param {string} [$ui-header-font-weight=$panel-header-font-weight]
- * The font-weight of the Header
- *
- * @param {number} [$ui-header-line-height=$panel-header-line-height]
- * The line-height of the Header
- *
- * @param {color} [$ui-header-border-color=$panel-header-border-color]
- * The border-color of the Header
- *
- * @param {number} [$ui-header-border-width=$panel-header-border-width]
- * The border-width of the Header
- *
- * @param {string} [$ui-header-border-style=$panel-header-border-style]
- * The border-style of the Header
- *
- * @param {color} [$ui-header-background-color=$panel-header-background-color]
- * The background-color of the Header
- *
- * @param {string/list} [$ui-header-background-gradient=$panel-header-background-gradient]
- * The background-gradient of the Header. Can be either the name of a predefined gradient
- * or a list of color stops. Used as the `$type` parameter for {@link Global_CSS#background-gradient}.
- *
- * @param {color} [$ui-header-inner-border-color=$panel-header-inner-border-color]
- * The inner border-color of the Header
- *
- * @param {number} [$ui-header-inner-border-width=$panel-header-inner-border-width]
- * The inner border-width of the Header
- *
- * @param {number/list} [$ui-header-text-padding=$panel-header-text-padding]
- * The padding of the Header's text element
- *
- * @param {string} [$ui-header-text-transform=$panel-header-text-transform]
- * The text-transform of the Header
- *
- * @param {number/list} [$ui-header-padding=$panel-header-padding]
- * The padding of the Header
- *
- * @param {number} [$ui-header-icon-width=$panel-header-icon-width]
- * The width of the Header icon
- *
- * @param {number} [$ui-header-icon-height=$panel-header-icon-height]
- * The height of the Header icon
- *
- * @param {number} [$ui-header-icon-spacing=$panel-header-icon-spacing]
- * The space between the Header icon and text
- *
- * @param {list} [$ui-header-icon-background-position=$panel-header-icon-background-position]
- * The background-position of the Header icon
- *
- * @param {color} [$ui-header-glyph-color=$panel-header-glyph-color]
- * The color of the Header glyph icon
- *
- * @param {number} [$ui-header-glyph-opacity=$panel-header-glyph-opacity]
- * The opacity of the Header glyph icon
- *
- * @param {number} [$ui-tool-spacing=$panel-tool-spacing]
- * The space between the Panel {@link Ext.panel.Tool Tools}
- *
- * @param {string} [$ui-tool-background-image=$panel-tool-background-image]
- * The background sprite to use for Panel {@link Ext.panel.Tool Tools}
- *
- * @param {color} [$ui-body-color=$panel-body-color]
- * The color of text inside the Panel body
- *
- * @param {color} [$ui-body-border-color=$panel-body-border-color]
- * The border-color of the Panel body
- *
- * @param {number} [$ui-body-border-width=$panel-body-border-width]
- * The border-width of the Panel body
- *
- * @param {string} [$ui-body-border-style=$panel-body-border-style]
- * The border-style of the Panel body
- *
- * @param {color} [$ui-body-background-color=$panel-body-background-color]
- * The background-color of the Panel body
- *
- * @param {number} [$ui-body-font-size=$panel-body-font-size]
- * The font-size of the Panel body
- *
- * @param {string} [$ui-body-font-weight=$panel-body-font-weight]
- * The font-weight of the Panel body
- *
- * @param {string} [$ui-background-stretch-top=$panel-background-stretch-top]
- * The direction to strech the background-gradient of top docked Headers when slicing images
- * for IE using Sencha Cmd
- *
- * @param {string} [$ui-background-stretch-bottom=$panel-background-stretch-bottom]
- * The direction to strech the background-gradient of bottom docked Headers when slicing images
- * for IE using Sencha Cmd
- *
- * @param {string} [$ui-background-stretch-right=$panel-background-stretch-right]
- * The direction to strech the background-gradient of right docked Headers when slicing images
- * for IE using Sencha Cmd
- *
- * @param {string} [$ui-background-stretch-left=$panel-background-stretch-left]
- * The direction to strech the background-gradient of left docked Headers when slicing images
- * for IE using Sencha Cmd
- *
- * @param {boolean} [$ui-include-border-management-rules=$panel-include-border-management-rules]
- * True to include neptune style border management rules.
- *
- * @param {color} [$ui-wrap-border-color=$panel-wrap-border-color]
- * The color to apply to the border that wraps the body and docked items in a framed
- * panel. The presence of the wrap border in a framed panel is controlled by the
- * {@link #border} config. Only applicable when `$ui-include-border-management-rules` is
- * `true`.
- *
- * @param {color} [$ui-wrap-border-width=$panel-wrap-border-width]
- * The width to apply to the border that wraps the body and docked items in a framed
- * panel. The presence of the wrap border in a framed panel is controlled by the
- * {@link #border} config. Only applicable when `$ui-include-border-management-rules` is
- * `true`.
- *
- * @member Ext.panel.Panel
- */:
-@lineio:Sass::Tree::MixinDefNode:
-@name"extjs-panel-ui;T;@;	["u:Sass::Tree::IfNode¯[o:Sass::Script::Operation
-:@operand2o; 
-;o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei√;@	:@operand1o:Sass::Script::Variable	:@underscored_name"ui_header_background_color:
-@name"ui-header-background-color;@	;i√:@operator:neq;i√;@	;o; 
-;o;	;@	;	;
-;"	null;i√;@	;o;	;"!ui_header_inner_border_color;"!ui-header-inner-border-color;@	;i√;:eq;i√;:and;i√0[o:Sass::Tree::VariableNode:@guarded0;"!ui-header-inner-border-color;@	:
-@expro:Sass::Script::Funcall
-;"lighten;@	:@keywords{ ;iƒ:
-@args[o;	;"ui_header_background_color;"ui-header-background-color;@	;iƒo:Sass::Script::Number:@original"10;@	:@denominator_units[ :@numerator_units[ ;i;iƒ:@children[ ;iƒo:Sass::Tree::VariableNode:@guarded0;"ui-header-padding-noborder;@:
-@expro:Sass::Script::List	;@:@separator:
-space;[	o:Sass::Script::Operation
-:@operand2o:Sass::Script::Funcall
-;"top;@:@keywords{ ;i»:
-@args[o:Sass::Script::Variable	:@underscored_name"ui_header_border_width;"ui-header-border-width;@;i»;@:@operand1o;
-;"top;@;{ ;i»;[o;	;"ui_header_padding;"ui-header-padding;@;i»:@operator:	plus;i»o;
-;o;
-;"
-right;@;{ ;i…;[o;	;"ui_header_border_width;"ui-header-border-width;@;i…;@; o;
-;"
-right;@;{ ;i…;[o;	;"ui_header_padding;"ui-header-padding;@;i…;!;";i…o;
-;"bottom;@;{ ;iÀ;[o;	;"ui_header_padding;"ui-header-padding;@;iÀo;
-;o;
-;"	left;@;{ ;iÃ;[o;	;"ui_header_border_width;"ui-header-border-width;@;iÃ;@; o;
-;"	left;@;{ ;iÃ;[o;	;"ui_header_padding;"ui-header-padding;@;iÃ;!;";iÃ;i»;	[ ;iÃo:Sass::Tree::RuleNode:
-@tabsi ;T:
-@rule[	".o;	;"prefix;"prefix;@;iŒ"panel-o;	;"ui_label;"ui-label;@;iŒ;@;	[u;ê[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@lineiœ;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_border_color:
-@name"ui-border-color;@;iœ:@operator:neq;iœ0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["border-color;@:@children[ ;o;	;"ui_border_color;"ui-border-color;@;iœ;iœo:Sass::Tree::PropNode;$i :@prop_syntax:new;["padding;@;	[ ;o;	;"ui_padding;"ui-padding;@;i–;i–;iŒo;
-;i ;@;	[ ;[ ;0;"/* header */;i”o;#;$i ;T;%[	".o;	;"prefix;"prefix;@;i‘"panel-header-o;	;"ui_label;"ui-label;@;i‘;@;	[u;ù[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei’;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_header_font_size:
-@name"ui-header-font-size;@;i’:@operator:neq;i’0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["font-size;@:@children[ ;o;	;"ui_header_font_size;"ui-header-font-size;@;i’;i’u;[o:Sass::Script::Operation
-:@operand2o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
-@linei◊;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"ui_header_border_width:
-@name"ui-header-border-width;	@	;i◊:@operator:neq;i◊0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["border;	@	:@children[ ;o:Sass::Script::List	;	@	:@separator:
-space;[o;	;"ui_header_border_width;"ui-header-border-width;	@	;iÿo;	;"ui_header_border_style;"ui-header-border-style;	@	;iÿo;	;"ui_header_border_color;"ui-header-border-color;	@	;iÿ;iÿ;iÿo;#;$i ;T;%[".o;	;"prefix;"prefix;@;i€"tool-img;@;	[u;[o:Sass::Script::Operation
-:@operand2o:Sass::Script::Variable	:@underscored_name"tool_background_image:
-@name"tool-background-image:@options{ :
-@linei‹;
-@
-:@operand1o;	;"ui_tool_background_image;	"ui-tool-background-image;
-@
-;i‹:@operator:neq;i‹0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;	["background-image;
-@
-:@children[ :@valueo:Sass::Script::Funcall
-;	"theme-background-image;
-@
-:@keywords{ ;i›:
-@args[o;	;"ui_tool_background_image;	"ui-tool-background-image;
-@
-;i›;i›u;Ô[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@lineiﬂ;@:@operand1o:Sass::Script::Variable	:@underscored_name""ui_header_background_gradient:
-@name""ui-header-background-gradient;@;iﬂ:@operator:eq;iﬂ0[o:Sass::Tree::CommentNode:@silenti ;@:@children[ :@lines[ :
-@loud0;"‡/* EXTJSIV-8846: partially transparent png images do not display correctly
- * in winXP/IE8m when the image element has a transparent background.
- * to fix this, we give the element the same background-color as the header. */;i‡o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["background-color;@;[ ;o;	;"ui_header_background_color;"ui-header-background-color;@;i„;i„;i€;i‘o;#;$i ;T;%[
-".o;	;"prefix;"prefix;@;iË"panel-header-o;	;"ui_label;"ui-label;@;iË"-horizontal;@;	[o;&;$i ;';(;["padding;@;	[ ;o;	;"ui_header_padding;"ui-header-padding;@;iÈ;iÈ;iËo;#;$i ;T;%[
-".o;	;"prefix;"prefix;@;iÏ"panel-header-o;	;"ui_label;"ui-label;@;iÏ"-horizontal-noborder;@;	[o;&;$i ;';(;["padding;@;	[ ;o;	;"ui_header_padding_noborder;"ui-header-padding-noborder;@;iÌ;iÌ;iÏo;#;$i ;T;%[
-".o;	;"prefix;"prefix;@;i"panel-header-o;	;"ui_label;"ui-label;@;i"-vertical;@;	[o;&;$i ;';(;["padding;@;	[ ;o;
-;"rotate90;@;{ ;iÒ;[o;	;"ui_header_padding;"ui-header-padding;@;iÒ;iÒ;io;#;$i ;T;%[
-".o;	;"prefix;"prefix;@;iÙ"panel-header-o;	;"ui_label;"ui-label;@;iÙ"-vertical-noborder;@;	[o;&;$i ;';(;["padding;@;	[ ;o;
-;"rotate90;@;{ ;iı;[o;	;"ui_header_padding_noborder;"ui-header-padding-noborder;@;iı;iı;iÙu;T[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@linei¯0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[".o; 	;"prefix;"prefix;@	;	i˘"	rtl.o; 	;"prefix;"prefix;@	;	i˘"panel-header-o; 	;"ui_label;"ui-label;@	;	i˘"-vertical;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["padding;@	;[ :@valueo:Sass::Script::Funcall
-;"rotate270;@	:@keywords{ ;	i˙:
-@args[o; 	;"ui_header_padding;"ui-header-padding;@	;	i˙;	i˙;	i˘o;
-;i ;T;[".o; 	;"prefix;"prefix;@	;	i˝"	rtl.o; 	;"prefix;"prefix;@	;	i˝"panel-header-o; 	;"ui_label;"ui-label;@	;	i˝"-vertical-noborder;@	;[o;;i ;;;["padding;@	;[ ;o;
-;"rotate270;@	;{ ;	i˛;[o; 	;"ui_header_padding_noborder;"ui-header-padding-noborder;@	;	i˛;	i˛;	i˝o;
-;i ;@;	[ ;[ ;0;"/* header text */;io;#;$i ;T;%[	".o;	;"prefix;"prefix;@;i"!panel-header-text-container-o;	;"ui_label;"ui-label;@;i;@;	[u;é[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_header_color:
-@name"ui-header-color;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["
-color;@:@children[ ;o;	;"ui_header_color;"ui-header-color;@;i;iu;¢[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_header_font_size:
-@name"ui-header-font-size;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["font-size;@:@children[ ;o;	;"ui_header_font_size;"ui-header-font-size;@;i;iu;¨[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_header_font_weight:
-@name"ui-header-font-weight;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["font-weight;@:@children[ ;o;	;"ui_header_font_weight;"ui-header-font-weight;@;i;iu;¨[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei	;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_header_font_family:
-@name"ui-header-font-family;@;i	:@operator:neq;i	0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["font-family;@:@children[ ;o;	;"ui_header_font_family;"ui-header-font-family;@;i	;i	u;¨[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei
-;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_header_line_height:
-@name"ui-header-line-height;@;i
-:@operator:neq;i
-0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["line-height;@:@children[ ;o;	;"ui_header_line_height;"ui-header-line-height;@;i
-;i
-o;&;$i ;';(;["padding;@;	[ ;o;	;"ui_header_text_padding;"ui-header-text-padding;@;i;io;&;$i ;';(;["text-transform;@;	[ ;o;	;"ui_header_text_transform;"ui-header-text-transform;@;i;i;io;
-;i ;@;	[ ;[ ;0;"/* body */;io;#;$i ;T;%[	".o;	;"prefix;"prefix;@;i"panel-body-o;	;"ui_label;"ui-label;@;i;@;	[u;∑[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_body_background_color:
-@name"ui-body-background-color;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["background;@:@children[ ;o;	;"ui_body_background_color;"ui-body-background-color;@;i;iu;©[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_body_border_color:
-@name"ui-body-border-color;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["border-color;@:@children[ ;o;	;"ui_body_border_color;"ui-body-border-color;@;i;iu;Ü[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_body_color:
-@name"ui-body-color;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["
-color;@:@children[ ;o;	;"ui_body_color;"ui-body-color;@;i;iu;ö[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_body_font_size:
-@name"ui-body-font-size;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["font-size;@:@children[ ;o;	;"ui_body_font_size;"ui-body-font-size;@;i;iu;¢[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_body_font_weight:
-@name"ui-body-font-weight;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["font-size;@:@children[ ;o;	;"ui_body_font_weight;"ui-body-font-weight;@;i;iu;j[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_body_border_width:
-@name"ui-body-border-width;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["border-width;@:@children[ ;o;	;"ui_body_border_width;"ui-body-border-width;@;i;iu:Sass::Tree::IfNode©[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_body_border_style:
-@name"ui-body-border-style;@;i:@operator:neq;i0[o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["border-style;@:@children[ ;o;	;"ui_body_border_style;"ui-body-border-style;@;i;i;iu;CZ[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_border_radius:
-@name"ui-border-radius;@;i:@operator:neq;iu:Sass::Tree::IfNode≥'[00[u:Sass::Tree::IfNodeC[o:Sass::Script::Operation
-:@operand2o; 
-;o:Sass::Script::Variable	:@underscored_name"compile_all:
-@name"compile-all:@options{ :
-@lineiØ;
-@:@operand1o;	;"supports_gradients;	"supports-gradients;
-@;iØ:@operator:or;iØ;
-@;o; 
-;o:Sass::Script::String	;
-@:
-@type:identifier:@value"	null;iØ;
-@;o;	;"ui_header_background_color;	"ui-header-background-color;
-@;iØ;:neq;iØ;:and;iØ0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[	".o;	;"prefix;	"prefix;
-@;i∞"panel-header-o;	;"ui_label;	"ui-label;
-@;i∞;
-@:@children[o:Sass::Tree::MixinNode;	"background-gradient;
-@;[ :@keywords{ ;i±:
-@args[o;	;"ui_header_background_color;	"ui-header-background-color;
-@;i±o;	;""ui_header_background_gradient;	""ui-header-background-gradient;
-@;i±;i∞o;;i ;T;[
-".o;	;"prefix;	"prefix;
-@;i¥"panel-header-o;	;"ui_label;	"ui-label;
-@;i¥"-vertical;
-@;[o;;	"background-gradient;
-@;[ ;{ ;iµ;[o;	;"ui_header_background_color;	"ui-header-background-color;
-@;iµo;	;""ui_header_background_gradient;	""ui-header-background-gradient;
-@;iµo;	;
-@;;;"
-right;iµ;i¥u:Sass::Tree::IfNode{[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@linei∏0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[".o; 	;"prefix;"prefix;@	;	iπ"	rtl.o; 	;"prefix;"prefix;@	;	iπ"panel-header-o; 	;"ui_label;"ui-label;@	;	iπ"-vertical;@	:@children[o:Sass::Tree::MixinNode;"background-gradient;@	;[ :@keywords{ ;	i∫:
-@args[o; 	;"ui_header_background_color;"ui-header-background-color;@	;	i∫o; 	;""ui_header_background_gradient;""ui-header-background-gradient;@	;	i∫o:Sass::Script::String	;@	:
-@type:identifier:@value"	left;	i∫;	iπo:Sass::Tree::CommentNode:@silenti :@options{ :@children[ :@lines[ :
-@loud0:@value"#/* header background images */:
-@lineiøo:Sass::Tree::VariableNode:@guarded0:
-@name"panel-header-ui;@	:
-@expro:&Sass::Script::StringInterpolation
-:@beforeo:Sass::Script::String	;@	:
-@type:string;"panel-header-;i¿;@	:@aftero;	;@	;;;" ;i¿:	@mido:Sass::Script::Variable	:@underscored_name"ui_label;"ui-label;@	;i¿;i¿;	[ ;i¿o;;0;"panel-header-path;@	;o;
-;o;	;@	;;;"panel-header/panel-header-;i¡;@	;o;	;@	;;;" ;i¡;o;	;"ui_label;"ui-label;@	;i¡;i¡;	[ ;i¡u; 6[o:Sass::Script::Operation
-:@operand2o; 
-;o:Sass::Script::String	:@options{ :
-@type:identifier:@value"	null:
-@linei√;@	:@operand1o:Sass::Script::Variable	:@underscored_name""ui_header_background_gradient:
-@name""ui-header-background-gradient;@	;i√:@operator:neq;i√;@	;o; 
-;o;	;@	;	;
-;"	null;i√;@	;o;	;"ui_header_background_color;"ui-header-background-color;@	;i√;;;i√;:and;i√0[u:Sass::Tree::IfNodem[o:Sass::Script::Operation
-:@operand2o:Sass::Script::Variable	:@underscored_name"compile_all:
-@name"compile-all:@options{ :
-@lineiƒ;
-@
-:@operand1o:!Sass::Script::UnaryOperation	;
-@
-:@operando;	;"supports_gradients;	"supports-gradients;
-@
-;iƒ:@operator:not;iƒ;:or;iƒ0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[".o;	;"prefix;	"prefix;
-@
-;i≈"nlg;
-@
-:@children[
-o;;i ;T;[	".o;	;"prefix;	"prefix;
-@
-;i∆o;	;"panel_header_ui;	"panel-header-ui;
-@
-;i∆"	-top;
-@
-;[o:Sass::Tree::PropNode;i :@prop_syntax:new;	["background;
-@
-;[ :@valueo:Sass::Script::Funcall
-;	"slicer-background-image;
-@
-:@keywords{ ;i»:
-@args[o; 
-;o:Sass::Script::String	;
-@
-:
-@type:string;"	-top;i«;
-@
-;o;	;"panel_header_ui;	"panel-header-ui;
-@
-;i«;:	plus;i«o:&Sass::Script::StringInterpolation
-:@beforeo;	;
-@
-;; ;" ;i»;
-@
-:@aftero;	;
-@
-;; ;"-top-bg;i»:	@mido;	;"panel_header_path;	"panel-header-path;
-@
-;i»;i»;i»;i∆o;;i ;T;[	".o;	;"prefix;	"prefix;
-@
-;iÀo;	;"panel_header_ui;	"panel-header-ui;
-@
-;iÀ"-bottom;
-@
-;[o;;i ;;;	["background;
-@
-;[ ;o;
-;	"slicer-background-image;
-@
-;{ ;iÕ;[o; 
-;o;	;
-@
-;; ;"-bottom;iÃ;
-@
-;o;	;"panel_header_ui;	"panel-header-ui;
-@
-;iÃ;;!;iÃo;"
-;#o;	;
-@
-;; ;" ;iÕ;
-@
-;$o;	;
-@
-;; ;"-bottom-bg;iÕ;%o;	;"panel_header_path;	"panel-header-path;
-@
-;iÕ;iÕ;iÕ;iÀo;;i ;T;[	".o;	;"prefix;	"prefix;
-@
-;i–o;	;"panel_header_ui;	"panel-header-ui;
-@
-;i–"
--left;
-@
-;[o;;i ;;;	["background;
-@
-;[ ;o:Sass::Script::List	;
-@
-:@separator:
-space;[o;
-;	"slicer-background-image;
-@
-;{ ;i“;[o; 
-;o;	;
-@
-;; ;"
--left;i—;
-@
-;o;	;"panel_header_ui;	"panel-header-ui;
-@
-;i—;;!;i—o;"
-;#o;	;
-@
-;; ;" ;i“;
-@
-;$o;	;
-@
-;; ;"-left-bg;i“;%o;	;"panel_header_path;	"panel-header-path;
-@
-;i“;i“o;	;
-@
-;:identifier;"top;i“o;	;
-@
-;;);"
-right;i“;i—;i“;i–o;;i ;T;[	".o;	;"prefix;	"prefix;
-@
-;i’o;	;"panel_header_ui;	"panel-header-ui;
-@
-;i’"-right;
-@
-;[o;;i ;;;	["background;
-@
-;[ ;o;&	;
-@
-;';(;[o;
-;	"slicer-background-image;
-@
-;{ ;i◊;[o; 
-;o;	;
-@
-;; ;"-right;i÷;
-@
-;o;	;"panel_header_ui;	"panel-header-ui;
-@
-;i÷;;!;i÷o;"
-;#o;	;
-@
-;; ;" ;i◊;
-@
-;$o;	;
-@
-;; ;"-right-bg;i◊;%o;	;"panel_header_path;	"panel-header-path;
-@
-;i◊;i◊o;	;
-@
-;;);"top;i◊o;	;
-@
-;;);"
-right;i◊;i÷;i◊;i’u:Sass::Tree::IfNodeM[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@linei⁄0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[".o; 	;"prefix;"prefix;@	;	i€"rtl;@	:@children[o;
-;i ;T;[	"&.o; 	;"prefix;"prefix;@	;	i‹o; 	;"panel_header_ui;"panel-header-ui;@	;	i‹"
--left;@	;[o:Sass::Tree::PropNode;i :@prop_syntax:new;["background;@	;[ :@valueo:Sass::Script::Funcall
-;" slicer-background-image-rtl;@	:@keywords{ ;	iﬁ:
-@args[o:Sass::Script::Operation
-:@operand2o:Sass::Script::String	;@	:
-@type:string;"
--left;	i›;@	:@operand1o; 	;"panel_header_ui;"panel-header-ui;@	;	i›:@operator:	plus;	i›o:&Sass::Script::StringInterpolation
-:@beforeo;	;@	;;;" ;	iﬁ;@	:@aftero;	;@	;;;"-left-bg-rtl;	iﬁ:	@mido; 	;"panel_header_path;"panel-header-path;@	;	iﬁ;	iﬁ;	iﬁ;	i‹o;
-;i ;T;[	"&.o; 	;"prefix;"prefix;@	;	i‡o; 	;"panel_header_ui;"panel-header-ui;@	;	i‡"-right;@	;[o;;i ;;;["background;@	;[ ;o;
-;" slicer-background-image-rtl;@	;{ ;	i‚;[o;
-;o;	;@	;;;"-right;	i·;@	;o; 	;"panel_header_ui;"panel-header-ui;@	;	i·;;;	i·o;
-;o;	;@	;;;" ;	i‚;@	; o;	;@	;;;"-right-bg-rtl;	i‚;!o; 	;"panel_header_path;"panel-header-path;@	;	i‚;	i‚;	i‚;	i‡;	i€;i≈o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[".o;	;"prefix;"prefix;@	;iÍ"
-panel;@	;	[
-o;;i ;@	;	[ ;
-[ ;0;"„/* !important is needed here to override dock layout's border management
- * rules. the x-panel ancestor selector is used to increase the specificity
- * over the ".#{$prefix}nbr .#{$prefix}#{$cls-ui}" rule produced by x-frame */;iÎo;;i ;T;[
-".o;	;"prefix;"prefix;@	;iÓ"panel-header-o;	;"ui_label;"ui-label;@	;iÓ"-collapsed-border-top;@	;	[o:Sass::Tree::PropNode;i :@prop_syntax:new;["border-bottom-width;@	;	[ ;o:Sass::Script::List	;@	:@separator:
-space;[o;	;"ui_header_border_width;"ui-header-border-width;@	;iÔo;	;@	;:identifier;"!important;iÔ;iÔ;iÔ;iÓo;;i ;T;[
-".o;	;"prefix;"prefix;@	;iÚ"panel-header-o;	;"ui_label;"ui-label;@	;iÚ"-collapsed-border-right;@	;	[o;;i ; ;!;["border-left-width;@	;	[ ;o;"	;@	;#;$;[o;	;"ui_header_border_width;"ui-header-border-width;@	;iÛo;	;@	;;%;"!important;iÛ;iÛ;iÛ;iÚo;;i ;T;[
-".o;	;"prefix;"prefix;@	;iˆ"panel-header-o;	;"ui_label;"ui-label;@	;iˆ"-collapsed-border-bottom;@	;	[o;;i ; ;!;["border-top-width;@	;	[ ;o;"	;@	;#;$;[o;	;"ui_header_border_width;"ui-header-border-width;@	;i˜o;	;@	;;%;"!important;i˜;i˜;i˜;iˆo;;i ;T;[
-".o;	;"prefix;"prefix;@	;i˙"panel-header-o;	;"ui_label;"ui-label;@	;i˙"-collapsed-border-left;@	;	[o;;i ; ;!;["border-right-width;@	;	[ ;o;"	;@	;#;$;[o;	;"ui_header_border_width;"ui-header-border-width;@	;i˚o;	;@	;;%;"!important;i˚;i˚;i˚;i˙;iÍo;;0;"stretch;@	;o:Sass::Script::Funcall
-;"slicer-background-stretch;@	:@keywords{ ;iˇ:
-@args[o:Sass::Script::Operation
-:@operand2o;	;@	;;;"	-top;iˇ;@	:@operand1o;	;"panel_header_ui;"panel-header-ui;@	;iˇ:@operator:	plus;iˇo;	;@	;;%;"bottom;iˇ;	[ ;iˇo;;0;"stretch;@	;o;&
-;"slicer-background-stretch;@	;'{ ;i ;([o;)
-;*o;	;@	;;;"-right;i ;@	;+o;	;"panel_header_ui;"panel-header-ui;@	;i ;,;-;i o;	;@	;;%;"	left;i ;	[ ;i o;;0;"stretch;@	;o;&
-;"slicer-background-stretch;@	;'{ ;i;([o;)
-;*o;	;@	;;;"-bottom;i;@	;+o;	;"panel_header_ui;"panel-header-ui;@	;i;,;-;io;	;@	;;%;"bottom;i;	[ ;io;;0;"stretch;@	;o;&
-;"slicer-background-stretch;@	;'{ ;i;([o;)
-;*o;	;@	;;;"
--left;i;@	;+o;	;"panel_header_ui;"panel-header-ui;@	;i;,;-;io;	;@	;;%;"	left;i;	[ ;io:Sass::Tree::MixinNode;"x-slicer;@	;	[ ;'{ ;i;([o;)
-;*o;	;@	;;;"	-top;i;@	;+o;	;"panel_header_ui;"panel-header-ui;@	;i;,;-;io;.;"x-slicer;@	;	[ ;'{ ;i;([o;)
-;*o;	;@	;;;"-bottom;i;@	;+o;	;"panel_header_ui;"panel-header-ui;@	;i;,;-;io;.;"x-slicer;@	;	[ ;'{ ;i;([o;)
-;*o;	;@	;;;"
--left;i;@	;+o;	;"panel_header_ui;"panel-header-ui;@	;i;,;-;io;.;"x-slicer;@	;	[ ;'{ ;i;([o;)
-;*o;	;@	;;;"-right;i;@	;+o;	;"panel_header_ui;"panel-header-ui;@	;i;,;-;i[o:Sass::Tree::MixinNode;"x-frame;@:@children[ :@keywords{"border_radiuso;	;"ui_border_radius;"ui-border-radius;@;i!"background_coloro;	;"ui_body_background_color;"ui-body-background-color;@;i$"uio:&Sass::Script::StringInterpolation
-:@beforeo;	;@;	:string;" ;i ;@:@aftero;	;@;	;;" ;i :	@mido;	;"ui_label;"ui-label;@;i ;i "border_widtho;	;"ui_border_width;"ui-border-width;@;i""paddingo;	;"ui_padding;"ui-padding;@;i#"clso;	;@;	;;"
-panel;i;i%:
-@args[ o;;"x-frame;@;[ ;{"border_radiuso:Sass::Script::List	;@:@separator:
-space;[	o:Sass::Script::Funcall
-;"top;@;{ ;i*;[o;	;"ui_border_radius;"ui-border-radius;@;i*o; 
-;"
-right;@;{ ;i*;[o;	;"ui_border_radius;"ui-border-radius;@;i*o:Sass::Script::Number:@original"0;@:@denominator_units[ :@numerator_units[ ;i ;i*o;!;""0;@;#@G;$[ ;i ;i*;i*"background_coloro;	;"ui_header_background_color;"ui-header-background-color;@;i-"uio;
-;o;	;@;	;;" ;i);@;o;	;@;	;;"	-top;i);o;	;"ui_label;"ui-label;@;i);i)"border_widtho;	;@;;;[	o; 
-;"top;@;{ ;i+;[o;	;"ui_header_border_width;"ui-header-border-width;@;i+o; 
-;"
-right;@;{ ;i+;[o;	;"ui_header_border_width;"ui-header-border-width;@;i+o;!;""0;@;#@G;$[ ;i ;i+o; 
-;"	left;@;{ ;i+;[o;	;"ui_header_border_width;"ui-header-border-width;@;i+;i+"paddingo;	;"ui_header_padding;"ui-header-padding;@;i,"background_gradiento;	;""ui_header_background_gradient;""ui-header-background-gradient;@;i."background_stretcho;	;"ui_background_stretch_top;"ui-background-stretch-top;@;i/"clso;	;@;	;;"panel-header;i(;i0;[ o;;"x-frame;@;[ ;{"background_directiono;	;@;	;
-;"
-right;i:"border_radiuso;	;@;;;[	o;!;""0;@;#@G;$[ ;i ;i5o; 
-;"
-right;@;{ ;i5;[o;	;"ui_border_radius;"ui-border-radius;@;i5o; 
-;"bottom;@;{ ;i5;[o;	;"ui_border_radius;"ui-border-radius;@;i5o;!;""0;@;#@G;$[ ;i ;i5;i5"background_coloro;	;"ui_header_background_color;"ui-header-background-color;@;i8"include_frame_rtlo;	;"include_rtl;"include-rtl;@;i;"uio;
-;o;	;@;	;;" ;i4;@;o;	;@;	;;"-right;i4;o;	;"ui_label;"ui-label;@;i4;i4"border_widtho;	;@;;;[	o; 
-;"top;@;{ ;i6;[o;	;"ui_header_border_width;"ui-header-border-width;@;i6o; 
-;"
-right;@;{ ;i6;[o;	;"ui_header_border_width;"ui-header-border-width;@;i6o; 
-;"bottom;@;{ ;i6;[o;	;"ui_header_border_width;"ui-header-border-width;@;i6o;!;""0;@;#@G;$[ ;i ;i6;i6"paddingo; 
-;"rotate90;@;{ ;i7;[o;	;"ui_header_padding;"ui-header-padding;@;i7"background_gradiento;	;""ui_header_background_gradient;""ui-header-background-gradient;@;i9"background_stretcho;	;" ui_background_stretch_right;" ui-background-stretch-right;@;i<"clso;	;@;	;;"panel-header;i3;i=;[ o;;"x-frame;@;[ ;{"border_radiuso;	;@;;;[	o;!;""0;@;#@G;$[ ;i ;iBo;!;""0;@;#@G;$[ ;i ;iBo; 
-;"bottom;@;{ ;iB;[o;	;"ui_border_radius;"ui-border-radius;@;iBo; 
-;"	left;@;{ ;iB;[o;	;"ui_border_radius;"ui-border-radius;@;iB;iB"background_coloro;	;"ui_header_background_color;"ui-header-background-color;@;iE"uio;
-;o;	;@;	;;" ;iA;@;o;	;@;	;;"-bottom;iA;o;	;"ui_label;"ui-label;@;iA;iA"border_widtho;	;@;;;[	o;!;""0;@;#@G;$[ ;i ;iCo; 
-;"
-right;@;{ ;iC;[o;	;"ui_header_border_width;"ui-header-border-width;@;iCo; 
-;"bottom;@;{ ;iC;[o;	;"ui_header_border_width;"ui-header-border-width;@;iCo; 
-;"	left;@;{ ;iC;[o;	;"ui_header_border_width;"ui-header-border-width;@;iC;iC"paddingo;	;"ui_header_padding;"ui-header-padding;@;iD"background_gradiento;	;""ui_header_background_gradient;""ui-header-background-gradient;@;iF"background_stretcho;	;"!ui_background_stretch_bottom;"!ui-background-stretch-bottom;@;iG"clso;	;@;	;;"panel-header;i@;iH;[ o;;"x-frame;@;[ ;{"background_directiono;	;@;	;
-;"
-right;iR"border_radiuso;	;@;;;[	o; 
-;"top;@;{ ;iM;[o;	;"ui_border_radius;"ui-border-radius;@;iMo;!;""0;@;#@G;$[ ;i ;iMo;!;""0;@;#@G;$[ ;i ;iMo; 
-;"	left;@;{ ;iM;[o;	;"ui_border_radius;"ui-border-radius;@;iM;iM"background_coloro;	;"ui_header_background_color;"ui-header-background-color;@;iP"include_frame_rtlo;	;"include_rtl;"include-rtl;@;iS"uio;
-;o;	;@;	;;" ;iL;@;o;	;@;	;;"
--left;iL;o;	;"ui_label;"ui-label;@;iL;iL"border_widtho;	;@;;;[	o; 
-;"top;@;{ ;iN;[o;	;"ui_header_border_width;"ui-header-border-width;@;iNo;!;""0;@;#@G;$[ ;i ;iNo; 
-;"bottom;@;{ ;iN;[o;	;"ui_header_border_width;"ui-header-border-width;@;iNo; 
-;"	left;@;{ ;iN;[o;	;"ui_header_border_width;"ui-header-border-width;@;iN;iN"paddingo; 
-;"rotate90;@;{ ;iO;[o;	;"ui_header_padding;"ui-header-padding;@;iO"background_gradiento;	;""ui_header_background_gradient;""ui-header-background-gradient;@;iQ"background_stretcho;	;"ui_background_stretch_left;"ui-background-stretch-left;@;iT"clso;	;@;	;;"panel-header;iK;iU;[ o;;"x-frame;@;[ ;{"border_radiuso;	;@;;;[	o; 
-;"top;@;{ ;iZ;[o;	;"ui_border_radius;"ui-border-radius;@;iZo; 
-;"
-right;@;{ ;iZ;[o;	;"ui_border_radius;"ui-border-radius;@;iZo; 
-;"bottom;@;{ ;iZ;[o;	;"ui_border_radius;"ui-border-radius;@;iZo; 
-;"	left;@;{ ;iZ;[o;	;"ui_border_radius;"ui-border-radius;@;iZ;iZ"background_coloro;	;"ui_header_background_color;"ui-header-background-color;@;i]"uio;
-;o;	;@;	;;" ;iY;@;o;	;@;	;;"-collapsed-top;iY;o;	;"ui_label;"ui-label;@;iY;iY"border_widtho;	;"ui_header_border_width;"ui-header-border-width;@;i["paddingo;	;"ui_header_padding;"ui-header-padding;@;i\"background_gradiento;	;""ui_header_background_gradient;""ui-header-background-gradient;@;i^"background_stretcho;	;"ui_background_stretch_top;"ui-background-stretch-top;@;i_"clso;	;@;	;;"panel-header;iX;i`;[ o;;"x-frame;@;[ ;{"background_directiono;	;@;	;
-;"
-right;ij"border_radiuso;	;@;;;[	o; 
-;"top;@;{ ;ie;[o;	;"ui_border_radius;"ui-border-radius;@;ieo; 
-;"
-right;@;{ ;ie;[o;	;"ui_border_radius;"ui-border-radius;@;ieo; 
-;"bottom;@;{ ;ie;[o;	;"ui_border_radius;"ui-border-radius;@;ieo; 
-;"	left;@;{ ;ie;[o;	;"ui_border_radius;"ui-border-radius;@;ie;ie"background_coloro;	;"ui_header_background_color;"ui-header-background-color;@;ih"include_frame_rtlo;	;"include_rtl;"include-rtl;@;ik"uio;
-;o;	;@;	;;" ;id;@;o;	;@;	;;"-collapsed-right;id;o;	;"ui_label;"ui-label;@;id;id"border_widtho;	;"ui_header_border_width;"ui-header-border-width;@;if"paddingo; 
-;"rotate90;@;{ ;ig;[o;	;"ui_header_padding;"ui-header-padding;@;ig"background_gradiento;	;""ui_header_background_gradient;""ui-header-background-gradient;@;ii"background_stretcho;	;" ui_background_stretch_right;" ui-background-stretch-right;@;il"clso;	;@;	;;"panel-header;ic;im;[ o;;"x-frame;@;[ ;{"border_radiuso;	;@;;;[	o; 
-;"top;@;{ ;ir;[o;	;"ui_border_radius;"ui-border-radius;@;iro; 
-;"
-right;@;{ ;ir;[o;	;"ui_border_radius;"ui-border-radius;@;iro; 
-;"bottom;@;{ ;ir;[o;	;"ui_border_radius;"ui-border-radius;@;iro; 
-;"	left;@;{ ;ir;[o;	;"ui_border_radius;"ui-border-radius;@;ir;ir"background_coloro;	;"ui_header_background_color;"ui-header-background-color;@;iu"uio;
-;o;	;@;	;;" ;iq;@;o;	;@;	;;"-collapsed-bottom;iq;o;	;"ui_label;"ui-label;@;iq;iq"border_widtho;	;"ui_header_border_width;"ui-header-border-width;@;is"paddingo;	;"ui_header_padding;"ui-header-padding;@;it"background_gradiento;	;""ui_header_background_gradient;""ui-header-background-gradient;@;iv"background_stretcho;	;"!ui_background_stretch_bottom;"!ui-background-stretch-bottom;@;iw"clso;	;@;	;;"panel-header;ip;ix;[ o;;"x-frame;@;[ ;{"background_directiono;	;@;	;
-;"
-right;iÇ"border_radiuso;	;@;;;[	o; 
-;"top;@;{ ;i};[o;	;"ui_border_radius;"ui-border-radius;@;i}o; 
-;"
-right;@;{ ;i};[o;	;"ui_border_radius;"ui-border-radius;@;i}o; 
-;"bottom;@;{ ;i};[o;	;"ui_border_radius;"ui-border-radius;@;i}o; 
-;"	left;@;{ ;i};[o;	;"ui_border_radius;"ui-border-radius;@;i};i}"background_coloro;	;"ui_header_background_color;"ui-header-background-color;@;iÄ"include_frame_rtlo;	;"include_rtl;"include-rtl;@;iÉ"uio;
-;o;	;@;	;;" ;i|;@;o;	;@;	;;"-collapsed-left;i|;o;	;"ui_label;"ui-label;@;i|;i|"border_widtho;	;"ui_header_border_width;"ui-header-border-width;@;i~"paddingo; 
-;"rotate90;@;{ ;i;[o;	;"ui_header_padding;"ui-header-padding;@;i"background_gradiento;	;""ui_header_background_gradient;""ui-header-background-gradient;@;iÅ"background_stretcho;	;"ui_background_stretch_left;"ui-background-stretch-left;@;iÑ"clso;	;@;	;;"panel-header;i{;iÖ;[ o:Sass::Tree::CommentNode:@silenti ;@;[ :@lines[ :
-@loud0;"¯/* !important is needed in the following rules to override dock layout's border
- * management rules. the x-panel ancestor selector is used to increase the
- * specificity over the ".#{$prefix}nbr .#{$prefix}#{$cls-ui}" rule produced by
- * x-frame */;iáo:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[".o;	;"prefix;"prefix;@;iã"
-panel;@;[	o;);*i ;+T;,[
-".o;	;"prefix;"prefix;@;iå"panel-header-o;	;"ui_label;"ui-label;@;iå"	-top;@;[o:Sass::Tree::PropNode;*i :@prop_syntax:new;["border-bottom-width;@;[ ;o;	;@;;;[o; 
-;"bottom;@;{ ;iç;[o;	;"ui_header_border_width;"ui-header-border-width;@;iço;	;@;	;
-;"!important;iç;iç;iç;iåo;);*i ;+T;,[
-".o;	;"prefix;"prefix;@;iê"panel-header-o;	;"ui_label;"ui-label;@;iê"-right;@;[o;-;*i ;.;/;["border-left-width;@;[ ;o;	;@;;;[o; 
-;"bottom;@;{ ;ië;[o;	;"ui_header_border_width;"ui-header-border-width;@;iëo;	;@;	;
-;"!important;ië;ië;ië;iêo;);*i ;+T;,[
-".o;	;"prefix;"prefix;@;iî"panel-header-o;	;"ui_label;"ui-label;@;iî"-bottom;@;[o;-;*i ;.;/;["border-top-width;@;[ ;o;	;@;;;[o; 
-;"bottom;@;{ ;iï;[o;	;"ui_header_border_width;"ui-header-border-width;@;iïo;	;@;	;
-;"!important;iï;iï;iï;iîo;);*i ;+T;,[
-".o;	;"prefix;"prefix;@;iò"panel-header-o;	;"ui_label;"ui-label;@;iò"
--left;@;[o;-;*i ;.;/;["border-right-width;@;[ ;o;	;@;;;[o; 
-;"bottom;@;{ ;iô;[o;	;"ui_header_border_width;"ui-header-border-width;@;iôo;	;@;	;
-;"!important;iô;iô;iô;iò;ião;);*i ;+T;,[".o;	;"prefix;"prefix;@;iù"nbr;@;[	o;);*i ;+T;,[
-".o;	;"prefix;"prefix;@;iû"panel-header-o;	;"ui_label;"ui-label;@;iû"-collapsed-top;@;[o;-;*i ;.;/;["border-bottom-width;@;[ ;o;;@;	;
-;"0 !important;iü;iûo;);*i ;+T;,[
-".o;	;"prefix;"prefix;@;i¢"panel-header-o;	;"ui_label;"ui-label;@;i¢"-collapsed-right;@;[o;-;*i ;.;/;["border-left-width;@;[ ;o;;@;	;
-;"0 !important;i£;i¢o;);*i ;+T;,[
-".o;	;"prefix;"prefix;@;i¶"panel-header-o;	;"ui_label;"ui-label;@;i¶"-collapsed-bottom;@;[o;-;*i ;.;/;["border-top-width;@;[ ;o;;@;	;
-;"0 !important;iß;i¶o;);*i ;+T;,[
-".o;	;"prefix;"prefix;@;i™"panel-header-o;	;"ui_label;"ui-label;@;i™"-collapsed-left;@;[o;-;*i ;.;/;["border-right-width;@;[ ;o;;@;	;
-;"0 !important;i´;i™;iùo;#;$i ;T;%[".o;	;"prefix;"prefix;@;i
-"panel-header-o;	;"ui_label;"ui-label;@;i
-"-vertical .o;	;"prefix;"prefix;@;i
-" panel-header-text-container;@;	[o:Sass::Tree::MixinNode;"rotate-element;@;	[ ;{"
-angleo:Sass::Script::Number:@original"90;@:@denominator_units[ :@numerator_units[ ;i_;i"background_coloro;	;"ui_header_background_color;"ui-header-background-color;@;i;i;[ ;i
-u;•[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@linei0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[".o; 	;"prefix;"prefix;@	;	i"panel-header-o; 	;"ui_label;"ui-label;@	;	i"-vertical .o; 	;"prefix;"prefix;@	;	i"	rtl.o; 	;"prefix;"prefix;@	;	i" panel-header-text-container;@	:@children[o:Sass::Tree::MixinNode;"rotate-element;@	;[ :@keywords{"
-angleo:Sass::Script::Number:@original"270;@	:@denominator_units[ :@numerator_units[ :@valuei;	i"background_coloro; 	;"ui_header_background_color;"ui-header-background-color;@	;	i;	i:
-@args[ ;	iu;#[o:Sass::Script::Operation
-:@operand2o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
-@linei;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"!ui_header_inner_border_width:
-@name"!ui-header-inner-border-width;	@	;i:@operator:neq;i0[	o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[
-".o;	;"prefix;"prefix;	@	;i"panel-header-o;	;"ui_label;"ui-label;	@	;i"	-top;	@	:@children[o:Sass::Tree::MixinNode;"inner-border;	@	;[ :@keywords{ ;i:
-@args[o;	;"!ui_header_inner_border_width;"!ui-header-inner-border-width;	@	;io;	;"!ui_header_inner_border_color;"!ui-header-inner-border-color;	@	;i;io;;i ;T;[
-".o;	;"prefix;"prefix;	@	;i"panel-header-o;	;"ui_label;"ui-label;	@	;i"-right;	@	;[o;;"inner-border;	@	;[ ;{ ;i;[o:Sass::Script::Funcall
-;"rotate90;	@	;{ ;i;[o;	;"!ui_header_inner_border_width;"!ui-header-inner-border-width;	@	;io;	;"!ui_header_inner_border_color;"!ui-header-inner-border-color;	@	;i;io;;i ;T;[
-".o;	;"prefix;"prefix;	@	;i"panel-header-o;	;"ui_label;"ui-label;	@	;i"-bottom;	@	;[o;;"inner-border;	@	;[ ;{ ;i;[o;
-;"rotate180;	@	;{ ;i;[o;	;"!ui_header_inner_border_width;"!ui-header-inner-border-width;	@	;io;	;"!ui_header_inner_border_color;"!ui-header-inner-border-color;	@	;i;io;;i ;T;[
-".o;	;"prefix;"prefix;	@	;i!"panel-header-o;	;"ui_label;"ui-label;	@	;i!"
--left;	@	;[o;;"inner-border;	@	;[ ;{ ;i";[o;
-;"rotate270;	@	;{ ;i";[o;	;"!ui_header_inner_border_width;"!ui-header-inner-border-width;	@	;i"o;	;"!ui_header_inner_border_color;"!ui-header-inner-border-color;	@	;i";i!o;#;$i ;T;%[	".o;	;"prefix;"prefix;@;i&"panel-header-o;	;"ui_label;"ui-label;@;i&;@;	[o;#;$i ;T;%[".o;	;"prefix;"prefix;@;i'"panel-header-icon;@;	[o;&;$i ;';(;["
-width;@;	[ ;o;	;"ui_header_icon_width;"ui-header-icon-width;@;i(;i(o;&;$i ;';(;["height;@;	[ ;o;	;"ui_header_icon_height;"ui-header-icon-height;@;i);i)o;&;$i ;';(;["background-position;@;	[ ;o;	;"'ui_header_icon_background_position;"'ui-header-icon-background-position;@;i*;i*;i'o;#;$i ;T;%[".o;	;"prefix;"prefix;@;i,"panel-header-glyph;@;	[o;&;$i ;';(;["
-color;@;	[ ;o;	;"ui_header_glyph_color;"ui-header-glyph-color;@;i-;i-o;&;$i ;';(;["font-size;@;	[ ;o;	;"ui_header_icon_height;"ui-header-icon-height;@;i.;i.o;&;$i ;';(;["line-height;@;	[ ;o;	;"ui_header_icon_height;"ui-header-icon-height;@;i/;i/u;Ú[o:Sass::Script::Operation
-:@operand2o:Sass::Script::Number:@original"1:@options{ :@denominator_units[ :@numerator_units[ :@valuei:
-@linei1;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"ui_header_glyph_opacity:
-@name"ui-header-glyph-opacity;	@	;i1:@operator:neq;i10[o:Sass::Tree::CommentNode:@silenti ;	@	:@children[ :@lines[ :
-@loud0;"÷/* do not use the opacity mixin because we do not want IE's filter version of
- * opacity to be included.  We emulate the opacity setting in IE8m by mixing
- * the icon color into the background color. (see below) */;i2o:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;["opacity;	@	;[ ;o;	;"ui_header_glyph_opacity;"ui-header-glyph-opacity;	@	;i5;i5o;
-;i ;@;	[ ;[ ;0;"á/* In IE8 and below when a glyph contains partially transparent pixels, we 
- * can't apply an opacity filter to the glyph element, because IE8m will render
- * the partially transparent pixels of the glyph as black. To work around this,
- * we emulate the approximate color that the glyph would have if it had opacity
- * applied by mixing the glyph color with the header's background-color. */;i7o;#;$i ;T;%[".o;	;"prefix;"prefix;@;i<"ie8m &;@;	[o;&;$i ;';(;["
-color;@;	[ ;o;
-;"mix;@;{ ;i=;[o;	;"ui_header_glyph_color;"ui-header-glyph-color;@;i=o;	;"ui_header_background_color;"ui-header-background-color;@;i=o;
-;o;*;+"100;@;,@;-[ ;ii;i=;@; o;	;"ui_header_glyph_opacity;"ui-header-glyph-opacity;@;i=;!:
-times;i=;i=;i<;i,;i&o;;0;"ui-header-icon-margin;@;o;	;@;;;[	o;*;+"0;@;,@;-[ ;i ;iBo;	;"panel_header_icon_spacing;"panel-header-icon-spacing;@;iBo;*;+"0;@;,@;-[ ;i ;iBo;*;+"0;@;,@;-[ ;i ;iB;iB;	[ ;iBo;#;$i ;T;%[
-".o;	;"prefix;"prefix;@;iC"panel-header-o;	;"ui_label;"ui-label;@;iC"-horizontal;@;	[	o;#;$i ;T;%[".o;	;"prefix;"prefix;@;iD"#panel-header-icon-before-title;@;	[o;&;$i ;';(;["margin;@;	[ ;o;	;"ui_header_icon_margin;"ui-header-icon-margin;@;iE;iE;iDu;˚[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@lineiH0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[
-".o; 	;"prefix;"prefix;@	;	iI"	rtl.o; 	;"prefix;"prefix;@	;	iI"#panel-header-icon-before-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo:Sass::Script::Funcall
-;"rtl;@	:@keywords{ ;	iJ:
-@args[o; 	;"ui_header_icon_margin;"ui-header-icon-margin;@	;	iJ;	iJ;	iIo;#;$i ;T;%[".o;	;"prefix;"prefix;@;iN""panel-header-icon-after-title;@;	[o;&;$i ;';(;["margin;@;	[ ;o;
-;"rtl;@;{ ;iO;[o;	;"ui_header_icon_margin;"ui-header-icon-margin;@;iO;iO;iNu;∫[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@lineiR0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[
-".o; 	;"prefix;"prefix;@	;	iS"	rtl.o; 	;"prefix;"prefix;@	;	iS""panel-header-icon-after-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo; 	;"ui_header_icon_margin;"ui-header-icon-margin;@	;	iT;	iT;	iS;iCo;#;$i ;T;%[
-".o;	;"prefix;"prefix;@;iY"panel-header-o;	;"ui_label;"ui-label;@;iY"-vertical;@;	[	o;#;$i ;T;%[".o;	;"prefix;"prefix;@;iZ"#panel-header-icon-before-title;@;	[o;&;$i ;';(;["margin;@;	[ ;o;
-;"rotate90;@;{ ;i[;[o;	;"ui_header_icon_margin;"ui-header-icon-margin;@;i[;i[;iZu;[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@linei^0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[
-".o; 	;"prefix;"prefix;@	;	i_"	rtl.o; 	;"prefix;"prefix;@	;	i_"#panel-header-icon-before-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo:Sass::Script::Funcall
-;"rotate270;@	:@keywords{ ;	i`:
-@args[o;
-;"rtl;@	;{ ;	i`;[o; 	;"ui_header_icon_margin;"ui-header-icon-margin;@	;	i`;	i`;	i_o;#;$i ;T;%[".o;	;"prefix;"prefix;@;id""panel-header-icon-after-title;@;	[o;&;$i ;';(;["margin;@;	[ ;o;
-;"rotate90;@;{ ;ie;[o;
-;"rtl;@;{ ;ie;[o;	;"ui_header_icon_margin;"ui-header-icon-margin;@;ie;ie;idu; [o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@lineih0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[
-".o; 	;"prefix;"prefix;@	;	ii"	rtl.o; 	;"prefix;"prefix;@	;	ii""panel-header-icon-after-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo:Sass::Script::Funcall
-;"rotate270;@	:@keywords{ ;	ij:
-@args[o; 	;"ui_header_icon_margin;"ui-header-icon-margin;@	;	ij;	ij;	ii;iYo;;0;"ui-tool-margin;@;o;	;@;;;[	o;*;+"0;@;,@;-[ ;i ;ioo;*;+"0;@;,@;-[ ;i ;ioo;*;+"0;@;,@;-[ ;i ;ioo;	;"ui_tool_spacing;"ui-tool-spacing;@;io;io;	[ ;ioo;#;$i ;T;%[
-".o;	;"prefix;"prefix;@;ip"panel-header-o;	;"ui_label;"ui-label;@;ip"-horizontal;@;	[	o;#;$i ;T;%[".o;	;"prefix;"prefix;@;iq"tool-after-title;@;	[o;&;$i ;';(;["margin;@;	[ ;o;	;"ui_tool_margin;"ui-tool-margin;@;ir;ir;iqu;ﬂ[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@lineiu0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[
-".o; 	;"prefix;"prefix;@	;	iv"	rtl.o; 	;"prefix;"prefix;@	;	iv"tool-after-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo:Sass::Script::Funcall
-;"rtl;@	:@keywords{ ;	iw:
-@args[o; 	;"ui_tool_margin;"ui-tool-margin;@	;	iw;	iw;	ivo;#;$i ;T;%[".o;	;"prefix;"prefix;@;i{"tool-before-title;@;	[o;&;$i ;';(;["margin;@;	[ ;o;
-;"rtl;@;{ ;i|;[o;	;"ui_tool_margin;"ui-tool-margin;@;i|;i|;i{u;†[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@linei0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[
-".o; 	;"prefix;"prefix;@	;	iÄ"	rtl.o; 	;"prefix;"prefix;@	;	iÄ"tool-before-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo; 	;"ui_tool_margin;"ui-tool-margin;@	;	iÅ;	iÅ;	iÄ;ipo;#;$i ;T;%[
-".o;	;"prefix;"prefix;@;iÜ"panel-header-o;	;"ui_label;"ui-label;@;iÜ"-vertical;@;	[	o;#;$i ;T;%[".o;	;"prefix;"prefix;@;iá"tool-after-title;@;	[o;&;$i ;';(;["margin;@;	[ ;o;
-;"rotate90;@;{ ;ià;[o;	;"ui_tool_margin;"ui-tool-margin;@;ià;ià;iáu;[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@lineiã0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[
-".o; 	;"prefix;"prefix;@	;	iå"	rtl.o; 	;"prefix;"prefix;@	;	iå"tool-after-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo:Sass::Script::Funcall
-;"rotate270;@	:@keywords{ ;	iç:
-@args[o;
-;"rtl;@	;{ ;	iç;[o; 	;"ui_tool_margin;"ui-tool-margin;@	;	iç;	iç;	iåo;#;$i ;T;%[".o;	;"prefix;"prefix;@;ië"tool-before-title;@;	[o;&;$i ;';(;["margin;@;	[ ;o;
-;"rotate90;@;{ ;ií;[o;
-;"rtl;@;{ ;ií;[o;	;"ui_tool_margin;"ui-tool-margin;@;ií;ií;iëu;Ê[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@lineiï0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[
-".o; 	;"prefix;"prefix;@	;	iñ"	rtl.o; 	;"prefix;"prefix;@	;	iñ"tool-before-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo:Sass::Script::Funcall
-;"rotate270;@	:@keywords{ ;	ió:
-@args[o; 	;"ui_tool_margin;"ui-tool-margin;@	;	ió;	ió;	iñ;iÜu;Ã[o:Sass::Script::Variable	:@underscored_name"include_rtl:
-@name"include-rtl:@options{ :
-@lineiú0[o:Sass::Tree::RuleNode:
-@tabsi :@has_childrenT:
-@rule[".o; 	;"prefix;"prefix;@	;	iù"rtl;@	:@children[o;
-;i ;T;[
-"&.o; 	;"prefix;"prefix;@	;	iû"panel-header-o; 	;"ui_label;"ui-label;@	;	iû"-collapsed-border-right;@	;[o:Sass::Tree::PropNode;i :@prop_syntax:new;["border-right-width;@	;[ :@valueo:Sass::Script::List	;@	:@separator:
-space;[o; 	;"ui_header_border_width;"ui-header-border-width;@	;	iüo:Sass::Script::String	;@	:
-@type:identifier;"!important;	iü;	iü;	iü;	iûo;
-;i ;T;[
-"&.o; 	;"prefix;"prefix;@	;	i°"panel-header-o; 	;"ui_label;"ui-label;@	;	i°"-collapsed-border-left;@	;[o;;i ;;;["border-left-width;@	;[ ;o;	;@	;;;[o; 	;"ui_header_border_width;"ui-header-border-width;@	;	i¢o;	;@	;;;"!important;	i¢;	i¢;	i¢;	i°;	iùo;
-;i ;@;	[ ;[ ;0;"≠/* Panel resizing.
- * If there's a border that's wider than the specified threshold (Sencha default is 2) then
- * embed the handles in the borders using -ve position and make resizable windows show overflow.
- * The dock layout should ensure that all constituent elements fit within the element.
- * The only exception is during animated resizing. Overflow inline style is set hidden during animation (AbstractComponent.animate) */;ißo;#;$i ;T;%[
-".o;	;"prefix;"prefix;@;i¨"panel-o;	;"ui_label;"ui-label;@;i¨"-resizable;@;	[	o;
-;i ;@;	[ ;[ ;0;"-/* Panel resize handles are invisible */;iÆo;#;$i ;T;%[".o;	;"prefix;"prefix;@;iØ"panel-handle;@;	[o;);"opacity;@;	[ ;{ ;i∞;[o;*;+"0;@;,@;-[ ;i ;i∞;iØo;
-;i ;@;	[ ;[ ;0;"F/* If there's a border width, embed the handles in that border */;i≥u;ô
-[o:Sass::Script::Operation
-:@operand2o:Sass::Script::Variable	:@underscored_name"border_width_threshold:
-@name"border-width-threshold:@options{ :
-@linei¥;
-@
-:@operand1o;	;"ui_border_width;	"ui-border-width;
-@
-;i¥:@operator:gt;i¥0[o:Sass::Tree::CommentNode:@silenti ;
-@
-:@children[ :@lines[ :
-@loud0:@value"f/* Resizable Panel element overflow must be visible for embedded handles to accept mouseovers. */;iµo:Sass::Tree::PropNode:
-@tabsi :@prop_syntax:new;	["overflow;
-@
-;[ ;o:Sass::Script::String;
-@
-:
-@type:identifier;"visible;i∂o:Sass::Tree::RuleNode;i :@has_childrenT:
-@rule[".o;	;"prefix;	"prefix;
-@
-;i∏"panel-handle-north-br;
-@
-;[o;;i ;;;	["top;
-@
-;[ ;o:!Sass::Script::UnaryOperation	;
-@
-:@operando;	;"ui_border_width;	"ui-border-width;
-@
-;iπ;:
-minus;iπ;iπ;i∏o;;i ;T;[".o;	;"prefix;	"prefix;
-@
-;iª"panel-handle-south-br;
-@
-;[o;;i ;;;	["bottom;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;iº;;!;iº;iº;iªo;;i ;T;[".o;	;"prefix;	"prefix;
-@
-;iæ"panel-handle-east-br;
-@
-;[o;;i ;;;	["
-right;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;iø;;!;iø;iø;iæo;;i ;T;[".o;	;"prefix;	"prefix;
-@
-;i¡"panel-handle-west-br;
-@
-;[o;;i ;;;	["	left;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;i¬;;!;i¬;i¬;i¡o;;i ;T;[".o;	;"prefix;	"prefix;
-@
-;iƒ"panel-handle-northwest-br;
-@
-;[o;;i ;;;	["	left;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;i≈;;!;i≈;i≈o;;i ;;;	["top;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;i∆;;!;i∆;i∆;iƒo;;i ;T;[".o;	;"prefix;	"prefix;
-@
-;i»"panel-handle-northeast-br;
-@
-;[o;;i ;;;	["
-right;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;i…;;!;i…;i…o;;i ;;;	["top;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;i ;;!;i ;i ;i»o;;i ;T;[".o;	;"prefix;	"prefix;
-@
-;iÃ"panel-handle-southeast-br;
-@
-;[o;;i ;;;	["
-right;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;iÕ;;!;iÕ;iÕo;;i ;;;	["bottom;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;iŒ;;!;iŒ;iŒ;iÃo;;i ;T;[".o;	;"prefix;	"prefix;
-@
-;i–"panel-handle-southwest-br;
-@
-;[o;;i ;;;	["	left;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;i—;;!;i—;i—o;;i ;;;	["bottom;
-@
-;[ ;o;	;
-@
-; o;	;"ui_border_width;	"ui-border-width;
-@
-;i“;;!;i“;i“;i–;i¨u;Å[o:Sass::Script::Variable	:@underscored_name"'ui_include_border_management_rules:
-@name"'ui-include-border-management-rules:@options{ :
-@linei◊0[o:Sass::Tree::MixinNode;"border-management;@	:@children[ :@keywords{"border_coloro; 	;"ui_wrap_border_color;"ui-wrap-border-color;@	;	i€"parent_clso: Sass::Script::Interpolation:@whitespace_after0:@beforeo:Sass::Script::String	;@	:
-@type:identifier:@value"panel-;	iŸ:@whitespace_before0;@	:@after0:@originally_textF:	@mido; 	;"ui_label;"ui-label;@	;	iŸ;	iŸ"border_widtho; 	;"ui_wrap_border_width;"ui-wrap-border-width;@	;	i⁄;	i‹:
-@args[ ;i¬;[/[o;;"ui_label;"ui-label;{ 0[o;;"ui_border_color;"ui-border-color;@©o;	;"panel_border_color;"panel-border-color;@©;iì[o;;"ui_border_radius;"ui-border-radius;@©o;	;"panel_border_radius;"panel-border-radius;@©;iî[o;;"ui_border_width;"ui-border-width;@©o;	;"panel_border_width;"panel-border-width;@©;iï[o;;"ui_padding;"ui-padding;@©o;*;+"0;@©;,@;-[ ;i ;iñ[o;;"ui_header_color;"ui-header-color;@©o;	;"panel_header_color;"panel-header-color;@©;iò[o;;"ui_header_font_family;"ui-header-font-family;@©o;	;"panel_header_font_family;"panel-header-font-family;@©;iô[o;;"ui_header_font_size;"ui-header-font-size;@©o;	;"panel_header_font_size;"panel-header-font-size;@©;iö[o;;"ui_header_font_weight;"ui-header-font-weight;@©o;	;"panel_header_font_weight;"panel-header-font-weight;@©;iõ[o;;"ui_header_line_height;"ui-header-line-height;@©o;	;"panel_header_line_height;"panel-header-line-height;@©;iú[o;;"ui_header_border_color;"ui-header-border-color;@©o;	;"panel_header_border_color;"panel-header-border-color;@©;iù[o;;"ui_header_border_width;"ui-header-border-width;@©o;	;"panel_header_border_width;"panel-header-border-width;@©;iû[o;;"ui_header_border_style;"ui-header-border-style;@©o;	;"panel_header_border_style;"panel-header-border-style;@©;iü[o;;"ui_header_background_color;"ui-header-background-color;@©o;	;""panel_header_background_color;""panel-header-background-color;@©;i†[o;;""ui_header_background_gradient;""ui-header-background-gradient;@©o;	;"%panel_header_background_gradient;"%panel-header-background-gradient;@©;i°[o;;"!ui_header_inner_border_color;"!ui-header-inner-border-color;@©o;	;"$panel_header_inner_border_color;"$panel-header-inner-border-color;@©;i¢[o;;"!ui_header_inner_border_width;"!ui-header-inner-border-width;@©o;	;"$panel_header_inner_border_width;"$panel-header-inner-border-width;@©;i£[o;;"ui_header_text_padding;"ui-header-text-padding;@©o;	;"panel_header_text_padding;"panel-header-text-padding;@©;i§[o;;"ui_header_text_transform;"ui-header-text-transform;@©o;	;" panel_header_text_transform;" panel-header-text-transform;@©;i•[o;;"ui_header_padding;"ui-header-padding;@©o;	;"panel_header_padding;"panel-header-padding;@©;i¶[o;;"ui_header_icon_width;"ui-header-icon-width;@©o;	;"panel_header_icon_width;"panel-header-icon-width;@©;iß[o;;"ui_header_icon_height;"ui-header-icon-height;@©o;	;"panel_header_icon_height;"panel-header-icon-height;@©;i®[o;;"ui_header_icon_spacing;"ui-header-icon-spacing;@©o;	;"panel_header_icon_spacing;"panel-header-icon-spacing;@©;i©[o;;"'ui_header_icon_background_position;"'ui-header-icon-background-position;@©o;	;"*panel_header_icon_background_position;"*panel-header-icon-background-position;@©;i™[o;;"ui_header_glyph_color;"ui-header-glyph-color;@©o;	;"panel_header_glyph_color;"panel-header-glyph-color;@©;i´[o;;"ui_header_glyph_opacity;"ui-header-glyph-opacity;@©o;	;"panel_header_glyph_opacity;"panel-header-glyph-opacity;@©;i¨[o;;"ui_tool_spacing;"ui-tool-spacing;@©o;	;"panel_tool_spacing;"panel-tool-spacing;@©;iÆ[o;;"ui_tool_background_image;"ui-tool-background-image;@©o;	;" panel_tool_background_image;" panel-tool-background-image;@©;iØ[o;;"ui_body_color;"ui-body-color;@©o;	;"panel_body_color;"panel-body-color;@©;i±[o;;"ui_body_border_color;"ui-body-border-color;@©o;	;"panel_body_border_color;"panel-body-border-color;@©;i≤[o;;"ui_body_border_width;"ui-body-border-width;@©o;	;"panel_body_border_width;"panel-body-border-width;@©;i≥[o;;"ui_body_border_style;"ui-body-border-style;@©o;	;"panel_body_border_style;"panel-body-border-style;@©;i¥[o;;"ui_body_background_color;"ui-body-background-color;@©o;	;" panel_body_background_color;" panel-body-background-color;@©;iµ[o;;"ui_body_font_size;"ui-body-font-size;@©o;	;"panel_body_font_size;"panel-body-font-size;@©;i∂[o;;"ui_body_font_weight;"ui-body-font-weight;@©o;	;"panel_body_font_weight;"panel-body-font-weight;@©;i∑[o;;"ui_background_stretch_top;"ui-background-stretch-top;@©o;	;"!panel_background_stretch_top;"!panel-background-stretch-top;@©;iπ[o;;"!ui_background_stretch_bottom;"!ui-background-stretch-bottom;@©o;	;"$panel_background_stretch_bottom;"$panel-background-stretch-bottom;@©;i∫[o;;" ui_background_stretch_right;" ui-background-stretch-right;@©o;	;"#panel_background_stretch_right;"#panel-background-stretch-right;@©;iª[o;;"ui_background_stretch_left;"ui-background-stretch-left;@©o;	;""panel_background_stretch_left;""panel-background-stretch-left;@©;iº[o;;"'ui_include_border_management_rules;"'ui-include-border-management-rules;@©o;	;"*panel_include_border_management_rules;"*panel-include-border-management-rules;@©;iø[o;;"ui_wrap_border_color;"ui-wrap-border-color;@©o;	;"panel_wrap_border_color;"panel-wrap-border-color;@©;i¿[o;;"ui_wrap_border_width;"ui-wrap-border-width;@©o;	;"panel_wrap_border_width;"panel-wrap-border-width;@©;i¡o;#;$i ;T;%[".o;	;"prefix;"prefix;@;i‡"panel-ghost;@;	[o;);"opacity;@;	[ ;{ ;i·;[o;	;"panel_ghost_opacity;"panel-ghost-opacity;@;i·;i‡u;*[o:Sass::Script::Variable	:@underscored_name"include_panel_default_ui:
-@name"include-panel-default-ui:@options{ :
-@linei‰0[o:Sass::Tree::MixinNode;"extjs-panel-ui;@	:@children[ :@keywords{"ui_labelo:Sass::Script::String	;@	:
-@type:string:@value"default;	iÊ;	iÁ:
-@args[ u;Ä[o:Sass::Script::Variable	:@underscored_name"$include_panel_default_framed_ui:
-@name"$include-panel-default-framed-ui:@options{ :
-@lineiÍ0[o:Sass::Tree::MixinNode;"extjs-panel-ui;@	:@children[ :@keywords{"ui_border_coloro; 	;"panel_frame_border_color;"panel-frame-border-color;@	;	iÓ"ui_body_border_widtho; 	;""panel_frame_body_border_width;""panel-frame-body-border-width;@	;	i˘"ui_border_radiuso; 	;"panel_frame_border_radius;"panel-frame-border-radius;@	;	i"!ui_header_inner_border_coloro; 	;"*panel_frame_header_inner_border_color;"*panel-frame-header-inner-border-color;@	;	iı"ui_paddingo; 	;"panel_frame_padding;"panel-frame-padding;@	;	iÒ"ui_border_widtho; 	;"panel_frame_border_width;"panel-frame-border-width;@	;	iÔ"ui_body_background_coloro; 	;"!panel_frame_background_color;"!panel-frame-background-color;@	;	i˙"ui_labelo:Sass::Script::String	;@	:
-@type:string:@value"default-framed;	iÏ"!ui_header_inner_border_widtho; 	;"*panel_frame_header_inner_border_width;"*panel-frame-header-inner-border-width;@	;	iˆ"ui_header_paddingo; 	;"panel_frame_header_padding;"panel-frame-header-padding;@	;	i˜"ui_header_border_widtho; 	;"$panel_frame_header_border_width;"$panel-frame-header-border-width;@	;	iÙ"ui_header_border_coloro; 	;"panel_frame_border_color;"panel-frame-border-color;@	;	iÛ;	i˚:
-@args[ ;i
