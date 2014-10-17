@@ -6,13 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "defer": false,
-        "designer|userClassName": "js1",
+        "designer|userClassName": "js",
         "id": "Bancha",
-        "remote": null,
         "url": "/bancha/js/ScriptTagInitializer.js",
         "x-bootstrap": true,
         "x-compile": true
     },
-    "designerId": "f672fe9e-9206-4008-be75-6d10326f654e"
+    "name": "js",
+    "designerId": "73829a30-db46-4b7a-93e9-2cbe78e64797"
 }

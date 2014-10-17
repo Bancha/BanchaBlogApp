@@ -41,10 +41,14 @@
         "displayfield-ExtBox1-1388-inputEl": "Not Installed",
         "displayfield-ExtBox1-1438-inputEl": "Not Installed",
         "displayfield-ExtBox1-1279-inputEl": "Not Installed",
-        "projectHasEnabledWebServer": true
+        "projectHasEnabledWebServer": true,
+        "lockUrlPrefix": true,
+        "installStatus": "Not Installed",
+        "displayfield-ExtBox1-1122-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1177-inputEl": "a new version of the framework is available"
     },
     "xdsVersion": "3.1.0",
-    "xdsBuild": 1903,
+    "xdsBuild": 1934,
     "schemaVersion": 1,
     "upgradeVersion": 300000000007,
     "framework": "ext42",
@@ -76,8 +80,8 @@
         ],
         "resource": [
             "93907ad8-a278-40b5-a417-cd1d172cd181",
-            "40bc445e-5215-4255-86be-592265051836",
-            "f672fe9e-9206-4008-be75-6d10326f654e"
+            "73829a30-db46-4b7a-93e9-2cbe78e64797",
+            "ce933a38-bb5d-43c0-b6dd-f16ae66bb9fa"
         ],
         "app": [
             "application"

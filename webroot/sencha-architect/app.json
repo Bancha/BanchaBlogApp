@@ -3,19 +3,7 @@
    "requires": [],
    "id": "e18aa0b6-53a4-4e3a-954c-73f82beea3ae",
    "resources": [
-      "css/blog-app.css"
+      "resources/blog-app.css"
    ],
-   "theme": "ext-theme-neptune",
-   "js": [
-      {
-         "path": "app.js",
-         "bundle": true
-      }
-   ],
-   "css": [
-      {
-         "path": "bootstrap.css",
-         "bootstrap": true
-      }
-   ]
+   "theme": "ext-theme-neptune"
 }

@@ -7,7 +7,8 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "css",
-        "url": "css/blog-app.css"
+        "url": "resources/blog-app.css"
     },
-    "designerId": "40bc445e-5215-4255-86be-592265051836"
+    "name": "css",
+    "designerId": "ce933a38-bb5d-43c0-b6dd-f16ae66bb9fa"
 }

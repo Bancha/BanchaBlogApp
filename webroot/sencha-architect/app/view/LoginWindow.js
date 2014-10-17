@@ -58,7 +58,7 @@ Ext.define('BlogApp.view.LoginWindow', {
                                 'and as "roland" you can delete the whole article additionally. ',
                                 '<br/><br/>',
                                 'Also read more about ',
-                                '<a href="http://banchaproject.org/using-sencha-architect-2.html" style="color: black;">',
+                                '<a href="http://bancha.io/documentation-pro-sencha-architect-3.html" style="color: black;">',
                                 'how to use Sencha Architect</a>. I hope you like it, now log in to play around:',
                                 '</p>'
                             ]
