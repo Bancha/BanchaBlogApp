@@ -14,6 +14,8 @@
         "store": "Comments"
     },
     "designerId": "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11",
+    "viewControllerInstanceId": "443b8250-fa63-447a-9dd9-ce5e75a1a6a7",
+    "viewModelInstanceId": "20e954ce-800a-4d77-881b-a7a706a741d9",
     "cn": [
         {
             "type": "Ext.XTemplate",

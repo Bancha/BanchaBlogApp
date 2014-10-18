@@ -7,6 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|initialView": true,
+        "designer|userAlias": "myviewport",
         "designer|userClassName": "MyViewport",
         "layout": "border",
         "requires": [
@@ -14,6 +15,8 @@
         ]
     },
     "designerId": "aa072d1e-c180-4283-9cba-f5e26adde0bb",
+    "viewControllerInstanceId": "623d0486-fe6b-4f94-b134-e01d46e32160",
+    "viewModelInstanceId": "6be1d7fa-d940-44f5-8206-d03fedfe0d19",
     "cn": [
         {
             "type": "linkedinstance",

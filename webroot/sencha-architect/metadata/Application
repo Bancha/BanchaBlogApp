@@ -17,6 +17,9 @@
             "Comment"
         ],
         "name": "BlogApp",
+        "requires": [
+            "Bancha.Initializer"
+        ],
         "stores": [
             "Comments",
             "Users",

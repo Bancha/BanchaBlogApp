@@ -19,6 +19,8 @@
         "width": 530
     },
     "designerId": "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6",
+    "viewControllerInstanceId": "b7e7e140-1664-40fc-aacf-9f0ecd588af9",
+    "viewModelInstanceId": "a0c69af2-6665-409f-ab8e-c8698c73d41a",
     "cn": [
         {
             "type": "Ext.form.Panel",

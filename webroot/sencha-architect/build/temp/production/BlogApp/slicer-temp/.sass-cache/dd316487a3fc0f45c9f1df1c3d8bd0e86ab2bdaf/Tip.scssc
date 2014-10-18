@@ -1,0 +1,510 @@
+3.1.7 (Brainy Betty)
+83136f836804c09da58dd220ff097e645d28cb4b
+o:Sass::Tree::RootNode
+:@template"ø /**
+ * Creates a visual theme for a Ext.tip.Tip
+ *
+ * @param {string} $ui
+ * The name of the UI being created. Can not included spaces or special punctuation
+ * (used in CSS class names).
+ *
+ * @param {color} [$ui-border-color=$tip-border-color]
+ * The border-color of the Tip
+ *
+ * @param {number} [$ui-border-width=$tip-border-width]
+ * The border-width of the Tip
+ *
+ * @param {number} [$ui-border-radius=$tip-border-radius]
+ * The border-radius of the Tip
+ *
+ * @param {color} [$ui-background-color=$tip-background-color]
+ * The background-color of the Tip
+ *
+ * @param {string/list} [$ui-background-gradient=$tip-background-gradient]
+ * The background-gradient of the Tip. Can be either the name of a predefined gradient or a
+ * list of color stops. Used as the `$type` parameter for {@link Global_CSS#background-gradient}.
+ *
+ * @param {number} [$ui-tool-spacing=$tip-tool-spacing]
+ * The space between {@link Ext.panel.Tool Tools} in the header
+ *
+ * @param {string} [$ui-tool-background-image=$tip-tool-background-image]
+ * The sprite to use for the header {@link Ext.panel.Tool Tools}
+ *
+ * @param {number/list} [$ui-header-padding=$tip-header-padding]
+ * The padding of the Tip header's body element
+ *
+ * @param {color} [$ui-header-color=$tip-header-color]
+ * The text color of the Tip header
+ *
+ * @param {number} [$ui-header-font-size=$tip-header-font-size]
+ * The font-size of the Tip header
+ *
+ * @param {string} [$ui-header-font-weight=$tip-header-font-weight]
+ * The font-weight of the Tip header
+ *
+ * @param {number/list} [$ui-body-padding=$tip-body-padding]
+ * The padding of the Tip body
+ *
+ * @param {color} [$ui-body-color=$tip-body-color]
+ * The text color of the Tip body
+ *
+ * @param {number} [$ui-body-font-size=$tip-body-font-size]
+ * The font-size of the Tip body
+ *
+ * @param {string} [$ui-body-font-weight=$tip-body-font-weight]
+ * The font-weight of the Tip body
+ *
+ * @param {color} [$ui-body-link-color=$tip-body-link-color]
+ * The text color of any anchor tags inside the Tip body
+ *
+ * @param {number} [$ui-inner-border-width=0]
+ * The inner border-width of the Tip
+ *
+ * @param {color} [$ui-inner-border-color=#fff]
+ * The inner border-color of the Tip
+ *
+ * @member Ext.tip.Tip
+ */
+@mixin extjs-tip-ui(
+    $ui: null,
+    $ui-border-color: $tip-border-color,
+    $ui-border-width: $tip-border-width,
+    $ui-border-radius: $tip-border-radius,
+    $ui-background-color: $tip-background-color,
+    $ui-background-gradient: $tip-background-gradient,
+
+    $ui-tool-spacing: $tip-tool-spacing,
+    $ui-tool-background-image: $tip-tool-background-image,
+    $ui-header-padding: $tip-header-padding,
+    $ui-header-color: $tip-header-color,
+    $ui-header-font-size: $tip-header-font-size,
+    $ui-header-font-weight: $tip-header-font-weight,
+    $ui-body-padding: $tip-body-padding,
+    $ui-body-color: $tip-body-color,
+    $ui-body-font-size: $tip-body-font-size,
+    $ui-body-font-weight: $tip-body-font-weight,
+    $ui-body-link-color: $tip-body-link-color,
+
+    $ui-inner-border-width: 0,
+    $ui-inner-border-color: #fff,
+
+    // deprecated - use $ui instead
+    $ui-label: null
+) {
+    @if $ui == null {
+        @if $ui-label != null {
+            @warn '$ui-label is deprecated.  Use $ui instead';
+            $ui: $ui-label;
+        } @else {
+            @warn "#{error('$ui is required')}";
+        }
+    }
+
+    @if not is-null($ui-border-radius) and $ui-border-radius != 0 {
+        @include x-frame(
+            $cls: 'tip',
+            $ui: '#{$ui}',
+            $border-radius: $ui-border-radius,
+            $border-width: $ui-border-width,
+            $background-color: $ui-background-color,
+            $background-gradient: $ui-background-gradient,
+            $table: true
+        );
+    }
+
+    .#{$prefix}tip-#{$ui} {
+        border-color: $ui-border-color;
+        @if $ui-inner-border-width != 0 {
+            @include inner-border(
+                $width: $ui-inner-border-width,
+                $color: $ui-inner-border-color
+            );
+        }
+
+        .#{$prefix}tool-img {
+            @if $ui-tool-background-image != $tool-background-image {
+                background-image: theme-background-image($ui-tool-background-image);
+            }
+            @if is-null($ui-background-gradient) {
+                // EXTJSIV-8846: partially transparent png images do not display correctly
+                // in winXP/IE8m when the image element has a transparent background.
+                // to fix this, we give the element the same background-color as the tooltip.
+                background-color: $ui-background-color;
+            }
+        }
+    }
+
+    $ui-tool-margin: 0 0 0 $ui-tool-spacing;
+    .#{$prefix}tip-header-#{$ui} {
+        .#{$prefix}tool-after-title {
+            margin: $ui-tool-margin;
+        }
+
+        @if $include-rtl {
+            .#{$prefix}rtl.#{$prefix}tool-after-title {
+                margin: rtl($ui-tool-margin);
+            }
+        }
+
+        .#{$prefix}tool-before-title {
+            margin: rtl($ui-tool-margin);
+        }
+
+        @if $include-rtl {
+            .#{$prefix}rtl.#{$prefix}tool-before-title {
+                margin: $ui-tool-margin;
+            }
+        }
+    }
+
+    .#{$prefix}tip-header-#{$ui} {
+        padding: $ui-header-padding;
+    }
+
+    .#{$prefix}tip-header-title-#{$ui} {
+        color: $ui-header-color;
+        font-size: $ui-header-font-size;
+        font-weight: $ui-header-font-weight;
+    }
+
+    .#{$prefix}tip-body-#{$ui} {
+        padding: $ui-body-padding;
+        color: $ui-body-color;
+        font-size: $ui-body-font-size;
+        font-weight: $ui-body-font-weight;
+        a {
+            color: $ui-body-link-color;
+        }
+    }
+}
+
+// TODO: refactor anchor to use an image instead of the border triangle technique
+.#{$prefix}tip-anchor {
+    position: absolute;
+
+    overflow: hidden;
+
+    height: 10px;
+    width: 10px;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: $tip-border-color;
+}
+
+.#{$prefix}tip-anchor-top {
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+    @if $include_ie {
+        _border-top-color: pink;
+        _border-left-color: pink;
+        _border-right-color: pink;
+        _filter: chroma(color=pink);
+    }
+}
+
+.#{$prefix}tip-anchor-bottom {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+    @if $include_ie {
+        _border-bottom-color: pink;
+        _border-left-color: pink;
+        _border-right-color: pink;
+        _filter: chroma(color=pink);
+    }
+}
+
+.#{$prefix}tip-anchor-left {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+
+    @if $include-ie {
+        _border-top-color: pink;
+        _border-bottom-color: pink;
+        _border-left-color: pink;
+        _filter: chroma(color=pink);
+    }
+}
+
+.#{$prefix}tip-anchor-right {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+
+    @if $include-ie {
+        _border-top-color: pink;
+        _border-bottom-color: pink;
+        _border-right-color: pink;
+        _filter: chroma(color=pink);
+    }
+}
+
+@if $include-tip-default-ui {
+    @include extjs-tip-ui(
+        $ui: 'default'
+    );
+}
+
+@if $include-ext-form-field-base {
+    @if $include-tip-form-invalid-ui {
+        @include extjs-tip-ui(
+            $ui: 'form-invalid',
+            $ui-border-color: $tip-error-border-color,
+            $ui-border-width: $tip-error-border-width,
+            $ui-border-radius: $tip-error-border-radius,
+            $ui-background-color: $tip-error-background-color,
+            $ui-body-padding: $tip-error-body-padding,
+            $ui-body-color: $tip-error-body-color,
+            $ui-body-font-size: $tip-error-body-font-size,
+            $ui-body-font-weight: $tip-error-body-font-weight,
+            $ui-body-link-color: $tip-error-body-link-color,
+            $ui-inner-border-color: $tip-error-inner-border-color,
+            $ui-inner-border-width: $tip-error-inner-border-width
+        );
+    }
+
+    .#{$prefix}tip-body-form-invalid {
+        background: 1px 1px no-repeat;
+        background-image: theme-background-image('form/exclamation');
+        li {
+            margin-bottom: 4px;
+            &.last {
+                margin-bottom: 0;
+            }
+        }
+    }
+}:@has_childrenT:@options{ :@children[o:Sass::Tree::CommentNode:@silent0;@;	[ :@lines[ :
+@loud0:@value"´/**
+ * Creates a visual theme for a Ext.tip.Tip
+ *
+ * @param {string} $ui
+ * The name of the UI being created. Can not included spaces or special punctuation
+ * (used in CSS class names).
+ *
+ * @param {color} [$ui-border-color=$tip-border-color]
+ * The border-color of the Tip
+ *
+ * @param {number} [$ui-border-width=$tip-border-width]
+ * The border-width of the Tip
+ *
+ * @param {number} [$ui-border-radius=$tip-border-radius]
+ * The border-radius of the Tip
+ *
+ * @param {color} [$ui-background-color=$tip-background-color]
+ * The background-color of the Tip
+ *
+ * @param {string/list} [$ui-background-gradient=$tip-background-gradient]
+ * The background-gradient of the Tip. Can be either the name of a predefined gradient or a
+ * list of color stops. Used as the `$type` parameter for {@link Global_CSS#background-gradient}.
+ *
+ * @param {number} [$ui-tool-spacing=$tip-tool-spacing]
+ * The space between {@link Ext.panel.Tool Tools} in the header
+ *
+ * @param {string} [$ui-tool-background-image=$tip-tool-background-image]
+ * The sprite to use for the header {@link Ext.panel.Tool Tools}
+ *
+ * @param {number/list} [$ui-header-padding=$tip-header-padding]
+ * The padding of the Tip header's body element
+ *
+ * @param {color} [$ui-header-color=$tip-header-color]
+ * The text color of the Tip header
+ *
+ * @param {number} [$ui-header-font-size=$tip-header-font-size]
+ * The font-size of the Tip header
+ *
+ * @param {string} [$ui-header-font-weight=$tip-header-font-weight]
+ * The font-weight of the Tip header
+ *
+ * @param {number/list} [$ui-body-padding=$tip-body-padding]
+ * The padding of the Tip body
+ *
+ * @param {color} [$ui-body-color=$tip-body-color]
+ * The text color of the Tip body
+ *
+ * @param {number} [$ui-body-font-size=$tip-body-font-size]
+ * The font-size of the Tip body
+ *
+ * @param {string} [$ui-body-font-weight=$tip-body-font-weight]
+ * The font-weight of the Tip body
+ *
+ * @param {color} [$ui-body-link-color=$tip-body-link-color]
+ * The text color of any anchor tags inside the Tip body
+ *
+ * @param {number} [$ui-inner-border-width=0]
+ * The inner border-width of the Tip
+ *
+ * @param {color} [$ui-inner-border-color=#fff]
+ * The inner border-color of the Tip
+ *
+ * @member Ext.tip.Tip
+ */:
+@lineio:Sass::Tree::MixinDefNode:
+@name"extjs-tip-ui;T;@;	[u:Sass::Tree::IfNode[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"	null:
+@linei`;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;i`:@operator:eq;i`0[u:Sass::Tree::IfNode[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"	null:
+@lineia;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui_label:
+@name"ui-label;@;ia:@operator:neq;iau:Sass::Tree::IfNodeB[00[o:Sass::Tree::WarnNode	:@options{ :
+@expro:&Sass::Script::StringInterpolation
+:@beforeo:Sass::Script::String	;@:
+@type:string:@value" :
+@lineie;@:@aftero;
+	;@;;;" ;ie:	@mido:Sass::Script::Funcall
+:
+@name"
+error;@:@keywords{ ;ie:
+@args[o;
+	;@;;;"$ui is required;ie;ie:@children[ ;ie[o:Sass::Tree::WarnNode	;@:
+@expro;	;@;	:string;".$ui-label is deprecated.  Use $ui instead;ib:@children[ ;ibo:Sass::Tree::VariableNode:@guarded0;"ui;@;o;	;"ui_label;"ui-label;@;ic;[ ;icu;5[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
+@lineii;	@
+:@operand1o:Sass::Script::Variable	:@underscored_name"ui_border_radius:
+@name"ui-border-radius;	@
+;ii:@operator:neq;ii;	@
+;o:!Sass::Script::UnaryOperation	;	@
+:@operando:Sass::Script::Funcall
+;"is-null;	@
+:@keywords{ ;ii:
+@args[o;	;"ui_border_radius;"ui-border-radius;	@
+;ii;:not;ii;:and;ii0[o:Sass::Tree::MixinNode;"x-frame;	@
+:@children[ ;{"uio:&Sass::Script::StringInterpolation
+:@beforeo:Sass::Script::String	;	@
+:
+@type:string;" ;il;	@
+:@aftero;	;	@
+; ;!;" ;il:	@mido;	;"ui;"ui;	@
+;il;il"background_gradiento;	;"ui_background_gradient;"ui-background-gradient;	@
+;ip"border_radiuso;	;"ui_border_radius;"ui-border-radius;	@
+;im"border_widtho;	;"ui_border_width;"ui-border-width;	@
+;in"background_coloro;	;"ui_background_color;"ui-background-color;	@
+;io"
+tableo:Sass::Script::Bool;	@
+;T;iq"clso;	;	@
+; ;!;"tip;ik;ir;[ o:Sass::Tree::RuleNode:
+@tabsi ;T:
+@rule[	".o:Sass::Script::Variable	:@underscored_name"prefix;"prefix;@;iu"	tip-o;	;"ui;"ui;@;iu;@;	[o:Sass::Tree::PropNode;i :@prop_syntax:new;["border-color;@;	[ ;o;	;"ui_border_color;"ui-border-color;@;iv;ivu;[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
+@lineiw;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"ui_inner_border_width:
+@name"ui-inner-border-width;	@	;iw:@operator:neq;iw0[o:Sass::Tree::MixinNode;"inner-border;	@	:@children[ :@keywords{"
+coloro;	;"ui_inner_border_color;"ui-inner-border-color;	@	;iz"
+widtho;	;"ui_inner_border_width;"ui-inner-border-width;	@	;iy;i{:
+@args[ o;;i ;T;[".o;	;"prefix;"prefix;@;i~"tool-img;@;	[u;
+[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Variable	:@underscored_name"tool_background_image:
+@name"tool-background-image:@options{ :
+@linei;
+@
+:@operand1o;	;"ui_tool_background_image;	"ui-tool-background-image;
+@
+;i:@operator:neq;i0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;	["background-image;
+@
+:@children[ :@valueo:Sass::Script::Funcall
+;	"theme-background-image;
+@
+:@keywords{ ;i{:
+@args[o;	;"ui_tool_background_image;	"ui-tool-background-image;
+@
+;i{;i{u;í[o:Sass::Script::Funcall
+:
+@name"is-null:@options{ :@keywords{ :
+@linei}:
+@args[o:Sass::Script::Variable	:@underscored_name"ui_background_gradient;"ui-background-gradient;@;	i}0[o:Sass::Tree::CommentNode:@silenti ;@:@children[ :@lines[ :
+@loud0:@value"·/* EXTJSIV-8846: partially transparent png images do not display correctly
+ * in winXP/IE8m when the image element has a transparent background.
+ * to fix this, we give the element the same background-color as the tooltip. */;	i~o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["background-color;@;[ ;o;	;"ui_background_color;"ui-background-color;@;	iÅ;	iÅ;i~;iuo:Sass::Tree::VariableNode:@guarded0;"ui-tool-margin;@:
+@expro:Sass::Script::List	;@:@separator:
+space;[	o:Sass::Script::Number:@original"0;@:@denominator_units[ :@numerator_units[ ;i ;iÜo;!;""0;@;#@5;$[ ;i ;iÜo;!;""0;@;#@5;$[ ;i ;iÜo;	;"ui_tool_spacing;"ui-tool-spacing;@;iÜ;iÜ;	[ ;iÜo;;i ;T;[	".o;	;"prefix;"prefix;@;iá"tip-header-o;	;"ui;"ui;@;iá;@;	[	o;;i ;T;[".o;	;"prefix;"prefix;@;ià"tool-after-title;@;	[o;;i ;;;["margin;@;	[ ;o;	;"ui_tool_margin;"ui-tool-margin;@;iâ;iâ;iàu;ÿ[o:Sass::Script::Variable	:@underscored_name"include_rtl:
+@name"include-rtl:@options{ :
+@lineiå0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule[
+".o; 	;"prefix;"prefix;@	;	iç"	rtl.o; 	;"prefix;"prefix;@	;	iç"tool-after-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo:Sass::Script::Funcall
+;"rtl;@	:@keywords{ ;	ié:
+@args[o; 	;"ui_tool_margin;"ui-tool-margin;@	;	ié;	ié;	iço;;i ;T;[".o;	;"prefix;"prefix;@;ií"tool-before-title;@;	[o;;i ;;;["margin;@;	[ ;o:Sass::Script::Funcall
+;"rtl;@:@keywords{ ;iì:
+@args[o;	;"ui_tool_margin;"ui-tool-margin;@;iì;iì;iíu;ö[o:Sass::Script::Variable	:@underscored_name"include_rtl:
+@name"include-rtl:@options{ :
+@lineiñ0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule[
+".o; 	;"prefix;"prefix;@	;	ió"	rtl.o; 	;"prefix;"prefix;@	;	ió"tool-before-title;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin;@	;[ :@valueo; 	;"ui_tool_margin;"ui-tool-margin;@	;	iò;	iò;	ió;iáo;;i ;T;[	".o;	;"prefix;"prefix;@;iù"tip-header-o;	;"ui;"ui;@;iù;@;	[o;;i ;;;["padding;@;	[ ;o;	;"ui_header_padding;"ui-header-padding;@;iû;iû;iùo;;i ;T;[	".o;	;"prefix;"prefix;@;i°"tip-header-title-o;	;"ui;"ui;@;i°;@;	[o;;i ;;;["
+color;@;	[ ;o;	;"ui_header_color;"ui-header-color;@;i¢;i¢o;;i ;;;["font-size;@;	[ ;o;	;"ui_header_font_size;"ui-header-font-size;@;i£;i£o;;i ;;;["font-weight;@;	[ ;o;	;"ui_header_font_weight;"ui-header-font-weight;@;i§;i§;i°o;;i ;T;[	".o;	;"prefix;"prefix;@;iß"tip-body-o;	;"ui;"ui;@;iß;@;	[
+o;;i ;;;["padding;@;	[ ;o;	;"ui_body_padding;"ui-body-padding;@;i®;i®o;;i ;;;["
+color;@;	[ ;o;	;"ui_body_color;"ui-body-color;@;i©;i©o;;i ;;;["font-size;@;	[ ;o;	;"ui_body_font_size;"ui-body-font-size;@;i™;i™o;;i ;;;["font-weight;@;	[ ;o;	;"ui_body_font_weight;"ui-body-font-weight;@;i´;i´o;;i ;T;["a;@:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;i¨:@members[o:Sass::Selector::Sequence;+[o:#Sass::Selector::SimpleSequence;*@»;i¨;+[o:Sass::Selector::Element	;["a:@namespace0;*@»;i¨;	[o;;i ;;;["
+color;@;	[ ;o;	;"ui_body_link_color;"ui-body-link-color;@;i≠;i≠;i¨;iß;i_;'[[o;;"ui;"ui;{ o:Sass::Script::String	;@ﬁ:
+@type:identifier;"	null;iG[o;;"ui_border_color;"ui-border-color;@ﬁo;	;"tip_border_color;"tip-border-color;@ﬁ;iH[o;;"ui_border_width;"ui-border-width;@ﬁo;	;"tip_border_width;"tip-border-width;@ﬁ;iI[o;;"ui_border_radius;"ui-border-radius;@ﬁo;	;"tip_border_radius;"tip-border-radius;@ﬁ;iJ[o;;"ui_background_color;"ui-background-color;@ﬁo;	;"tip_background_color;"tip-background-color;@ﬁ;iK[o;;"ui_background_gradient;"ui-background-gradient;@ﬁo;	;"tip_background_gradient;"tip-background-gradient;@ﬁ;iL[o;;"ui_tool_spacing;"ui-tool-spacing;@ﬁo;	;"tip_tool_spacing;"tip-tool-spacing;@ﬁ;iN[o;;"ui_tool_background_image;"ui-tool-background-image;@ﬁo;	;"tip_tool_background_image;"tip-tool-background-image;@ﬁ;iO[o;;"ui_header_padding;"ui-header-padding;@ﬁo;	;"tip_header_padding;"tip-header-padding;@ﬁ;iP[o;;"ui_header_color;"ui-header-color;@ﬁo;	;"tip_header_color;"tip-header-color;@ﬁ;iQ[o;;"ui_header_font_size;"ui-header-font-size;@ﬁo;	;"tip_header_font_size;"tip-header-font-size;@ﬁ;iR[o;;"ui_header_font_weight;"ui-header-font-weight;@ﬁo;	;"tip_header_font_weight;"tip-header-font-weight;@ﬁ;iS[o;;"ui_body_padding;"ui-body-padding;@ﬁo;	;"tip_body_padding;"tip-body-padding;@ﬁ;iT[o;;"ui_body_color;"ui-body-color;@ﬁo;	;"tip_body_color;"tip-body-color;@ﬁ;iU[o;;"ui_body_font_size;"ui-body-font-size;@ﬁo;	;"tip_body_font_size;"tip-body-font-size;@ﬁ;iV[o;;"ui_body_font_weight;"ui-body-font-weight;@ﬁo;	;"tip_body_font_weight;"tip-body-font-weight;@ﬁ;iW[o;;"ui_body_link_color;"ui-body-link-color;@ﬁo;	;"tip_body_link_color;"tip-body-link-color;@ﬁ;iX[o;;"ui_inner_border_width;"ui-inner-border-width;@ﬁo;!;""0;@ﬁ;#@5;$[ ;i ;iZ[o;;"ui_inner_border_color;"ui-inner-border-color;@ﬁo:Sass::Script::Color	:@attrs{	:rediˇ:
+alphai:
+greeniˇ:	blueiˇ;@ﬁ;0;i[[o;;"ui_label;"ui-label;@ﬁo;0	;@ﬁ;1;2;"	null;i^o;
+;i ;@;	[ ;[ ;0;"Y/* TODO: refactor anchor to use an image instead of the border triangle technique */;i≤o;;i ;T;[".o;	;"prefix;"prefix;@;i≥"tip-anchor;@;	[o;;i ;;;["position;@;	[ ;o;0;@;1;2;"absolute;i¥o;;i ;;;["overflow;@;	[ ;o;0;@;1;2;"hidden;i∂o;;i ;;;["height;@;	[ ;o;0;@;1;2;"	10px;i∏o;;i ;;;["
+width;@;	[ ;o;0;@;1;2;"	10px;iπo;;i ;;;["border-style;@;	[ ;o;0;@;1;2;"
+solid;iªo;;i ;;;["border-width;@;	[ ;o;0;@;1;2;"5px;iºo;;i ;;;["border-color;@;	[ ;o;	;"tip_border_color;"tip-border-color;@;iΩ;iΩ;i≥o;;i ;T;[".o;	;"prefix;"prefix;@;i¿"tip-anchor-top;@;	[	o;;i ;;;["border-top-color;@;	[ ;o;0;@;1;2;"transparent;i¡o;;i ;;;["border-left-color;@;	[ ;o;0;@;1;2;"transparent;i¬o;;i ;;;["border-right-color;@;	[ ;o;0;@;1;2;"transparent;i√u;Ö[o:Sass::Script::Variable	:@underscored_name"include_ie:
+@name"include_ie:@options{ :
+@linei≈0[	o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["_border-top-color;@	:@children[ :@valueo:Sass::Script::String;@	:
+@type:identifier;"	pink;	i∆o;
+;i ;;;["_border-left-color;@	;[ ;o;;@	;;;"	pink;	i«o;
+;i ;;;["_border-right-color;@	;[ ;o;;@	;;;"	pink;	i»o;
+;i ;;;["_filter;@	;[ ;o:Sass::Script::Funcall
+;"chroma;@	:@keywords{ ;	i…:
+@args[o:Sass::Script::Operation
+:@operand2o;	;@	;;;"	pink;	i…;@	:@operand1o;	;@	;;;"
+color;	i…:@operator:single_eq;	i…;	i…;i¿o;;i ;T;[".o;	;"prefix;"prefix;@;iÕ"tip-anchor-bottom;@;	[	o;;i ;;;["border-bottom-color;@;	[ ;o;0;@;1;2;"transparent;iŒo;;i ;;;["border-left-color;@;	[ ;o;0;@;1;2;"transparent;iœo;;i ;;;["border-right-color;@;	[ ;o;0;@;1;2;"transparent;i–u;à[o:Sass::Script::Variable	:@underscored_name"include_ie:
+@name"include_ie:@options{ :
+@linei“0[	o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["_border-bottom-color;@	:@children[ :@valueo:Sass::Script::String;@	:
+@type:identifier;"	pink;	i”o;
+;i ;;;["_border-left-color;@	;[ ;o;;@	;;;"	pink;	i‘o;
+;i ;;;["_border-right-color;@	;[ ;o;;@	;;;"	pink;	i’o;
+;i ;;;["_filter;@	;[ ;o:Sass::Script::Funcall
+;"chroma;@	:@keywords{ ;	i÷:
+@args[o:Sass::Script::Operation
+:@operand2o;	;@	;;;"	pink;	i÷;@	:@operand1o;	;@	;;;"
+color;	i÷:@operator:single_eq;	i÷;	i÷;iÕo;;i ;T;[".o;	;"prefix;"prefix;@;i⁄"tip-anchor-left;@;	[	o;;i ;;;["border-top-color;@;	[ ;o;0;@;1;2;"transparent;i€o;;i ;;;["border-bottom-color;@;	[ ;o;0;@;1;2;"transparent;i‹o;;i ;;;["border-left-color;@;	[ ;o;0;@;1;2;"transparent;i›u;Ü[o:Sass::Script::Variable	:@underscored_name"include_ie:
+@name"include-ie:@options{ :
+@lineiﬂ0[	o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["_border-top-color;@	:@children[ :@valueo:Sass::Script::String;@	:
+@type:identifier;"	pink;	i‡o;
+;i ;;;["_border-bottom-color;@	;[ ;o;;@	;;;"	pink;	i·o;
+;i ;;;["_border-left-color;@	;[ ;o;;@	;;;"	pink;	i‚o;
+;i ;;;["_filter;@	;[ ;o:Sass::Script::Funcall
+;"chroma;@	:@keywords{ ;	i„:
+@args[o:Sass::Script::Operation
+:@operand2o;	;@	;;;"	pink;	i„;@	:@operand1o;	;@	;;;"
+color;	i„:@operator:single_eq;	i„;	i„;i⁄o;;i ;T;[".o;	;"prefix;"prefix;@;iÁ"tip-anchor-right;@;	[	o;;i ;;;["border-top-color;@;	[ ;o;0;@;1;2;"transparent;iËo;;i ;;;["border-bottom-color;@;	[ ;o;0;@;1;2;"transparent;iÈo;;i ;;;["border-right-color;@;	[ ;o;0;@;1;2;"transparent;iÍu;á[o:Sass::Script::Variable	:@underscored_name"include_ie:
+@name"include-ie:@options{ :
+@lineiÏ0[	o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["_border-top-color;@	:@children[ :@valueo:Sass::Script::String;@	:
+@type:identifier;"	pink;	iÌo;
+;i ;;;["_border-bottom-color;@	;[ ;o;;@	;;;"	pink;	iÓo;
+;i ;;;["_border-right-color;@	;[ ;o;;@	;;;"	pink;	iÔo;
+;i ;;;["_filter;@	;[ ;o:Sass::Script::Funcall
+;"chroma;@	:@keywords{ ;	i:
+@args[o:Sass::Script::Operation
+:@operand2o;	;@	;;;"	pink;	i;@	:@operand1o;	;@	;;;"
+color;	i:@operator:single_eq;	i;	i;iÁu;[o:Sass::Script::Variable	:@underscored_name"include_tip_default_ui:
+@name"include-tip-default-ui:@options{ :
+@lineiÙ0[o:Sass::Tree::MixinNode;"extjs-tip-ui;@	:@children[ :@keywords{"uio:Sass::Script::String	;@	:
+@type:string:@value"default;	iˆ;	i˜:
+@args[ u;ú	[o:Sass::Script::Variable	:@underscored_name" include_ext_form_field_base:
+@name" include-ext-form-field-base:@options{ :
+@linei˙0[u:Sass::Tree::IfNode[o:Sass::Script::Variable	:@underscored_name" include_tip_form_invalid_ui:
+@name" include-tip-form-invalid-ui:@options{ :
+@linei˚0[o:Sass::Tree::MixinNode;"extjs-tip-ui;@	:@children[ :@keywords{"ui_border_coloro; 	;"tip_error_border_color;"tip-error-border-color;@	;	i˛"uio:Sass::Script::String	;@	:
+@type:string:@value"form-invalid;	i˝"ui_body_font_weighto; 	;"tip_error_body_font_weight;"tip-error-body-font-weight;@	;	i"ui_body_coloro; 	;"tip_error_body_color;"tip-error-body-color;@	;	i"ui_inner_border_coloro; 	;"!tip_error_inner_border_color;"!tip-error-inner-border-color;@	;	i"ui_body_link_coloro; 	;"tip_error_body_link_color;"tip-error-body-link-color;@	;	i"ui_inner_border_widtho; 	;"!tip_error_inner_border_width;"!tip-error-inner-border-width;@	;	i"ui_background_coloro; 	;"tip_error_background_color;"tip-error-background-color;@	;	i"ui_border_radiuso; 	;"tip_error_border_radius;"tip-error-border-radius;@	;	i "ui_body_paddingo; 	;"tip_error_body_padding;"tip-error-body-padding;@	;	i"ui_body_font_sizeo; 	;"tip_error_body_font_size;"tip-error-body-font-size;@	;	i"ui_border_widtho; 	;"tip_error_border_width;"tip-error-border-width;@	;	iˇ;	i	:
+@args[ o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule[".o; 	;"prefix;"prefix;@	;	i"tip-body-form-invalid;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["background;@	;[ :@valueo:Sass::Script::String;@	:
+@type:identifier;"1px 1px no-repeat;	io;;i ;;;["background-image;@	;[ ;o:Sass::Script::Funcall
+;"theme-background-image;@	:@keywords{ ;	i:
+@args[o;	;@	;:string;"form/exclamation;	i;	io;;i ;T;["li;@	:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;	i:@members[o:Sass::Selector::Sequence;[o:#Sass::Selector::SimpleSequence;@(;	i;[o:Sass::Selector::Element	;["li:@namespace0;@(;	i;[o;;i ;;;["margin-bottom;@	;[ ;o;;@	;;;"4px;	io;;i ;T;["&.last;@	;o;;" ;	i;[o;;[o; ;@<;	i;[o:Sass::Selector::Parent;@<;	io:Sass::Selector::Class;["	last;@<;	i;[o;;i ;;;["margin-bottom;@	;[ ;o;;@	;;;"0;	i;	i;	i;	i;i

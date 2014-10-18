@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "articlereader",
+        "designer|userClassName": "ArticleReaderViewController"
+    },
+    "designerId": "2b14d841-9ae9-4a04-b724-167de0c92dec"
+}

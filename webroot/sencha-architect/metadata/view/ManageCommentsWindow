@@ -15,6 +15,8 @@
         "width": 800
     },
     "designerId": "591a9c04-0e0a-4bc9-8679-78f1b38363d1",
+    "viewControllerInstanceId": "e5902969-0941-4d0f-875c-81cab37520cb",
+    "viewModelInstanceId": "7cd5b68e-e48b-40cf-83eb-943814f73d60",
     "cn": [
         {
             "type": "Ext.grid.Panel",

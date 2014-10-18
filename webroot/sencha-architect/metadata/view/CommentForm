@@ -26,6 +26,8 @@
         "title": null
     },
     "designerId": "bde46fe1-286e-4915-9a8d-2c6da3934859",
+    "viewControllerInstanceId": "66ce70dd-60fd-4880-bba2-2776de90a960",
+    "viewModelInstanceId": "9d07c829-171b-4bc8-bacb-2e1a38bb6e9c",
     "cn": [
         {
             "type": "Ext.form.FieldSet",

@@ -1,0 +1,782 @@
+3.1.7 (Brainy Betty)
+ab1313e3db7f63f8b68634624165986ed8059dbc
+o:Sass::Tree::RootNode
+:@template"â+/**
+ * Creates a visual theme for a {@link Ext.layout.container.boxOverflow.Scroller Box Scroller}
+ *
+ * @param {string} $ui
+ * The name of the UI being created. Can not included spaces or special punctuation
+ * (used in CSS class names).
+ *
+ * @param {string} $type
+ * The type of component that this box scroller will be used with.  For example 'toolbar'
+ * or 'tab-bar'
+ *
+ * @param {number} [$horizontal-width=16px]
+ * The width of horizontal scroller buttons
+ *
+ * @param {Number} [$horizontal-height=16px]
+ * The height of horizontal scroller buttons
+ *
+ * @param {number} [$vertical-width=16px]
+ * The width of vertical scroller buttons
+ *
+ * @param {Number} [$vertical-height=16px]
+ * The height of vertical scroller buttons
+ *
+ * @param {number/list} [$top-margin=0]
+ * The margin of the "top" scroller button
+ *
+ * @param {number/list} [$right-margin=0]
+ * The margin of the "right" scroller button
+ *
+ * @param {number/list} [$bottom-margin=0]
+ * The margin of the "bottom" scroller button
+ *
+ * @param {number/list} [$left-margin=0]
+ * The margin of the "left" scroller button
+ *
+ * @param {number/list} $top-background-image
+ * The background-image of the "top" scroller button
+ *
+ * @param {number/list} $right-background-image
+ * The background-image of the "right" scroller button
+ *
+ * @param {number/list} $bottom-background-image
+ * The background-image of the "bottom" scroller button
+ *
+ * @param {number/list} $left-background-image
+ * The background-image of the "left" scroller button
+ *
+ * @param {color} [$border-color=$base-color]
+ * The border-color of the scroller buttons
+ *
+ * @param {number} [$horizontal-border-width=0]
+ * The border-width of the scroller buttons
+ *
+ * @param {number} [$vertical-border-width=0]
+ * The border-width of the scroller buttons
+ *
+ * @param {number/list} [$container-padding=0]
+ * The padding of the container that these scroller buttons will be used in.  Used for
+ * setting margin offsets of the inner layout element to reserve space for the scrollers.
+ *
+ * @param {string} [$cursor=pointer]
+ * The type of cursor to display when the mouse is over a scroller button
+ *
+ * @param {string} [$cursor-disabled=default]
+ * The type of cursor to display when the mouse is over a disabled scroller button
+ *
+ * @param {string} [$align=middle]
+ * Vertical alignment of the scroller buttons, or horizontal align of vertically oriented
+ * scroller buttons. Can be one of the following values:
+ *
+ * - `begin`
+ * - `middle`
+ * - `end`
+ * - `stretch`
+ *
+ * @param {number} [$opacity=0.6]
+ * The opacity of the scroller buttons. Only applicable when `$classic` is `false`.
+ *
+ * @param {number} [$opacity-over=0.8]
+ * The opacity of hovered scroller buttons. Only applicable when `$classic` is `false`.
+ *
+ * @param {number} [$opacity-pressed=1]
+ * The opacity of pressed scroller buttons. Only applicable when `$classic` is `false`.
+ *
+ * @param {number} [$opacity-disabled=0.25]
+ * The opacity of disabled scroller buttons. Only applicable when `$classic` is `false`.
+ *
+ * @param {boolean} [$classic=false]
+ * `true` to use classic-style scroller buttons.  When `true` scroller buttons are given
+ * their hover state by changing their background-position,  When `false` scroller buttons
+ * are given their hover state by applying opacity.
+ *
+ * @member Ext.layout.container.Box
+ * @private
+ */
+@mixin extjs-box-scroller-ui(
+    $ui: null,
+    $type: null,
+    $horizontal-width: 16px,
+    $horizontal-height: 16px,
+    $vertical-width: 16px,
+    $vertical-height: 16px,
+    $top-margin: 0,
+    $right-margin: 0,
+    $bottom-margin: 0,
+    $left-margin: 0,
+    $top-background-image: null,
+    $right-background-image: null,
+    $bottom-background-image: null,
+    $left-background-image: null,
+    $horizontal-border-color: $base-color,
+    $horizontal-border-width: 0,
+    $vertical-border-color: $base-color,
+    $vertical-border-width: 0,
+    $container-padding: 0,
+    $cursor: pointer,
+    $cursor-disabled: default,
+    $align: middle,
+    $opacity: 0.5,
+    $opacity-over: 0.8,
+    $opacity-pressed: 1,
+    $opacity-disabled: 0.25,
+    $classic: false,
+    $include-horizontal: true,
+    $include-vertical: true,
+    $include-background-images: true
+) {
+    @if is-null($top-background-image) {
+        $top-background-image: #{$type}/#{$ui}-scroll-top;
+    }
+
+    @if is-null($right-background-image) {
+        $right-background-image: #{$type}/#{$ui}-scroll-right;
+    }
+
+    @if is-null($bottom-background-image) {
+        $bottom-background-image: #{$type}/#{$ui}-scroll-bottom;
+    }
+
+    @if is-null($left-background-image) {
+        $left-background-image: #{$type}/#{$ui}-scroll-left;
+    }
+
+    .#{$prefix}#{$type}-#{$ui}-scroller {
+        .#{$prefix}box-scroller-body-horizontal {
+            margin-left: max($horizontal-width + horizontal($left-margin) - left($container-padding), 0);
+        }
+    }
+
+    .#{$prefix}#{$type}-#{$ui}-vertical-scroller {
+        .#{$prefix}box-scroller-body-vertical {
+            margin-top: max($vertical-height + vertical($top-margin) - top($container-padding), 0);
+        }
+    }
+
+    .#{$prefix}box-scroller-#{$type}-#{$ui} {
+        cursor: $cursor;
+
+        @if not $classic {
+            @if $opacity != 1 {
+                @include opacity($opacity);
+            }
+
+            @if $opacity != 1 or $opacity-over != 1 {
+                &.#{$prefix}box-scroller-hover {
+                    @include opacity($opacity-over);
+                }
+            }
+
+            @if $opacity != 1 or $opacity-pressed != 1 {
+                &.#{$prefix}box-scroller-pressed {
+                    @include opacity($opacity-pressed);
+                }
+            }
+        }
+
+        &.#{$prefix}box-scroller-disabled {
+            @if $opacity-disabled != 1 {
+                @include opacity($opacity-disabled);
+            }
+            @if not is-null($cursor-disabled) {
+                cursor: $cursor-disabled;
+            }
+        }
+
+        @if $include-horizontal {
+            &.#{$prefix}box-scroller-left,
+            &.#{$prefix}box-scroller-right {
+                width: $horizontal-width;
+
+                @if $align != stretch {
+                    height: $horizontal-height;
+                }
+
+                @if $horizontal-border-width != 0 {
+                    border-style: solid;
+                    border-color: $horizontal-border-color;
+                    border-width: $horizontal-border-width;
+                }
+
+                @if $align == begin {
+                    top: 0;
+                } @else if $align == middle {
+                    top: 50%;
+                    margin-top: -(floor($horizontal-height / 2));
+                } @else if $align == end {
+                    bottom: 0;
+                } @else if $align == stretch {
+                    top: 0;
+                    bottom: 0;
+                }
+            }
+
+            &.#{$prefix}box-scroller-left {
+                @if $align == middle {
+                    // set all but margin-top to avoid overriding centering margin above
+                    margin-left: left($left-margin);
+                    margin-right: right($left-margin);
+                    margin-bottom: bottom($left-margin);
+                } @else {
+                    margin: $left-margin;
+                }
+
+                @if $include-background-images {
+                    background-image: theme-background-image($left-background-image);
+                }
+
+                @if $classic {
+                    background-position: -$horizontal-width 0;
+
+                    &.#{$prefix}box-scroller-hover {
+                        background-position: 0 0;
+                    }
+                }
+            }
+
+            &.#{$prefix}box-scroller-right {
+                @if $align == middle {
+                    // set all but margin-top to avoid overriding centering margin above
+                    margin-left: left($right-margin);
+                    margin-right: right($right-margin);
+                    margin-bottom: bottom($right-margin);
+                } @else {
+                    margin: $right-margin;
+                }
+
+                @if $include-background-images {
+                    background-image: theme-background-image($right-background-image);
+                }
+
+                @if $classic {
+                    background-position: 0 0;
+
+                    &.#{$prefix}box-scroller-hover {
+                        background-position: -$horizontal-width 0;
+                    }
+                }
+            }
+        }
+
+        @if $include-vertical {
+            &.#{$prefix}box-scroller-top,
+            &.#{$prefix}box-scroller-bottom {
+                height: $vertical-height;
+
+                @if $align != stretch {
+                    width: $vertical-width;
+                }
+
+                @if $vertical-border-width != 0 {
+                    border-style: solid;
+                    border-color: $vertical-border-color;
+                    border-width: $vertical-border-width;
+                }
+
+                @if $align == begin {
+                    left: 0;
+                } @else if $align == middle {
+                    left: 50%;
+                    margin-left: -(floor($vertical-width / 2));
+                } @else if $align == end {
+                    right: 0;
+                } @else if $align == stretch {
+                    left: 0;
+                    right: 0;
+                }
+            }
+
+            &.#{$prefix}box-scroller-top {
+                @if $align == middle {
+                    // set all but margin-left to avoid overriding centering margin above
+                    margin-top: top($top-margin);
+                    margin-right: right($top-margin);
+                    margin-bottom: bottom($top-margin);
+                } @else {
+                    margin: $top-margin;
+                }
+
+                @if $include-background-images {
+                    background-image: theme-background-image($top-background-image);
+                }
+
+                @if $classic {
+                    background-position: 0 (-$vertical-height);
+
+                    &.#{$prefix}box-scroller-hover {
+                        background-position: 0 0;
+                    }
+                }
+            }
+
+            &.#{$prefix}box-scroller-bottom {
+                @if $align == middle {
+                    // set all but margin-left to avoid overriding centering margin above
+                    margin-top: top($bottom-margin);
+                    margin-right: right($bottom-margin);
+                    margin-bottom: bottom($bottom-margin);
+                } @else {
+                    margin: $bottom-margin;
+                }
+
+                @if $include-background-images {
+                    background-image: theme-background-image($bottom-background-image);
+                }
+
+                @if $classic {
+                    background-position: 0 0;
+
+                    &.#{$prefix}box-scroller-hover {
+                        background-position: 0 (-$vertical-height);
+                    }
+                }
+            }
+        }
+    }
+}:@has_childrenT:@options{ :@children[o:Sass::Tree::CommentNode:@silent0;@;	[ :@lines[ :
+@loud0:@value"/**
+ * Creates a visual theme for a {@link Ext.layout.container.boxOverflow.Scroller Box Scroller}
+ *
+ * @param {string} $ui
+ * The name of the UI being created. Can not included spaces or special punctuation
+ * (used in CSS class names).
+ *
+ * @param {string} $type
+ * The type of component that this box scroller will be used with.  For example 'toolbar'
+ * or 'tab-bar'
+ *
+ * @param {number} [$horizontal-width=16px]
+ * The width of horizontal scroller buttons
+ *
+ * @param {Number} [$horizontal-height=16px]
+ * The height of horizontal scroller buttons
+ *
+ * @param {number} [$vertical-width=16px]
+ * The width of vertical scroller buttons
+ *
+ * @param {Number} [$vertical-height=16px]
+ * The height of vertical scroller buttons
+ *
+ * @param {number/list} [$top-margin=0]
+ * The margin of the "top" scroller button
+ *
+ * @param {number/list} [$right-margin=0]
+ * The margin of the "right" scroller button
+ *
+ * @param {number/list} [$bottom-margin=0]
+ * The margin of the "bottom" scroller button
+ *
+ * @param {number/list} [$left-margin=0]
+ * The margin of the "left" scroller button
+ *
+ * @param {number/list} $top-background-image
+ * The background-image of the "top" scroller button
+ *
+ * @param {number/list} $right-background-image
+ * The background-image of the "right" scroller button
+ *
+ * @param {number/list} $bottom-background-image
+ * The background-image of the "bottom" scroller button
+ *
+ * @param {number/list} $left-background-image
+ * The background-image of the "left" scroller button
+ *
+ * @param {color} [$border-color=$base-color]
+ * The border-color of the scroller buttons
+ *
+ * @param {number} [$horizontal-border-width=0]
+ * The border-width of the scroller buttons
+ *
+ * @param {number} [$vertical-border-width=0]
+ * The border-width of the scroller buttons
+ *
+ * @param {number/list} [$container-padding=0]
+ * The padding of the container that these scroller buttons will be used in.  Used for
+ * setting margin offsets of the inner layout element to reserve space for the scrollers.
+ *
+ * @param {string} [$cursor=pointer]
+ * The type of cursor to display when the mouse is over a scroller button
+ *
+ * @param {string} [$cursor-disabled=default]
+ * The type of cursor to display when the mouse is over a disabled scroller button
+ *
+ * @param {string} [$align=middle]
+ * Vertical alignment of the scroller buttons, or horizontal align of vertically oriented
+ * scroller buttons. Can be one of the following values:
+ *
+ * - `begin`
+ * - `middle`
+ * - `end`
+ * - `stretch`
+ *
+ * @param {number} [$opacity=0.6]
+ * The opacity of the scroller buttons. Only applicable when `$classic` is `false`.
+ *
+ * @param {number} [$opacity-over=0.8]
+ * The opacity of hovered scroller buttons. Only applicable when `$classic` is `false`.
+ *
+ * @param {number} [$opacity-pressed=1]
+ * The opacity of pressed scroller buttons. Only applicable when `$classic` is `false`.
+ *
+ * @param {number} [$opacity-disabled=0.25]
+ * The opacity of disabled scroller buttons. Only applicable when `$classic` is `false`.
+ *
+ * @param {boolean} [$classic=false]
+ * `true` to use classic-style scroller buttons.  When `true` scroller buttons are given
+ * their hover state by changing their background-position,  When `false` scroller buttons
+ * are given their hover state by applying opacity.
+ *
+ * @member Ext.layout.container.Box
+ * @private
+ */:
+@lineio:Sass::Tree::MixinDefNode:
+@name"extjs-box-scroller-ui;T;@;	[u:Sass::Tree::IfNodez[o:Sass::Script::Funcall
+:
+@name"is-null:@options{ :@keywords{ :
+@lineiÄ:
+@args[o:Sass::Script::Variable	:@underscored_name"top_background_image;"top-background-image;@;	iÄ0[o:Sass::Tree::VariableNode:@guarded0;"top-background-image;@:
+@expro: Sass::Script::Interpolation:@whitespace_after0:@before0:@whitespace_beforeiø;@:@aftero;;0;o;;F;0;0;@;0:@originally_text:originally_text:	@mido:Sass::Script::String	;@:
+@type:identifier:@value"/;	iÅ;	iÅ;0;@;o;	;@;;;"-scroll-top;	iÅ;F;o;	;"ui;"ui;@;	iÅ;	iÅ;F;o;	;"	type;"	type;@;	iÅ;	iÅ:@children[ ;	iÅu;Ç[o:Sass::Script::Funcall
+:
+@name"is-null:@options{ :@keywords{ :
+@lineiÑ:
+@args[o:Sass::Script::Variable	:@underscored_name"right_background_image;"right-background-image;@;	iÑ0[o:Sass::Tree::VariableNode:@guarded0;"right-background-image;@:
+@expro: Sass::Script::Interpolation:@whitespace_after0:@before0:@whitespace_beforei.;@:@aftero;;0;o;;F;0;0;@;0:@originally_text:originally_text:	@mido:Sass::Script::String	;@:
+@type:identifier:@value"/;	iÖ;	iÖ;0;@;o;	;@;;;"-scroll-right;	iÖ;F;o;	;"ui;"ui;@;	iÖ;	iÖ;F;o;	;"	type;"	type;@;	iÖ;	iÖ:@children[ ;	iÖu;Ü[o:Sass::Script::Funcall
+:
+@name"is-null:@options{ :@keywords{ :
+@lineià:
+@args[o:Sass::Script::Variable	:@underscored_name"bottom_background_image;"bottom-background-image;@;	ià0[o:Sass::Tree::VariableNode:@guarded0;"bottom-background-image;@:
+@expro: Sass::Script::Interpolation:@whitespace_after0:@before0:@whitespace_beforei°;@:@aftero;;0;o;;F;0;0;@;0:@originally_text:originally_text:	@mido:Sass::Script::String	;@:
+@type:identifier:@value"/;	iâ;	iâ;0;@;o;	;@;;;"-scroll-bottom;	iâ;F;o;	;"ui;"ui;@;	iâ;	iâ;F;o;	;"	type;"	type;@;	iâ;	iâ:@children[ ;	iâu;~[o:Sass::Script::Funcall
+:
+@name"is-null:@options{ :@keywords{ :
+@lineiå:
+@args[o:Sass::Script::Variable	:@underscored_name"left_background_image;"left-background-image;@;	iå0[o:Sass::Tree::VariableNode:@guarded0;"left-background-image;@:
+@expro: Sass::Script::Interpolation:@whitespace_after0:@before0:@whitespace_beforei;@:@aftero;;0;o;;F;0;0;@;0:@originally_text:originally_text:	@mido:Sass::Script::String	;@:
+@type:identifier:@value"/;	iç;	iç;0;@;o;	;@;;;"-scroll-left;	iç;F;o;	;"ui;"ui;@;	iç;	iç;F;o;	;"	type;"	type;@;	iç;	iç:@children[ ;	iço:Sass::Tree::RuleNode:
+@tabsi ;T:
+@rule[".o:Sass::Script::Variable	:@underscored_name"prefix;"prefix;@;iêo;	;"	type;"	type;@;iê"-o;	;"ui;"ui;@;iê"-scroller;@;	[o;;i ;T;[".o;	;"prefix;"prefix;@;ië"!box-scroller-body-horizontal;@;	[o:Sass::Tree::PropNode;i :@prop_syntax:new;["margin-left;@;	[ ;o:Sass::Script::Funcall
+;"max;@:@keywords{ ;ií:
+@args[o:Sass::Script::Operation
+:@operand2o;
+;"	left;@;{ ;ií;[o;	;"container_padding;"container-padding;@;ií;@:@operand1o;
+;o;
+;"horizontal;@;{ ;ií;[o;	;"left_margin;"left-margin;@;ií;@; o;	;"horizontal_width;"horizontal-width;@;ií:@operator:	plus;ií;!:
+minus;iío:Sass::Script::Number:@original"0;@:@denominator_units[ :@numerator_units[ ;i ;ií;ií;ië;iêo;;i ;T;[".o;	;"prefix;"prefix;@;iño;	;"	type;"	type;@;iñ"-o;	;"ui;"ui;@;iñ"-vertical-scroller;@;	[o;;i ;T;[".o;	;"prefix;"prefix;@;ió"box-scroller-body-vertical;@;	[o;;i ;;;["margin-top;@;	[ ;o;
+;"max;@;{ ;iò;[o;
+;o;
+;"top;@;{ ;iò;[o;	;"container_padding;"container-padding;@;iò;@; o;
+;o;
+;"vertical;@;{ ;iò;[o;	;"top_margin;"top-margin;@;iò;@; o;	;"vertical_height;"vertical-height;@;iò;!;";iò;!;#;iòo;$;%"0;@;&@H;'[ ;i ;iò;iò;ió;iño;;i ;T;[".o;	;"prefix;"prefix;@;iú"box-scroller-o;	;"	type;"	type;@;iú"-o;	;"ui;"ui;@;iú;@;	[
+o;;i ;;;["cursor;@;	[ ;o;	;"cursor;"cursor;@;iù;iùu;c[o:!Sass::Script::UnaryOperation	:@options{ :@operando:Sass::Script::Variable	:@underscored_name"classic:
+@name"classic;@:
+@lineiü:@operator:not;iü0[u:Sass::Tree::IfNodeÉ[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"1:@options{ :@denominator_units[ :@numerator_units[ :@valuei:
+@linei†;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"opacity:
+@name"opacity;	@	;i†:@operator:neq;i†0[o:Sass::Tree::MixinNode;"opacity;	@	:@children[ :@keywords{ ;i°:
+@args[o;	;"opacity;"opacity;	@	;i°u;Ñ[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::Number:@original"1:@options{ :@denominator_units[ :@numerator_units[ :@valuei:
+@linei§;	@
+:@operand1o:Sass::Script::Variable	:@underscored_name"opacity_over:
+@name"opacity-over;	@
+;i§:@operator:neq;i§;	@
+;o; 
+;o;;"1;	@
+;
+@;[ ;i;i§;	@
+;o;	;"opacity;"opacity;	@
+;i§;;;i§;:or;i§0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule["&.o;	;"prefix;"prefix;	@
+;i•"box-scroller-hover;	@
+:@children[o:Sass::Tree::MixinNode;"opacity;	@
+;[ :@keywords{ ;i¶:
+@args[o;	;"opacity_over;"opacity-over;	@
+;i¶;i•u;í[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::Number:@original"1:@options{ :@denominator_units[ :@numerator_units[ :@valuei:
+@linei™;	@
+:@operand1o:Sass::Script::Variable	:@underscored_name"opacity_pressed:
+@name"opacity-pressed;	@
+;i™:@operator:neq;i™;	@
+;o; 
+;o;;"1;	@
+;
+@;[ ;i;i™;	@
+;o;	;"opacity;"opacity;	@
+;i™;;;i™;:or;i™0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule["&.o;	;"prefix;"prefix;	@
+;i´"box-scroller-pressed;	@
+:@children[o:Sass::Tree::MixinNode;"opacity;	@
+;[ :@keywords{ ;i¨:
+@args[o;	;"opacity_pressed;"opacity-pressed;	@
+;i¨;i´o;;i ;T;["&.o;	;"prefix;"prefix;@;i±"box-scroller-disabled;@;	[u;ß[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"1:@options{ :@denominator_units[ :@numerator_units[ :@valuei:
+@linei≤;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"opacity_disabled:
+@name"opacity-disabled;	@	;i≤:@operator:neq;i≤0[o:Sass::Tree::MixinNode;"opacity;	@	:@children[ :@keywords{ ;i≥:
+@args[o;	;"opacity_disabled;"opacity-disabled;	@	;i≥u;ä[o:!Sass::Script::UnaryOperation	:@options{ :@operando:Sass::Script::Funcall
+:
+@name"is-null;@:@keywords{ :
+@lineiµ:
+@args[o:Sass::Script::Variable	:@underscored_name"cursor_disabled;	"cursor-disabled;@;iµ:@operator:not;iµ0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;	["cursor;@:@children[ :@valueo;	;"cursor_disabled;	"cursor-disabled;@;i∂;i∂;i±u;ß[o:Sass::Script::Variable	:@underscored_name"include_horizontal:
+@name"include-horizontal:@options{ :
+@linei∫0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule[
+"&.o; 	;"prefix;"prefix;@	;	iª"&box-scroller-left,
+            &.o; 	;"prefix;"prefix;@	;	iº"box-scroller-right;@	:@children[	o:Sass::Tree::PropNode;i :@prop_syntax:new;["
+width;@	;[ :@valueo; 	;"horizontal_width;"horizontal-width;@	;	iΩ;	iΩu:Sass::Tree::IfNode}[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"stretch:
+@lineiø;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;iø:@operator:neq;iø0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["height;@:@children[ ;o;	;"horizontal_height;"horizontal-height;@;i¿;i¿u;¶[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
+@linei√;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"horizontal_border_width:
+@name"horizontal-border-width;	@	;i√:@operator:neq;i√0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["border-style;	@	:@children[ ;o:Sass::Script::String;	@	:
+@type:identifier;"
+solid;iƒo;;i ;;;["border-color;	@	;[ ;o;	;"horizontal_border_color;"horizontal-border-color;	@	;i≈;i≈o;;i ;;;["border-width;	@	;[ ;o;	;"horizontal_border_width;"horizontal-border-width;	@	;i∆;i∆u;[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"
+begin:
+@linei…;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i…:@operator:eq;i…u:Sass::Tree::IfNode≥[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"middle:
+@lineiÀ;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;iÀ:@operator:eq;iÀu:Sass::Tree::IfNodeÙ[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"end:
+@lineiŒ;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;iŒ:@operator:eq;iŒu:Sass::Tree::IfNodeã[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"stretch:
+@linei–;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i–:@operator:eq;i–0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["top;@:@children[ ;o;;@;	;
+;"0;i—o;;i ;;;["bottom;@;[ ;o;;@;	;
+;"0;i“[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["bottom;@:@children[ ;o;;@;	;
+;"0;iœ[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["top;@:@children[ ;o;;@;	;
+;"50%;iÃo;;i ;;;["margin-top;@;[ ;o:!Sass::Script::UnaryOperation	;@:@operando:Sass::Script::Funcall
+;"
+floor;@:@keywords{ ;iÕ:
+@args[o; 
+;o:Sass::Script::Number:@original"2;@:@denominator_units[ :@numerator_units[ ;i;iÕ;@;o;	;"horizontal_height;"horizontal-height;@;iÕ;:div;iÕ;:
+minus;iÕ;iÕ[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["top;@:@children[ ;o;;@;	;
+;"0;i ;	iºo;
+;i ;T;["&.o; 	;"prefix;"prefix;@	;	i÷"box-scroller-left;@	;[u;[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"middle:
+@linei◊;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i◊:@operator:eq;i◊u:Sass::Tree::IfNode [00[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new:
+@name["margin:@options{ :@children[ :@valueo:Sass::Script::Variable	:@underscored_name"left_margin;	"left-margin;
+@
+:
+@linei›;i›[	o:Sass::Tree::CommentNode:@silenti ;@:@children[ :@lines[ :
+@loud0;"L/* set all but margin-top to avoid overriding centering margin above */;iÿo:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["margin-left;@;[ ;o:Sass::Script::Funcall
+;"	left;@:@keywords{ ;iŸ:
+@args[o;	;"left_margin;"left-margin;@;iŸ;iŸo;;i ;;;["margin-right;@;[ ;o;
+;"
+right;@;{ ;i⁄;[o;	;"left_margin;"left-margin;@;i⁄;i⁄o;;i ;;;["margin-bottom;@;[ ;o;
+;"bottom;@;{ ;i€;[o;	;"left_margin;"left-margin;@;i€;i€u;Ä[o:Sass::Script::Variable	:@underscored_name"include_background_images:
+@name"include-background-images:@options{ :
+@linei‡0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["background-image;@	:@children[ :@valueo:Sass::Script::Funcall
+;"theme-background-image;@	:@keywords{ ;	i·:
+@args[o; 	;"left_background_image;"left-background-image;@	;	i·;	i·u;¿[o:Sass::Script::Variable	:@underscored_name"classic:
+@name"classic:@options{ :
+@linei‰0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["background-position;@	:@children[ :@valueo:Sass::Script::List	;@	:@separator:
+space;[o:!Sass::Script::UnaryOperation	;@	:@operando; 	;"horizontal_width;"horizontal-width;@	;	iÂ:@operator:
+minus;	iÂo:Sass::Script::Number:@original"0;@	:@denominator_units[ :@numerator_units[ ;i ;	iÂ;	iÂ;	iÂo:Sass::Tree::RuleNode;i :@has_childrenT:
+@rule["&.o; 	;"prefix;"prefix;@	;	iÁ"box-scroller-hover;@	;[o;
+;i ;;;["background-position;@	;[ ;o:Sass::Script::String;@	:
+@type:identifier;"0 0;	iË;	iÁ;	i÷o;
+;i ;T;["&.o; 	;"prefix;"prefix;@	;	iÌ"box-scroller-right;@	;[u;[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"middle:
+@lineiÓ;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;iÓ:@operator:eq;iÓu:Sass::Tree::IfNodeÃ[00[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new:
+@name["margin:@options{ :@children[ :@valueo:Sass::Script::Variable	:@underscored_name"right_margin;	"right-margin;
+@
+:
+@lineiÙ;iÙ[	o:Sass::Tree::CommentNode:@silenti ;@:@children[ :@lines[ :
+@loud0;"L/* set all but margin-top to avoid overriding centering margin above */;iÔo:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["margin-left;@;[ ;o:Sass::Script::Funcall
+;"	left;@:@keywords{ ;i:
+@args[o;	;"right_margin;"right-margin;@;i;io;;i ;;;["margin-right;@;[ ;o;
+;"
+right;@;{ ;iÒ;[o;	;"right_margin;"right-margin;@;iÒ;iÒo;;i ;;;["margin-bottom;@;[ ;o;
+;"bottom;@;{ ;iÚ;[o;	;"right_margin;"right-margin;@;iÚ;iÚu;Ç[o:Sass::Script::Variable	:@underscored_name"include_background_images:
+@name"include-background-images:@options{ :
+@linei˜0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["background-image;@	:@children[ :@valueo:Sass::Script::Funcall
+;"theme-background-image;@	:@keywords{ ;	i¯:
+@args[o; 	;"right_background_image;"right-background-image;@	;	i¯;	i¯u;¿[o:Sass::Script::Variable	:@underscored_name"classic:
+@name"classic:@options{ :
+@linei˚0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["background-position;@	:@children[ :@valueo:Sass::Script::String;@	:
+@type:identifier;"0 0;	i¸o:Sass::Tree::RuleNode;i :@has_childrenT:
+@rule["&.o; 	;"prefix;"prefix;@	;	i˛"box-scroller-hover;@	;[o;
+;i ;;;["background-position;@	;[ ;o:Sass::Script::List	;@	:@separator:
+space;[o:!Sass::Script::UnaryOperation	;@	:@operando; 	;"horizontal_width;"horizontal-width;@	;	iˇ:@operator:
+minus;	iˇo:Sass::Script::Number:@original"0;@	:@denominator_units[ :@numerator_units[ ;i ;	iˇ;	iˇ;	iˇ;	i˛;	iÌu;Î[o:Sass::Script::Variable	:@underscored_name"include_vertical:
+@name"include-vertical:@options{ :
+@linei0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule[
+"&.o; 	;"prefix;"prefix;@	;	i"%box-scroller-top,
+            &.o; 	;"prefix;"prefix;@	;	i"box-scroller-bottom;@	:@children[	o:Sass::Tree::PropNode;i :@prop_syntax:new;["height;@	;[ :@valueo; 	;"vertical_height;"vertical-height;@	;	i;	iu:Sass::Tree::IfNode{[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"stretch:
+@linei
+;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i
+:@operator:neq;i
+0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["
+width;@:@children[ ;o;	;"vertical_width;"vertical-width;@;i;iu;¢[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
+@linei;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"vertical_border_width:
+@name"vertical-border-width;	@	;i:@operator:neq;i0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["border-style;	@	:@children[ ;o:Sass::Script::String;	@	:
+@type:identifier;"
+solid;io;;i ;;;["border-color;	@	;[ ;o;	;"vertical_border_color;"vertical-border-color;	@	;i;io;;i ;;;["border-width;	@	;[ ;o;	;"vertical_border_width;"vertical-border-width;	@	;i;iu;.[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"
+begin:
+@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i:@operator:eq;iu:Sass::Tree::IfNode¡[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"middle:
+@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i:@operator:eq;iu:Sass::Tree::IfNode¸[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"end:
+@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i:@operator:eq;iu:Sass::Tree::IfNodeê[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"stretch:
+@linei;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i:@operator:eq;i0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["	left;@:@children[ ;o;;@;	;
+;"0;io;;i ;;;["
+right;@;[ ;o;;@;	;
+;"0;i[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["
+right;@:@children[ ;o;;@;	;
+;"0;i[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["	left;@:@children[ ;o;;@;	;
+;"50%;io;;i ;;;["margin-left;@;[ ;o:!Sass::Script::UnaryOperation	;@:@operando:Sass::Script::Funcall
+;"
+floor;@:@keywords{ ;i:
+@args[o; 
+;o:Sass::Script::Number:@original"2;@:@denominator_units[ :@numerator_units[ ;i;i;@;o;	;"vertical_width;"vertical-width;@;i;:div;i;:
+minus;i;i[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["	left;@:@children[ ;o;;@;	;
+;"0;i;	io;
+;i ;T;["&.o; 	;"prefix;"prefix;@	;	i!"box-scroller-top;@	;[u;[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"middle:
+@linei";@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i":@operator:eq;i"u:Sass::Tree::IfNode [00[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new:
+@name["margin:@options{ :@children[ :@valueo:Sass::Script::Variable	:@underscored_name"top_margin;	"top-margin;
+@
+:
+@linei(;i([	o:Sass::Tree::CommentNode:@silenti ;@:@children[ :@lines[ :
+@loud0;"M/* set all but margin-left to avoid overriding centering margin above */;i#o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["margin-top;@;[ ;o:Sass::Script::Funcall
+;"top;@:@keywords{ ;i$:
+@args[o;	;"top_margin;"top-margin;@;i$;i$o;;i ;;;["margin-right;@;[ ;o;
+;"
+right;@;{ ;i%;[o;	;"top_margin;"top-margin;@;i%;i%o;;i ;;;["margin-bottom;@;[ ;o;
+;"bottom;@;{ ;i&;[o;	;"top_margin;"top-margin;@;i&;i&u;Ç[o:Sass::Script::Variable	:@underscored_name"include_background_images:
+@name"include-background-images:@options{ :
+@linei+0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["background-image;@	:@children[ :@valueo:Sass::Script::Funcall
+;"theme-background-image;@	:@keywords{ ;	i,:
+@args[o; 	;"top_background_image;"top-background-image;@	;	i,;	i,u;«[o:Sass::Script::Variable	:@underscored_name"classic:
+@name"classic:@options{ :
+@linei/0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["background-position;@	:@children[ :@valueo:Sass::Script::List	;@	:@separator:
+space;[o:Sass::Script::Number:@original"0;@	:@denominator_units[ :@numerator_units[ ;i ;	i0o:!Sass::Script::UnaryOperation	;@	:@operando; 	;"vertical_height;"vertical-height;@	;	i0:@operator:
+minus;	i0;	i0;	i0o:Sass::Tree::RuleNode;i :@has_childrenT:
+@rule["&.o; 	;"prefix;"prefix;@	;	i2"box-scroller-hover;@	;[o;
+;i ;;;["background-position;@	;[ ;o:Sass::Script::String;@	:
+@type:identifier;"0 0;	i3;	i2;	i!o;
+;i ;T;["&.o; 	;"prefix;"prefix;@	;	i8"box-scroller-bottom;@	;[u;0[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:identifier:@value"middle:
+@linei9;@:@operand1o:Sass::Script::Variable	:@underscored_name"
+align:
+@name"
+align;@;i9:@operator:eq;i9u:Sass::Tree::IfNode–[00[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new:
+@name["margin:@options{ :@children[ :@valueo:Sass::Script::Variable	:@underscored_name"bottom_margin;	"bottom-margin;
+@
+:
+@linei?;i?[	o:Sass::Tree::CommentNode:@silenti ;@:@children[ :@lines[ :
+@loud0;"M/* set all but margin-left to avoid overriding centering margin above */;i:o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["margin-top;@;[ ;o:Sass::Script::Funcall
+;"top;@:@keywords{ ;i;:
+@args[o;	;"bottom_margin;"bottom-margin;@;i;;i;o;;i ;;;["margin-right;@;[ ;o;
+;"
+right;@;{ ;i<;[o;	;"bottom_margin;"bottom-margin;@;i<;i<o;;i ;;;["margin-bottom;@;[ ;o;
+;"bottom;@;{ ;i=;[o;	;"bottom_margin;"bottom-margin;@;i=;i=u;à[o:Sass::Script::Variable	:@underscored_name"include_background_images:
+@name"include-background-images:@options{ :
+@lineiB0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["background-image;@	:@children[ :@valueo:Sass::Script::Funcall
+;"theme-background-image;@	:@keywords{ ;	iC:
+@args[o; 	;"bottom_background_image;"bottom-background-image;@	;	iC;	iCu;«[o:Sass::Script::Variable	:@underscored_name"classic:
+@name"classic:@options{ :
+@lineiF0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["background-position;@	:@children[ :@valueo:Sass::Script::String;@	:
+@type:identifier;"0 0;	iGo:Sass::Tree::RuleNode;i :@has_childrenT:
+@rule["&.o; 	;"prefix;"prefix;@	;	iI"box-scroller-hover;@	;[o;
+;i ;;;["background-position;@	;[ ;o:Sass::Script::List	;@	:@separator:
+space;[o:Sass::Script::Number:@original"0;@	:@denominator_units[ :@numerator_units[ ;i ;	iJo:!Sass::Script::UnaryOperation	;@	:@operando; 	;"vertical_height;"vertical-height;@	;	iJ:@operator:
+minus;	iJ;	iJ;	iJ;	iI;	i8;iú;i;[#[o;;"ui;"ui;{ o:Sass::Script::String	;@¢:
+@type:identifier;"	null;if[o;;"	type;"	type;@¢o;(	;@¢;);*;"	null;ig[o;;"horizontal_width;"horizontal-width;@¢o;$;%"	16px;@¢;&[ ;'["px;i;ih[o;;"horizontal_height;"horizontal-height;@¢o;$;%"	16px;@¢;&[ ;'["px;i;ii[o;;"vertical_width;"vertical-width;@¢o;$;%"	16px;@¢;&[ ;'["px;i;ij[o;;"vertical_height;"vertical-height;@¢o;$;%"	16px;@¢;&[ ;'["px;i;ik[o;;"top_margin;"top-margin;@¢o;$;%"0;@¢;&@H;'[ ;i ;il[o;;"right_margin;"right-margin;@¢o;$;%"0;@¢;&@H;'[ ;i ;im[o;;"bottom_margin;"bottom-margin;@¢o;$;%"0;@¢;&@H;'[ ;i ;in[o;;"left_margin;"left-margin;@¢o;$;%"0;@¢;&@H;'[ ;i ;io[o;;"top_background_image;"top-background-image;@¢o;(	;@¢;);*;"	null;ip[o;;"right_background_image;"right-background-image;@¢o;(	;@¢;);*;"	null;iq[o;;"bottom_background_image;"bottom-background-image;@¢o;(	;@¢;);*;"	null;ir[o;;"left_background_image;"left-background-image;@¢o;(	;@¢;);*;"	null;is[o;;"horizontal_border_color;"horizontal-border-color;@¢o;	;"base_color;"base-color;@¢;it[o;;"horizontal_border_width;"horizontal-border-width;@¢o;$;%"0;@¢;&@H;'[ ;i ;iu[o;;"vertical_border_color;"vertical-border-color;@¢o;	;"base_color;"base-color;@¢;iv[o;;"vertical_border_width;"vertical-border-width;@¢o;$;%"0;@¢;&@H;'[ ;i ;iw[o;;"container_padding;"container-padding;@¢o;$;%"0;@¢;&@H;'[ ;i ;ix[o;;"cursor;"cursor;@¢o;(	;@¢;);*;"pointer;iy[o;;"cursor_disabled;"cursor-disabled;@¢o;(	;@¢;);*;"default;iz[o;;"
+align;"
+align;@¢o;(	;@¢;);*;"middle;i{[o;;"opacity;"opacity;@¢o;$;%"0.5;@¢;&@H;'[ ;f0.5;i|[o;;"opacity_over;"opacity-over;@¢o;$;%"0.8;@¢;&@H;'[ ;f0.80000000000000004 ôö;i}[o;;"opacity_pressed;"opacity-pressed;@¢o;$;%"1;@¢;&@H;'[ ;i;i~[o;;"opacity_disabled;"opacity-disabled;@¢o;$;%"	0.25;@¢;&@H;'[ ;f	0.25;i[o;;"classic;"classic;@¢o:Sass::Script::Bool;@¢;F;i{[o;;"include_horizontal;"include-horizontal;@¢o;+;@¢;T;i|[o;;"include_vertical;"include-vertical;@¢o;+;@¢;T;i}[o;;"include_background_images;"include-background-images;@¢o;+;@¢;T;i~;i

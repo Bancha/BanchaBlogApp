@@ -31,7 +31,7 @@
     -->
 
     <!-- Add Support for Bancha -->
-    <import file="${bancha.folder}/_sencha/build.xml"/>
+    <import file="${app.dir}/${bancha.folder.relative}/_sencha/build.xml"/>
     <target name="-before-app-build" depends="-bancha-before-app-build"></target>
     <target name="-before-app-refresh" depends="-bancha-before-app-build"></target>
     <target name="-after-app-build" depends="-bancha-after-app-build"></target>

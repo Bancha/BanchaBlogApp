@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commentform",
+        "designer|userClassName": "CommentFormViewModel"
+    },
+    "designerId": "9d07c829-171b-4bc8-bacb-2e1a38bb6e9c"
+}

@@ -23,6 +23,8 @@
         "title": "Article List"
     },
     "designerId": "b546f619-60cc-442f-aae5-c0f933e1967b",
+    "viewControllerInstanceId": "c092d7ca-725d-4a80-ab12-3ad02c6a0178",
+    "viewModelInstanceId": "45587fdc-d7a9-4780-a8e1-2da143cd727a",
     "cn": [
         {
             "type": "Ext.grid.column.Column",

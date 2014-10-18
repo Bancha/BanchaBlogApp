@@ -4,7 +4,7 @@
         "cmd": {
             "license": "gpl",
             "cmdVersion": "5.0.2.270",
-            "frameworkVersion": "4.2.1.883"
+            "frameworkVersion": "5.0.1.1189"
         },
         "urlPrefix": "http://localhost:1841",
         "spacesToIndent": 4,
@@ -51,17 +51,33 @@
     "xdsBuild": 1934,
     "schemaVersion": 1,
     "upgradeVersion": 300000000007,
-    "framework": "ext42",
+    "framework": "ext50",
     "viewOrderMap": {
         "view": [
             "aa072d1e-c180-4283-9cba-f5e26adde0bb",
+            "6be1d7fa-d940-44f5-8206-d03fedfe0d19",
+            "623d0486-fe6b-4f94-b134-e01d46e32160",
             "591a9c04-0e0a-4bc9-8679-78f1b38363d1",
+            "7cd5b68e-e48b-40cf-83eb-943814f73d60",
+            "e5902969-0941-4d0f-875c-81cab37520cb",
             "caaf6f35-2041-4a98-bbbe-4c00e45a0bb6",
+            "a0c69af2-6665-409f-ab8e-c8698c73d41a",
+            "b7e7e140-1664-40fc-aacf-9f0ecd588af9",
             "8b3b577a-a2ce-4959-b077-396ccb45c57b",
+            "6a769e87-348d-4791-8832-e1618db60fb8",
+            "15f5acd2-127c-40cb-8ab6-b3677be8d3c1",
             "9f90d3d0-1a27-43cb-9e0f-96e3d5475a11",
+            "20e954ce-800a-4d77-881b-a7a706a741d9",
+            "443b8250-fa63-447a-9dd9-ce5e75a1a6a7",
             "bde46fe1-286e-4915-9a8d-2c6da3934859",
+            "9d07c829-171b-4bc8-bacb-2e1a38bb6e9c",
+            "66ce70dd-60fd-4880-bba2-2776de90a960",
             "c4e4a2f6-2a3f-4210-980b-48a2fb439c37",
-            "b546f619-60cc-442f-aae5-c0f933e1967b"
+            "7d2a65d8-42b7-4280-b257-ac5979e4072d",
+            "2b14d841-9ae9-4a04-b724-167de0c92dec",
+            "b546f619-60cc-442f-aae5-c0f933e1967b",
+            "45587fdc-d7a9-4780-a8e1-2da143cd727a",
+            "c092d7ca-725d-4a80-ab12-3ad02c6a0178"
         ],
         "store": [
             "fcc4597e-3fcb-4d90-b6d2-b204866b5d35",
@@ -80,7 +96,6 @@
         ],
         "resource": [
             "93907ad8-a278-40b5-a417-cd1d172cd181",
-            "73829a30-db46-4b7a-93e9-2cbe78e64797",
             "ce933a38-bb5d-43c0-b6dd-f16ae66bb9fa"
         ],
         "app": [

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commentspanel",
+        "designer|userClassName": "CommentsPanelViewModel"
+    },
+    "designerId": "6a769e87-348d-4791-8832-e1618db60fb8"
+}

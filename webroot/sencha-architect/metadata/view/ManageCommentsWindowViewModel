@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "managecommentswindows",
+        "designer|userClassName": "ManageCommentsWindowViewModel"
+    },
+    "designerId": "7cd5b68e-e48b-40cf-83eb-943814f73d60"
+}

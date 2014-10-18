@@ -14,6 +14,8 @@
         "ui": null
     },
     "designerId": "c4e4a2f6-2a3f-4210-980b-48a2fb439c37",
+    "viewControllerInstanceId": "2b14d841-9ae9-4a04-b724-167de0c92dec",
+    "viewModelInstanceId": "7d2a65d8-42b7-4280-b257-ac5979e4072d",
     "cn": [
         {
             "type": "Ext.XTemplate",

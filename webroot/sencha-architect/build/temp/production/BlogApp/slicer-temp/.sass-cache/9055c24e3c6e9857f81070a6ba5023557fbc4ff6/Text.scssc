@@ -1,0 +1,869 @@
+3.1.7 (Brainy Betty)
+d9d7c12c5d0350ed8c0eda7ac44bd0b5f8eaaa5f
+o:Sass::Tree::RootNode
+:@template"[E/**
+ * Creates a visual theme for text fields.  Note this mixin only provides styling
+ * for the form field body, The label and error are styled by {@link #extjs-label-ui}.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. Can not included spaces or special punctuation
+ * (used in CSS class names).
+ *
+ * @param {number} [$ui-height=$form-text-field-height]
+ * The height of the text field
+ *
+ * @param {number} [$ui-font-size=$form-text-field-font-size]
+ * The font-size of the text field
+ *
+ * @param {string} [$ui-font-family=$form-text-field-font-family]
+ * The font-family of the text field
+ *
+ * @param {string} [$ui-font-weight=$form-text-field-font-weight]
+ * The font-weight of the text field
+ *
+ * @param {color} [$ui-color=$form-text-field-color]
+ * The color of the text field's input element
+ *
+ * @param {color} [$ui-background-color=$form-text-field-background-color]
+ * The background color of the text field's input element
+ *
+ * @param {number/list} [$ui-border-width=$form-text-field-border-width]
+ * The border width of the text field
+ *
+ * @param {string/list} [$ui-border-style=$form-text-field-border-style]
+ * The border style of the text field
+ *
+ * @param {color/list} [$ui-border-color=$form-text-field-border-color]
+ * The border color of text fields
+ *
+ * @param {color/list} [$ui-focus-border-color=$form-text-field-focus-border-color]
+ * The border color of the text field when focused
+ *
+ * @param {color} [$ui-invalid-border-color=$form-text-field-invalid-border-color]
+ * The border color of the text field when the field value is invalid.
+ *
+ * @param {number/list} [$ui-border-radius=$form-text-field-border-radius]
+ * The border radius of the text field
+ *
+ * @param {string} [$ui-background-image=$form-text-field-background-image]
+ * The background image of the text field's input element
+ *
+ * @param {number/list} [$ui-padding=$form-text-field-padding]
+ * The padding of the text field's input element
+ *
+ * @param {color} [$ui-empty-color=$form-text-field-empty-color]
+ * Text color for of the text field when empty
+ *
+ * @param {number} [$ui-body-width=$form-text-field-body-width]
+ * The default width of the text field's body element (the element that contains the input
+ * element and triggers) when the field is not sized explicitly using the {@link #width}
+ * config, or sized by it's containing layout.
+ *
+ * @param {color} [$ui-invalid-background-color=$form-field-invalid-background-color]
+ * Background color of the input element when the field value is invalid.
+ *
+ * @param {string} [$ui-invalid-background-image=$form-field-invalid-background-image]
+ * Background image of the input element when the field value is invalid.
+ *
+ * @param {string} [$ui-invalid-background-repeat=$form-field-invalid-background-repeat]
+ * Background repeat of the input element when the field value is invalid.
+ *
+ * @param {string/list} [$ui-invalid-background-position=$form-field-invalid-background-position]
+ * Background position of the input element when the field value is invalid.
+ *
+ * @param {number} [$ui-trigger-width=$form-trigger-width]
+ * The width of the trigger element
+ *
+ * @param {number/list} [$ui-trigger-border-width=$form-trigger-border-width]
+ * The width of the trigger's border
+ *
+ * @param {color/list} [$ui-trigger-border-color=$form-trigger-border-color]
+ * The color of the trigger's border
+ *
+ * @param {string/list} [$ui-trigger-border-style=$form-trigger-border-style]
+ * The style of the trigger's border
+ *
+ * @param {color} [$ui-trigger-border-color-over=$form-trigger-border-color-over]
+ * The color of the trigger's border when hovered
+ *
+ * @param {color} [$ui-trigger-border-color-focus=$form-trigger-border-color-focus]
+ * The color of the trigger's border when the field is focused
+ *
+ * @param {color} [$ui-trigger-border-color-pressed=$form-trigger-border-color-pressed]
+ * The color of the trigger's border when the field is focused and the trigger is hovered
+ *
+ * @param {string} [$ui-trigger-background-image=$form-trigger-background-image]
+ * The default background image for the trigger
+ *
+ * @param {color} [$ui-trigger-background-color=$form-trigger-background-color]
+ * The background color of the trigger element
+ *
+ * @param {number} [$ui-textarea-line-height=$form-textarea-line-height]
+ * The line-height of the textarea element when this mixin is used to style a
+ * {@link Ext.form.field.TextArea TextArea}
+ *
+ * @param {number} [$ui-textarea-body-height=$form-textarea-body-height]
+ * The default width of the TextArea's body element (the element that contains the textarea
+ * html element when the field is not sized explicitly using the {@link #width}config, or
+ * sized by it's containing layout.
+ *
+ * @param {color} [$ui-file-field-color=$form-file-field-color] The text color of the
+ * input element when this mixin is used to style a {@link Ext.form.field.File File Field}
+ *
+ * @param {boolean} [$ui-classic-border=$form-text-field-classic-border]
+ * `true` to use classic-theme styled border.
+ *
+ * @member Ext.form.field.Text
+ */
+@mixin extjs-text-field-ui(
+    $ui: null,
+    $ui-height: $form-text-field-height,
+    $ui-font-size: $form-text-field-font-size,
+    $ui-font-family: $form-text-field-font-family,
+    $ui-font-weight: $form-text-field-font-weight,
+    $ui-color: $form-text-field-color,
+    $ui-background-color: $form-text-field-background-color,
+    $ui-border-width: $form-text-field-border-width,
+    $ui-border-style: $form-text-field-border-style,
+    $ui-border-color: $form-text-field-border-color,
+    $ui-focus-border-color: $form-text-field-focus-border-color,
+    $ui-invalid-border-color: $form-text-field-invalid-border-color,
+    $ui-border-radius: $form-text-field-border-radius,
+    $ui-background-image: $form-text-field-background-image,
+    $ui-padding: $form-text-field-padding,
+    $ui-empty-color: $form-text-field-empty-color,
+    $ui-body-width: $form-text-field-body-width,
+
+    $ui-invalid-background-color: $form-field-invalid-background-color,
+    $ui-invalid-background-image: $form-field-invalid-background-image,
+    $ui-invalid-background-repeat: $form-field-invalid-background-repeat,
+    $ui-invalid-background-position: $form-field-invalid-background-position,
+
+    $ui-trigger-width: $form-trigger-width,
+    $ui-trigger-border-width: $form-trigger-border-width,
+    $ui-trigger-border-color: $form-trigger-border-color,
+    $ui-trigger-border-style: $form-trigger-border-style,
+
+    $ui-trigger-border-color-over: null,
+    $ui-trigger-border-color-focus: null,
+    $ui-trigger-border-color-pressed: null,
+
+    $ui-trigger-background-image: $form-trigger-background-image,
+    $ui-trigger-background-color: $form-trigger-background-color,
+
+    $ui-textarea-line-height: $form-textarea-line-height,
+    $ui-textarea-body-height: $form-textarea-body-height,
+    $ui-file-field-color: $form-file-field-color,
+
+    $ui-classic-border: $form-text-field-classic-border
+) {
+    @if is-null($ui-trigger-border-color-over) {
+        @if $ui == 'default' {
+            $ui-trigger-border-color-over: $form-trigger-border-color-over;
+        } @else if $ui == 'toolbar' {
+            $ui-trigger-border-color-over: $form-toolbar-trigger-border-color-over;
+        } @else if $ui == 'grid-cell' {
+            $ui-trigger-border-color-over: $grid-cell-field-trigger-border-color-over;
+        } @else {
+            $ui-trigger-border-color-over: $ui-trigger-border-color;
+        }
+    }
+
+    @if is-null($ui-trigger-border-color-focus) {
+        @if $ui == 'default' {
+            $ui-trigger-border-color-focus: $form-trigger-border-color-focus;
+        } @else if $ui == 'toolbar' {
+            $ui-trigger-border-color-over: $form-toolbar-trigger-border-color-over;
+        } @else if $ui == 'grid-cell' {
+            $ui-trigger-border-color-over: $grid-cell-field-trigger-border-color-over;
+        } @else {
+            $ui-trigger-border-color-focus: $ui-trigger-border-color;
+        }
+    }
+
+    @if is-null($ui-trigger-border-color-pressed) {
+        @if $ui == 'default' {
+            $ui-trigger-border-color-pressed: $form-trigger-border-color-pressed;
+        } @else if $ui == 'toolbar' {
+            $ui-trigger-border-color-pressed: $form-toolbar-trigger-border-color-pressed;
+        } @else if $ui == 'grid-cell' {
+            $ui-trigger-border-color-pressed: $grid-cell-field-trigger-border-color-pressed;
+        } @else {
+            $ui-trigger-border-color-pressed: $ui-trigger-border-color;
+        }
+    }
+
+    .#{$prefix}form-text-field-body-#{$ui} {
+        // We use a combination of min-width and max-width to control the "default" width
+        // of the field body for the following reasons:
+        //
+        // 1. When the field is shrink wrap width, min-width prevents the width of the
+        // body from shrinking smaller than the default width
+        //
+        // 2. When the field is shrink wrap width, max-width prevents the width:100%
+        // triggerWrap element that is immediately inside the body element from causing
+        // the body to expand to infinity.
+        //
+        // 3. When the field's outermost element has a "width" assigned, whether that
+        // width is larger or smaller than what the default shrink-wrap width of the
+        // field would have been, that width will overcome either min-width or max-width
+        // and adjust the size of the body to fit within the defined width of the field
+        // minus the label width.
+        min-width: $ui-body-width;
+        max-width: $ui-body-width;
+    }
+
+    .#{$prefix}form-trigger-wrap-#{$ui} {
+        @if not $ui-classic-border {
+            border-width: $ui-border-width;
+            border-style: $ui-border-style;
+            border-color: $ui-border-color;
+            @if $ui-border-radius != 0 {
+                border-radius: $ui-border-radius;
+            }
+            &.#{$prefix}form-trigger-wrap-focus {
+                border-color: $ui-focus-border-color;
+            }
+
+            &.#{$prefix}form-trigger-wrap-invalid {
+                border-color: $ui-invalid-border-color;
+            }
+        }
+    }
+
+    @if $ui-classic-border {
+        .#{$prefix}form-text-wrap-#{$ui} {
+            border-width: $ui-border-width;
+            border-style: $ui-border-style;
+            border-color: $ui-border-color;
+            @if $ui-border-radius != 0 {
+                border-radius: $ui-border-radius;
+            }
+            &.#{$prefix}form-text-wrap-focus {
+                border-color: $ui-focus-border-color;
+            }
+
+            &.#{$prefix}form-text-wrap-invalid {
+                border-color: $ui-invalid-border-color;
+            }
+        }
+    }
+
+    $ui-line-height: $ui-height - vertical($ui-padding) - vertical($ui-border-width);
+    .#{$prefix}form-text-#{$ui} {
+        color: $ui-color;
+        padding: $ui-padding;
+        background-color: $ui-background-color;
+        @if $ui-border-radius != 0 {
+            border-radius: $ui-border-radius;
+        }
+        @if not is-null($ui-background-image) {
+            background-image: theme-background-image($ui-background-image);
+        }
+        font: $ui-font-weight #{$ui-font-size}/#{$ui-line-height} $ui-font-family;
+        min-height: $ui-height - vertical($ui-border-width);
+
+        @if $include-ie {
+            .#{$prefix}ie8 & {
+                // min-height triggers content-box sizing on IE8, so subtract padding
+                min-height: $ui-height - vertical($ui-border-width) - vertical($ui-padding);
+            }
+        }
+
+        &.#{$prefix}form-textarea {
+            line-height: $ui-textarea-line-height;
+            min-height: $ui-textarea-body-height;
+
+            @if $include-ie {
+                .#{$prefix}ie8 & {
+                    // min-height triggers content-box sizing on IE8, so subtract padding
+                    min-height: $ui-textarea-body-height - vertical($ui-padding);
+                }
+            }
+        }
+
+        &.#{$prefix}form-text-file {
+            color: $ui-file-field-color;
+        }
+    }
+
+    .#{$prefix}form-empty-field-#{$ui} {
+        color: $ui-empty-color;
+    }
+
+    .#{$prefix}form-invalid-field-#{$ui} {
+        background-color: $ui-invalid-background-color;
+        @if not is-null($ui-invalid-background-image) {
+            background-image: theme-background-image($ui-invalid-background-image);
+            background-repeat: $ui-invalid-background-repeat;
+            background-position: $ui-invalid-background-position;
+        }
+    }
+
+    $bg-position-y: if($ui-classic-border, 0, center);
+
+    .#{$prefix}form-trigger-#{$ui} {
+        background: $ui-trigger-background-color theme-background-image($ui-trigger-background-image) no-repeat;
+        background-position: 0 $bg-position-y;
+        width: $ui-trigger-width;
+
+        @if $ui-trigger-border-width != 0 {
+            border-width: $ui-trigger-border-width;
+            border-color: $ui-trigger-border-color;
+            border-style: $ui-trigger-border-style;
+        }
+
+        @if $include-rtl {
+            &.#{$prefix}rtl {
+                background-image: theme-background-image($ui-trigger-background-image + '-rtl');
+            }
+        }
+
+        &.#{$prefix}form-trigger-over {
+            background-position: -$ui-trigger-width $bg-position-y;
+            @if $ui-trigger-border-width != 0 and $ui-trigger-border-color-over != $ui-trigger-border-color {
+                border-color: $ui-trigger-border-color-over;
+            }
+
+            &.#{$prefix}form-trigger-focus {
+                background-position: -($ui-trigger-width * 4) $bg-position-y;
+            }
+        }
+
+        &.#{$prefix}form-trigger-focus {
+            background-position: -($ui-trigger-width * 3) $bg-position-y;
+            @if $ui-trigger-border-width != 0 and $ui-trigger-border-color-focus != $ui-trigger-border-color {
+                border-color: $ui-trigger-border-color-focus;
+            }
+        }
+    }
+
+    // add x-form-trigger class to increase specificity of "click" above focus/over
+    .#{$prefix}form-trigger.#{$prefix}form-trigger-#{$ui}.#{$prefix}form-trigger-click {
+        background-position: -($ui-trigger-width * 2) $bg-position-y;
+        @if $ui-trigger-border-width != 0 and $ui-trigger-border-color-pressed != $ui-trigger-border-color-over {
+            border-color: $ui-trigger-border-color-pressed;
+        }
+    }
+
+    // Text field or subclass inside cell - calculate top/bottom padding to keep row height correct
+    @if $include-ext-grid-column-widget or $include-ext-grid-plugin-editing {
+        .#{$prefix}textfield-#{$ui}-cell > .#{$prefix}grid-cell-inner {
+            padding-top:    max(ceil(($grid-row-height - $ui-height) / 2), 0);
+            padding-bottom: max(floor(($grid-row-height - $ui-height) / 2), 0);
+        }
+    }
+}
+
+@if $include-text-field-default-ui {
+    @include extjs-text-field-ui(
+        $ui: 'default'
+    );
+}
+
+@if $include-text-field-toolbar-ui {
+     @include extjs-text-field-ui(
+        $ui: 'toolbar',
+        $ui-height: $form-toolbar-text-field-height,
+        $ui-font-size: $form-toolbar-text-field-font-size,
+        $ui-font-family: $form-toolbar-text-field-font-family,
+        $ui-font-weight: $form-toolbar-text-field-font-weight,
+        $ui-color: $form-toolbar-text-field-color,
+        $ui-background-color: $form-toolbar-text-field-background-color,
+        $ui-border-width: $form-toolbar-text-field-border-width,
+        $ui-border-style: $form-toolbar-text-field-border-style,
+        $ui-border-color: $form-toolbar-text-field-border-color,
+        $ui-focus-border-color: $form-toolbar-text-field-focus-border-color,
+        $ui-invalid-border-color: $form-toolbar-text-field-invalid-border-color,
+        $ui-border-radius: $form-toolbar-text-field-border-radius,
+        $ui-background-image: $form-toolbar-text-field-background-image,
+        $ui-padding: $form-toolbar-text-field-padding,
+        $ui-empty-color: $form-toolbar-text-field-empty-color,
+        $ui-body-width: $form-toolbar-text-field-body-width,
+
+        $ui-invalid-background-color: $form-toolbar-text-field-invalid-background-color,
+        $ui-invalid-background-image: $form-toolbar-text-field-invalid-background-image,
+        $ui-invalid-background-repeat: $form-toolbar-text-field-invalid-background-repeat,
+        $ui-invalid-background-position: $form-toolbar-text-field-invalid-background-position,
+
+        $ui-trigger-width: $form-toolbar-trigger-width,
+        $ui-trigger-border-width: $form-toolbar-trigger-border-width,
+        $ui-trigger-border-color: $form-toolbar-trigger-border-color,
+        $ui-trigger-border-style: $form-toolbar-trigger-border-style,
+
+        $ui-trigger-border-color-over: null,
+        $ui-trigger-border-color-focus: null,
+        $ui-trigger-border-color-pressed: null,
+
+        $ui-trigger-background-image: $form-toolbar-trigger-background-image,
+        $ui-trigger-background-color: $form-toolbar-trigger-background-color,
+
+        $ui-textarea-line-height: $form-toolbar-textarea-line-height,
+        $ui-textarea-body-height: $form-toolbar-textarea-body-height,
+        $ui-file-field-color: $form-toolbar-file-field-color,
+
+        $ui-classic-border: $form-toolbar-text-field-classic-border
+    );
+}
+
+.#{$prefix}form-clear-trigger {
+    background-image: theme-background-image('form/clear-trigger');
+    @if $include-rtl {
+        &.#{$prefix}rtl {
+            background-image: theme-background-image('form/clear-trigger-rtl');
+        }
+    }
+}
+
+.#{$prefix}form-search-trigger {
+    background-image: theme-background-image('form/search-trigger');
+    @if $include-rtl {
+        &.#{$prefix}rtl {
+            background-image: theme-background-image('form/search-trigger-rtl');
+        }
+    }
+}
+:@has_childrenT:@options{ :@children[o:Sass::Tree::CommentNode:@silent0;@;	[ :@lines[ :
+@loud0:@value"∏/**
+ * Creates a visual theme for text fields.  Note this mixin only provides styling
+ * for the form field body, The label and error are styled by {@link #extjs-label-ui}.
+ *
+ * @param {string} $ui
+ * The name of the UI being created. Can not included spaces or special punctuation
+ * (used in CSS class names).
+ *
+ * @param {number} [$ui-height=$form-text-field-height]
+ * The height of the text field
+ *
+ * @param {number} [$ui-font-size=$form-text-field-font-size]
+ * The font-size of the text field
+ *
+ * @param {string} [$ui-font-family=$form-text-field-font-family]
+ * The font-family of the text field
+ *
+ * @param {string} [$ui-font-weight=$form-text-field-font-weight]
+ * The font-weight of the text field
+ *
+ * @param {color} [$ui-color=$form-text-field-color]
+ * The color of the text field's input element
+ *
+ * @param {color} [$ui-background-color=$form-text-field-background-color]
+ * The background color of the text field's input element
+ *
+ * @param {number/list} [$ui-border-width=$form-text-field-border-width]
+ * The border width of the text field
+ *
+ * @param {string/list} [$ui-border-style=$form-text-field-border-style]
+ * The border style of the text field
+ *
+ * @param {color/list} [$ui-border-color=$form-text-field-border-color]
+ * The border color of text fields
+ *
+ * @param {color/list} [$ui-focus-border-color=$form-text-field-focus-border-color]
+ * The border color of the text field when focused
+ *
+ * @param {color} [$ui-invalid-border-color=$form-text-field-invalid-border-color]
+ * The border color of the text field when the field value is invalid.
+ *
+ * @param {number/list} [$ui-border-radius=$form-text-field-border-radius]
+ * The border radius of the text field
+ *
+ * @param {string} [$ui-background-image=$form-text-field-background-image]
+ * The background image of the text field's input element
+ *
+ * @param {number/list} [$ui-padding=$form-text-field-padding]
+ * The padding of the text field's input element
+ *
+ * @param {color} [$ui-empty-color=$form-text-field-empty-color]
+ * Text color for of the text field when empty
+ *
+ * @param {number} [$ui-body-width=$form-text-field-body-width]
+ * The default width of the text field's body element (the element that contains the input
+ * element and triggers) when the field is not sized explicitly using the {@link #width}
+ * config, or sized by it's containing layout.
+ *
+ * @param {color} [$ui-invalid-background-color=$form-field-invalid-background-color]
+ * Background color of the input element when the field value is invalid.
+ *
+ * @param {string} [$ui-invalid-background-image=$form-field-invalid-background-image]
+ * Background image of the input element when the field value is invalid.
+ *
+ * @param {string} [$ui-invalid-background-repeat=$form-field-invalid-background-repeat]
+ * Background repeat of the input element when the field value is invalid.
+ *
+ * @param {string/list} [$ui-invalid-background-position=$form-field-invalid-background-position]
+ * Background position of the input element when the field value is invalid.
+ *
+ * @param {number} [$ui-trigger-width=$form-trigger-width]
+ * The width of the trigger element
+ *
+ * @param {number/list} [$ui-trigger-border-width=$form-trigger-border-width]
+ * The width of the trigger's border
+ *
+ * @param {color/list} [$ui-trigger-border-color=$form-trigger-border-color]
+ * The color of the trigger's border
+ *
+ * @param {string/list} [$ui-trigger-border-style=$form-trigger-border-style]
+ * The style of the trigger's border
+ *
+ * @param {color} [$ui-trigger-border-color-over=$form-trigger-border-color-over]
+ * The color of the trigger's border when hovered
+ *
+ * @param {color} [$ui-trigger-border-color-focus=$form-trigger-border-color-focus]
+ * The color of the trigger's border when the field is focused
+ *
+ * @param {color} [$ui-trigger-border-color-pressed=$form-trigger-border-color-pressed]
+ * The color of the trigger's border when the field is focused and the trigger is hovered
+ *
+ * @param {string} [$ui-trigger-background-image=$form-trigger-background-image]
+ * The default background image for the trigger
+ *
+ * @param {color} [$ui-trigger-background-color=$form-trigger-background-color]
+ * The background color of the trigger element
+ *
+ * @param {number} [$ui-textarea-line-height=$form-textarea-line-height]
+ * The line-height of the textarea element when this mixin is used to style a
+ * {@link Ext.form.field.TextArea TextArea}
+ *
+ * @param {number} [$ui-textarea-body-height=$form-textarea-body-height]
+ * The default width of the TextArea's body element (the element that contains the textarea
+ * html element when the field is not sized explicitly using the {@link #width}config, or
+ * sized by it's containing layout.
+ *
+ * @param {color} [$ui-file-field-color=$form-file-field-color] The text color of the
+ * input element when this mixin is used to style a {@link Ext.form.field.File File Field}
+ *
+ * @param {boolean} [$ui-classic-border=$form-text-field-classic-border]
+ * `true` to use classic-theme styled border.
+ *
+ * @member Ext.form.field.Text
+ */:
+@lineio:Sass::Tree::MixinDefNode:
+@name"extjs-text-field-ui;T;@;	[u:Sass::Tree::IfNode[o:Sass::Script::Funcall
+:
+@name"is-null:@options{ :@keywords{ :
+@lineiù:
+@args[o:Sass::Script::Variable	:@underscored_name"!ui_trigger_border_color_over;"!ui-trigger-border-color-over;@;	iù0[u:Sass::Tree::IfNode[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:string:@value"default:
+@lineiû;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;iû:@operator:eq;iûu:Sass::Tree::IfNodem[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:string:@value"toolbar:
+@linei†;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;i†:@operator:eq;i†u:Sass::Tree::IfNodeÆ[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:string:@value"grid-cell:
+@linei¢;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;i¢:@operator:eq;i¢u:Sass::Tree::IfNodeË[00[o:Sass::Tree::VariableNode:@guarded0:
+@name"!ui-trigger-border-color-over:@options{ :
+@expro:Sass::Script::Variable	:@underscored_name"ui_trigger_border_color;"ui-trigger-border-color;@	:
+@linei•:@children[ ;i•[o:Sass::Tree::VariableNode:@guarded0;"!ui-trigger-border-color-over;@:
+@expro;	;".grid_cell_field_trigger_border_color_over;".grid-cell-field-trigger-border-color-over;@;i£:@children[ ;i£[o:Sass::Tree::VariableNode:@guarded0;"!ui-trigger-border-color-over;@:
+@expro;	;"+form_toolbar_trigger_border_color_over;"+form-toolbar-trigger-border-color-over;@;i°:@children[ ;i°[o:Sass::Tree::VariableNode:@guarded0;"!ui-trigger-border-color-over;@:
+@expro;	;"#form_trigger_border_color_over;"#form-trigger-border-color-over;@;iü:@children[ ;iüu;
+[o:Sass::Script::Funcall
+:
+@name"is-null:@options{ :@keywords{ :
+@linei©:
+@args[o:Sass::Script::Variable	:@underscored_name""ui_trigger_border_color_focus;""ui-trigger-border-color-focus;@;	i©0[u:Sass::Tree::IfNode [o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:string:@value"default:
+@linei™;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;i™:@operator:eq;i™u:Sass::Tree::IfNoden[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:string:@value"toolbar:
+@linei¨;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;i¨:@operator:eq;i¨u:Sass::Tree::IfNodeØ[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:string:@value"grid-cell:
+@lineiÆ;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;iÆ:@operator:eq;iÆu:Sass::Tree::IfNodeÈ[00[o:Sass::Tree::VariableNode:@guarded0:
+@name""ui-trigger-border-color-focus:@options{ :
+@expro:Sass::Script::Variable	:@underscored_name"ui_trigger_border_color;"ui-trigger-border-color;@	:
+@linei±:@children[ ;i±[o:Sass::Tree::VariableNode:@guarded0;"!ui-trigger-border-color-over;@:
+@expro;	;".grid_cell_field_trigger_border_color_over;".grid-cell-field-trigger-border-color-over;@;iØ:@children[ ;iØ[o:Sass::Tree::VariableNode:@guarded0;"!ui-trigger-border-color-over;@:
+@expro;	;"+form_toolbar_trigger_border_color_over;"+form-toolbar-trigger-border-color-over;@;i≠:@children[ ;i≠[o:Sass::Tree::VariableNode:@guarded0;""ui-trigger-border-color-focus;@:
+@expro;	;"$form_trigger_border_color_focus;"$form-trigger-border-color-focus;@;i´:@children[ ;i´u;([o:Sass::Script::Funcall
+:
+@name"is-null:@options{ :@keywords{ :
+@lineiµ:
+@args[o:Sass::Script::Variable	:@underscored_name"$ui_trigger_border_color_pressed;"$ui-trigger-border-color-pressed;@;	iµ0[u:Sass::Tree::IfNode:[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:string:@value"default:
+@linei∂;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;i∂:@operator:eq;i∂u:Sass::Tree::IfNodeÇ[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:string:@value"toolbar:
+@linei∏;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;i∏:@operator:eq;i∏u:Sass::Tree::IfNode∫[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	:@options{ :
+@type:string:@value"grid-cell:
+@linei∫;@:@operand1o:Sass::Script::Variable	:@underscored_name"ui:
+@name"ui;@;i∫:@operator:eq;i∫u:Sass::Tree::IfNodeÎ[00[o:Sass::Tree::VariableNode:@guarded0:
+@name"$ui-trigger-border-color-pressed:@options{ :
+@expro:Sass::Script::Variable	:@underscored_name"ui_trigger_border_color;"ui-trigger-border-color;@	:
+@lineiΩ:@children[ ;iΩ[o:Sass::Tree::VariableNode:@guarded0;"$ui-trigger-border-color-pressed;@:
+@expro;	;"1grid_cell_field_trigger_border_color_pressed;"1grid-cell-field-trigger-border-color-pressed;@;iª:@children[ ;iª[o:Sass::Tree::VariableNode:@guarded0;"$ui-trigger-border-color-pressed;@:
+@expro;	;".form_toolbar_trigger_border_color_pressed;".form-toolbar-trigger-border-color-pressed;@;iπ:@children[ ;iπ[o:Sass::Tree::VariableNode:@guarded0;"$ui-trigger-border-color-pressed;@:
+@expro;	;"&form_trigger_border_color_pressed;"&form-trigger-border-color-pressed;@;i∑:@children[ ;i∑o:Sass::Tree::RuleNode:
+@tabsi ;T:
+@rule[	".o:Sass::Script::Variable	:@underscored_name"prefix;"prefix;@;i¡"form-text-field-body-o;	;"ui;"ui;@;i¡;@;	[o;
+;i ;@;	[ ;[ ;0;"(/* We use a combination of min-width and max-width to control the "default" width
+ * of the field body for the following reasons:
+ *
+ * 1. When the field is shrink wrap width, min-width prevents the width of the
+ * body from shrinking smaller than the default width
+ *
+ * 2. When the field is shrink wrap width, max-width prevents the width:100%
+ * triggerWrap element that is immediately inside the body element from causing
+ * the body to expand to infinity.
+ *
+ * 3. When the field's outermost element has a "width" assigned, whether that
+ * width is larger or smaller than what the default shrink-wrap width of the
+ * field would have been, that width will overcome either min-width or max-width
+ * and adjust the size of the body to fit within the defined width of the field
+ * minus the label width. */;i¬o:Sass::Tree::PropNode;i :@prop_syntax:new;["min-width;@;	[ ;o;	;"ui_body_width;"ui-body-width;@;i—;i—o;;i ;;;["max-width;@;	[ ;o;	;"ui_body_width;"ui-body-width;@;i“;i“;i¡o;;i ;T;[	".o;	;"prefix;"prefix;@;i’"form-trigger-wrap-o;	;"ui;"ui;@;i’;@;	[u;ó[o:!Sass::Script::UnaryOperation	:@options{ :@operando:Sass::Script::Variable	:@underscored_name"ui_classic_border:
+@name"ui-classic-border;@:
+@linei÷:@operator:not;i÷0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;
+["border-width;@:@children[ :@valueo;	;	"ui_border_width;
+"ui-border-width;@;i◊;i◊o;;i ;;;
+["border-style;@;[ ;o;	;	"ui_border_style;
+"ui-border-style;@;iÿ;iÿo;;i ;;;
+["border-color;@;[ ;o;	;	"ui_border_color;
+"ui-border-color;@;iŸ;iŸu:Sass::Tree::IfNode∂[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
+@linei⁄;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"ui_border_radius:
+@name"ui-border-radius;	@	;i⁄:@operator:neq;i⁄0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["border-radius;	@	:@children[ ;o;	;"ui_border_radius;"ui-border-radius;	@	;i€;i€o:Sass::Tree::RuleNode;i :@has_childrenT:
+@rule["&.o;	;	"prefix;
+"prefix;@;i›"form-trigger-wrap-focus;@;[o;;i ;;;
+["border-color;@;[ ;o;	;	"ui_focus_border_color;
+"ui-focus-border-color;@;iﬁ;iﬁ;i›o;;i ;T;["&.o;	;	"prefix;
+"prefix;@;i·"form-trigger-wrap-invalid;@;[o;;i ;;;
+["border-color;@;[ ;o;	;	"ui_invalid_border_color;
+"ui-invalid-border-color;@;i‚;i‚;i·;i’u;∏[o:Sass::Script::Variable	:@underscored_name"ui_classic_border:
+@name"ui-classic-border:@options{ :
+@lineiÁ0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule[	".o; 	;"prefix;"prefix;@	;	iË"form-text-wrap-o; 	;"ui;"ui;@	;	iË;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["border-width;@	;[ :@valueo; 	;"ui_border_width;"ui-border-width;@	;	iÈ;	iÈo;;i ;;;["border-style;@	;[ ;o; 	;"ui_border_style;"ui-border-style;@	;	iÍ;	iÍo;;i ;;;["border-color;@	;[ ;o; 	;"ui_border_color;"ui-border-color;@	;	iÎ;	iÎu:Sass::Tree::IfNode∂[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
+@lineiÏ;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"ui_border_radius:
+@name"ui-border-radius;	@	;iÏ:@operator:neq;iÏ0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["border-radius;	@	:@children[ ;o;	;"ui_border_radius;"ui-border-radius;	@	;iÌ;iÌo;
+;i ;T;["&.o; 	;"prefix;"prefix;@	;	iÔ"form-text-wrap-focus;@	;[o;;i ;;;["border-color;@	;[ ;o; 	;"ui_focus_border_color;"ui-focus-border-color;@	;	i;	i;	iÔo;
+;i ;T;["&.o; 	;"prefix;"prefix;@	;	iÛ"form-text-wrap-invalid;@	;[o;;i ;;;["border-color;@	;[ ;o; 	;"ui_invalid_border_color;"ui-invalid-border-color;@	;	iÙ;	iÙ;	iÛ;	iËo:Sass::Tree::VariableNode:@guarded0;"ui-line-height;@:
+@expro:Sass::Script::Operation
+:@operand2o:Sass::Script::Funcall
+;"vertical;@:@keywords{ ;i˘:
+@args[o;	;"ui_border_width;"ui-border-width;@;i˘;@:@operand1o;
+;o; 
+;"vertical;@;!{ ;i˘;"[o;	;"ui_padding;"ui-padding;@;i˘;@;#o;	;"ui_height;"ui-height;@;i˘:@operator:
+minus;i˘;$;%;i˘;	[ ;i˘o;;i ;T;[	".o;	;"prefix;"prefix;@;i˙"form-text-o;	;"ui;"ui;@;i˙;@;	[o;;i ;;;["
+color;@;	[ ;o;	;"ui_color;"ui-color;@;i˚;i˚o;;i ;;;["padding;@;	[ ;o;	;"ui_padding;"ui-padding;@;i¸;i¸o;;i ;;;["background-color;@;	[ ;o;	;"ui_background_color;"ui-background-color;@;i˝;i˝u;∂[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
+@linei˛;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"ui_border_radius:
+@name"ui-border-radius;	@	;i˛:@operator:neq;i˛0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["border-radius;	@	:@children[ ;o;	;"ui_border_radius;"ui-border-radius;	@	;iˇ;iˇu;Ÿ[o:!Sass::Script::UnaryOperation	:@options{ :@operando:Sass::Script::Funcall
+:
+@name"is-null;@:@keywords{ :
+@linei:
+@args[o:Sass::Script::Variable	:@underscored_name"ui_background_image;	"ui-background-image;@;i:@operator:not;i0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;	["background-image;@:@children[ :@valueo;
+;	"theme-background-image;@;
+{ ;i;[o;	;"ui_background_image;	"ui-background-image;@;i;io;;i ;;;["	font;@;	[ ;o: Sass::Script::Interpolation:@whitespace_after0:@beforeo;	;"ui_font_weight;"ui-font-weight;@;i:@whitespace_beforeiï+;@:@aftero;&;'i ;(o;&;'F;(0;)0;@;*0:@originally_text:originally_text:	@mido:Sass::Script::String	;@:
+@type:identifier;"/;i;i;)0;@;*o;	;"ui_font_family;"ui-font-family;@;i;+F;-o;	;"ui_line_height;"ui-line-height;@;i;i;+F;-o;	;"ui_font_size;"ui-font-size;@;i;i;io;;i ;;;["min-height;@;	[ ;o;
+;o; 
+;"vertical;@;!{ ;i;"[o;	;"ui_border_width;"ui-border-width;@;i;@;#o;	;"ui_height;"ui-height;@;i;$;%;i;iu;[o:Sass::Script::Variable	:@underscored_name"include_ie:
+@name"include-ie:@options{ :
+@linei0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule[".o; 	;"prefix;"prefix;@	;	i"
+ie8 &;@	:@children[o:Sass::Tree::CommentNode:@silenti ;@	;[ :@lines[ :
+@loud0:@value"M/* min-height triggers content-box sizing on IE8, so subtract padding */;	i	o:Sass::Tree::PropNode;i :@prop_syntax:new;["min-height;@	;[ ;o:Sass::Script::Operation
+:@operand2o:Sass::Script::Funcall
+;"vertical;@	:@keywords{ ;	i
+:
+@args[o; 	;"ui_padding;"ui-padding;@	;	i
+;@	:@operand1o;
+;o;
+;"vertical;@	;{ ;	i
+;[o; 	;"ui_border_width;"ui-border-width;@	;	i
+;@	;o; 	;"ui_height;"ui-height;@	;	i
+:@operator:
+minus;	i
+;;;	i
+;	i
+;	io;;i ;T;["&.o;	;"prefix;"prefix;@;i"form-textarea;@;	[o;;i ;;;["line-height;@;	[ ;o;	;"ui_textarea_line_height;"ui-textarea-line-height;@;i;io;;i ;;;["min-height;@;	[ ;o;	;"ui_textarea_body_height;"ui-textarea-body-height;@;i;iu;Œ[o:Sass::Script::Variable	:@underscored_name"include_ie:
+@name"include-ie:@options{ :
+@linei0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule[".o; 	;"prefix;"prefix;@	;	i"
+ie8 &;@	:@children[o:Sass::Tree::CommentNode:@silenti ;@	;[ :@lines[ :
+@loud0:@value"M/* min-height triggers content-box sizing on IE8, so subtract padding */;	io:Sass::Tree::PropNode;i :@prop_syntax:new;["min-height;@	;[ ;o:Sass::Script::Operation
+:@operand2o:Sass::Script::Funcall
+;"vertical;@	:@keywords{ ;	i:
+@args[o; 	;"ui_padding;"ui-padding;@	;	i;@	:@operand1o; 	;"ui_textarea_body_height;"ui-textarea-body-height;@	;	i:@operator:
+minus;	i;	i;	i;io;;i ;T;["&.o;	;"prefix;"prefix;@;i"form-text-file;@;	[o;;i ;;;["
+color;@;	[ ;o;	;"ui_file_field_color;"ui-file-field-color;@;i;i;i;i˙o;;i ;T;[	".o;	;"prefix;"prefix;@;i"form-empty-field-o;	;"ui;"ui;@;i;@;	[o;;i ;;;["
+color;@;	[ ;o;	;"ui_empty_color;"ui-empty-color;@;i ;i ;io;;i ;T;[	".o;	;"prefix;"prefix;@;i#"form-invalid-field-o;	;"ui;"ui;@;i#;@;	[o;;i ;;;["background-color;@;	[ ;o;	;" ui_invalid_background_color;" ui-invalid-background-color;@;i$;i$u;[o:!Sass::Script::UnaryOperation	:@options{ :@operando:Sass::Script::Funcall
+:
+@name"is-null;@:@keywords{ :
+@linei%:
+@args[o:Sass::Script::Variable	:@underscored_name" ui_invalid_background_image;	" ui-invalid-background-image;@;i%:@operator:not;i%0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;	["background-image;@:@children[ :@valueo;
+;	"theme-background-image;@;
+{ ;i&;[o;	;" ui_invalid_background_image;	" ui-invalid-background-image;@;i&;i&o;;i ;;;	["background-repeat;@;[ ;o;	;"!ui_invalid_background_repeat;	"!ui-invalid-background-repeat;@;i';i'o;;i ;;;	["background-position;@;[ ;o;	;"#ui_invalid_background_position;	"#ui-invalid-background-position;@;i(;i(;i#o;;0;"bg-position-y;@;o; 
+;"if;@;!{ ;i,;"[o;	;"ui_classic_border;"ui-classic-border;@;i,o:Sass::Script::Number:@original"0;@:@denominator_units[ :@numerator_units[ ;i ;i,o;.	;@;/;0;"center;i,;	[ ;i,o;;i ;T;[	".o;	;"prefix;"prefix;@;i."form-trigger-o;	;"ui;"ui;@;i.;@;	[o;;i ;;;["background;@;	[ ;o:Sass::Script::List	;@:@separator:
+space;[o;	;" ui_trigger_background_color;" ui-trigger-background-color;@;i/o; 
+;"theme-background-image;@;!{ ;i/;"[o;	;" ui_trigger_background_image;" ui-trigger-background-image;@;i/o;.	;@;/;0;"no-repeat;i/;i/;i/o;;i ;;;["background-position;@;	[ ;o;5	;@;6;7;[o;1;2"0;@;3@Î;4[ ;i ;i0o;	;"bg_position_y;"bg-position-y;@;i0;i0;i0o;;i ;;;["
+width;@;	[ ;o;	;"ui_trigger_width;"ui-trigger-width;@;i1;i1u;∫[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Number:@original"0:@options{ :@denominator_units[ :@numerator_units[ :@valuei :
+@linei3;	@	:@operand1o:Sass::Script::Variable	:@underscored_name"ui_trigger_border_width:
+@name"ui-trigger-border-width;	@	;i3:@operator:neq;i30[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;["border-width;	@	:@children[ ;o;	;"ui_trigger_border_width;"ui-trigger-border-width;	@	;i4;i4o;;i ;;;["border-color;	@	;[ ;o;	;"ui_trigger_border_color;"ui-trigger-border-color;	@	;i5;i5o;;i ;;;["border-style;	@	;[ ;o;	;"ui_trigger_border_style;"ui-trigger-border-style;	@	;i6;i6u;g[o:Sass::Script::Variable	:@underscored_name"include_rtl:
+@name"include-rtl:@options{ :
+@linei90[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule["&.o; 	;"prefix;"prefix;@	;	i:"rtl;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["background-image;@	;[ :@valueo:Sass::Script::Funcall
+;"theme-background-image;@	:@keywords{ ;	i;:
+@args[o:Sass::Script::Operation
+:@operand2o:Sass::Script::String	;@	:
+@type:string;"	-rtl;	i;;@	:@operand1o; 	;" ui_trigger_background_image;" ui-trigger-background-image;@	;	i;:@operator:	plus;	i;;	i;;	i:o;;i ;T;["&.o;	;"prefix;"prefix;@;i?"form-trigger-over;@;	[o;;i ;;;["background-position;@;	[ ;o;5	;@;6;7;[o:!Sass::Script::UnaryOperation	;@:@operando;	;"ui_trigger_width;"ui-trigger-width;@;i@;$;%;i@o;	;"bg_position_y;"bg-position-y;@;i@;i@;i@u;°[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::Variable	:@underscored_name"ui_trigger_border_color:
+@name"ui-trigger-border-color:@options{ :
+@lineiA;
+@:@operand1o;	;"!ui_trigger_border_color_over;	"!ui-trigger-border-color-over;
+@;iA:@operator:neq;iA;
+@;o; 
+;o:Sass::Script::Number:@original"0;
+@:@denominator_units[ :@numerator_units[ :@valuei ;iA;
+@;o;	;"ui_trigger_border_width;	"ui-trigger-border-width;
+@;iA;;;iA;:and;iA0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;	["border-color;
+@:@children[ ;o;	;"!ui_trigger_border_color_over;	"!ui-trigger-border-color-over;
+@;iB;iBo;;i ;T;["&.o;	;"prefix;"prefix;@;iE"form-trigger-focus;@;	[o;;i ;;;["background-position;@;	[ ;o;5	;@;6;7;[o;8	;@;9o;
+;o;1;2"4;@;3@Î;4[ ;i	;iF;@;#o;	;"ui_trigger_width;"ui-trigger-width;@;iF;$:
+times;iF;$;%;iFo;	;"bg_position_y;"bg-position-y;@;iF;iF;iF;iE;i?o;;i ;T;["&.o;	;"prefix;"prefix;@;iJ"form-trigger-focus;@;	[o;;i ;;;["background-position;@;	[ ;o;5	;@;6;7;[o;8	;@;9o;
+;o;1;2"3;@;3@Î;4[ ;i;iK;@;#o;	;"ui_trigger_width;"ui-trigger-width;@;iK;$;:;iK;$;%;iKo;	;"bg_position_y;"bg-position-y;@;iK;iK;iKu;•[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::Variable	:@underscored_name"ui_trigger_border_color:
+@name"ui-trigger-border-color:@options{ :
+@lineiL;
+@:@operand1o;	;""ui_trigger_border_color_focus;	""ui-trigger-border-color-focus;
+@;iL:@operator:neq;iL;
+@;o; 
+;o:Sass::Script::Number:@original"0;
+@:@denominator_units[ :@numerator_units[ :@valuei ;iL;
+@;o;	;"ui_trigger_border_width;	"ui-trigger-border-width;
+@;iL;;;iL;:and;iL0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;	["border-color;
+@:@children[ ;o;	;""ui_trigger_border_color_focus;	""ui-trigger-border-color-focus;
+@;iM;iM;iJ;i.o;
+;i ;@;	[ ;[ ;0;"W/* add x-form-trigger class to increase specificity of "click" above focus/over */;iRo;;i ;T;[".o;	;"prefix;"prefix;@;iS"form-trigger.o;	;"prefix;"prefix;@;iS"form-trigger-o;	;"ui;"ui;@;iS".o;	;"prefix;"prefix;@;iS"form-trigger-click;@;	[o;;i ;;;["background-position;@;	[ ;o;5	;@;6;7;[o;8	;@;9o;
+;o;1;2"2;@;3@Î;4[ ;i;iT;@;#o;	;"ui_trigger_width;"ui-trigger-width;@;iT;$;:;iT;$;%;iTo;	;"bg_position_y;"bg-position-y;@;iT;iT;iTu;∑[o:Sass::Script::Operation
+:@operand2o; 
+;o:Sass::Script::Variable	:@underscored_name"!ui_trigger_border_color_over:
+@name"!ui-trigger-border-color-over:@options{ :
+@lineiU;
+@:@operand1o;	;"$ui_trigger_border_color_pressed;	"$ui-trigger-border-color-pressed;
+@;iU:@operator:neq;iU;
+@;o; 
+;o:Sass::Script::Number:@original"0;
+@:@denominator_units[ :@numerator_units[ :@valuei ;iU;
+@;o;	;"ui_trigger_border_width;	"ui-trigger-border-width;
+@;iU;;;iU;:and;iU0[o:Sass::Tree::PropNode:
+@tabsi :@prop_syntax:new;	["border-color;
+@:@children[ ;o;	;"$ui_trigger_border_color_pressed;	"$ui-trigger-border-color-pressed;
+@;iV;iV;iSo;
+;i ;@;	[ ;[ ;0;"g/* Text field or subclass inside cell - calculate top/bottom padding to keep row height correct */;iZu;˝[o:Sass::Script::Operation
+:@operand2o:Sass::Script::Variable	:@underscored_name"$include_ext_grid_plugin_editing:
+@name"$include-ext-grid-plugin-editing:@options{ :
+@linei[;
+@
+:@operand1o;	;"#include_ext_grid_column_widget;	"#include-ext-grid-column-widget;
+@
+;i[:@operator:or;i[0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule[".o;	;"prefix;	"prefix;
+@
+;i\"textfield-o;	;"ui;	"ui;
+@
+;i\"-cell > .o;	;"prefix;	"prefix;
+@
+;i\"grid-cell-inner;
+@
+:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;	["padding-top;
+@
+;[ :@valueo:Sass::Script::Funcall
+;	"max;
+@
+:@keywords{ ;i]:
+@args[o;
+;	"	ceil;
+@
+;{ ;i];[o; 
+;o:Sass::Script::Number:@original"2;
+@
+:@denominator_units[ :@numerator_units[ ;i;i];
+@
+;o; 
+;o;	;"ui_height;	"ui-height;
+@
+;i];
+@
+;o;	;"grid_row_height;	"grid-row-height;
+@
+;i];:
+minus;i];:div;i]o;;"0;
+@
+;@.;[ ;i ;i];i]o;;i ;;;	["padding-bottom;
+@
+;[ ;o;
+;	"max;
+@
+;{ ;i^;[o;
+;	"
+floor;
+@
+;{ ;i^;[o; 
+;o;;"2;
+@
+;@.;[ ;i;i^;
+@
+;o; 
+;o;	;"ui_height;	"ui-height;
+@
+;i^;
+@
+;o;	;"grid_row_height;	"grid-row-height;
+@
+;i^;;;i^;; ;i^o;;"0;
+@
+;@.;[ ;i ;i^;i^;i\;iú;"['[o;;"ui;"ui;{ o;.	;@ü;/;0;"	null;iy[o;;"ui_height;"ui-height;@üo;	;"form_text_field_height;"form-text-field-height;@ü;iz[o;;"ui_font_size;"ui-font-size;@üo;	;"form_text_field_font_size;"form-text-field-font-size;@ü;i{[o;;"ui_font_family;"ui-font-family;@üo;	;" form_text_field_font_family;" form-text-field-font-family;@ü;i|[o;;"ui_font_weight;"ui-font-weight;@üo;	;" form_text_field_font_weight;" form-text-field-font-weight;@ü;i}[o;;"ui_color;"ui-color;@üo;	;"form_text_field_color;"form-text-field-color;@ü;i~[o;;"ui_background_color;"ui-background-color;@üo;	;"%form_text_field_background_color;"%form-text-field-background-color;@ü;i[o;;"ui_border_width;"ui-border-width;@üo;	;"!form_text_field_border_width;"!form-text-field-border-width;@ü;i{[o;;"ui_border_style;"ui-border-style;@üo;	;"!form_text_field_border_style;"!form-text-field-border-style;@ü;i|[o;;"ui_border_color;"ui-border-color;@üo;	;"!form_text_field_border_color;"!form-text-field-border-color;@ü;i}[o;;"ui_focus_border_color;"ui-focus-border-color;@üo;	;"'form_text_field_focus_border_color;"'form-text-field-focus-border-color;@ü;i~[o;;"ui_invalid_border_color;"ui-invalid-border-color;@üo;	;")form_text_field_invalid_border_color;")form-text-field-invalid-border-color;@ü;i[o;;"ui_border_radius;"ui-border-radius;@üo;	;""form_text_field_border_radius;""form-text-field-border-radius;@ü;iÄ[o;;"ui_background_image;"ui-background-image;@üo;	;"%form_text_field_background_image;"%form-text-field-background-image;@ü;iÅ[o;;"ui_padding;"ui-padding;@üo;	;"form_text_field_padding;"form-text-field-padding;@ü;iÇ[o;;"ui_empty_color;"ui-empty-color;@üo;	;" form_text_field_empty_color;" form-text-field-empty-color;@ü;iÉ[o;;"ui_body_width;"ui-body-width;@üo;	;"form_text_field_body_width;"form-text-field-body-width;@ü;iÑ[o;;" ui_invalid_background_color;" ui-invalid-background-color;@üo;	;"(form_field_invalid_background_color;"(form-field-invalid-background-color;@ü;iÜ[o;;" ui_invalid_background_image;" ui-invalid-background-image;@üo;	;"(form_field_invalid_background_image;"(form-field-invalid-background-image;@ü;iá[o;;"!ui_invalid_background_repeat;"!ui-invalid-background-repeat;@üo;	;")form_field_invalid_background_repeat;")form-field-invalid-background-repeat;@ü;ià[o;;"#ui_invalid_background_position;"#ui-invalid-background-position;@üo;	;"+form_field_invalid_background_position;"+form-field-invalid-background-position;@ü;iâ[o;;"ui_trigger_width;"ui-trigger-width;@üo;	;"form_trigger_width;"form-trigger-width;@ü;iã[o;;"ui_trigger_border_width;"ui-trigger-border-width;@üo;	;"form_trigger_border_width;"form-trigger-border-width;@ü;iå[o;;"ui_trigger_border_color;"ui-trigger-border-color;@üo;	;"form_trigger_border_color;"form-trigger-border-color;@ü;iç[o;;"ui_trigger_border_style;"ui-trigger-border-style;@üo;	;"form_trigger_border_style;"form-trigger-border-style;@ü;ié[o;;"!ui_trigger_border_color_over;"!ui-trigger-border-color-over;@üo;.	;@ü;/;0;"	null;iê[o;;""ui_trigger_border_color_focus;""ui-trigger-border-color-focus;@üo;.	;@ü;/;0;"	null;ië[o;;"$ui_trigger_border_color_pressed;"$ui-trigger-border-color-pressed;@üo;.	;@ü;/;0;"	null;ií[o;;" ui_trigger_background_image;" ui-trigger-background-image;@üo;	;""form_trigger_background_image;""form-trigger-background-image;@ü;iî[o;;" ui_trigger_background_color;" ui-trigger-background-color;@üo;	;""form_trigger_background_color;""form-trigger-background-color;@ü;iï[o;;"ui_textarea_line_height;"ui-textarea-line-height;@üo;	;"form_textarea_line_height;"form-textarea-line-height;@ü;ió[o;;"ui_textarea_body_height;"ui-textarea-body-height;@üo;	;"form_textarea_body_height;"form-textarea-body-height;@ü;iò[o;;"ui_file_field_color;"ui-file-field-color;@üo;	;"form_file_field_color;"form-file-field-color;@ü;iô[o;;"ui_classic_border;"ui-classic-border;@üo;	;"#form_text_field_classic_border;"#form-text-field-classic-border;@ü;iõu;3[o:Sass::Script::Variable	:@underscored_name""include_text_field_default_ui:
+@name""include-text-field-default-ui:@options{ :
+@lineic0[o:Sass::Tree::MixinNode;"extjs-text-field-ui;@	:@children[ :@keywords{"uio:Sass::Script::String	;@	:
+@type:string:@value"default;	ie;	if:
+@args[ u;ç[o:Sass::Script::Variable	:@underscored_name""include_text_field_toolbar_ui:
+@name""include-text-field-toolbar-ui:@options{ :
+@lineii0[o:Sass::Tree::MixinNode;"extjs-text-field-ui;@	:@children[ :@keywords{'"ui_border_coloro; 	;")form_toolbar_text_field_border_color;")form-toolbar-text-field-border-color;@	;	it"ui_background_imageo; 	;"-form_toolbar_text_field_background_image;"-form-toolbar-text-field-background-image;@	;	ix"ui_textarea_line_heighto; 	;"&form_toolbar_textarea_line_height;"&form-toolbar-textarea-line-height;@	;	ié"uio:Sass::Script::String	;@	:
+@type:string:@value"toolbar;	ik"ui_font_familyo; 	;"(form_toolbar_text_field_font_family;"(form-toolbar-text-field-font-family;@	;	in" ui_invalid_background_coloro; 	;"5form_toolbar_text_field_invalid_background_color;"5form-toolbar-text-field-invalid-background-color;@	;	i}"$ui_trigger_border_color_pressedo;	;@	;:identifier;"	null;	iâ"ui_body_widtho; 	;"'form_toolbar_text_field_body_width;"'form-toolbar-text-field-body-width;@	;	i{"ui_font_weighto; 	;"(form_toolbar_text_field_font_weight;"(form-toolbar-text-field-font-weight;@	;	io"ui_font_sizeo; 	;"&form_toolbar_text_field_font_size;"&form-toolbar-text-field-font-size;@	;	im"ui_heighto; 	;"#form_toolbar_text_field_height;"#form-toolbar-text-field-height;@	;	il"ui_trigger_widtho; 	;"form_toolbar_trigger_width;"form-toolbar-trigger-width;@	;	iÇ"!ui_trigger_border_color_overo;	;@	;;;"	null;	iá"ui_classic_bordero; 	;"+form_toolbar_text_field_classic_border;"+form-toolbar-text-field-classic-border;@	;	ií"ui_trigger_border_styleo; 	;"&form_toolbar_trigger_border_style;"&form-toolbar-trigger-border-style;@	;	iÖ"ui_coloro; 	;""form_toolbar_text_field_color;""form-toolbar-text-field-color;@	;	ip"ui_invalid_border_coloro; 	;"1form_toolbar_text_field_invalid_border_color;"1form-toolbar-text-field-invalid-border-color;@	;	iv"ui_trigger_border_widtho; 	;"&form_toolbar_trigger_border_width;"&form-toolbar-trigger-border-width;@	;	iÉ" ui_invalid_background_imageo; 	;"5form_toolbar_text_field_invalid_background_image;"5form-toolbar-text-field-invalid-background-image;@	;	i~"ui_textarea_body_heighto; 	;"&form_toolbar_textarea_body_height;"&form-toolbar-textarea-body-height;@	;	iè"ui_trigger_border_coloro; 	;"&form_toolbar_trigger_border_color;"&form-toolbar-trigger-border-color;@	;	iÑ" ui_trigger_background_coloro; 	;"*form_toolbar_trigger_background_color;"*form-toolbar-trigger-background-color;@	;	iå"ui_file_field_coloro; 	;""form_toolbar_file_field_color;""form-toolbar-file-field-color;@	;	iê" ui_trigger_background_imageo; 	;"*form_toolbar_trigger_background_image;"*form-toolbar-trigger-background-image;@	;	iã"#ui_invalid_background_positiono; 	;"8form_toolbar_text_field_invalid_background_position;"8form-toolbar-text-field-invalid-background-position;@	;	iÄ"ui_paddingo; 	;"$form_toolbar_text_field_padding;"$form-toolbar-text-field-padding;@	;	iy"ui_background_coloro; 	;"-form_toolbar_text_field_background_color;"-form-toolbar-text-field-background-color;@	;	iq""ui_trigger_border_color_focuso;	;@	;;;"	null;	ià"ui_border_radiuso; 	;"*form_toolbar_text_field_border_radius;"*form-toolbar-text-field-border-radius;@	;	iw"ui_focus_border_coloro; 	;"/form_toolbar_text_field_focus_border_color;"/form-toolbar-text-field-focus-border-color;@	;	iu"ui_border_styleo; 	;")form_toolbar_text_field_border_style;")form-toolbar-text-field-border-style;@	;	is"ui_border_widtho; 	;")form_toolbar_text_field_border_width;")form-toolbar-text-field-border-width;@	;	ir"ui_empty_coloro; 	;"(form_toolbar_text_field_empty_color;"(form-toolbar-text-field-empty-color;@	;	iz"!ui_invalid_background_repeato; 	;"6form_toolbar_text_field_invalid_background_repeat;"6form-toolbar-text-field-invalid-background-repeat;@	;	i;	iì:
+@args[ o;;i ;T;[".o;	;"prefix;"prefix;@;iñ"form-clear-trigger;@;	[o;;i ;;;["background-image;@;	[ ;o; 
+;"theme-background-image;@;!{ ;ió;"[o;.	;@;/:string;"form/clear-trigger;ió;ióu;·[o:Sass::Script::Variable	:@underscored_name"include_rtl:
+@name"include-rtl:@options{ :
+@lineiò0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule["&.o; 	;"prefix;"prefix;@	;	iô"rtl;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["background-image;@	;[ :@valueo:Sass::Script::Funcall
+;"theme-background-image;@	:@keywords{ ;	iö:
+@args[o:Sass::Script::String	;@	:
+@type:string;"form/clear-trigger-rtl;	iö;	iö;	iô;iño;;i ;T;[".o;	;"prefix;"prefix;@;iü"form-search-trigger;@;	[o;;i ;;;["background-image;@;	[ ;o; 
+;"theme-background-image;@;!{ ;i†;"[o;.	;@;/;;;"form/search-trigger;i†;i†u;‚[o:Sass::Script::Variable	:@underscored_name"include_rtl:
+@name"include-rtl:@options{ :
+@linei°0[o:Sass::Tree::RuleNode:
+@tabsi :@has_childrenT:
+@rule["&.o; 	;"prefix;"prefix;@	;	i¢"rtl;@	:@children[o:Sass::Tree::PropNode;i :@prop_syntax:new;["background-image;@	;[ :@valueo:Sass::Script::Funcall
+;"theme-background-image;@	:@keywords{ ;	i£:
+@args[o:Sass::Script::String	;@	:
+@type:string;"form/search-trigger-rtl;	i£;	i£;	i¢;iü;i

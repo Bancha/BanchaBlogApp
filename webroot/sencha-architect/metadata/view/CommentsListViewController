@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "commentslist",
+        "designer|userClassName": "CommentsListViewController"
+    },
+    "designerId": "443b8250-fa63-447a-9dd9-ce5e75a1a6a7"
+}

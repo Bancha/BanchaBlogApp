@@ -5,5 +5,21 @@
    "resources": [
       "resources/blog-app.css"
    ],
-   "theme": "ext-theme-neptune"
+   "theme": "ext-theme-neptune",
+   "js": [
+      {
+         "path": "app.js",
+         "bundle": true
+      }
+   ],
+   "css": [
+      {
+         "path": "bootstrap.css",
+         "bootstrap": true
+      },
+      {
+         "path": "resources/blog-app.css"
+      }
+   ],
+   "classpath": "${app.dir}/app,${app.dir}//bancha/js/"
 }
