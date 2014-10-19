@@ -331,6 +331,8 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.data.XmlReader"
   ],
   "Ext.data.validations": [],
+  "Ext.data.validator.Bound": [],
+  "Ext.data.validator.Range": [],
   "Ext.data.validator.Validator": [],
   "Ext.data.writer.Json": [
     "Ext.data.JsonWriter"
@@ -1256,6 +1258,8 @@ Ext.ClassManager.addNameAliasMappings({
     "reader.xml"
   ],
   "Ext.data.validations": [],
+  "Ext.data.validator.Bound": [],
+  "Ext.data.validator.Range": [],
   "Ext.data.validator.Validator": [],
   "Ext.data.writer.Json": [
     "writer.json"

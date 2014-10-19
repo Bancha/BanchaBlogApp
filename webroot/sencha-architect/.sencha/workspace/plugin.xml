@@ -8,4 +8,11 @@
     <property name="framework.config.dir" value="${cmd.config.dir}"/>
 
     <import file="${framework.config.dir}/plugin.xml"/>
+
+    <!-- Add Support for Bancha -->
+    <import file="${app.dir}/${bancha.folder.relative}/_sencha/build.xml"/>
+    <target name="-before-app-build" depends="-bancha-before-app-build"></target>
+    <target name="-before-app-refresh" depends="-bancha-before-app-build"></target>
+    <target name="-after-app-build" depends="-bancha-after-app-build"></target>
+    <target name="-after-app-refresh" depends="-bancha-after-app-build"></target>
 </project>
