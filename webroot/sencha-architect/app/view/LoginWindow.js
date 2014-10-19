@@ -29,7 +29,7 @@ Ext.define('BlogApp.view.LoginWindow', {
     viewModel: {
         type: 'loginwindow'
     },
-    height: 342,
+    height: 360,
     resizable: false,
     width: 530,
     layout: 'fit',

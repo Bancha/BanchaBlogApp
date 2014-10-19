@@ -9,7 +9,7 @@
         "closable": false,
         "designer|userAlias": "loginwindow",
         "designer|userClassName": "LoginWindow",
-        "height": 342,
+        "height": 360,
         "layout": "fit",
         "modal": true,
         "resizable": [
