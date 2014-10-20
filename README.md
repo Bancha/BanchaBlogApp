@@ -5,6 +5,15 @@ This project is show casing the usage of Bancha in Sencha Architect 3 by creatin
 
 For more information go to our article how to use [Sencha Architect 3](http://banchaproject.org/documentation-pro-sencha-architect-3.html)
 
+Branches
+--------
+
+Since Sencha Architect changes a lot from release to release, here are different branches:
+
+* [Sencha Architect 3.0 with Ext JS 4](https://github.com/Bancha/BanchaBlogApp/tree/sencha-architect-3.0-extjs-4)
+* [Sencha Architect 3.1 with Ext JS 4](https://github.com/Bancha/BanchaBlogApp/tree/sencha-architect-3.1-extjs-4)
+* [Sencha Architect 3.1 with Ext JS 5](https://github.com/Bancha/BanchaBlogApp/tree/sencha-architect-3.1-extjs-5)
+
 How to setup the project
 ------------------------
 1. Download [CakePHP](http://www.cakephp.org) latest
